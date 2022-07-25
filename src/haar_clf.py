@@ -132,7 +132,7 @@ def integral_image(i):
     return ii
 
 
-@jit(nopython=True)
+@jit(nopython=True, cache=True)
 def ii_delta(ii, j1, k1, j2, k2):
     delta = ii[j2, k2]
     if j1 > 0:
@@ -144,7 +144,7 @@ def ii_delta(ii, j1, k1, j2, k2):
     return delta
 
 
-@jit(nopython=True)
+@jit(nopython=True, cache=True)
 def haar_feature(ii, j0, k0, hcw):
     j, k, h, w = hcw[0]
     j1 = j0 + j
@@ -386,6 +386,8 @@ def fddb_data(path_fddb_root, hfs_coords, n_negs_per_img, n):
 
 def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     H, W = ii.shape
+    detectionTime = 0
+    calcFeatureTime = 0
     windows_count = 0
     for s in consts.DETECTION_SIZES:
         [w, h] = s
@@ -398,8 +400,8 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
                 windows_count += 1
 
     n = hcs.size
-    # todo - do czego to potrzebne?
-    # hcs = hcs[feature_indexes]
+    # chyba po to aby liczyc tylko wybrane indeksy
+    hcs = hcs[feature_indexes]
     detections = []
     window_index = 0
     progress_print = int(0.01 * windows_count)
@@ -417,10 +419,13 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
         hcws = [hcw.astype("int32") for hcw in hcws]
         for j in range(rj, H - h, dj):
             for k in range(rk, W - w, dk):
-                features = haar_features(ii, j, k, hcws, n)
-                # features = haar_features(ii, j, k, hcws, n, feature_indexes)
+                tCalc = time.time()
+                features = haar_features(ii, j, k, hcws, n, feature_indexes)
+                calcFeatureTime += (time.time() - tCalc)
 
+                tDec = time.time()
                 decision = clf.decision_function(np.array([features]))
+                detectionTime += (time.time() - tDec)
                 if decision > threshold:
                     detections.append([j, k, h, w])
                     print(f"! FACE DETECTED, DECISION: {decision}, size: {w}x{h}")
@@ -428,7 +433,10 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
                 if (window_index % progress_print == 0):
                     print(f"PROGRESS: {window_index / windows_count}")
     t2 = time.time()
+    print(f"Decision function time  {detectionTime} s")
+    print(f"Features time {calcFeatureTime} s")
     print(f"DETECTION DONE IN {t2 - t1} s")
+
 
     # bez łączenia
     for j, k, h, w in detections:
@@ -479,15 +487,14 @@ def generateROC(clf):
 
 
 def multiplyWindow(w, h, hcws):
-    tmp = copy.deepcopy(hcws)
-
-    return multiplyWindowCalc(w, h, hcws, tmp)
+    return multiplyWindowCalc(w, h, hcws)
 
 
 # @jit(nopython=True)
-def multiplyWindowCalc(w, h, hcws, tmp):
+def multiplyWindowCalc(w, h, hcws):
+    tmp = list(range(len(hcws)))
     for i in range(0, len(hcws)):
-        tmp[i] *= [h, w, h, w]
+        tmp[i] = hcws[i] * [h, w, h, w]
 
     return tmp
 
@@ -532,7 +539,7 @@ i = cv2.imread("test_data/camera.jpg")
 i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
 # remove subtitles from camera
-i_gray_cropped = i_gray[0:, 0:]
+i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.imshow("cropped", i_gray_cropped)
 # cv2.waitKey()
 ii = integral_image(i_gray_cropped)
@@ -552,4 +559,4 @@ ii = integral_image(i_gray_cropped)
 #     cv2.waitKey()
 
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6)
