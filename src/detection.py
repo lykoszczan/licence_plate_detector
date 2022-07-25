@@ -1,7 +1,9 @@
 import numpy as np
+
 import consts
 import utils
 from haar_features import haar_features
+
 
 def detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes, n, hcs, ii):
     dj = int(np.round(w * consts.DETECTION_W_JUMP_RATIO))

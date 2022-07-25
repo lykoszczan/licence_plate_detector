@@ -1,8 +1,11 @@
-import time
 import pickle
-import numpy as np
+import time
+
 import cv2
+import numpy as np
+
 import consts
+
 
 def multiplyWindow(w, h, hcws):
     tmp = list(range(len(hcws)))
@@ -10,6 +13,7 @@ def multiplyWindow(w, h, hcws):
         tmp[i] = hcws[i] * [h, w, h, w]
 
     return tmp
+
 
 def scale_image(i):
     h, w, _ = i.shape

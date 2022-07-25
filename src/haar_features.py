@@ -1,19 +1,9 @@
-import numpy as np
 import cv2
-import time
+import numpy as np
 from numba import jit
-import multiprocessing as mp
-from sklearn.metrics import roc_curve, auc
-import matplotlib.pyplot as plt
-from objects.ParsedLine import ParsedLine
-import utils
-import training
-import consts
-import random
 
 
-
-def haar_features(ii, j0, k0, hcws_subset, n, feature_indexes=None, verbose=False):
+def haar_features(ii, j0, k0, hcws_subset, n, feature_indexes=None, verbose=False, i_scaled=None):
     # verbose = True
 
     features = np.zeros(n, dtype="int16")
@@ -26,6 +16,7 @@ def haar_features(ii, j0, k0, hcws_subset, n, feature_indexes=None, verbose=Fals
             cv2.imshow("DEMO", draw_haar_feature_at(i_scaled, j0, k0, hcws_subset[i]))
             cv2.waitKey()
     return features
+
 
 @jit(nopython=True, cache=True)
 def haar_feature(ii, j0, k0, hcw):
@@ -46,6 +37,7 @@ def haar_feature(ii, j0, k0, hcw):
     black_area = total_area - white_area
     return np.int16(white_intensity / white_area - black_intensity / black_area)
 
+
 @jit(nopython=True, cache=True)
 def ii_delta(ii, j1, k1, j2, k2):
     delta = ii[j2, k2]
@@ -56,6 +48,7 @@ def ii_delta(ii, j1, k1, j2, k2):
     if j1 > 0 and k1 > 0:
         delta += ii[j1 - 1, k1 - 1]
     return delta
+
 
 def draw_haar_feature_at(i, j0, k0, hcw):
     i_copy = i.copy()
