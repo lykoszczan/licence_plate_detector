@@ -19,7 +19,7 @@ def learn(X_train, y_train, clf_path, n, s, p, adaBoost=False, force=False):
             utils.pickle_all(clf_path + clf_name, clf)
         clf = utils.unpickle_all(clf_path + clf_name)
     else:
-        clf_name = "clf_sklearn_rb_faces_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + "_T_" + str(T) + ".bin"
+        clf_name = "clf_boosting_rb_faces_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + "_T_" + str(T) + ".bin"
         if force:
             clf = boosting.RealBoostBins(T, B)
             print("LEARNING...")
