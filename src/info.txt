@@ -1,0 +1,18 @@
+jak dzialaja haar-like feature?
+wybierana jest liczba cech np s =3, p=4 => 1024 cechy
+
+przygotowujemy zbiory probek negatywnych i pozytywnych
+
+dla pozytywnych wyciagamy cechy haara i zapisujemy
+dla negatywnych wyciagamy cechy i tez zapisujemy jako negatywne
+
+klasyfikator nie musi byc jakis szczegolny, na zajeciach uzywany byl AdaBoostClassifier, w innym przykladzie
+RandomForestClassifier
+
+
+---- 08.06.2022 ----
+2x boundingbox wiekszy - do zastanowienia, wtedy do OCR odjac dodane wczesniej marginesy
+object marker exe - oznaczenie zdjec
+
+10000 pozytwów
+odpowiednia ilosc negatywow - negatywy prostokatne o odpowiedniej proporcji bokow (proporcje tablicy rejestracyjmnych)
