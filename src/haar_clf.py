@@ -404,6 +404,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
                 windows_count += 1
 
     n = hcs.size
+    # todo - do czego to potrzebne?
     # hcs = hcs[feature_indexes]
     detections = []
     window_index = 0
@@ -428,12 +429,8 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
         hcws = [hcw.astype("int32") for hcw in hcws]
         for j in range(rj, H - h, dj):
             for k in range(rk, W - w, dk):
-                # j = 380
-                # k = 200
                 features = haar_features(ii, j, k, hcws, n)
                 # features = haar_features(ii, j, k, hcws, n, feature_indexes)
-
-
 
                 decision = clf.decision_function(np.array([features]))
                 if decision > threshold:
@@ -446,17 +443,17 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     print(f"DETECTION DONE IN {t2 - t1} s")
 
     # bez łączenia
-    for j, k, h, w in detections:
-        cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
-    cv2.imshow("OUTPUT_all", i_scaled)
-    cv2.waitKey()
+    # for j, k, h, w in detections:
+    #     cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
+    # cv2.imshow("OUTPUT_all", i_scaled)
+    # cv2.waitKey()
 
     # połaczone
-    # rects = non_max_supression(detections, 0.1)
-    # for rect in rects:
-    #     cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
-    # cv2.imshow("OUTPUT", i_scaled)
-    # cv2.waitKey()
+    rects = non_max_supression(detections, 0.1)
+    for rect in rects:
+        cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
+    cv2.imshow("OUTPUT", i_scaled)
+    cv2.waitKey()
 
 
 def generateROC(clf):
@@ -492,7 +489,7 @@ def generateROC(clf):
     plt.legend(loc="lower right")
     plt.show()
 
-
+# @jit(nopython=True)
 def multiplyWindow(w, h, hcws):
     tmp = copy.deepcopy(hcws)
 
