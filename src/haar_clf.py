@@ -328,19 +328,6 @@ def fddb_data(hfs_coords, n_negs_per_img, n):
 
 def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     H, W = ii.shape
-    detectionTime = 0
-    calcFeatureTime = 0
-    windows_count = 0
-    for s in consts.DETECTION_SIZES:
-        [w, h] = s
-        dj = int(np.round(w * DETECTION_W_JUMP_RATIO))
-        dk = dj
-        rj = int(((H - h) % dj) / 2)
-        rk = int(((W - w) % dk) / 2)
-        for j in range(rj, H - h, dj):
-            for k in range(rk, W - w, dk):
-                windows_count += 1
-
     n = hcs.size
     # chyba po to aby liczyc tylko wybrane indeksy
     hcs = hcs[feature_indexes]
@@ -362,8 +349,6 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     for p in procs: p.join()
 
     t2 = time.time()
-    print(f"Decision function time  {detectionTime} s")
-    print(f"Features time {calcFeatureTime} s")
     print(f"DETECTION DONE IN {t2 - t1} s")
 
     # bez łączenia
