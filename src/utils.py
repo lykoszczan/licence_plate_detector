@@ -4,6 +4,12 @@ import numpy as np
 import cv2
 import consts
 
+def multiplyWindow(w, h, hcws):
+    tmp = list(range(len(hcws)))
+    for i in range(0, len(hcws)):
+        tmp[i] = hcws[i] * [h, w, h, w]
+
+    return tmp
 
 def scale_image(i):
     h, w, _ = i.shape

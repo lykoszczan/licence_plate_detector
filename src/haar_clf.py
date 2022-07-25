@@ -1,15 +1,18 @@
-import numpy as np
-import cv2
-import time
-from numba import jit
-import copy
-from sklearn.metrics import roc_curve, auc
-import matplotlib.pyplot as plt
-from objects.ParsedLine import ParsedLine
-import utils
-import training
-import consts
+import multiprocessing as mp
 import random
+import time
+
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.metrics import roc_curve, auc
+
+import consts
+import training
+import utils
+from detection import detection_one_scale
+from haar_features import draw_haar_feature_at, haar_features
+from objects.ParsedLine import ParsedLine
 
 DEFAULT_HEIGHT = 480
 HAAR_TEMPLATES = [
@@ -132,67 +135,6 @@ def integral_image(i):
     return ii
 
 
-@jit(nopython=True, cache=True)
-def ii_delta(ii, j1, k1, j2, k2):
-    delta = ii[j2, k2]
-    if j1 > 0:
-        delta -= ii[j1 - 1, k2]
-    if k1 > 0:
-        delta -= ii[j2, k1 - 1]
-    if j1 > 0 and k1 > 0:
-        delta += ii[j1 - 1, k1 - 1]
-    return delta
-
-
-@jit(nopython=True, cache=True)
-def haar_feature(ii, j0, k0, hcw):
-    j, k, h, w = hcw[0]
-    j1 = j0 + j
-    k1 = k0 + k
-    total_intensity = ii_delta(ii, j1, k1, j1 + h - 1, k1 + w - 1)
-    total_area = h * w
-    white_intensity = 0
-    white_area = 0
-    for white in hcw[1:]:
-        j, k, h, w = white
-        j1 = j0 + j
-        k1 = k0 + k
-        white_intensity += ii_delta(ii, j1, k1, j1 + h - 1, k1 + w - 1)
-        white_area += h * w
-    black_intensity = total_intensity - white_intensity
-    black_area = total_area - white_area
-    return np.int16(white_intensity / white_area - black_intensity / black_area)
-
-
-def haar_features(ii, j0, k0, hcws_subset, n, feature_indexes=None, verbose=False):
-    # verbose = True
-
-    features = np.zeros(n, dtype="int16")
-    if feature_indexes is None:
-        feature_indexes = list(range(n))
-    for i, fi in enumerate(feature_indexes):
-        features[fi] = haar_feature(ii, j0, k0, hcws_subset[i])
-
-        if verbose:
-            cv2.imshow("DEMO", draw_haar_feature_at(i_scaled, j0, k0, hcws_subset[i]))
-            cv2.waitKey()
-    return features
-
-
-def draw_haar_feature_at(i, j0, k0, hcw):
-    i_copy = i.copy()
-    j, k, h, w = hcw[0]
-    j1 = j0 + j
-    k1 = k0 + k
-    cv2.rectangle(i_copy, (k1, j1), (k1 + w - 1, j1 + h - 1), (0, 0, 0), cv2.FILLED)
-    for white in hcw[1:]:
-        j, k, h, w = white
-        j1 = j0 + j
-        k1 = k0 + k
-        cv2.rectangle(i_copy, (k1, j1), (k1 + w - 1, j1 + h - 1), (255, 255, 255), cv2.FILLED)
-    return cv2.addWeighted(i, 0.4, i_copy, 0.6, 0.0)
-
-
 # intersection over union - czesc wspolna
 def iou(coords_1, coords_2):
     j11, k11, j12, k12 = coords_1
@@ -271,7 +213,7 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                 cv2.rectangle(i0, p1, p2, (0, 0, 255), 1)
                 # cv2.imshow("FDDB", i0)
                 cv2.waitKey()
-            hfs_coords_window = multiplyWindow(w, h, hfs_coords)
+            hfs_coords_window = utils.multiplyWindow(w, h, hfs_coords)
             hfs_coords_window = np.array(list(map(lambda npa: npa.astype("int32"), hfs_coords_window)), dtype=object)
             feats = haar_features(ii, j0, k0, hfs_coords_window, n)
 
@@ -303,7 +245,7 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                 ious = list(map(lambda ifc: iou(patch, ifc), img_faces_coords))
                 max_iou = max(ious) if len(ious) > 0 else 0.0
                 if max_iou < neg_max_iou:
-                    hfs_coords_window = multiplyWindow(w_random, h_random, hfs_coords)
+                    hfs_coords_window = utils.multiplyWindow(w_random, h_random, hfs_coords)
                     hfs_coords_window = np.array(list(map(lambda npa: npa.astype("int32"), hfs_coords_window)),
                                                  dtype=object)
                     feats = haar_features(ii, j0, k0, hfs_coords_window, n)
@@ -338,7 +280,7 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
     return X, y
 
 
-def fddb_data(path_fddb_root, hfs_coords, n_negs_per_img, n):
+def fddb_data(hfs_coords, n_negs_per_img, n):
     n_negs_per_img = n_negs_per_img
 
     fold_paths_all = utils.readDataFile()
@@ -402,41 +344,27 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     n = hcs.size
     # chyba po to aby liczyc tylko wybrane indeksy
     hcs = hcs[feature_indexes]
-    detections = []
-    window_index = 0
-    progress_print = int(0.01 * windows_count)
+
+    manager = mp.Manager()
+    detections = manager.list()
+
     print("DETECTION...")
     t1 = time.time()
+    procs = []
+
     for s in consts.DETECTION_SIZES:
         [w, h] = s
+        p = mp.Process(target=detection_one_scale,
+                       args=(H, W, h, w, threshold, detections, clf, feature_indexes, n, hcs, ii))
+        p.start()
+        procs.append(p)
 
-        dj = int(np.round(w * DETECTION_W_JUMP_RATIO))
-        dk = dj
-        print(f"S: {w}x{h}, DJ: {dj}, DK: {dk}")
-        rj = int(((H - h) % dj) / 2)
-        rk = int(((W - w) % dk) / 2)
-        hcws = multiplyWindow(w, h, hcs)
-        hcws = [hcw.astype("int32") for hcw in hcws]
-        for j in range(rj, H - h, dj):
-            for k in range(rk, W - w, dk):
-                tCalc = time.time()
-                features = haar_features(ii, j, k, hcws, n, feature_indexes)
-                calcFeatureTime += (time.time() - tCalc)
+    for p in procs: p.join()
 
-                tDec = time.time()
-                decision = clf.decision_function(np.array([features]))
-                detectionTime += (time.time() - tDec)
-                if decision > threshold:
-                    detections.append([j, k, h, w])
-                    print(f"! FACE DETECTED, DECISION: {decision}, size: {w}x{h}")
-                window_index += 1
-                if (window_index % progress_print == 0):
-                    print(f"PROGRESS: {window_index / windows_count}")
     t2 = time.time()
     print(f"Decision function time  {detectionTime} s")
     print(f"Features time {calcFeatureTime} s")
     print(f"DETECTION DONE IN {t2 - t1} s")
-
 
     # bez łączenia
     for j, k, h, w in detections:
@@ -452,7 +380,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     # cv2.waitKey()
 
 
-def generateROC(clf):
+def generate_roc(clf):
     y_score = clf.decision_function(X_test)
 
     # Compute ROC curve and ROC area for each class
@@ -486,19 +414,6 @@ def generateROC(clf):
     plt.show()
 
 
-def multiplyWindow(w, h, hcws):
-    return multiplyWindowCalc(w, h, hcws)
-
-
-# @jit(nopython=True)
-def multiplyWindowCalc(w, h, hcws):
-    tmp = list(range(len(hcws)))
-    for i in range(0, len(hcws)):
-        tmp[i] = hcws[i] * [h, w, h, w]
-
-    return tmp
-
-
 clf_path = "clf/"
 data_path = "trained/"
 
@@ -511,7 +426,7 @@ print("N: " + str(n))
 hcs = haar_coords(s, p, indexes)
 
 data_name = "licence_plates_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + ".bin"
-# X_train, y_train, X_test, y_test = fddb_data("annotations", hcs, 50, n)
+# X_train, y_train, X_test, y_test = fddb_data(hcs, 50, n)
 # utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
 X_train, y_train, X_test, y_test = utils.unpickle_all(data_path + data_name)
 print(X_train.shape)
@@ -528,12 +443,11 @@ print(f"ACC TEST: {clf.score(X_test, y_test)}")
 print(f"SENSITIVITY TEST: {clf.score(X_test[indexes_pos], y_test[indexes_pos])}")
 print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 
-generateROC(clf)
+generate_roc(clf)
 
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-# i = cv2.imread("test_data/car.png")
 i = cv2.imread("test_data/camera.jpg")
 
 i_scaled = utils.scale_image(i)
@@ -543,20 +457,5 @@ i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.imshow("cropped", i_gray_cropped)
 # cv2.waitKey()
 ii = integral_image(i_gray_cropped)
-
-# w = 150
-# h = 40
-# j0 = 380
-# k0 = 200
-# hcws = multiplyWindow(w, h, hcs)
-# hcws = [hcw.astype("int32") for hcw in hcws]
-#
-# for hcw in hcws:
-#     print("HCW: ")
-#     print(hcw)
-#     print("VALUE: " + str(haar_feature(ii, j0, k0, hcw)))
-#     cv2.imshow("DEMO", draw_haar_feature_at(i_scaled, j0, k0, hcw))
-#     cv2.waitKey()
-
 
 detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6)
