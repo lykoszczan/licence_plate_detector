@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from objects.ParsedLine import ParsedLine
 import utils
 import training
+import consts
 import random
 
 DEFAULT_HEIGHT = 480
@@ -95,12 +96,6 @@ def non_max_supression(detections, ratio):
             if run:
                 break
     return rects
-
-
-def scale_image(i):
-    h, w, _ = i.shape
-    w_new = int(np.round(w * DEFAULT_HEIGHT / h))
-    return cv2.resize(i, (w_new, DEFAULT_HEIGHT))
 
 
 def haar_indexes(s, p):
@@ -389,17 +384,16 @@ def fddb_data(path_fddb_root, hfs_coords, n_negs_per_img, n):
     return X_train, y_train, X_test, y_test
 
 
-
 def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     H, W = ii.shape
     windows_count = 0
-    for s in range(DETECTION_SCALES):
-        w = int(np.round(DETECTION_W_MIN * DETECTION_W_GROWTH ** (s)))
+    for s in consts.DETECTION_SIZES:
+        [w, h] = s
         dj = int(np.round(w * DETECTION_W_JUMP_RATIO))
         dk = dj
-        rj = int(((H - w) % dj) / 2)
+        rj = int(((H - h) % dj) / 2)
         rk = int(((W - w) % dk) / 2)
-        for j in range(rj, H - w, dj):
+        for j in range(rj, H - h, dj):
             for k in range(rk, W - w, dk):
                 windows_count += 1
 
@@ -411,18 +405,12 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     progress_print = int(0.01 * windows_count)
     print("DETECTION...")
     t1 = time.time()
-    for s in range(DETECTION_SCALES):
-        # todo - wyznaczenie h
-        # w = int(np.round(DETECTION_W_MIN * DETECTION_W_GROWTH ** (s)))
-        # h = int(np.round(w / 4.5))
-
-        # tymczasowo
-        w = 165
-        h = 45
+    for s in consts.DETECTION_SIZES:
+        [w, h] = s
 
         dj = int(np.round(w * DETECTION_W_JUMP_RATIO))
         dk = dj
-        print(f"S: {s}, DJ: {dj}, DK: {dk}")
+        print(f"S: {w}x{h}, DJ: {dj}, DK: {dk}")
         rj = int(((H - h) % dj) / 2)
         rk = int(((W - w) % dk) / 2)
         hcws = multiplyWindow(w, h, hcs)
@@ -435,7 +423,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
                 decision = clf.decision_function(np.array([features]))
                 if decision > threshold:
                     detections.append([j, k, h, w])
-                    print(f"! FACE DETECTED, DECISION: {decision}")
+                    print(f"! FACE DETECTED, DECISION: {decision}, size: {w}x{h}")
                 window_index += 1
                 if (window_index % progress_print == 0):
                     print(f"PROGRESS: {window_index / windows_count}")
@@ -443,17 +431,17 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
     print(f"DETECTION DONE IN {t2 - t1} s")
 
     # bez łączenia
-    # for j, k, h, w in detections:
-    #     cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
-    # cv2.imshow("OUTPUT_all", i_scaled)
-    # cv2.waitKey()
+    for j, k, h, w in detections:
+        cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
+    cv2.imshow("OUTPUT_all", i_scaled)
+    cv2.waitKey()
 
     # połaczone
-    rects = non_max_supression(detections, 0.1)
-    for rect in rects:
-        cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
-    cv2.imshow("OUTPUT", i_scaled)
-    cv2.waitKey()
+    # rects = non_max_supression(detections, 0.1)
+    # for rect in rects:
+    #     cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
+    # cv2.imshow("OUTPUT", i_scaled)
+    # cv2.waitKey()
 
 
 def generateROC(clf):
@@ -489,16 +477,17 @@ def generateROC(clf):
     plt.legend(loc="lower right")
     plt.show()
 
-# @jit(nopython=True)
+
 def multiplyWindow(w, h, hcws):
     tmp = copy.deepcopy(hcws)
 
+    return multiplyWindowCalc(w, h, hcws, tmp)
+
+
+# @jit(nopython=True)
+def multiplyWindowCalc(w, h, hcws, tmp):
     for i in range(0, len(hcws)):
-        for j in range(0, len(hcws[i])):
-            tmp[i][j][0] *= h
-            tmp[i][j][1] *= w
-            tmp[i][j][2] *= h
-            tmp[i][j][3] *= w
+        tmp[i] *= [h, w, h, w]
 
     return tmp
 
@@ -506,10 +495,6 @@ def multiplyWindow(w, h, hcws):
 clf_path = "clf/"
 data_path = "trained/"
 
-w = 150
-h = 40
-j0 = 380
-k0 = 200
 s = 3
 p = 4
 
@@ -536,18 +521,26 @@ print(f"ACC TEST: {clf.score(X_test, y_test)}")
 print(f"SENSITIVITY TEST: {clf.score(X_test[indexes_pos], y_test[indexes_pos])}")
 print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 
-
 generateROC(clf)
 
-#feature_indexes = clf.feature_importances_ > 0  # Ada
+# feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-i = cv2.imread("test_data/car.png")
+# i = cv2.imread("test_data/car.png")
+i = cv2.imread("test_data/camera.jpg")
 
-i_scaled = scale_image(i)
+i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
-ii = integral_image(i_gray)
+# remove subtitles from camera
+i_gray_cropped = i_gray[0:, 0:]
+# cv2.imshow("cropped", i_gray_cropped)
+# cv2.waitKey()
+ii = integral_image(i_gray_cropped)
 
+# w = 150
+# h = 40
+# j0 = 380
+# k0 = 200
 # hcws = multiplyWindow(w, h, hcs)
 # hcws = [hcw.astype("int32") for hcw in hcws]
 #
