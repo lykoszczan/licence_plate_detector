@@ -7,6 +7,21 @@ import numpy as np
 import consts
 
 
+def transform_to_original(j, k, h, w, i_scaled, i_original):
+    h_scaled, w_scaled, _ = i_scaled.shape
+    h_org, w_org, _ = i_original.shape
+
+    ratio_h = h_org / h_scaled
+    ratio_w = w_org / w_scaled
+
+    j_new = int(np.round(j * ratio_w))
+    k_new = int(np.round(k * ratio_h))
+    w_new = int(np.round(w * ratio_w))
+    h_new = int(np.round(h * ratio_h))
+
+    return [j_new, k_new, h_new, w_new]
+
+
 def multiplyWindow(w, h, hcws):
     tmp = list(range(len(hcws)))
     for i in range(0, len(hcws)):

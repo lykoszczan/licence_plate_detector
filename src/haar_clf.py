@@ -326,7 +326,7 @@ def fddb_data(hfs_coords, n_negs_per_img, n):
     return X_train, y_train, X_test, y_test
 
 
-def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
+def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_image=None):
     H, W = ii.shape
     n = hcs.size
     # chyba po to aby liczyc tylko wybrane indeksy
@@ -356,6 +356,12 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0):
         cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
     cv2.imshow("OUTPUT_all", i_scaled)
     cv2.waitKey()
+
+    for j, k, h, w in detections:
+        [j0, k0, h0, w0] = utils.transform_to_original(j, k, h, w, i_scaled, original_image)
+        rect_cropped = original_image[j0:j0 + h0 - 1, k0:k0 + w0 - 1]
+        cv2.imshow("orig_rects", rect_cropped)
+        cv2.waitKey()
 
     # połaczone
     # rects = non_max_supression(detections, 0.1)
@@ -428,7 +434,7 @@ print(f"ACC TEST: {clf.score(X_test, y_test)}")
 print(f"SENSITIVITY TEST: {clf.score(X_test[indexes_pos], y_test[indexes_pos])}")
 print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 
-generate_roc(clf)
+# generate_roc(clf)
 
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
@@ -443,4 +449,4 @@ i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.waitKey()
 ii = integral_image(i_gray_cropped)
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=i)
