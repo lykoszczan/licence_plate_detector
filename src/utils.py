@@ -1,18 +1,44 @@
-import time
 import pickle
-import numpy as np
+import time
+
 import cv2
+import numpy as np
+
 import consts
 
 
-def scale_image(i):
+def transform_to_original(j, k, h, w, i_scaled, i_original):
+    h_scaled, w_scaled, _ = i_scaled.shape
+    h_org, w_org, _ = i_original.shape
+
+    ratio_h = h_org / h_scaled
+    ratio_w = w_org / w_scaled
+
+    j_new = int(np.round(j * ratio_w))
+    k_new = int(np.round(k * ratio_h))
+    w_new = int(np.round(w * ratio_w))
+    h_new = int(np.round(h * ratio_h))
+
+    return [j_new, k_new, h_new, w_new]
+
+
+def multiplyWindow(w, h, hcws):
+    tmp = list(range(len(hcws)))
+    for i in range(0, len(hcws)):
+        tmp[i] = hcws[i] * [h, w, h, w]
+
+    return tmp
+
+
+def scale_image(i, height=consts.DEFAULT_HEIGHT):
     h, w, _ = i.shape
-    w_new = int(np.round(w * consts.DEFAULT_HEIGHT / h))
-    return cv2.resize(i, (w_new, consts.DEFAULT_HEIGHT))
+    w_new = int(np.round(w * height / h))
+    return cv2.resize(i, (w_new, height))
 
 
 def readDataFile():
     outputPath = r'C:\Users\lykos\Desktop\py-mgr\src\tools\data.txt'
+    # outputPath = r'/home/mlykowski/PycharmProjects/licence_plate_detector/src/tools/data.txt'
 
     with open(outputPath, 'r') as f:
         lines = f.readlines()
