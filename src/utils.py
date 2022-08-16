@@ -30,14 +30,15 @@ def multiplyWindow(w, h, hcws):
     return tmp
 
 
-def scale_image(i):
+def scale_image(i, height=consts.DEFAULT_HEIGHT):
     h, w, _ = i.shape
-    w_new = int(np.round(w * consts.DEFAULT_HEIGHT / h))
-    return cv2.resize(i, (w_new, consts.DEFAULT_HEIGHT))
+    w_new = int(np.round(w * height / h))
+    return cv2.resize(i, (w_new, height))
 
 
 def readDataFile():
     outputPath = r'C:\Users\lykos\Desktop\py-mgr\src\tools\data.txt'
+    # outputPath = r'/home/mlykowski/PycharmProjects/licence_plate_detector/src/tools/data.txt'
 
     with open(outputPath, 'r') as f:
         lines = f.readlines()

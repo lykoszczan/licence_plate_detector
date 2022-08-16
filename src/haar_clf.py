@@ -13,6 +13,7 @@ import utils
 from detection import detection_one_scale
 from haar_features import draw_haar_feature_at, haar_features
 from objects.ParsedLine import ParsedLine
+from src.ocr_detection import detect_licence_plate_characters
 
 DEFAULT_HEIGHT = 480
 HAAR_TEMPLATES = [
@@ -153,7 +154,7 @@ def iou(coords_1, coords_2):
 def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=False, fold_title=""):
     np.random.seed(1)
 
-    verbose = False
+    verbose = True
     # verbose = parsedObject.elementsCount > 1
     showFeatures = False
 
@@ -234,8 +235,8 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                 w_random = int((random.random() * w_relative_spread + w_relative_min) * i.shape[1])
                 h_random = int(np.round(w_random / random.randrange(3, 5, 1)))
 
-                k0 = random.randint(150, i.shape[1] - 150)  # szer
-                j0 = random.randint(150, i.shape[0] - 250)  # wys
+                k0 = random.randint(0, i.shape[1] - w_random - 1)  # szer
+                j0 = random.randint(0, i.shape[0] - h_random - 1)  # wys
 
                 if verbose:
                     # area for negative windows beginnings
@@ -284,8 +285,8 @@ def fddb_data(hfs_coords, n_negs_per_img, n):
     n_negs_per_img = n_negs_per_img
 
     fold_paths_all = utils.readDataFile()
-    fold_paths_train = fold_paths_all[0:10]
-    fold_paths_test = fold_paths_all[-2:]
+    fold_paths_train = fold_paths_all[0:-100]
+    fold_paths_test = fold_paths_all[-100:]
     X_train = None
     y_train = None
     for index, fold_path in enumerate(fold_paths_train):
@@ -348,27 +349,35 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
 
     for p in procs: p.join()
 
-    t2 = time.time()
-    print(f"DETECTION DONE IN {t2 - t1} s")
-
     # bez łączenia
-    for j, k, h, w in detections:
-        cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
-    cv2.imshow("OUTPUT_all", i_scaled)
-    cv2.waitKey()
-
-    for j, k, h, w in detections:
-        [j0, k0, h0, w0] = utils.transform_to_original(j, k, h, w, i_scaled, original_image)
-        rect_cropped = original_image[j0:j0 + h0 - 1, k0:k0 + w0 - 1]
-        cv2.imshow("orig_rects", rect_cropped)
-        cv2.waitKey()
+    # for j, k, h, w in detections:
+    #     cv2.rectangle(i_scaled, (k, j), (k + w - 1, j + h - 1), (0, 0, 255), 1)
+    # cv2.imshow("OUTPUT_all", i_scaled)
+    # cv2.waitKey()
 
     # połaczone
-    # rects = non_max_supression(detections, 0.1)
-    # for rect in rects:
-    #     cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
-    # cv2.imshow("OUTPUT", i_scaled)
-    # cv2.waitKey()
+    rects = non_max_supression(detections, 0.1)
+    for rect in rects:
+        cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
+
+        [k, j] = rect[0]
+        [k_end, j_end] = rect[1]
+        h = j_end - j
+        w = k_end - k
+        [j0, k0, h0, w0] = utils.transform_to_original(j, k, h, w, i_scaled, original_image)
+        rect_cropped = original_image[j0:j0 + h0 - 1, k0:k0 + w0 - 1]
+        # cv2.imshow("OUTPUT", rect_cropped)
+        # cv2.waitKey()
+        plate_text = detect_licence_plate_characters(rect_cropped)
+        if plate_text:
+            print(plate_text)
+            font = cv2.FONT_HERSHEY_DUPLEX
+            cv2.putText(i_scaled, plate_text, (k + 2, j - 5), font, 0.5, (0, 0, 255), 1)
+
+    t2 = time.time()
+    print(f"DETECTION DONE IN {t2 - t1} s")
+    cv2.imshow("OUTPUT", i_scaled)
+    cv2.waitKey()
 
 
 def generate_roc(clf):
@@ -416,9 +425,10 @@ n = indexes.shape[0]  # number of all features
 print("N: " + str(n))
 hcs = haar_coords(s, p, indexes)
 
-data_name = "licence_plates_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + ".bin"
-# X_train, y_train, X_test, y_test = fddb_data(hcs, 50, n)
-# utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
+neg_per_image = 100
+data_name = "licence_plates_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + "_negs_" + str(neg_per_image) + ".bin"
+X_train, y_train, X_test, y_test = fddb_data(hcs, neg_per_image, n)
+utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
 X_train, y_train, X_test, y_test = utils.unpickle_all(data_path + data_name)
 print(X_train.shape)
 print(y_train.shape)
@@ -439,7 +449,7 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-i = cv2.imread("test_data/camera.jpg")
+i = cv2.imread("test_data/3.png")
 
 i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
