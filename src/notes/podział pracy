@@ -6,7 +6,7 @@
     - gray level processing
     - color processing
     - coś o haar (to zapewne najbardziej rozbudowane)
-    - classifiers
+    - classifiers (odległość euklidesowa, ksasiadów itp)
 3. Przegląd istniejących metod detekcji znaków
     - classifiers
     - Pattern/Template Matching
@@ -15,7 +15,25 @@
 4. Zastosowana metoda
     - implementacja okien haar, jak to zostało zrobione, jakie okna, liczby cech, porównanie dla różnych parametrów wejściowych, fajne są takie kolaże 3x3 zdjęć z pozytywami i można pokazać potencjalne błędy, wyraportowanie jakości detekcji, jak najwięcej wykresów, danych itp, różne tresholdy, różne wyniki
     - szczegółowy opis zastosowanej bilbioteki, parametry, na czym bazuje
-    - pomysły na udoskonalenie w przyszłości
+    - pomysły na udoskonalenie w przyszłości (przykładowo kaskada klasyfikatorów, najpierw wykrywanie auta, potem rejestracji)
+    - opisać boosting
+    - można coś opowiedzieć o rotacji, kształcie, rozmiarze
+    - wykorzystano pythona, szybciej by pewnie było w c++
 
 5. Podsumowanie
     - co się udało, co się nie udało
+
+
+Można przedstawić na schematach blokowych algorytm/sposób uczenia
+Analogicznie dla algorytmu detekcji
+
+Należy opisać użyte bilbioteki, na pewno opencv, tesseract
+Starczy czasu, można użyć jakiejś gotowej bilbioteki do głębokiego uczenia (może np. jakaś głęboka sieć neuronowa - korzystając
+np. z biblioteki Keras/tensor flow)
+
+Zakres pracy
+1. Omówienie wybranych algorytmów z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych
+do realizacji postawionego zadania.
+2. Przygotowania odpowiedniego materiału (sekwencje wideo) na potrzeby uczenia maszynowego i testowania.
+3. Przedstawienie ostatecznego schematu algorytmicznego dla całego procesu.
+4. Przeprowadzenie eksperymetów, pomiary dokładności i czasów wykonania, wnioski końcowe.

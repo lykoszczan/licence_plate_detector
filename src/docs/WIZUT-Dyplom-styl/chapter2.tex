@@ -18,126 +18,136 @@
 \chapter{Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}
 \chaptermark{Elementy w pracy} % Tekst, który wyświetli się w nagłówku strony,  jeżeli jest za długi tytuł rozdziału
 
-Szablon definiuje różne otoczenia, z których może korzystać autor pracy dyplomowej. Takowe zostąły opisane w niniejszym rozdziale. Jeżeli otoczenie jest zawarte w szablonie, to właśnie takie należy stosować. Jeżeli w ramach pracy zachodzi potrzeba korzystania z elementów nie ujętych w szablonie można je stosować dowolnie.
+Szablon definiuje różne otoczenia, z których może korzystać autor pracy dyplomowej.
+Takowe zostąły opisane w niniejszym rozdziale.
+Jeżeli otoczenie jest zawarte w szablonie, to właśnie takie należy stosować.
+Jeżeli w ramach pracy zachodzi potrzeba korzystania z elementów nie ujętych w szablonie można je stosować dowolnie.
+
+\noindent Test.
+
 
 \section{Listy}
 
-Strukturę list wyliczeniowych poprawnie wykorzystywanych w języku polskim opisują słowniki. Oto fragment z poradnika \url{sjp.pwn.pl}. Podpunkty zdaniowe powinny się zaczynać wielką literą, a niezdaniowe małą. Jeśli podpunkt jest zdaniem, to zamykamy go kropką lub znakiem równoważnym, jeśli nie – przecinkiem lub średnikiem.  Nagłówek listy powinien się kończyć dwukropkiem nawet wtedy, gdy następują po nim podpunkty zdaniowe, pisane wielką literą. 
+Strukturę list wyliczeniowych poprawnie wykorzystywanych w języku polskim opisują słowniki. Oto fragment z poradnika \url{sjp.pwn.pl}. Podpunkty zdaniowe powinny się zaczynać wielką literą, a niezdaniowe małą. Jeśli podpunkt jest zdaniem, to zamykamy go kropką lub znakiem równoważnym, jeśli nie – przecinkiem lub średnikiem. Nagłówek listy powinien się kończyć dwukropkiem nawet wtedy, gdy następują po nim podpunkty zdaniowe, pisane wielką literą.
 
 \noindent Listy numerowane wykorzystuje się, gdy kolejność elementów jest istotna:
 \begin{enumerate}
-\item element 1,
-\item element 2,
-\item element 34234.
+    \item element 1,
+    \item element 2,
+    \item element 34234.
 \end{enumerate}
 
 \noindent Listy wypunktowane wykorzystuje się, gdy kolejność elementów jest istotna:
 \begin{itemize}
-\item osoba Alicja A, 
-\item zwierzak kot Alicji,
-\item dom Alicji.
+    \item osoba Alicja A,
+    \item zwierzak kot Alicji,
+    \item dom Alicji.
 \end{itemize}
 
 Jeżeli zamiast punktora lub wyliczenia istnieje potrzeba wykorzystania innego słowa jako wyliczenia,to możliwe jest stosowanie listy z nagłówkami (descriptions-definitions),
 \begin{description}
-\item[Nazwa] Opis;
-\item[Słowo] Definicja;
-\item[Komentarz] Wywód.
+    \item[Nazwa] Opis;
+    \item[Słowo] Definicja;
+    \item[Komentarz] Wywód.
 \end{description}
+
 
 \section{Tabele i rysunki w pracy}
 
 Tabele podpisuje się z góry. Ważne, że każdy element osadzony w treści pracy musi zostać przywołany w tekście np. w Tabeli: \ref{tab:eksperyment1} zaprezentowano wyniki eksperymentu
 
 \begin{table}[h]
-\centering
-\caption{Tabelka z wynikami eksperymentu 1} 
-\begin{tabular}{l l l}
-\toprule
-\textbf{Lek} & \textbf{Odpowiedź 1} & \textbf{Odpowiedź 2}\\
-\midrule
-Lek 1 & 0.0003262 & 0.562 \\
-Lek 2 & 0.0015681 & 0.910 \\
-Lek 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\label{tab:eksperyment1} % Etykiety dla każdej tabeli musi być unikalna
+    \centering
+    \caption{Tabelka z wynikami eksperymentu 1}
+    \begin{tabular}{l l l}
+        \toprule
+        \textbf{Lek} & \textbf{Odpowiedź 1} & \textbf{Odpowiedź 2} \\
+        \midrule
+        Lek 1        & 0.0003262            & 0.562                \\
+        Lek 2        & 0.0015681            & 0.910                \\
+        Lek 3        & 0.0009271            & 0.296                \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:eksperyment1} % Etykiety dla każdej tabeli musi być unikalna
 \end{table}
 
 Rysunki podpisywane są z dołu. Należy tak jak w tabeli w treści pracy odnieść się do etykiety rysunku, np. Rysunek \ref{fig:rys1} przedstawia
 
 \begin{figure}[!ht]
-		\centering
-		%\vspace{2mm}
-		\includegraphics[scale=0.6]{Pictures/placeholder.jpg}
-		\caption{To jest przykład osadzania rysunków (źródło:)}
-		\label{fig:rys1}
+    \centering
+    %\vspace{2mm}
+    \includegraphics[scale=0.6]{Pictures/placeholder.jpg}
+    \caption{To jest przykład osadzania rysunków (źródło:)}
+    \label{fig:rys1}
 \end{figure}
-
 
 
 \section{Twierdzenia i definicje}
 
-W pracach o rozbudowanej części teoretycznej może istnieć potrzeba prezentowania twierdzeń i definicji. Poniżej przykłady stosowania odpowiednich otoczeń. 
+W pracach o rozbudowanej części teoretycznej może istnieć potrzeba prezentowania twierdzeń i definicji. Poniżej przykłady stosowania odpowiednich otoczeń.
 
 A oto twierdzenie składające się z kilku równań.
 
 \begin{theorem}[Tytuł twierdzenia]
-In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
-\begin{align}
-& \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
-&  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
-\end{align}
+    In $E=\mathbb{R}^n$ all norms are equivalent. It has the properties:
+    \begin{align}
+        & \big| ||\mathbf{x}|| - ||\mathbf{y}|| \big|\leq || \mathbf{x}- \mathbf{y}||\\
+        &  ||\sum_{i=1}^n\mathbf{x}_i||\leq \sum_{i=1}^n||\mathbf{x}_i||\quad\text{where $n$ is a finite integer}
+    \end{align}
 \end{theorem}
 
 Jest to twierdzenie składające się z tylko jednej linii.
 
 \begin{theorem}
-Zbiór $\mathcal{D}(G)$ ma gęstość $L^2(G)$, $|\cdot|_0$. 
+    Zbiór $\mathcal{D}(G)$ ma gęstość $L^2(G)$, $|\cdot|_0$.
 \end{theorem}
 
 
 To jest przykład definicji. Definicja może być matematyczna lub może definiować koncepcję. Jeżeli w pracy wprowadza się nowe pojęcia najlepiej ująć je w formie definicji, co będzie spójnie akcentować taki fakt.
 
 \begin{definition}[Tytuł definicji]
-Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
-\begin{align}
-& ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
-& ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
-& ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
-\end{align}
+    Given a vector space $E$, a norm on $E$ is an application, denoted $||\cdot||$, $E$ in $\mathbb{R}^+=[0,+\infty[$ such that:
+    \begin{align}
+        & ||\mathbf{x}||=0\ \Rightarrow\ \mathbf{x}=\mathbf{0}\\
+        & ||\lambda \mathbf{x}||=|\lambda|\cdot ||\mathbf{x}||\\
+        & ||\mathbf{x}+\mathbf{y}||\leq ||\mathbf{x}||+||\mathbf{y}||
+    \end{align}
 \end{definition}
 
 
 %------------------------------------------------
 
+
 \section{Przykłady}
 
-W wielu pracach do przedstawionych idei prezentuje się przykłady. Na tą okoliczność przygotowano otoczenie {\it example}, które pomoże utrzymać spójny wygląd wszystkich przykładów. 
+W wielu pracach do przedstawionych idei prezentuje się przykłady. Na tą okoliczność przygotowano otoczenie {\it example}, które pomoże utrzymać spójny wygląd wszystkich przykładów.
 
 Przykład może dotyczyć obliczeń lub prezentacji działania np. metody, algorytmu kodu, itp, itd.
 
 \begin{example}
 
-Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$; consider the function:
-\begin{equation}
-f(x)=\left\{\begin{aligned} & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
-& 0 & & \text{si $|x-x^0|> 1/2$}\end{aligned}\right.
-\end{equation}
-The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\intoo{0}{5/2-\sqrt{2}}$.
+    Let $G=\{x\in\mathbb{R}^2:|x|<3\}$ and denoted by: $x^0=(1,1)$; consider the function:
+    \begin{equation}
+        f(x)=\left\{\begin{aligned}
+                        & \mathrm{e}^{|x|} & & \text{si $|x-x^0|\leq 1/2$}\\
+                        & 0 & & \text{si $|x-x^0|> 1/2$}
+        \end{aligned}\right.
+    \end{equation}
+    The function $f$ has bounded support, we can take $A=\{x\in\mathbb{R}^2:|x-x^0|\leq 1/2+\epsilon\}$ for all $\epsilon\in\intoo{0}{5/2-\sqrt{2}}$.
 \end{example}
 
 
 \begin{example}[Przykład krzyżowania]
-\begin{align*}
-&\text{Pokolenie rodziców:} & & & &\text{Pokolenie potomków:} \\
-&x_1 = (\textbf{00110} | \textbf{011}) & &\xrightarrow{\text{krzyżowanie}} & &(\textbf{00110}|1 0 1)\\
-&x_2 = (0 1 1 0 1 | 1 0 1) & & & &(0 1 1 0 1|\textbf{011})\\
-\end{align*}
+    \begin{align*}
+        &\text{Pokolenie rodziców:} & & & &\text{Pokolenie potomków:} \\
+        &x_1 = (\textbf{00110} | \textbf{011}) & &\xrightarrow{\text{krzyżowanie}} & &(\textbf{00110}|1 0 1)\\
+        &x_2 = (0 1 1 0 1 | 1 0 1) & & & &(0 1 1 0 1|\textbf{011})\\
+    \end{align*}
 \end{example}
 
 
 %------------------------------------------------
+
 
 \section{Kod źródłowy}
 
@@ -157,10 +167,10 @@ print('%0.1f degree Celsius is equal to %0.1f degree Fahrenheit' %(celsius,fahre
 def incmatrix(genl1,genl2):
     m = len(genl1)
     n = len(genl2)
-    M = None #to become the incidence matrix
-    VT = np.zeros((n*m,1), int)  #zmienna ąźćł
+    M = None # to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  # zmienna ąźćł
  
-    #compute the bitwise xor matrix
+    # compute the bitwise xor matrix
     M1 = bitxormatrix(genl1)
     M2 = np.triu(bitxormatrix(genl2),1) 
  
