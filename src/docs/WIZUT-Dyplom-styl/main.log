@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  18 AUG 2022 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  18 AUG 2022 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1286,9 +1286,10 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 55.
+ [9]
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 60.
- [9]
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
@@ -1303,6 +1304,12 @@ This may cause the page layout to be inconsistent, however.
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
+
+
+Package Fancyhdr Warning: \headheight is too small (31.84628pt): 
+Make it at least 32.1919pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
 
 [11]
 \openout2 = `chapter2.aux'.
@@ -1427,12 +1434,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 (./appendixA.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FC8D2B7E531E78D264A134A46D5E3DC3;1220.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: FC8D2B7E531E78D264A134A46D5E3DC3;1220
+(rerunfilecheck)             After:  CBE7BAA505E9F995D6E750F496DC350F;1201.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.36998pt have occurred.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
@@ -1441,7 +1457,7 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  22741 strings out of 483148
  367925 string characters out of 5965416
- 1078450 words of memory out of 5000000
+ 1077451 words of memory out of 5000000
  37189 multiletter control sequences out of 15000+600000
  669436 words of font info for 213 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
@@ -1465,7 +1481,7 @@ re/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/newtx/txsys.pfb>
-Output written on main.pdf (23 pages, 413995 bytes).
+Output written on main.pdf (23 pages, 414318 bytes).
 PDF statistics:
  422 PDF objects out of 1000 (max. 8388607)
  352 compressed objects within 4 object streams

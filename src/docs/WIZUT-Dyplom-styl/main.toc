@@ -5,7 +5,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Wstęp}{7}{chapter*.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Wprowadzenie teoretyczne}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Wstęp}{9}{chapter.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Autorzy stylu}{9}{section.1.1}%
 \defcounter {refsection}{0}\relax 
@@ -15,7 +15,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.1}Podstawowe wymagania dotyczące szablonu}{10}{subsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Bibliografia}{10}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}Bibliografia}{11}{subsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{13}{chapter.2}%
 \defcounter {refsection}{0}\relax 

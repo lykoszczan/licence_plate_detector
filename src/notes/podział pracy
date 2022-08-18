@@ -1,0 +1,21 @@
+1. Wstęp
+    - motywacja do pracy, jaki problem rozwiązuje, analiza zapotrzebowania na tego typu rozwiązania, potencjalne nie rozwiązane wyzwania, jakie zastosowania i co jest najczęsciej używane
+
+2. Przegląd istniejących metod detekcji tablic rejestracyjnych
+    - binary image processing
+    - gray level processing
+    - color processing
+    - coś o haar (to zapewne najbardziej rozbudowane)
+    - classifiers
+3. Przegląd istniejących metod detekcji znaków
+    - classifiers
+    - Pattern/Template Matching
+    - coś o ocr?
+
+4. Zastosowana metoda
+    - implementacja okien haar, jak to zostało zrobione, jakie okna, liczby cech, porównanie dla różnych parametrów wejściowych, fajne są takie kolaże 3x3 zdjęć z pozytywami i można pokazać potencjalne błędy, wyraportowanie jakości detekcji, jak najwięcej wykresów, danych itp, różne tresholdy, różne wyniki
+    - szczegółowy opis zastosowanej bilbioteki, parametry, na czym bazuje
+    - pomysły na udoskonalenie w przyszłości
+
+5. Podsumowanie
+    - co się udało, co się nie udało
