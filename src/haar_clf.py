@@ -1,10 +1,9 @@
-import multiprocessing as mp
-import random
-import time
-
 import cv2
 import matplotlib.pyplot as plt
+import multiprocessing as mp
 import numpy as np
+import random
+import time
 from sklearn.metrics import roc_curve, auc
 
 import consts
@@ -14,6 +13,33 @@ from detection import detection_one_scale
 from haar_features import draw_haar_feature_at, haar_features
 from objects.ParsedLine import ParsedLine
 from src.ocr_detection import detect_licence_plate_characters
+
+
+def test_video(path):
+    cap = cv2.VideoCapture(path)
+    count = 0
+    while cap.isOpened():
+        ret, frame = cap.read()
+        count = count + 1
+
+        if (count % 30 != 0):
+            continue
+
+        i_scaled = utils.scale_image(frame)
+        i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
+        i_gray_cropped = i_gray[0:-80, 0:]
+        ii = integral_image(i_gray_cropped)
+        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=2.1, original_image=frame,
+                          show_output=False, ocr=True)
+
+        cv2.imshow('window-name', i_scaled)
+        count = count + 1
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()  # destroy all opened windows
+
 
 DEFAULT_HEIGHT = 480
 HAAR_TEMPLATES = [
@@ -353,7 +379,7 @@ def fddb_data(hfs_coords, n_negs_per_img, n):
     return X_train, y_train, X_test, y_test
 
 
-def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_image=None):
+def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_image=None, show_output=False, ocr=False):
     H, W = ii.shape
     n = hcs.size
     # chyba po to aby liczyc tylko wybrane indeksy
@@ -394,16 +420,23 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
         rect_cropped = original_image[j0:j0 + h0 - 1, k0:k0 + w0 - 1]
         # cv2.imshow("OUTPUT", rect_cropped)
         # cv2.waitKey()
-        plate_text = detect_licence_plate_characters(rect_cropped)
-        if plate_text:
-            print(plate_text)
-            font = cv2.FONT_HERSHEY_DUPLEX
-            cv2.putText(i_scaled, plate_text, (k + 2, j - 5), font, 0.5, (0, 0, 255), 1)
+
+        if ocr:
+            plate_text = detect_licence_plate_characters(rect_cropped)
+            if plate_text:
+                print(plate_text)
+                if len(plate_text) > 3:
+                    font = cv2.FONT_HERSHEY_DUPLEX
+                    cv2.putText(i_scaled, plate_text, (k + 2, j - 5), font, 0.5, (0, 0, 255), 1)
 
     t2 = time.time()
     print(f"DETECTION DONE IN {t2 - t1} s")
-    cv2.imshow("OUTPUT", i_scaled)
-    cv2.waitKey()
+
+    if show_output:
+        cv2.imshow("OUTPUT", i_scaled)
+        cv2.waitKey()
+
+    return i_scaled
 
 
 def generate_roc(clf):
@@ -451,10 +484,10 @@ n = indexes.shape[0]  # number of all features
 print("N: " + str(n))
 hcs = haar_coords(s, p, indexes)
 
-neg_per_image = 100
+neg_per_image = 50
 data_name = "licence_plates_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + "_negs_" + str(neg_per_image) + ".bin"
-X_train, y_train, X_test, y_test = fddb_data(hcs, neg_per_image, n)
-utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
+# X_train, y_train, X_test, y_test = fddb_data(hcs, neg_per_image, n)
+# utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
 X_train, y_train, X_test, y_test = utils.unpickle_all(data_path + data_name)
 print(X_train.shape)
 print(y_train.shape)
@@ -462,7 +495,7 @@ print(X_test.shape)
 print(y_test.shape)
 print(X_train.dtype)
 
-clf = training.learn(X_train=X_train, y_train=y_train, s=s, n=n, p=p, clf_path=clf_path, adaBoost=False, force=True)
+clf = training.learn(X_train=X_train, y_train=y_train, s=s, n=n, p=p, clf_path=clf_path, adaBoost=False)
 
 indexes_pos = y_test == 1
 indexes_neg = y_test == -1
@@ -470,13 +503,16 @@ print(f"ACC TEST: {clf.score(X_test, y_test)}")
 print(f"SENSITIVITY TEST: {clf.score(X_test[indexes_pos], y_test[indexes_pos])}")
 print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 
-exit(200)
 # generate_roc(clf)
 
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-i = cv2.imread("test_data/3.png")
+test_video("test_data/video/dr750x-plus-dzien.mp4")
+exit()
+
+# i = cv2.imread("test_data/car.png")
+i = cv2.imread("test_data/camera.jpg")
 
 i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
@@ -486,4 +522,4 @@ i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.waitKey()
 ii = integral_image(i_gray_cropped)
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=i)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=i, show_output=True, ocr=True)

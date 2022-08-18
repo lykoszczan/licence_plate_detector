@@ -14,6 +14,7 @@ def detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes,
     hcws = utils.multiplyWindow(w, h, hcs)
     hcws = [hcw.astype("int32") for hcw in hcws]
     for j in range(rj, H - h, dj):
+        # joblib
         for k in range(rk, W - w, dk):
             features = haar_features(ii, j, k, hcws, n, feature_indexes)
 
