@@ -5,7 +5,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Wstęp}{7}{chapter*.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Informacje podstawowe dotyczące szablonu}{9}{chapter.1}%
+\contentsline {chapter}{\numberline {1}Wprowadzenie teoretyczne}{9}{chapter.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.1}Autorzy stylu}{9}{section.1.1}%
 \defcounter {refsection}{0}\relax 
