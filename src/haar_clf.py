@@ -154,7 +154,7 @@ def iou(coords_1, coords_2):
 def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=False, fold_title=""):
     np.random.seed(1)
 
-    verbose = True
+    verbose = False
     # verbose = parsedObject.elementsCount > 1
     showFeatures = False
 
@@ -216,7 +216,14 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                 cv2.waitKey()
             hfs_coords_window = utils.multiplyWindow(w, h, hfs_coords)
             hfs_coords_window = np.array(list(map(lambda npa: npa.astype("int32"), hfs_coords_window)), dtype=object)
-            feats = haar_features(ii, j0, k0, hfs_coords_window, n)
+            try:
+                feats = haar_features(ii, j0, k0, hfs_coords_window, n)
+            except Exception as e:
+                print(e)
+                print('factor w', w / ii.shape[0])
+                print('factor y', h / ii.shape[1])
+                print("haar feature error")
+                continue
 
             # wyswietlenie cech
             if showFeatures:
@@ -235,8 +242,18 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                 w_random = int((random.random() * w_relative_spread + w_relative_min) * i.shape[1])
                 h_random = int(np.round(w_random / random.randrange(3, 5, 1)))
 
+                # k0 = random.randint(150, i.shape[1] - 150)  # szer
+                # j0 = random.randint(150, i.shape[0] - 250)  # wys
+
                 k0 = random.randint(0, i.shape[1] - w_random - 1)  # szer
                 j0 = random.randint(0, i.shape[0] - h_random - 1)  # wys
+
+                if verbose:
+                    print('factor w', w_random / i.shape[0])
+                    print('factor y', h_random / i.shape[1])
+
+                if h_random / ii.shape[1] < 0.004:
+                    continue
 
                 if verbose:
                     # area for negative windows beginnings
@@ -249,7 +266,16 @@ def fddb_read_single_fold(n_negs_per_img, hfs_coords, n, parsedObject, verbose=F
                     hfs_coords_window = utils.multiplyWindow(w_random, h_random, hfs_coords)
                     hfs_coords_window = np.array(list(map(lambda npa: npa.astype("int32"), hfs_coords_window)),
                                                  dtype=object)
-                    feats = haar_features(ii, j0, k0, hfs_coords_window, n)
+
+                    try:
+                        feats = haar_features(ii, j0, k0, hfs_coords_window, n)
+                    except Exception as e:
+                        print(e)
+                        print('factor w', w_random / ii.shape[0])
+                        print('factor y', h_random / ii.shape[1])
+                        print("haar feature negative probe error")
+                        continue
+
                     n_negative_probes += 1
                     X_list.append(feats)
                     y_list.append(-1)
@@ -436,7 +462,7 @@ print(X_test.shape)
 print(y_test.shape)
 print(X_train.dtype)
 
-clf = training.learn(X_train=X_train, y_train=y_train, s=s, n=n, p=p, clf_path=clf_path, adaBoost=False)
+clf = training.learn(X_train=X_train, y_train=y_train, s=s, n=n, p=p, clf_path=clf_path, adaBoost=False, force=True)
 
 indexes_pos = y_test == 1
 indexes_neg = y_test == -1
@@ -444,6 +470,7 @@ print(f"ACC TEST: {clf.score(X_test, y_test)}")
 print(f"SENSITIVITY TEST: {clf.score(X_test[indexes_pos], y_test[indexes_pos])}")
 print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 
+exit(200)
 # generate_roc(clf)
 
 # feature_indexes = clf.feature_importances_ > 0  # Ada
