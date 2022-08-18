@@ -508,7 +508,7 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-test_video("test_data/video/dr750x-plus-dzien.mp4")
+test_video("test_data/video/test_video_1.mp4")
 exit()
 
 # i = cv2.imread("test_data/car.png")
