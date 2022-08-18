@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Szablon pracy dyplomowej
+% Wydział Informatyki 
+% Zachodniopomorski Uniwersytet Technologiczny w Szczecinie
+% autor Joanna Kołodziejczyk (jkolodziejczyk@zut.edu.pl)
+% Bardzo wczesnym pierwowzorem szablonu był
+% The Legrand Orange Book
+% Version 2.1 (26/09/2018)
+%
+% Modifications to LOB assigned by %JK
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	CHAPTER 1
+% 	author: Joanna Kolodziejczyk (jkolodziejczyk@zut.edu.pl)
+%----------------------------------------------------------------------------------------
+
+\chapter{Informacje podstawowe dotyczące szablonu}
+\label{rozdzial1}
+
+Niniejszy szablon przeznaczony jest do utrzymania spójnego wyglądu prac dyplomowych na Wydziale Informatyki Zachodniopomorskiego Uniwersytetu Technologicznego w Szczecinie. Na bazie niniejszego szablonu przygotowywane są podręczniki, skrypty i monografie wydziałowe.
+
+\section{Autorzy stylu}
+\index{Autorzy stylu}
+
+Niniejszy szablon powstał na bazie szablonu\footnote{\url{http://www.LaTeXTemplates.com}} o nazwie ,,The Legrand Orange Book''. 
+Autorzy pierwotnego stylu to:
+\begin{itemize}
+\item Mathias Legrand (legrand.mathias@gmail.com)
+\item Vel (vel@latextemplates.com).
+\end{itemize}
+
+Późniejsze zmiany na potrzeby stylu Wydziału Informatyki zostały wprowadzone przez Joannę Kołodziejczyk (jkolodziejczyk@zut.edu.pl). Wizualna strona stylu  jest konsensusem uzyskanym w wyniku prac zespołu: 
+\begin{itemize}
+\item Anna Barcz
+\item Marcin Korzeń
+\item Mirosław Łazoryszczak
+\item Piotr Piela
+\end{itemize}
+
+Niniejszy styl jest udostępniony na zasadach licencji CC BY-NC-SA 3.0 ({\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}}).
+
+\section{Kompilowanie dokumentu}
+\index{Kompilacja}
+
+ Do kompilacji wykorzystać należy procesor {\em pdflatex}.
+ 
+ Ten szablon wykorzystuje pakiet - menedżer spisu literatury o nazwie {\em biber}\footnote{ \url{http://biblatex-biber.sourceforge.net}}, który jest dostępny w wielu popularnych środowiskach programistycznych dla \LaTeX.  
+
+Najpewniejszym sposobem na poprawną kompilację jest wykonanie jej z wiersza poleceń następującą sekwencją rozkazów:
+
+\begin{lstlisting}[language=bash, caption=Skrypt kompilujący, label=alg:1]
+pdflatex main
+biber main
+pdflatex main
+pdflatex main
+
+\end{lstlisting}
+
+Szablon wykorzystuje również rozliczne pakiety, które mogą wymagać
+zaktualizowane do najnowszych wersji. Rekomendowane jest więc, by utrzymywać swoją wersję dystrybucji \LaTeX w najnowszej wersji.
+
+\section{Zawartość pakietu}\index{Zawartość pakietu}
+
+Pakiet ze stylem zawiera pliki tekstowe z zawartością przykładowej pracy , czyli w tym wypadku niniejszego przewodnika oraz pliki konfiguracyjne. W tabeli \ref{tab:1} znajduje się lista plików wraz z ich krótkim opisem.
+
+\begin{table}[h]
+\centering
+\caption{Pliki w pakiecie szablonu}
+\begin{tabular}{p{.2\textwidth}|p{.1\textwidth} | p{.60\textwidth}}
+\toprule
+\textbf{Nazwa pliku}& \textbf{Edycja}  & \textbf{Opis}\\
+\midrule
+main.tex &TAK& Główny plik pracy. Zawiera otwarcie dokumentu, dołącza pliki konfiguracyjne, spis treści, dołącza wszystkie rozdziały, literaturę oraz zamyka dokument.  \\
+definitions.tex &TAK& Zawiera elementy strony tytułowej: autora, tytuł, niezbędne informacje ze strony tytułowej.\\
+abstract.tex &TAK& Zawartość streszczenia pracy w j. polskim i j. angielskim. Zaleca się, by nie przekroczyć tekstem 1 strony.\\
+introduction.tex&TAK & Wstęp pracy dyplomowej\\
+chapter1.tex &TAK& Zawartość rozdziału pierwszego.  \\
+chapter2.tex  &TAK& Zawartość rozdziału drugiego.  \\
+conclusions.tex &TAK& Zakończenie/podsumowanie pracy dyplomowej.\\
+bibliography.bib &TAK & Plik z literaturą w formacie bib.  \\
+Pictures  &TAK & Katalog zawierający ilustracje i  grafiki z pracy. Nazwa katalogu jest wykorzystana w pliku konfiguracyjnym jako katalog domyślny do każdego osadzonego obiektu graficznego.  \\
+title\_page.tex&NIE & Struktura strony tytułowej.\\
+structure.tex  &NIE& Plik konfiguracyjny (preambuła). Podłącza i konfiguruje wszystkie niezbędne pakiety oraz definiuje otoczenia wykorzystywane w szablonie. \\
+\bottomrule
+\end{tabular}
+\label{tab:1} 
+\end{table}
+%------------------------------------------------
+
+\subsection{Podstawowe wymagania dotyczące szablonu}
+
+Praca ma ustawiony format wielkości strony A4, w pliku {\em structure.tex} w konfiguracji pakietu {\bf geometry}. Przygotowana jest do druku dwustronnego. Ustawiony jest 1cm margines na oprawę.
+
+\noindent{\bf UWAGA!} Każdy rozdział zaczyna się na stronie nieparzystej
+
+
+\subsection{Bibliografia}
+
+Po zaktualizowaniu pliku z literaturą należy dokonać kompilacji z użyciem procesora {\em biber} a nie standardowego  {\em Bibtex}. Następnie dwukrotnie skompilować z użyciem {\em pdflatex}, aby zmiany były widoczne. Pakiet do zarządzania bibliografią to {\em biblatex}. Jego konfiguracja jest dostępna w pliku {\em structure.tex}
+
+Bibliografia w pracach dyplomowych ma format numeryczny, sortowanie alfabetyczne i jest podzielona na  części: książki, artykuły i źródła internetowe i inne. Konfiguracja jest zapisana w niniejszym szablonie.
+
+Tylko zacytowane prace znajdą się w spisie literatury. Nie należy tego zmieniać. Cytowanie odbywa się przez użycie polecenia $\backslash cite\{\}$ a efekt jest następujący: \cite{book_key}, \cite{article_key}, \cite{lam1994}, \cite{knuthwebsite}.
+
+
+
+
+
