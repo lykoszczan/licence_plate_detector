@@ -19,125 +19,49 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
-    \entry{knuthwebsite}{online}{}
-      \name{author}{1}{}{%
-        {{hash=1dd533466eb3313074d496394d319407}{%
-           family={Knuth},
-           familyi={K\bibinitperiod},
-           given={Donald},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{1dd533466eb3313074d496394d319407}
-      \strng{fullhash}{1dd533466eb3313074d496394d319407}
-      \strng{bibnamehash}{1dd533466eb3313074d496394d319407}
-      \strng{authorbibnamehash}{1dd533466eb3313074d496394d319407}
-      \strng{authornamehash}{1dd533466eb3313074d496394d319407}
-      \strng{authorfullhash}{1dd533466eb3313074d496394d319407}
-      \field{sortinit}{K}
-      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Knuth: Computers and Typesetting}
-      \verb{urlraw}
-      \verb http://www-cs-faculty.stanford.edu/~uno/abcde.html
-      \endverb
-      \verb{url}
-      \verb http://www-cs-faculty.stanford.edu/~uno/abcde.html
-      \endverb
-      \keyw{latex,knuth}
-    \endentry
-    \entry{lam1994}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5d77435450d10a850a5b58577b9a456b}{%
-           family={Lamport},
+    \entry{1688109}{article}{}
+      \name{author}{4}{}{%
+        {{hash=18516ce21cc404d3fbc78e92ca62bf0f}{%
+           family={Anagnostopoulos},
+           familyi={A\bibinitperiod},
+           given={C.N.E.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0ffca69c1eab769bd1599ec26fb1ff0d}{%
+           family={Anagnostopoulos},
+           familyi={A\bibinitperiod},
+           given={I.E.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=977fa90ea88a64c3eb681d295c42e17f}{%
+           family={Loumos},
            familyi={L\bibinitperiod},
-           given={Leslie},
-           giveni={L\bibinitperiod}}}%
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=1a691633fc10d6b61ce3a4b73611c122}{%
+           family={Kayafas},
+           familyi={K\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Addison-Wesley Publishing Company}%
-      }
-      \strng{namehash}{5d77435450d10a850a5b58577b9a456b}
-      \strng{fullhash}{5d77435450d10a850a5b58577b9a456b}
-      \strng{bibnamehash}{5d77435450d10a850a5b58577b9a456b}
-      \strng{authorbibnamehash}{5d77435450d10a850a5b58577b9a456b}
-      \strng{authornamehash}{5d77435450d10a850a5b58577b9a456b}
-      \strng{authorfullhash}{5d77435450d10a850a5b58577b9a456b}
-      \field{sortinit}{L}
-      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \strng{namehash}{2343f6031d5e60b05140ef4c17d97ce8}
+      \strng{fullhash}{c76ceb9fc2801d281c065b153683d691}
+      \strng{bibnamehash}{2343f6031d5e60b05140ef4c17d97ce8}
+      \strng{authorbibnamehash}{2343f6031d5e60b05140ef4c17d97ce8}
+      \strng{authornamehash}{2343f6031d5e60b05140ef4c17d97ce8}
+      \strng{authorfullhash}{c76ceb9fc2801d281c065b153683d691}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{Second}
-      \field{isbn}{0-201-52983-1}
-      \field{title}{\LaTeX: A Document Preparation System}
-      \field{year}{1994}
-    \endentry
-    \entry{article_key}{article}{}
-      \name{author}{1}{}{%
-        {{hash=26a8b4a95216218b2dfc1460f6d4c494}{%
-           family={Smith},
-           familyi={S\bibinitperiod},
-           given={James},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {City}%
-      }
-      \list{publisher}{1}{%
-        {Publisher}%
-      }
-      \strng{namehash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \strng{fullhash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \strng{bibnamehash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \strng{authorbibnamehash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \strng{authornamehash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \strng{authorfullhash}{26a8b4a95216218b2dfc1460f6d4c494}
-      \field{extraname}{1}
-      \field{sortinit}{S}
-      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{3}
-      \field{number}{6}
-      \field{title}{Article title}
-      \field{volume}{14}
-      \field{year}{2013}
-      \field{pages}{1\bibrangedash 8}
-      \range{pages}{8}
-    \endentry
-    \entry{book_key}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5d0ddda3a367ceb26fbaeca02e391c22}{%
-           family={Smith},
-           familyi={S\bibinitperiod},
-           given={John},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {City}%
-      }
-      \list{publisher}{1}{%
-        {Publisher}%
-      }
-      \strng{namehash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \strng{fullhash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \strng{bibnamehash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \strng{authorbibnamehash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \strng{authornamehash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \strng{authorfullhash}{5d0ddda3a367ceb26fbaeca02e391c22}
-      \field{extraname}{2}
-      \field{sortinit}{S}
-      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{edition}{1}
-      \field{month}{1}
-      \field{series}{2}
-      \field{title}{Book title}
-      \field{volume}{3}
-      \field{year}{2012}
-      \field{pages}{123\bibrangedash 200}
-      \range{pages}{78}
+      \field{journaltitle}{IEEE Transactions on Intelligent Transportation Systems}
+      \field{number}{3}
+      \field{title}{A License Plate-Recognition Algorithm for Intelligent Transportation System Applications}
+      \field{volume}{7}
+      \field{year}{2006}
+      \field{pages}{377\bibrangedash 392}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1109/TITS.2006.880641
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

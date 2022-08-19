@@ -20,18 +20,37 @@
 
 Na przestrzeni ostatnich lat zastosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR)(ang. \textit{Automatic Licence Plate Recognition} - ALPR) stało się znacznie bardziej powszechne.
 W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty za postój, przy zbliżeniu się do wyjazdu, szlaban otwiera się automatycznie po rozpoznaniu numeru rejestracyjnego pojazdu, którym się poruszamy.
-W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym wykorzystują technologie ARTR.
-Odbiorcy tacy jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
+W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym oparte są o technologie ARTR.
+Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
 Innym z możliwych przykładów zastosowania wspomnianych systemów są odcinkowe pomiary prędkości, opłaty za przejazd płatnymi drogami lub wykrywanie kierowców łamiących przepisy.
 Dzięki nieustannemu rozwojowi technologii i co raz wydajniejszym komputerom, systemy stają się tańszą i łatwiej dostępną alternatywą dla systemów opartych na RFID (ang. \textit{Radio-frequency identification}), które to wymagają specjalnej etykiety do prawidłowego działania.
 
-Rozpoznawanie tablic rejestracyjnych jest techniką polegająca na wykryciu i odczytaniu znaków z tablicy rejestracyjnych na podstawie zarejestrowanych obrazów.
-Do tego celu wykorzystywany jest aparat o wysokiej rozdzielczości oraz odpowiednie oprogramowanie.
+Rozpoznawanie tablic rejestracyjnych jest techniką polegająca na wykryciu i odczytaniu znaków z tablicy rejestracyjnych na podstawie zarejestrowanego obrazu.
+Do tego celu wykorzystywany jest aparat o wysokiej rozdzielczości oraz odpowiedni program komputerowy.
+Oprogramowanie otrzymuje na wejściu cyfrową reprezentację obrazu.
+Dla zdjęć kolorowych każdy piksel opisany jest wartościami z palety barw RGB reprezentującymi jego barwę oraz współrzędnymi umiejscowienia w obrazie.
+Dla zdjęć monochromatycznych barwy opisywane są najczęściej za pomocą wartości luminacji obrazu.
+
+W procesie automatycznego rozpoznawania tablic rejestracyjnych pozyskany obraz jest odpowiednio przetwarzany.
+W procesie tym można wyróżnić trzy etapy \cite{1688109}:
+\begin{itemize}
+    \item \textbf{detekcję} - określenie położenia tablicy rejestracyjnej w analizowanym obrazie
+    \item \textbf{segmentację} - wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą
+    \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
+\end{itemize}
+Kolejne etapy korzystają z wyników uzyskanych w poprzednich krokach, co oznacza, że błąd powstały we wcześniejszej fazie, będzie rzutował na jakość działania całego systemu.
+W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest wpierw odpowiednio przetwarzany.
+Jednymi z najpowszechniej stosowanych czynności są skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
+W zależności od wymagań stawianych przed danym mechanizmem i środowiskiem jego działania, czynności te mogą znacznie się od siebie różnić.
 Najbardziej podstawowe systemy wymagają, aby pojazd znajdował się nieruchomo w określonym miejscu.
 Tego typu rozwiązania najczęściej stosowane są na parkingach, gdzie szlaban otwiera się po odczycie numerów rejestracyjnych pojazdu i potwierdzeniu opłaty za postój w zewnętrznej bazie danych.
 Tego rodzaju systemy pracują z reguły w środowisku o niskim poziomie zakłóceń wynikających z warunków atmosferycznych i oświetlenia.
-
-W niniejszej pracy przedstawione zostaną najczęściej wykorzystywane techniki uczenia maszynowego i widzenia komputerowego do osiągnięcia wysokiej jakości systemu automatycznego rozpoznawania tablic rejestracyjnych.
+Dzisiaj na rynku znajduje się wiele komercyjnych rozwiązań, które oferują wysoką dokładność (powyżej 95\%).
+Ten rodzaj systemów ARTR nazywany systemami statycznymi.
+Dużo większą złożonością charakteryzują się systemy dynamiczne, w których znacznie większą rolę odgrywają zakłócenia wynikające ze zmiennych warunków oświetlenia.
+Nie bez znaczenia zostają analizowane pojazdy poruszające się z wysokimi prędkościami, których tablice rejestracyjne mogą znajdować się w różnych sektorach obrazu.
+Celem niniejszej pracy jest analizowanie obrazów pochodzących z kamery samochodowej, co zdecydowanie sprawia, że jest to system dynamiczny.
+Poniżej przedstawiono najczęściej stosowane metody widzenia komputerowego w systemach ARTR.
 
 
 \section{Przegląd istniejących metod detekcji tablic rejestracyjnych}
@@ -116,7 +135,7 @@ Po zaktualizowaniu pliku z literaturą należy dokonać kompilacji z użyciem pr
 
 Bibliografia w pracach dyplomowych ma format numeryczny, sortowanie alfabetyczne i jest podzielona na części: książki, artykuły i źródła internetowe i inne. Konfiguracja jest zapisana w niniejszym szablonie.
 
-Tylko zacytowane prace znajdą się w spisie literatury. Nie należy tego zmieniać. Cytowanie odbywa się przez użycie polecenia $\backslash cite\{\}$ a efekt jest następujący: \cite{book_key}, \cite{article_key}, \cite{lam1994}, \cite{knuthwebsite}.
+%Tylko zacytowane prace znajdą się w spisie literatury. Nie należy tego zmieniać. Cytowanie odbywa się przez użycie polecenia $\backslash cite\{\}$ a efekt jest następujący: \cite{book_key}, \cite{article_key}, \cite{lam1994}, \cite{knuthwebsite}.
 
 
 

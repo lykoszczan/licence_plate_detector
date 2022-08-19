@@ -2182,10 +2182,7 @@
     <bcf:datasource type="file" datatype="bibtex">bibliography.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">book_key</bcf:citekey>
-    <bcf:citekey order="2">article_key</bcf:citekey>
-    <bcf:citekey order="3">lam1994</bcf:citekey>
-    <bcf:citekey order="4">knuthwebsite</bcf:citekey>
+    <bcf:citekey order="1">1688109</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
