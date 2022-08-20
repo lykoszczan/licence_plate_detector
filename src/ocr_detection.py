@@ -16,6 +16,8 @@ def process(img):
 
 
 def get_contours(img):
+    cv2.imshow('processed', process(img))
+    cv2.waitKey()
     contours, _ = cv2.findContours(process(img), cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     r1, r2 = sorted(contours, key=cv2.contourArea)[-3:-1]
     x, y, w, h = cv2.boundingRect(np.r_[r1, r2])
@@ -23,7 +25,7 @@ def get_contours(img):
     return img[y: y + h, x:x + w]
 
 
-def detect_licence_plate_characters(test_license_plate, with_contours=False):
+def detect_licence_plate_characters(test_license_plate, with_contours=True):
     # test_license_plate = cv2.imread('test_data/plate_ocr_test.png')
     test_license_plate = scale_image(test_license_plate, 300)
 
@@ -32,8 +34,8 @@ def detect_licence_plate_characters(test_license_plate, with_contours=False):
     if with_contours:
         test_license_plate = get_contours(test_license_plate)
 
-    # cv2.imshow('processed', test_license_plate)
-    # cv2.waitKey()
+    cv2.imshow('processed', test_license_plate)
+    cv2.waitKey()
 
     predicted_result = pytesseract.image_to_string(test_license_plate, lang='eng',
                                                    config=custom_oem_psm_config)

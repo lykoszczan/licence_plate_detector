@@ -38,6 +38,17 @@ W procesie tym można wyróżnić trzy etapy \cite{1688109}:
     \item \textbf{segmentację} - wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą
     \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
 \end{itemize}
+
+Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
+
+\begin{figure}[!ht]
+    \centering
+    %\vspace{2mm}
+    \includegraphics[scale=0.6]{Pictures/schemat_lpr.png}
+    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjncyh (źródło:)}
+    \label{fig:schemat_lpr}
+\end{figure}
+
 Kolejne etapy korzystają z wyników uzyskanych w poprzednich krokach, co oznacza, że błąd powstały we wcześniejszej fazie, będzie rzutował na jakość działania całego systemu.
 W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest wpierw odpowiednio przetwarzany.
 Jednymi z najpowszechniej stosowanych czynności są skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
@@ -63,9 +74,9 @@ Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poni
     \item słabe oświetlenie, rozmazany obraz
     \item ruch pojazdu, zabrudzone tablice
 \end{itemize}
-Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}
 W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardziej efektywna.
-Poniżej wyróżniono najczęściej stosowane metody do detekcji tablic rejestracyjnych.
+Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}
+Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
 
 \subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
 test

@@ -1,9 +1,10 @@
-import cv2
-import matplotlib.pyplot as plt
 import multiprocessing as mp
-import numpy as np
 import random
 import time
+
+import cv2
+import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.metrics import roc_curve, auc
 
 import consts
@@ -508,18 +509,19 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-test_video("test_data/video/test_video_1.mp4")
-exit()
+# test_video("test_data/video/test_video_1.mp4")
+# exit()
 
-# i = cv2.imread("test_data/car.png")
-i = cv2.imread("test_data/camera.jpg")
+i = cv2.imread("test_data/car.png")
+# i = cv2.imread("test_data/camera.jpg")
 
 i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
 # remove subtitles from camera
-i_gray_cropped = i_gray[0:-80, 0:]
+# i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.imshow("cropped", i_gray_cropped)
 # cv2.waitKey()
-ii = integral_image(i_gray_cropped)
+# ii = integral_image(i_gray_cropped)
+ii = integral_image(i_gray)
 
 detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=i, show_output=True, ocr=True)
