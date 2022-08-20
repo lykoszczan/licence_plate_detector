@@ -63,6 +63,53 @@
       \verb 10.1109/TITS.2006.880641
       \endverb
     \endentry
+    \entry{4410602}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=479fcd33de2424508c01528820c48056}{%
+           family={Heo},
+           familyi={H\bibinitperiod},
+           given={Gisu},
+           giveni={G\bibinitperiod}}}%
+        {{hash=7beb6096a07ed11e6db1ae7b7c747ef2}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={Minwoo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1ab870ca6970eaf50ea8265422e106c2}{%
+           family={Jung},
+           familyi={J\bibinitperiod},
+           given={Insook},
+           giveni={I\bibinitperiod}}}%
+        {{hash=47a81b30c23898b74c6eedff304315b3}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Duk-Ryong},
+           giveni={D\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=860589c91cb7a9bd62cd521c1976500c}{%
+           family={Oh},
+           familyi={O\bibinitperiod},
+           given={Il-Seok},
+           giveni={I\bibinithyphendelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{6ff4264f345bcbf50c61ec95231b50b0}
+      \strng{fullhash}{1e5bfa0367c8f9bc8912e4df32833b18}
+      \strng{bibnamehash}{6ff4264f345bcbf50c61ec95231b50b0}
+      \strng{authorbibnamehash}{6ff4264f345bcbf50c61ec95231b50b0}
+      \strng{authornamehash}{6ff4264f345bcbf50c61ec95231b50b0}
+      \strng{authorfullhash}{1e5bfa0367c8f9bc8912e4df32833b18}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2007 International Symposium on Information Technology Convergence (ISITC 2007)}
+      \field{title}{Extraction of Car License Plate Regions Using Line Grouping and Edge Density Methods}
+      \field{year}{2007}
+      \field{pages}{37\bibrangedash 42}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ISITC.2007.79
+      \endverb
+    \endentry
     \entry{9310202}{article}{}
       \name{author}{4}{}{%
         {{hash=c7b2bbe625ac4084aa5de45e546ec6cb}{%
@@ -104,6 +151,40 @@
       \range{pages}{23}
       \verb{doi}
       \verb 10.1109/ACCESS.2020.3047929
+      \endverb
+    \endentry
+    \entry{824138}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ce34cef36160659d8e8be125fc3ddd5b}{%
+           family={Zunino},
+           familyi={Z\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=25413cb1cf45a94a70d8c19254e7c253}{%
+           family={Rovetta},
+           familyi={R\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \strng{fullhash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \strng{bibnamehash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \strng{authorbibnamehash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \strng{authornamehash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \strng{authorfullhash}{b320ecbdadd6e3605ea0476766c72e2d}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Industrial Electronics}
+      \field{number}{1}
+      \field{title}{Vector quantization for license-plate location and image coding}
+      \field{volume}{47}
+      \field{year}{2000}
+      \field{pages}{159\bibrangedash 167}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/41.824138
       \endverb
     \endentry
   \enddatalist

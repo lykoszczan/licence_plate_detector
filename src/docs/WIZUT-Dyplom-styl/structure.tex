@@ -24,15 +24,17 @@
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
 
 % For math equations, theorems, symbols, etc
-\usepackage{amsmath,amsfonts,amssymb,amsthm} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
 
 % Customize lists
-\usepackage{enumitem} 
+\usepackage{enumitem}
 \setlist{nolistsep} % Reduce spacing between bullet points and numbered lists
 \setlist[itemize]{label=--}
 
+\usepackage[section]{placeins}
+
 % Required for nicer horizontal rules in tables
-\usepackage{booktabs} 
+\usepackage{booktabs}
 
 \usepackage{xcolor} % Required for specifying colors by name
 % Define blue colors used for highlighting throughout the book- based on the WI ZUT colors
@@ -50,7 +52,7 @@
 \usepackage{newtxmath,newtxtext}
 \usepackage{t1enc}
 \usepackage[polish]{babel}% moved after to avoid conflict between polish babel and amsmath
-\usepackage[utf8]{inputenc} 
+\usepackage[utf8]{inputenc}
 %\usepackage{avant} % Use the Avantgarde font for headings
 
 %----------------------------------------------------------------------------------------
@@ -68,50 +70,50 @@
 
 % JK - header with page hanging  and chapter title in the box
 \fancyhead[EL]{%
-  \textcolor{white}{%
-    \llap{%
-      \colorbox{blueZUT}{%
-        \makebox[7ex][r]{\sffamily\thepage}%
-      }%
-      \hspace{1.25\marginparsep}%
-      \hspace{-\fboxsep}%
+    \textcolor{white}{%
+        \llap{%
+            \colorbox{blueZUT}{%
+                \makebox[7ex][r]{\sffamily\thepage}%
+            }%
+            \hspace{1.25\marginparsep}%
+            \hspace{-\fboxsep}%
+        }%
+        \textcolor{black}{%
+            \colorbox{blueWI!20}{%
+                \makebox[\textwidth][l]{\sffamily\shorttitle}}}
+        \addtolength{\headheight}{5ex} % Increase the spacing around the header slightly
     }%
-    \textcolor{black}{%
-      \colorbox{blueWI!20}{%
-        \makebox[\textwidth][l]{\sffamily\shorttitle}}}
-     \addtolength{\headheight}{5ex} % Increase the spacing around the header slightly
-  }%
 }
 \fancyhead[OR]{%
-  \textcolor{white}{%
-    \llap{%
-      \colorbox{blueZUT}{%
-        \makebox[7ex][r]{\sffamily\thepage}%
-      }%
-      \hspace{1.25\marginparsep}%
-      \hspace{-\fboxsep}%
+    \textcolor{white}{%
+        \llap{%
+            \colorbox{blueZUT}{%
+                \makebox[7ex][r]{\sffamily\thepage}%
+            }%
+            \hspace{1.25\marginparsep}%
+            \hspace{-\fboxsep}%
+        }%
+        \textcolor{black}{%
+            \colorbox{blueWI!20}{%
+                \makebox[\textwidth][l]{\sffamily\leftmark}}}%{\rightmark}}}
+        \addtolength{\headheight}{5ex} % Increase the spacing around the header slightly
     }%
-    \textcolor{black}{%
-      \colorbox{blueWI!20}{%
-        \makebox[\textwidth][l]{\sffamily\leftmark}}}%{\rightmark}}}
-    \addtolength{\headheight}{5ex} % Increase the spacing around the header slightly    
-  }%
 }
 
 \fancypagestyle{plain}{%
-   \fancyhead{} % get rid of headers
-   \fancyfoot[RE,RO]{
-  	\textcolor{white}{%
-    	\llap{%
-      	\colorbox{blueZUT}{%
-        	\makebox[7ex][l]{\sffamily\thepage}%
-      }%
-      \hspace{-6\marginparsep}%separation from the margin
-      \hspace{-5\fboxsep}%
-     }%
-     }%
-    } 
-   \addtolength{\headheight}{18pt} % Increase the spacing around the header slightly
+    \fancyhead{} % get rid of headers
+    \fancyfoot[RE,RO]{
+        \textcolor{white}{%
+            \llap{%
+                \colorbox{blueZUT}{%
+                    \makebox[7ex][l]{\sffamily\thepage}%
+                }%
+                \hspace{-6\marginparsep}%separation from the margin
+                \hspace{-5\fboxsep}%
+            }%
+        }%
+    }
+    \addtolength{\headheight}{18pt} % Increase the spacing around the header slightly
 }
 
 
@@ -121,27 +123,27 @@
 % Removes the header from odd empty pages at the end of chapters
 \makeatletter
 \renewcommand{\cleardoublepage}{
-\clearpage\ifodd\c@page\else
-\hbox{}
-\vspace*{\fill}
-\thispagestyle{empty}
-\newpage
-\fi}
+    \clearpage\ifodd\c@page\else
+    \hbox{}
+    \vspace*{\fill}
+    \thispagestyle{empty}
+    \newpage
+    \fi}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY (JK - configuring and styling)
 %----------------------------------------------------------------------------------------
 % 
 \usepackage[
-style=numeric,% style alphabetic or numeric
-citestyle=numeric,
-sorting=nyt,%name -year -title
-sortcites=true,
-autopunct=true,
-autolang=hyphen,
-hyperref=true, % if the citation is the link to bibliography
-backend=biber,
-defernumbers=true]{biblatex}
+    style=numeric,% style alphabetic or numeric
+    citestyle=numeric,
+    sorting=nyt,%name -year -title
+    sortcites=true,
+    autopunct=true,
+    autolang=hyphen,
+    hyperref=true, % if the citation is the link to bibliography
+    backend=biber,
+    defernumbers=true]{biblatex}
 \addbibresource{bibliography.bib} % BibTeX bibliography file
 \defbibheading{bibempty}{}
 
@@ -157,23 +159,23 @@ defernumbers=true]{biblatex}
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before-code>}[<after-code>]
 
 \titleformat{\chapter}[block]
-  {\huge\sffamily\color{blueZUT}}
-  {\hspace{- 3ex}{\thechapter.} \hspace{0.5em}{#1\strut}}
-  {0pt}
-  {}
+{\huge\sffamily\color{blueZUT}}
+{\hspace{- 3ex}{\thechapter.} \hspace{0.5em}{#1\strut}}
+{0pt}
+{}
 
 \titleformat{name = \chapter, numberless}[block]
-  {\huge\sffamily\color{blueZUT}}
-  {{#1\strut}}
-  {0pt}
-  {}
+{\huge\sffamily\color{blueZUT}}
+{{#1\strut}}
+{0pt}
+{}
 
 %----------------------------------------------------------------------------------------
 %	Hanging SECTION NUMBERING (MARGIN)
 %----------------------------------------------------------------------------------------
 
 \makeatletter
-\renewcommand{\@seccntformat}[1]{\llap{\textcolor{blueZUT}{\csname the#1\endcsname}\hspace{1em}}}                    
+\renewcommand{\@seccntformat}[1]{\llap{\textcolor{blueZUT}{\csname the#1\endcsname}\hspace{1em}}}
 
 \renewcommand{\section}
 {\@startsection{section}{1}{\z@}
@@ -189,13 +191,12 @@ defernumbers=true]{biblatex}
 \renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}
 {-2ex \@plus -0.1ex \@minus -.2ex}
 {.2ex \@plus.2ex }
-{\normalfont\small\sffamily\bfseries}}                        
+{\normalfont\small\sffamily\bfseries}}
 
 \renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}
 {-2ex \@plus-.2ex \@minus .2ex}
 {.1ex}
 {\normalfont\small\sffamily\bfseries}}
-
 
 
 %----------------------------------------------------------------------------------------
@@ -209,41 +210,41 @@ defernumbers=true]{biblatex}
 \titlecontents{chapter}[1.25cm] % Indentation
 {\addvspace{12pt}\large\sffamily} % Spacing and font options for chapters
 {\color{blueZUT!60}\contentslabel[\Large\thecontentslabel]{1.25cm}\color{blueZUT}} % JK Chapter number
-{\color{blueZUT}}  
+{\color{blueZUT}}
 {\color{blueZUT!60}\normalsize\;\titlerule*[.5pc]{.}\;\thecontentspage} % Page number
 
 % Section text styling
 \titlecontents{section}
-	[1.25cm] % Left indentation
-	{\addvspace{3pt}\sffamily} % Spacing and font options for sections
-	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
-	{} % Formatting of numberless sections of this type
-	{\;\titlerule*[.5pc]{.}\;\color{black}\thecontentspage} % Formatting of the filler to the right of the heading and the page number
+[1.25cm] % Left indentation
+{\addvspace{3pt}\sffamily} % Spacing and font options for sections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
+{} % Formatting of numberless sections of this type
+{\;\titlerule*[.5pc]{.}\;\color{black}\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 
 % Subsection text styling
 \titlecontents{subsection}
-	[2.5cm] % Left indentation
-	{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
-	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
-	{} % Formatting of numberless sections of this type
-	{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
+[2.5cm] % Left indentation
+{\addvspace{1pt}\sffamily\small} % Spacing and font options for subsections
+{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
+{} % Formatting of numberless sections of this type
+{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 
 %%%%% JK Add figures and tables
 % Figure text styling
 \titlecontents{figure}
-	[0em] % Left indentation
-	{\addvspace{3pt}\sffamily} % Spacing and font options for figures
-	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
-	{} % Formatting of numberless sections of this type
-	{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
+[0em] % Left indentation
+{\addvspace{3pt}\sffamily} % Spacing and font options for figures
+{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
+{} % Formatting of numberless sections of this type
+{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 
 % Table text styling
 \titlecontents{table}
-	[0em] % Left indentation
-	{\addvspace{3pt}\sffamily} % Spacing and font options for tables
-	{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
-	{} % Formatting of numberless sections of this type
-	{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
+[0em] % Left indentation
+{\addvspace{3pt}\sffamily} % Spacing and font options for tables
+{\contentslabel[\thecontentslabel]{1.25cm}} % Formatting of numbered sections of this type
+{} % Formatting of numberless sections of this type
+{\ \titlerule*[.5pc]{.}\;\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 
 
 %----------------------------------------------------------------------------------------
@@ -304,7 +305,7 @@ defernumbers=true]{biblatex}
 \makeatother
 
 % Defines the theorem text style for each type of theorem to one of the three styles above
-\newcounter{dummy} 
+\newcounter{dummy}
 \numberwithin{dummy}{section}
 \theoremstyle{blueZUTnumbox}
 \newtheorem{theoremeT}[dummy]{Twierdzenie}
@@ -322,38 +323,43 @@ defernumbers=true]{biblatex}
 
 % Theorem box
 \newmdenv[skipabove=7pt,
-skipbelow=7pt,
-backgroundcolor=black!3,
-linecolor=blueZUT,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=5pt,
-leftmargin=0cm,
-rightmargin=0cm,
-innerbottommargin=5pt]{tBox}
+    skipbelow=7pt,
+    backgroundcolor=black!3,
+    linecolor=blueZUT,
+    innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=5pt,
+    leftmargin=0cm,
+    rightmargin=0cm,
+    innerbottommargin=5pt]{tBox}
 
 
 % Definition box
 \newmdenv[skipabove=7pt,
-skipbelow=7pt,
-rightline=false,
-leftline=true,
-topline=false,
-bottomline=false,
-linecolor=blueZUT,
-innerleftmargin=5pt,
-innerrightmargin=5pt,
-innertopmargin=0pt,
-leftmargin=0cm,
-rightmargin=0cm,
-linewidth=2pt,
-innerbottommargin=0pt]{dBox}	
+    skipbelow=7pt,
+    rightline=false,
+    leftline=true,
+    topline=false,
+    bottomline=false,
+    linecolor=blueZUT,
+    innerleftmargin=5pt,
+    innerrightmargin=5pt,
+    innertopmargin=0pt,
+    leftmargin=0cm,
+    rightmargin=0cm,
+    linewidth=2pt,
+    innerbottommargin=0pt]{dBox}
 
 % Creates an environment for each type of theorem and assigns it a theorem text style from the "Theorem Styles" section above and a colored box from above
-\newenvironment{theorem}{\begin{tBox}\begin{theoremeT}}{\end{theoremeT}\end{tBox}}				  
-\newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
-\newenvironment{example}{\begin{exampleT}}{\hfill{\tiny\ensuremath{\blacksquare}}\end{exampleT}}		
-
+\newenvironment{theorem}{\begin{tBox}
+                             \begin{theoremeT}}{\end{theoremeT}
+\end{tBox}}
+\newenvironment{definition}{\begin{dBox}
+                                \begin{definitionT}}{\end{definitionT}
+\end{dBox}}
+\newenvironment{example}{\begin{exampleT}}{
+                             \hfill{\tiny\ensuremath{\blacksquare}}
+\end{exampleT}}
 
 
 %----------------------------------------------------------------------------------------
@@ -364,25 +370,25 @@ innerbottommargin=0pt]{dBox}
 
 %Polish set of letteres accepted in the listings
 \lstset{
-literate=%
-{ą}{{\k{a}}}1
-{Ą}{{\k{A}}}1
-{ć}{{\'c}}1
-{Ć}{{\'{C}}}1
-{ę}{{\k{e}}}1
-{Ę}{{\k{E}}}1
-{ł}{{\l{}}}1
-{Ł}{{\L{}}}1
-{ń}{{\'n}}1
-{Ń}{{\'N}}1
-{ó}{{\'o}}1
-{Ó}{{\'O}}1
-{ś}{{\'s}}1
-{Ś}{{\'S}}1
-{ż}{{\.z}}1
-{Ż}{{\.Z}}1
-{ź}{{\'z}}1
-{Ź}{{\'Z}}1
+    literate=%
+        {ą}{{\k{a}}}1
+        {Ą}{{\k{A}}}1
+        {ć}{{\'c}}1
+        {Ć}{{\'{C}}}1
+        {ę}{{\k{e}}}1
+        {Ę}{{\k{E}}}1
+        {ł}{{\l{}}}1
+        {Ł}{{\L{}}}1
+        {ń}{{\'n}}1
+        {Ń}{{\'N}}1
+        {ó}{{\'o}}1
+        {Ó}{{\'O}}1
+        {ś}{{\'s}}1
+        {Ś}{{\'S}}1
+        {ż}{{\.z}}1
+        {Ż}{{\.Z}}1
+        {ź}{{\'z}}1
+        {Ź}{{\'Z}}1
 }
 
 \renewcommand{\lstlistingname}{\small\sffamily\bfseries\color{blueZUT} Algorytm} % Change default listing caption to Algorthm
@@ -392,7 +398,7 @@ literate=%
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 
 \lstdefinestyle{mystyle}{
- %   backgroundcolor=\color{grayZUT!10},   
+%   backgroundcolor=\color{grayZUT!10},
     basicstyle= \small\fontfamily{lmss}\selectfont,%\footnotesize\fontfamily{cmss}\selectfont,
     commentstyle=\color{codegray},
     keywordstyle=\color{violet},
@@ -401,20 +407,20 @@ literate=%
     numbers=left,%numeracja linijek
     numbersep=10pt,%numeracja linijek
     stringstyle=\color{codegreen},
-    breakatwhitespace=true,         
-    breaklines=true,                 
-    captionpos=b,                    
-    %keepspaces=false,                
-    %showspaces=false,                
+    breakatwhitespace=true,
+    breaklines=true,
+    captionpos=b,
+%keepspaces=false,
+%showspaces=false,
     showstringspaces=false,
-    showtabs=true,                  
+    showtabs=true,
     tabsize=2,
     frame=leftline,
     rulecolor = \color{blueWI},
     xleftmargin=5ex,
     xrightmargin=5ex
-    }
- 
+}
+
 \lstset{style=mystyle}
 
 %----------------------------------------------------------------------------------------

@@ -18,8 +18,8 @@
 \chapter{Wprowadzenie teoretyczne}
 \chaptermark{Wprowadzenie teoretyczne}
 
-Na przestrzeni ostatnich lat zastosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR)(ang. \textit{Automatic Licence Plate Recognition} - ALPR) stało się znacznie bardziej powszechne.
-W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty za postój, przy zbliżeniu się do wyjazdu, szlaban otwiera się automatycznie po rozpoznaniu numeru rejestracyjnego pojazdu, którym się poruszamy.
+Na przestrzeni ostatnich lat stosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR)(ang. \textit{Automatic Licence Plate Recognition} - ALPR) stało się znacznie bardziej powszechne.
+W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty za postój, przy zbliżeniu się do wyjazdu, szlaban otwiera się automatycznie po rozpoznaniu numeru rejestracyjnego pojazdu, w którym się poruszamy.
 W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym oparte są o technologie ARTR.
 Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
 Innym z możliwych przykładów zastosowania wspomnianych systemów są odcinkowe pomiary prędkości, opłaty za przejazd płatnymi drogami lub wykrywanie kierowców łamiących przepisy.
@@ -32,40 +32,52 @@ Dla zdjęć kolorowych każdy piksel opisany jest wartościami z palety barw RGB
 Dla zdjęć monochromatycznych barwy opisywane są najczęściej za pomocą wartości luminacji obrazu.
 
 W procesie automatycznego rozpoznawania tablic rejestracyjnych pozyskany obraz jest odpowiednio przetwarzany.
+Przed przejściem do rozpoznawania, obraz często jest konwertowany do skali szarości i filtrowany za pomocą filtrów np.
+(Gaussa lub średnio-przepustowego) w celu redukcji szumu.
 W procesie tym można wyróżnić trzy etapy \cite{1688109}:
 \begin{itemize}
     \item \textbf{detekcję} - określenie położenia tablicy rejestracyjnej w analizowanym obrazie
     \item \textbf{segmentację} - wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą
     \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
 \end{itemize}
-
-Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
-
+\FloatBarrier
+\flushleft Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
 \begin{figure}[!ht]
     \centering
-    %\vspace{2mm}
     \includegraphics[scale=0.6]{Pictures/schemat_lpr.png}
-    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjncyh (źródło:)}
+    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjncyh}
     \label{fig:schemat_lpr}
 \end{figure}
-
+\FloatBarrier
 Kolejne etapy korzystają z wyników uzyskanych w poprzednich krokach, co oznacza, że błąd powstały we wcześniejszej fazie, będzie rzutował na jakość działania całego systemu.
 W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest wpierw odpowiednio przetwarzany.
 Jednymi z najpowszechniej stosowanych czynności są skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
 W zależności od wymagań stawianych przed danym mechanizmem i środowiskiem jego działania, czynności te mogą znacznie się od siebie różnić.
 Najbardziej podstawowe systemy wymagają, aby pojazd znajdował się nieruchomo w określonym miejscu.
 Tego typu rozwiązania najczęściej stosowane są na parkingach, gdzie szlaban otwiera się po odczycie numerów rejestracyjnych pojazdu i potwierdzeniu opłaty za postój w zewnętrznej bazie danych.
-Tego rodzaju systemy pracują z reguły w środowisku o niskim poziomie zakłóceń wynikających z warunków atmosferycznych i oświetlenia.
-Dzisiaj na rynku znajduje się wiele komercyjnych rozwiązań, które oferują wysoką dokładność (powyżej 95\%).
-Ten rodzaj systemów ARTR nazywany systemami statycznymi.
+Takie systemy pracują z reguły w środowisku o niskim poziomie zakłóceń wynikających z warunków atmosferycznych i oświetlenia.
+Obecnie na rynku znajduje się wiele komercyjnych rozwiązań, które oferują wysoką dokładność (powyżej 95\%) dla tego rodzaju detekcji.
+Taki rodzaj systemów ARTR nazywany systemami statycznymi.
 Dużo większą złożonością charakteryzują się systemy dynamiczne, w których znacznie większą rolę odgrywają zakłócenia wynikające ze zmiennych warunków oświetlenia.
-Nie bez znaczenia zostają analizowane pojazdy poruszające się z wysokimi prędkościami, których tablice rejestracyjne mogą znajdować się w różnych sektorach obrazu.
+W obecnych czasach stworzenie dynamicznego systemu ARTR o wysokiej dokładności wciąż stanowi wyzwanie i jest tematem wielu prac naukowych.
 Celem niniejszej pracy jest analizowanie obrazów pochodzących z kamery samochodowej, co zdecydowanie sprawia, że jest to system dynamiczny.
 Poniżej przedstawiono najczęściej stosowane metody widzenia komputerowego w systemach ARTR.
 
 
 \section{Przegląd istniejących metod detekcji tablic rejestracyjnych}
 \index{Przegląd istniejących metod detekcji tablic rejestracyjnych}
+
+Zgodnie ze słowikiem języka polskiego, definicja tablicy rejestracyjnej brzmi następująco:
+\begin{definition}[Tablica rejestracyjna]
+    Płytka zawierająca numery identyfikacyjne pojazdu, umieszczana z przodu i z tyłu pojazdu.
+\end{definition}
+Dla programu komputerowego powyższe zdanie nie jest zrozumiałe.
+W zadaniu detekcji tablicy rejestracyjnej, wymagane jest, aby maszyna ``zrozumiała'' jakich obiektów należy szukać.
+W kontekście detekcji, za definicję można uznać ``prostokątny obszar, z dużym zagęszczeniem horyzontalnych i wertykalnych krawędzi''\cite{824138}.
+W oparciu o powyższe cechy zaprezentowano wiele algorytmów do rozwiązania zadania wykrywania tablic rejestracyjnych.
+Część z nich wywodzi się z tradycyjnych metod widzenia komputerowego i metod głębokiego uczenia.
+Każda z metod ma swoje zalety, ale również często ograniczenia.
+W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardziej efektywna.
 
 Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poniższe czynniki:
 \begin{itemize}
@@ -74,15 +86,34 @@ Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poni
     \item słabe oświetlenie, rozmazany obraz
     \item ruch pojazdu, zabrudzone tablice
 \end{itemize}
-W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardziej efektywna.
 Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}
 Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
 
-\subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
-test
-
 \subsection{Metody oparte na krawędziach (ang. \textit{Edge based)}}
-tst
+Biorąc pod uwagę, że tablica rejestracyjna jest prostokątem o znanych proporcjach, większość badań bazuje na podejściu opartym o wykrywanie krawędzi.
+W większości przypadków kolor tablicy rejestracyjnej jest różny od koloru pojazdu.
+Dzięki temu, granice tablicy zostają uznane za krawędzie.
+Wiele metod wykorzystuje filtr Sobela.
+Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}) służących do detekcji krawędzi horyzontalnych i wertykalnych.
+\FloatBarrier
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/sobel_filter}
+    \caption{Macierze detektora krawędzi Sobela}
+    \label{fig:sobel_filter}
+\end{figure}
+\FloatBarrier
+Zaletą takiego podejścia jest niewątpliwa łatwość użycia, natomiast jedną z głównych wad jest jego wrażliwość na szum.
+
+Innym zaproponowanym podejściem~\cite{4410602} było zastosowanie dwóch algorytmów.
+Pierwszy z nich miał za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
+Drugi znajduje obszary o najwyższym zagęszczeniu pionowych krawędzi.
+Dzięki takiemu spojrzeniu na przedstawiony problem, udało się uzyskać wysokie wyniki dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
+Metode oparte na krawędziach są stosowane w wielu rozwiązaniach ze względu na ich szybkość działania i prostotę.
+Jednakże, rozwiązania te są silenie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
+
+\subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
+Metody oparte na kolorach bazują na fakcie, że kolor tablicy jest różny od koloru tła pojazdu.
 
 \subsection{Metody oparte na kolorach (ang. \textit{Color based)}}
 sas
@@ -95,16 +126,6 @@ Autorzy pierwotnego stylu to:
     \item Mathias Legrand (legrand.mathias@gmail.com)
     \item Vel (vel@latextemplates.com).
 \end{itemize}
-
-Późniejsze zmiany na potrzeby stylu Wydziału Informatyki zostały wprowadzone przez Joannę Kołodziejczyk (jkolodziejczyk@zut.edu.pl). Wizualna strona stylu jest konsensusem uzyskanym w wyniku prac zespołu:
-\begin{itemize}
-    \item Anna Barcz
-    \item Marcin Korzeń
-    \item Mirosław Łazoryszczak
-    \item Piotr Piela
-\end{itemize}
-
-Niniejszy styl jest udostępniony na zasadach licencji CC BY-NC-SA 3.0 ({\url{http://creativecommons.org/licenses/by-nc-sa/3.0/}}).
 
 
 \section{Kompilowanie dokumentu}
