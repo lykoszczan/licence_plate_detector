@@ -1,19 +1,23 @@
 \BOOKMARK [0][-]{chapter*.1}{Wstep}{}% 1
 \BOOKMARK [0][-]{chapter.1}{Wprowadzenie teoretyczne}{}% 2
 \BOOKMARK [1][-]{section.1.1}{Przeglad istniejacych metod detekcji tablic rejestracyjnych}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Kompilowanie dokumentu}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Zawartosc pakietu}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.3.1}{Podstawowe wymagania dotyczace szablonu}{section.1.3}% 6
-\BOOKMARK [2][-]{subsection.1.3.2}{Bibliografia}{section.1.3}% 7
-\BOOKMARK [0][-]{chapter.2}{Przedstawienie zestawu zdefiniowanych otoczen mozliwych do wykorzystania w pracy}{}% 8
-\BOOKMARK [1][-]{section.2.1}{Listy}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.2}{Tabele i rysunki w pracy}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Twierdzenia i definicje}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.4}{Przyk\233ady}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.5}{Kod zr\363d\233owy}{chapter.2}% 13
-\BOOKMARK [0][-]{lstnumber.2.1.33}{Podsumowanie}{}% 14
-\BOOKMARK [0][-]{chapter*.7}{Spis literatury}{}% 15
-\BOOKMARK [1][-]{section*.8}{Ksiazki}{chapter*.7}% 16
-\BOOKMARK [1][-]{section*.9}{Artyku\233y}{chapter*.7}% 17
-\BOOKMARK [1][-]{section*.10}{Zr\363d\233a internetowe i inne}{chapter*.7}% 18
-\BOOKMARK [0][-]{appendix.A}{Dodatek}{}% 19
+\BOOKMARK [2][-]{subsection.1.1.1}{Metody oparte na teksturach \(ang. Texture based\)}{section.1.1}% 4
+\BOOKMARK [2][-]{subsection.1.1.2}{Metody oparte na krawedziach \(ang. Edge based\)}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{Metody oparte na kolorach \(ang. Color based\)}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.4}{Metody oparte na znakach \(ang. Character based\)}{section.1.1}% 7
+\BOOKMARK [1][-]{section.1.2}{Kompilowanie dokumentu}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.3}{Zawartosc pakietu}{chapter.1}% 9
+\BOOKMARK [2][-]{subsection.1.3.1}{Podstawowe wymagania dotyczace szablonu}{section.1.3}% 10
+\BOOKMARK [2][-]{subsection.1.3.2}{Bibliografia}{section.1.3}% 11
+\BOOKMARK [0][-]{chapter.2}{Przedstawienie zestawu zdefiniowanych otoczen mozliwych do wykorzystania w pracy}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Listy}{chapter.2}% 13
+\BOOKMARK [1][-]{section.2.2}{Tabele i rysunki w pracy}{chapter.2}% 14
+\BOOKMARK [1][-]{section.2.3}{Twierdzenia i definicje}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.4}{Przyk\233ady}{chapter.2}% 16
+\BOOKMARK [1][-]{section.2.5}{Kod zr\363d\233owy}{chapter.2}% 17
+\BOOKMARK [0][-]{lstnumber.2.1.33}{Podsumowanie}{}% 18
+\BOOKMARK [0][-]{chapter*.7}{Spis literatury}{}% 19
+\BOOKMARK [1][-]{section*.8}{Ksiazki}{chapter*.7}% 20
+\BOOKMARK [1][-]{section*.9}{Artyku\233y}{chapter*.7}% 21
+\BOOKMARK [1][-]{section*.10}{Zr\363d\233a internetowe i inne}{chapter*.7}% 22
+\BOOKMARK [0][-]{appendix.A}{Dodatek}{}% 23

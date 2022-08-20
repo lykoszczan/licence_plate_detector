@@ -63,6 +63,49 @@
       \verb 10.1109/TITS.2006.880641
       \endverb
     \endentry
+    \entry{9310202}{article}{}
+      \name{author}{4}{}{%
+        {{hash=c7b2bbe625ac4084aa5de45e546ec6cb}{%
+           family={Shashirangana},
+           familyi={S\bibinitperiod},
+           given={Jithmi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3776b0c5230903b95da1537cfb0ad088}{%
+           family={Padmasiri},
+           familyi={P\bibinitperiod},
+           given={Heshan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=f01382ff7bca48ad7086e69ee7fd037e}{%
+           family={Meedeniya},
+           familyi={M\bibinitperiod},
+           given={Dulani},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e5b420aba58a8d93cbbcaf2b1b0f4dab}{%
+           family={Perera},
+           familyi={P\bibinitperiod},
+           given={Charith},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{e30437336a9ff7ab3b19803bcdf27823}
+      \strng{fullhash}{afe668674b8e3555a6deaf4d63124ec9}
+      \strng{bibnamehash}{e30437336a9ff7ab3b19803bcdf27823}
+      \strng{authorbibnamehash}{e30437336a9ff7ab3b19803bcdf27823}
+      \strng{authornamehash}{e30437336a9ff7ab3b19803bcdf27823}
+      \strng{authorfullhash}{afe668674b8e3555a6deaf4d63124ec9}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{Automated License Plate Recognition: A Survey on Methods and Techniques}
+      \field{volume}{9}
+      \field{year}{2021}
+      \field{pages}{11203\bibrangedash 11225}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2020.3047929
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

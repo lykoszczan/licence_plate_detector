@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  19 AUG 2022 13:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  20 AUG 2022 14:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1161,12 +1161,12 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-<Pictures/zut.png, id=80, 168.63pt x 65.7657pt>
+<Pictures/zut.png, id=96, 168.63pt x 65.7657pt>
 File: Pictures/zut.png Graphic file (type png)
 <use Pictures/zut.png>
 Package pdftex.def Info: Pictures/zut.png  used on input line 26.
 (pdftex.def)             Requested size: 168.62958pt x 65.76553pt.
-<Pictures/wi.png, id=82, 763.85374pt x 274.02374pt>
+<Pictures/wi.png, id=98, 763.85374pt x 274.02374pt>
 File: Pictures/wi.png Graphic file (type png)
 <use Pictures/wi.png>
 Package pdftex.def Info: Pictures/wi.png  used on input line 26.
@@ -1216,7 +1216,9 @@ LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
 (Font)              scaled to size 22.39185pt on input line 63.
  (./main.toc
 LaTeX Font Info:    Font shape `T1/qhv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 16.
+(Font)              scaled to size 9.85492pt on input line 12.
+LaTeX Font Info:    Font shape `T1/qhv/m/it' will be
+(Font)              scaled to size 9.85492pt on input line 12.
 )
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -1258,52 +1260,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--34
 ]
 Rozdzia\l  1.
 [9]
+LaTeX Font Info:    Font shape `T1/qhv/b/it' will be
+(Font)              scaled to size 10.79993pt on input line 70.
 LaTeX Font Info:    Trying to load font information for T1+ntxsups on input lin
-e 59.
+e 81.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxsups.fd
 File: t1ntxsups.fd 2015/01/17 v1.0
 )
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 12.0pt on input line 59.
+(Font)              scaled to size 12.0pt on input line 81.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 59.
+(Font)              scaled to size 10.0pt on input line 81.
 LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 10.0pt on input line 59.
+(Font)              scaled to size 10.0pt on input line 81.
 LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-59.
+81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 File: t1ntxtt.fd 2012/04/20 v3.1
 )
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 59.
+(Font)              scaled to size 10.0pt on input line 81.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 59.
+(Font)              size <5> substituted on input line 81.
 
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 12.0pt on input line 74.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 82.
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 86.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 8
-6.
-
-(/usr/share/texmf/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 87.
-LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 92.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
@@ -1316,6 +1298,33 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [10]
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 12.0pt on input line 96.
+ (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 10.95pt on input line 108.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+08.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 109.
+LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
+(Font)              scaled to size 9.85492pt on input line 114.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 117.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
@@ -1338,7 +1347,7 @@ Overfull \hbox (10.94658pt too wide) in paragraph at lines 18--18
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pictures/placeholder.jpg, id=204, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=229, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
 Package pdftex.def Info: Pictures/placeholder.jpg  used on input line 79.
@@ -1449,7 +1458,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EA2AD18DB543178179B77B289AC40246;1266.
+(rerunfilecheck)             Checksum: 2C72D5F648548E022951280A888AE3C6;1675.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1460,36 +1469,37 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22717 strings out of 483148
- 367329 string characters out of 5965416
- 1086240 words of memory out of 5000000
- 37173 multiletter control sequences out of 15000+600000
- 666648 words of font info for 212 fonts, out of 8000000 for 9000
+ 22732 strings out of 483148
+ 367639 string characters out of 5965416
+ 1086296 words of memory out of 5000000
+ 37182 multiletter control sequences out of 15000+600000
+ 672949 words of font info for 214 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  58i,18n,103p,888b,3676s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-sc.enc}{/usr/
 share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntxsups_t1.enc}{
-/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/usr/share/
-texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}</usr/share/texlive/texmf-dist/fonts/ty
+/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texlive/texmf-di
+st/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/newtx/ntxsups-Regular.pfb></usr/share/texmf/fonts/
 type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qh
-vr.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmb.pfb></usr/share/texmf
-/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texmf/fonts/type1/public/tex-
-gyre/qtmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/newtx/txsys.pfb>
-Output written on main.pdf (23 pages, 417451 bytes).
+vbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texm
+f/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/public/te
+x-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/sh
+are/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx
+/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (23 pages, 449892 bytes).
 PDF statistics:
- 407 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 108 named destinations out of 1000 (max. 500000)
- 168 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 366 compressed objects within 4 object streams
+ 112 named destinations out of 1000 (max. 500000)
+ 200 words of extra memory for PDF output out of 10000 (max. 10000000)
 
