@@ -110,6 +110,48 @@
       \verb 10.1109/ISITC.2007.79
       \endverb
     \endentry
+    \entry{1520110}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=e11b3db81db996b3366420a5427ae73a}{%
+           family={Jia},
+           familyi={J\bibinitperiod},
+           given={Wenjing},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d74a580f2394f90e8d401803d03c5f57}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Huaifeng},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1b7a4fd1ae9f62d241c8dfa6d9d6b38a}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Xiangjian},
+           giveni={X\bibinitperiod}}}%
+        {{hash=9f59e7c44987529f819aa16049b71555}{%
+           family={Piccardi},
+           familyi={P\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{79c707abd24bb7e28680acbcefe42e47}
+      \strng{fullhash}{480779d76fe1d12acdf8f2d3a81f8338}
+      \strng{bibnamehash}{79c707abd24bb7e28680acbcefe42e47}
+      \strng{authorbibnamehash}{79c707abd24bb7e28680acbcefe42e47}
+      \strng{authornamehash}{79c707abd24bb7e28680acbcefe42e47}
+      \strng{authorfullhash}{480779d76fe1d12acdf8f2d3a81f8338}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings. 2005 IEEE Intelligent Transportation Systems, 2005.}
+      \field{title}{Mean shift for accurate license plate localization}
+      \field{year}{2005}
+      \field{pages}{566\bibrangedash 571}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ITSC.2005.1520110
+      \endverb
+    \endentry
     \entry{9310202}{article}{}
       \name{author}{4}{}{%
         {{hash=c7b2bbe625ac4084aa5de45e546ec6cb}{%
@@ -152,6 +194,56 @@
       \verb{doi}
       \verb 10.1109/ACCESS.2020.3047929
       \endverb
+    \endentry
+    \entry{Wang2008FuzzybasedAF}{article}{}
+      \name{author}{6}{}{%
+        {{hash=ee2b4a15025ecfaafcb95983b2d2623d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Feng},
+           giveni={F\bibinitperiod}}}%
+        {{hash=411d92fd652d412b1262f5f9bc4a8b9c}{%
+           family={Man},
+           familyi={M\bibinitperiod},
+           given={Lichun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5b6ba4740f86b05002d57582fb08f166}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bangping},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c2380b89e9c2077cbbcd0b15696270f2}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Yijun},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=188e0b0486b277245804f98bce4641f9}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Wei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=87f1ddb3ecb35d6ff47cd1d466781de3}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Xiaochun},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{fullhash}{7bb70ac8a46d1155680d58ffd0844f10}
+      \strng{bibnamehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{authorbibnamehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{authornamehash}{4fad24a73fd343b446f9bae8b7b79d4a}
+      \strng{authorfullhash}{7bb70ac8a46d1155680d58ffd0844f10}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pattern Recognit. Lett.}
+      \field{title}{Fuzzy-based algorithm for color recognition of license plates}
+      \field{volume}{29}
+      \field{year}{2008}
+      \field{pages}{1007\bibrangedash 1020}
+      \range{pages}{14}
     \endentry
     \entry{824138}{article}{}
       \name{author}{2}{}{%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  20 AUG 2022 19:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  21 AUG 2022 09:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,12 +1164,12 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-<Pictures/zut.png, id=96, 168.63pt x 65.7657pt>
+<Pictures/zut.png, id=80, 168.63pt x 65.7657pt>
 File: Pictures/zut.png Graphic file (type png)
 <use Pictures/zut.png>
 Package pdftex.def Info: Pictures/zut.png  used on input line 26.
 (pdftex.def)             Requested size: 168.62958pt x 65.76553pt.
-<Pictures/wi.png, id=98, 763.85374pt x 274.02374pt>
+<Pictures/wi.png, id=82, 763.85374pt x 274.02374pt>
 File: Pictures/wi.png Graphic file (type png)
 <use Pictures/wi.png>
 Package pdftex.def Info: Pictures/wi.png  used on input line 26.
@@ -1262,7 +1262,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--34
 
 ]
 Rozdzia\l  1.
-<Pictures/schemat_lpr.png, id=191, 268.00125pt x 638.385pt>
+<Pictures/schemat_lpr.png, id=167, 268.00125pt x 638.385pt>
 File: Pictures/schemat_lpr.png Graphic file (type png)
 <use Pictures/schemat_lpr.png>
 Package pdftex.def Info: Pictures/schemat_lpr.png  used on input line 47.
@@ -1293,11 +1293,11 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 71.
 LaTeX Font Info:    Font shape `T1/qhv/b/it' will be
-(Font)              scaled to size 10.79993pt on input line 92.
-<Pictures/sobel_filter.png, id=207, 383.93437pt x 175.40532pt>
+(Font)              scaled to size 10.79993pt on input line 93.
+<Pictures/sobel_filter.png, id=182, 383.93437pt x 175.40532pt>
 File: Pictures/sobel_filter.png Graphic file (type png)
 <use Pictures/sobel_filter.png>
-Package pdftex.def Info: Pictures/sobel_filter.png  used on input line 101.
+Package pdftex.def Info: Pictures/sobel_filter.png  used on input line 102.
 (pdftex.def)             Requested size: 230.3624pt x 105.24399pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1305,91 +1305,58 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [11]
-LaTeX Font Info:    Trying to load font information for T1+ntxsups on input lin
-e 123.
- (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxsups.fd
-File: t1ntxsups.fd 2015/01/17 v1.0
-)
-LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 12.0pt on input line 123.
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 10.0pt on input line 123.
-LaTeX Font Info:    Font shape `T1/ntxsups/m/n' will be
-(Font)              scaled to size 10.0pt on input line 123.
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-123.
-
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 123.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 123.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
-40.
-
-(/usr/share/texmf/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 141.
+<Pictures/tablice.png, id=197, 489.83pt x 68.255pt>
+File: Pictures/tablice.png Graphic file (type png)
+<use Pictures/tablice.png>
+Package pdftex.def Info: Pictures/tablice.png  used on input line 141.
+(pdftex.def)             Requested size: 293.90025pt x 40.95331pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[12 <./Pictures/sobel_filter.png (PNG copy)>]
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 149.
-
+[12 <./Pictures/sobel_filter.png (PNG copy)>])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[13])
-Overfull \hbox (6.0pt too wide) has occurred while \output is active
-[][][][][][][][][][][] 
- []
-
-[14]
+[13 <./Pictures/tablice.png>]
 \openout2 = `chapter2.aux'.
 
- (./chapter2.tex
+ (./chapter2.tex [14
+
+
+
+]
 Rozdzia\l  2.
 
 Overfull \hbox (10.94658pt too wide) in paragraph at lines 18--18
 | \T1/qhv/m/n/24.88 2.  Przed-sta-wie-nie ze-stawu zde-fi-nio-wa-nych oto-
  []
 
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
+31.
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 31.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pictures/placeholder.jpg, id=248, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=219, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
 Package pdftex.def Info: Pictures/placeholder.jpg  used on input line 79.
 (pdftex.def)             Requested size: 210.78911pt x 116.23514pt.
-[15
-
-
-
-]
+[15]
 Package mdframed Info: mdframed works in twoside mode on input line 91.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 91.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 96.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.6pt on input line 96.
 Package mdframed Info: mdframed works in twoside mode on input line 101.
@@ -1406,9 +1373,16 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [16 <./Pictures/placeholder.jpg>]
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 137.
+
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
 (Font)              size <6> substituted on input line 137.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 137.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/b/n' in size <6.5> not available
@@ -1420,6 +1394,12 @@ LaTeX Font Warning: Font shape `OT1/cmr/b/n' in size <5.5> not available
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 1
+58.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
 164.
@@ -1485,7 +1465,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 69CA664E03F7CF20FD51111BE1CE7A14;1677.
+(rerunfilecheck)             Checksum: 02BC8029B9E05C2C2F41806190E5592B;1385.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1496,37 +1476,35 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22780 strings out of 483148
- 368746 string characters out of 5965416
- 1086771 words of memory out of 5000000
- 37216 multiletter control sequences out of 15000+600000
- 672949 words of font info for 214 fonts, out of 8000000 for 9000
+ 22645 strings out of 483148
+ 367032 string characters out of 5965416
+ 1086899 words of memory out of 5000000
+ 37096 multiletter control sequences out of 15000+600000
+ 661110 words of font info for 192 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 58i,18n,103p,888b,3676s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,18n,98p,888b,3700s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-sc.enc}{/usr/
 share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
-lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntxsups_t1.enc}{
-/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texlive/texmf-di
-st/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/newtx/ntxsups-Regular.pfb></usr/share/texmf/fonts/
-type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qh
-vbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texm
-f/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/public/te
-x-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/sh
-are/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx
-/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (25 pages, 551573 bytes).
+lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-di
+st/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/shar
+e/texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/publ
+ic/tex-gyre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></
+usr/share/texmf/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/t
+ype1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtm
+r.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
+onts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (25 pages, 608994 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 382 compressed objects within 4 object streams
- 119 named destinations out of 1000 (max. 500000)
- 210 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 432 PDF objects out of 1000 (max. 8388607)
+ 354 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
+ 183 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,19 +11,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.1}Metody oparte na krawędziach (ang. \textit {Edge based)}}{11}{subsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.2}Metody oparte na teksturach (ang. \textit {Texture based)}}{12}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Metody oparte na kolorach (ang. \textit {Color based)}}{12}{subsection.1.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.3}Metody oparte na kolorach (ang. \textit {Color based)}}{12}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.3}Metody oparte na teksturach (ang. \textit {Texture based)}}{13}{subsection.1.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.4}Metody oparte na znakach (ang. \textit {Character based)}}{12}{subsection.1.1.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Kompilowanie dokumentu}{12}{section.1.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Zawartość pakietu}{13}{section.1.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Podstawowe wymagania dotyczące szablonu}{13}{subsection.1.3.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Bibliografia}{14}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.1.4}Metody oparte na znakach (ang. \textit {Character based)}}{13}{subsection.1.1.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{15}{chapter.2}%
 \defcounter {refsection}{0}\relax 

@@ -83,10 +83,11 @@ Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poni
 \begin{itemize}
     \item tablica rejestracyjna zajmuje niewielki obszar na zdjęciu
     \item istnienie ogromnej ilości formatów tablic rejestracyjnych (w zależności od kraju rejestracji lub rodzaju pojazdu)
-    \item słabe oświetlenie, rozmazany obraz
+    \item słabe oświetlenie, rozmazany obraz, refleksy świetlne
     \item ruch pojazdu, zabrudzone tablice
 \end{itemize}
-Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}
+Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}.
+W celu uzyskania lepszych wyników, spotyka się rozwiązania, w których łączy się wiele technik.
 Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
 
 \subsection{Metody oparte na krawędziach (ang. \textit{Edge based)}}
@@ -105,89 +106,106 @@ Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}
 \FloatBarrier
 Zaletą takiego podejścia jest niewątpliwa łatwość użycia, natomiast jedną z głównych wad jest jego wrażliwość na szum.
 
-Innym zaproponowanym podejściem~\cite{4410602} było zastosowanie dwóch algorytmów.
-Pierwszy z nich miał za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
+Często wykorzystywaną metodą do wykrywania krawędzi obiektów w obrazach jest \textit{Binary Image Processing}.
+Technika ta polega na sprowadzenia obrazu do postaci, w której kolory pikseli przyjmują tylko dwie wartości - czarną lub białą.
+Osiąga się to za pomocą ustalenia progu, który determinuje kolor piksela.
+Próg wyznaczany jest na podstawie histogramu obrazu w odcieniach szarości.
+Metoda ta jest użyteczna, ze względu na fakt łatwego odseparowania obiektu od tła.
+Wykorzystuje ona założenie, że krawędzie tablicy są proste i poziome.
+Przy zdeformowanych lub zabrudzonych tablicach, algorytm ten nie osiąga zadowalających wyników.
+
+Innym spotykanym podejściem~\cite{4410602} jest zastosowanie dwóch algorytmów.
+Pierwszy z nich ma za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
 Drugi znajduje obszary o najwyższym zagęszczeniu pionowych krawędzi.
-Dzięki takiemu spojrzeniu na przedstawiony problem, udało się uzyskać wysokie wyniki dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
+Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysoką dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
 Metode oparte na krawędziach są stosowane w wielu rozwiązaniach ze względu na ich szybkość działania i prostotę.
 Jednakże, rozwiązania te są silenie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
 
-\subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
-Metody oparte na kolorach bazują na fakcie, że kolor tablicy jest różny od koloru tła pojazdu.
-
 \subsection{Metody oparte na kolorach (ang. \textit{Color based)}}
+Metody oparte na kolorach bazują na fakcie, że kolor tablicy jest różny od koloru tła pojazdu.
+Dla tej grupy rozwiązań, zamiast modelu barw RGB, stosuje się model HSL oparty o nasycenie koloru.
+Model ten jest jednak wrażliwy na szum.
+
+Często metody wykorzystujące kolor tablicy rejestracyjnej są używane do wyselekcjonowania kandydatów.
+Innymi słowy, oznacza to wybrania obszarów obrazu, w których może znajdować się tablica rejestracyjna.
+Technika ta łączona jest z innymi algorytmami, które na kolejnych etapach decydują, czy wskazany obszar rzeczywiście zawiera poszukiwany obiekt.
+Do tego typu metod wykorzystywany jest m. in. algorytm \textit{Mean shift} \cite{1520110} i logika rozmyta \cite{Wang2008FuzzybasedAF}.
+
+Opisywana grupa metod może zostać użyta do detekcji zdeformowanych i pochylonych tablic.
+Rzadko występują one osobno w metodach detekcji, głównie ze względu na ich dużą czułość na zmiany naświetlenia.
+Dodatkowo w zależności od kraju oraz przeznaczenia pojazdu, kolory tablic mogą się znacznie różnić.
+Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a samochody zabytkowe żółty (\ref{fig:tablice}).
+\FloatBarrier
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/tablice}
+    \caption{Tablice rejestracyjne w Polsce dla aut elektrycznych i zabytkowych}
+    \label{fig:tablice}
+\end{figure}
+\FloatBarrier
+
+\subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
 sas
 
 \subsection{Metody oparte na znakach (ang. \textit{Character based)}}
 asd
-Niniejszy szablon powstał na bazie szablonu\footnote{\url{http://www.LaTeXTemplates.com}} o nazwie ,,The Legrand Orange Book''.
-Autorzy pierwotnego stylu to:
-\begin{itemize}
-    \item Mathias Legrand (legrand.mathias@gmail.com)
-    \item Vel (vel@latextemplates.com).
-\end{itemize}
 
-
-\section{Kompilowanie dokumentu}
-\index{Kompilacja}
-
-Do kompilacji wykorzystać należy procesor {\em pdflatex}.
 
 %Ten szablon wykorzystuje pakiet - menedżer spisu literatury o nazwie {\em biber}\footnote{ \url{http://biblatex-biber.sourceforge.net}}, który jest dostępny w wielu popularnych środowiskach programistycznych dla \LaTeX.
 
-Najpewniejszym sposobem na poprawną kompilację jest wykonanie jej z wiersza poleceń następującą sekwencją rozkazów:
-
-\begin{lstlisting}[language=bash, caption=Skrypt kompilujący, label=alg:1]
-pdflatex main
-biber main
-pdflatex main
-pdflatex main
-
-\end{lstlisting}
-
-Szablon wykorzystuje również rozliczne pakiety, które mogą wymagać
-zaktualizowane do najnowszych wersji. Rekomendowane jest więc, by utrzymywać swoją wersję dystrybucji \LaTeX w najnowszej wersji.
-
-
-\section{Zawartość pakietu}\index{Zawartość pakietu}
-
-Pakiet ze stylem zawiera pliki tekstowe z zawartością przykładowej pracy , czyli w tym wypadku niniejszego przewodnika oraz pliki konfiguracyjne. W tabeli \ref{tab:1} znajduje się lista plików wraz z ich krótkim opisem.
-
-\begin{table}[h]
-    \centering
-    \caption{Pliki w pakiecie szablonu}
-    \begin{tabular}{p{.2\textwidth}|p{.1\textwidth} | p{.60\textwidth}}
-        \toprule
-        \textbf{Nazwa pliku} & \textbf{Edycja} & \textbf{Opis}                                                                                                                                                               \\
-        \midrule
-        main.tex             & TAK             & Główny plik pracy. Zawiera otwarcie dokumentu, dołącza pliki konfiguracyjne, spis treści, dołącza wszystkie rozdziały, literaturę oraz zamyka dokument.                     \\
-        definitions.tex      & TAK             & Zawiera elementy strony tytułowej: autora, tytuł, niezbędne informacje ze strony tytułowej.                                                                                 \\
-        abstract.tex         & TAK             & Zawartość streszczenia pracy w j. polskim i j. angielskim. Zaleca się, by nie przekroczyć tekstem 1 strony.                                                                 \\
-        introduction.tex     & TAK             & Wstęp pracy dyplomowej                                                                                                                                                      \\
-        chapter1.tex         & TAK             & Zawartość rozdziału pierwszego.                                                                                                                                             \\
-        chapter2.tex         & TAK             & Zawartość rozdziału drugiego.                                                                                                                                               \\
-        conclusions.tex      & TAK             & Zakończenie/podsumowanie pracy dyplomowej.                                                                                                                                  \\
-        bibliography.bib     & TAK             & Plik z literaturą w formacie bib.                                                                                                                                           \\
-        Pictures             & TAK             & Katalog zawierający ilustracje i grafiki z pracy. Nazwa katalogu jest wykorzystana w pliku konfiguracyjnym jako katalog domyślny do każdego osadzonego obiektu graficznego. \\
-        title\_page.tex      & NIE             & Struktura strony tytułowej.                                                                                                                                                 \\
-        structure.tex        & NIE             & Plik konfiguracyjny (preambuła). Podłącza i konfiguruje wszystkie niezbędne pakiety oraz definiuje otoczenia wykorzystywane w szablonie.                                    \\
-        \bottomrule
-    \end{tabular}
-    \label{tab:1}
-\end{table}
+%Najpewniejszym sposobem na poprawną kompilację jest wykonanie jej z wiersza poleceń następującą sekwencją rozkazów:
+%
+%\begin{lstlisting}[language=bash, caption=Skrypt kompilujący, label=alg:1]
+%pdflatex main
+%biber main
+%pdflatex main
+%pdflatex main
+%
+%\end{lstlisting}
+%
+%Szablon wykorzystuje również rozliczne pakiety, które mogą wymagać
+%zaktualizowane do najnowszych wersji. Rekomendowane jest więc, by utrzymywać swoją wersję dystrybucji \LaTeX w najnowszej wersji.
+%
+%
+%\section{Zawartość pakietu}\index{Zawartość pakietu}
+%
+%Pakiet ze stylem zawiera pliki tekstowe z zawartością przykładowej pracy , czyli w tym wypadku niniejszego przewodnika oraz pliki konfiguracyjne. W tabeli \ref{tab:1} znajduje się lista plików wraz z ich krótkim opisem.
+%
+%\begin{table}[h]
+%    \centering
+%    \caption{Pliki w pakiecie szablonu}
+%    \begin{tabular}{p{.2\textwidth}|p{.1\textwidth} | p{.60\textwidth}}
+%        \toprule
+%        \textbf{Nazwa pliku} & \textbf{Edycja} & \textbf{Opis}                                                                                                                                                               \\
+%        \midrule
+%        main.tex             & TAK             & Główny plik pracy. Zawiera otwarcie dokumentu, dołącza pliki konfiguracyjne, spis treści, dołącza wszystkie rozdziały, literaturę oraz zamyka dokument.                     \\
+%        definitions.tex      & TAK             & Zawiera elementy strony tytułowej: autora, tytuł, niezbędne informacje ze strony tytułowej.                                                                                 \\
+%        abstract.tex         & TAK             & Zawartość streszczenia pracy w j. polskim i j. angielskim. Zaleca się, by nie przekroczyć tekstem 1 strony.                                                                 \\
+%        introduction.tex     & TAK             & Wstęp pracy dyplomowej                                                                                                                                                      \\
+%        chapter1.tex         & TAK             & Zawartość rozdziału pierwszego.                                                                                                                                             \\
+%        chapter2.tex         & TAK             & Zawartość rozdziału drugiego.                                                                                                                                               \\
+%        conclusions.tex      & TAK             & Zakończenie/podsumowanie pracy dyplomowej.                                                                                                                                  \\
+%        bibliography.bib     & TAK             & Plik z literaturą w formacie bib.                                                                                                                                           \\
+%        Pictures             & TAK             & Katalog zawierający ilustracje i grafiki z pracy. Nazwa katalogu jest wykorzystana w pliku konfiguracyjnym jako katalog domyślny do każdego osadzonego obiektu graficznego. \\
+%        title\_page.tex      & NIE             & Struktura strony tytułowej.                                                                                                                                                 \\
+%        structure.tex        & NIE             & Plik konfiguracyjny (preambuła). Podłącza i konfiguruje wszystkie niezbędne pakiety oraz definiuje otoczenia wykorzystywane w szablonie.                                    \\
+%        \bottomrule
+%    \end{tabular}
+%    \label{tab:1}
+%\end{table}
 %------------------------------------------------
 
-\subsection{Podstawowe wymagania dotyczące szablonu}
-
-Praca ma ustawiony format wielkości strony A4, w pliku {\em structure.tex} w konfiguracji pakietu {\bf geometry}. Przygotowana jest do druku dwustronnego. Ustawiony jest 1cm margines na oprawę.
-
-\noindent{\bf UWAGA!} Każdy rozdział zaczyna się na stronie nieparzystej
-
-\subsection{Bibliografia}
-
-Po zaktualizowaniu pliku z literaturą należy dokonać kompilacji z użyciem procesora {\em biber} a nie standardowego  {\em Bibtex}. Następnie dwukrotnie skompilować z użyciem {\em pdflatex}, aby zmiany były widoczne. Pakiet do zarządzania bibliografią to {\em biblatex}. Jego konfiguracja jest dostępna w pliku {\em structure.tex}
-
-Bibliografia w pracach dyplomowych ma format numeryczny, sortowanie alfabetyczne i jest podzielona na części: książki, artykuły i źródła internetowe i inne. Konfiguracja jest zapisana w niniejszym szablonie.
+%\subsection{Podstawowe wymagania dotyczące szablonu}
+%
+%Praca ma ustawiony format wielkości strony A4, w pliku {\em structure.tex} w konfiguracji pakietu {\bf geometry}. Przygotowana jest do druku dwustronnego. Ustawiony jest 1cm margines na oprawę.
+%
+%\noindent{\bf UWAGA!} Każdy rozdział zaczyna się na stronie nieparzystej
+%
+%\subsection{Bibliografia}
+%
+%Po zaktualizowaniu pliku z literaturą należy dokonać kompilacji z użyciem procesora {\em biber} a nie standardowego  {\em Bibtex}. Następnie dwukrotnie skompilować z użyciem {\em pdflatex}, aby zmiany były widoczne. Pakiet do zarządzania bibliografią to {\em biblatex}. Jego konfiguracja jest dostępna w pliku {\em structure.tex}
+%
+%Bibliografia w pracach dyplomowych ma format numeryczny, sortowanie alfabetyczne i jest podzielona na części: książki, artykuły i źródła internetowe i inne. Konfiguracja jest zapisana w niniejszym szablonie.
 
 %Tylko zacytowane prace znajdą się w spisie literatury. Nie należy tego zmieniać. Cytowanie odbywa się przez użycie polecenia $\backslash cite\{\}$ a efekt jest następujący: \cite{book_key}, \cite{article_key}, \cite{lam1994}, \cite{knuthwebsite}.
 
