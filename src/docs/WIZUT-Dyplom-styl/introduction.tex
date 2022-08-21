@@ -26,10 +26,32 @@
 %\item Struktura pracy.
 %\end{enumerate}
 
-W dzisiejszych czasach ludzka praca stanowi jeden z największych składników kosztów dla wielu przedsiębiorstw.\ Taki stan rzeczy prowadzi do poszukiwania rozwiązań mających na celu zautomatyzowanie najbardziej powtarzalnych czynności.\ Potwierdza to wzrost zainteresowania tematami takimi jak uczenie maszynowe czy widzenie komputerowe na przestrzeni ostatnich lat.\ Jedną z gałęzi gospodarki, w której tego rodzaju automatyzacja jest zauważalna nawet dla osób niezwiązanych z branżą, jest transport drogowy.\ Nieustannie zwiększająca się liczba aut poruszających się po drogach, wzrost sieci dróg i autostrad niejako samoistnie wymusiła próby zautomatyzowania pewnych czynności.\\
+W dzisiejszych czasach ludzka praca stanowi jeden z największych składników kosztów dla wielu przedsiębiorstw.\ Taki stan rzeczy prowadzi do poszukiwania rozwiązań mających na celu zautomatyzowanie najbardziej powtarzalnych czynności.\ Potwierdza to wzrost zainteresowania na przestrzeni ostatnich lat zagadnieniami takimi jak uczenie maszynowe czy widzenie komputerowe.
+Jedną z gałęzi gospodarki, w której tego rodzaju automatyzacja jest zauważalna nawet dla osób niezwiązanych z branżą, jest transport drogowy.\ Nieustannie zwiększająca się liczba aut poruszających się po drogach, wzrost sieci dróg i autostrad niejako samoistnie wymusiła próby zautomatyzowania pewnych czynności.
 
 Jednym z najczęściej poruszanych zagadnień jest problem rozpoznawania tablic rejestracyjnych (ang. \textit{Licence Plate Recognition} - LPR).\ Do zadań takich systemów należy wykrycie na obrazie obszarów, w których znajdują się tablice rejestracyjne.
 Dokładność uzależniona jest od wielu czynników, takich jak jakość obrazu, prędkość pojazdu, warunki atmosferyczne lub pora dnia.
-\\\\We wstępie można zawrzeć co jest w dalszych częściach pracy.\\
+%\\\\We wstępie można zawrzeć co jest w dalszych częściach pracy, ile rozdziałóœ i krótki opis każdego z nich.\\
 
-W niniejszej pracy przedstawione zostaną najczęściej wykorzystywane techniki uczenia maszynowego i widzenia komputerowego do osiągnięcia wysokiej jakości systemu automatycznego rozpoznawania tablic rejestracyjnych.
+Celem niniejszej pracy jest przedstawienie tematyki rozpoznawania tablic rejestracyjnych.
+Wybór takiego zagadnienia w niniejszej pracy dyplomowej, motywuje własnymi zainteresowaniami zarówno na polu motoryzacyjnym jak i również uczenia maszynowego oraz widzenia komputerowego.
+W skład zakresu pracy wchodzi:
+\begin{itemize}
+    \item Omówienie wybranych algorytmów z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych
+    do realizacji postawionego zadania.
+    \item Przygotowania odpowiedniego materiału (sekwencje wideo) na potrzeby uczenia maszynowego i testowania.
+    \item Przedstawienie ostatecznego schematu algorytmicznego dla całego procesu.
+    \item Przeprowadzenie eksperymetów, pomiary dokładności i czasów wykonania, wnioski końcowe.
+\end{itemize}
+
+W pierwszej części pracy przedstawione zostaną najczęściej wykorzystywane techniki uczenia maszynowego i widzenia komputerowego do osiągnięcia wysokiej jakości systemu automatycznego rozpoznawania tablic rejestracyjnych.
+W drugiej części pracy zostanie przedstawiony stworzony program komputerowy do realizacji zadania rozpoznawania tablic rejestracyjnych.
+Przedstawiono również etapy pozyskania zbioru uczącego dla opracowanego mechanizmu.
+Po opisaniu opracowanego procesu, zostaną zaraportowane wyniki dla wyuczonego klasyfikatora.
+
+W przedstawionej pracy udało się zrealizować przedstawione zadanie.
+Do realizacji programu wykorzystano język programowania Python w wersji 3.8.
+Klasyfikator oparty został o cechy Haara (ang. \textit{Haar-like features}).
+Praca ma charakter eksperymentalny.
+Z tego powodu oraz z racji ograniczonych zasobów, algorytm ma swoje niedoskonałości.
+W podsumowaniu pracy zaprezentowano możliwości dalszego rozwoju klasyfikatora.

@@ -63,6 +63,41 @@
       \verb 10.1109/TITS.2006.880641
       \endverb
     \endentry
+    \entry{DuanBuildingAA}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=58af688532decd4fc679546c470ec61f}{%
+           family={Duan},
+           familyi={D\bibinitperiod},
+           given={Tran\bibnamedelima Duc},
+           giveni={T\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=fb98d5db3caa420346ae1cdd2896a76d}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Tran\bibnamedelimb Le\bibnamedelima Hong},
+           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=3764c3069715fe3cb53e9b56c5c678a0}{%
+           family={Phước},
+           familyi={P\bibinitperiod},
+           given={Trần\bibnamedelima Vĩnh},
+           giveni={T\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=214e0911199f44e4b29ce073455de152}{%
+           family={Hoang},
+           familyi={H\bibinitperiod},
+           given={Nguyen\bibnamedelima Viet},
+           giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{41481a1d3d4970c447539a7ee0fbe64f}
+      \strng{fullhash}{24686ac0e315531fb127c38d29f53e55}
+      \strng{bibnamehash}{41481a1d3d4970c447539a7ee0fbe64f}
+      \strng{authorbibnamehash}{41481a1d3d4970c447539a7ee0fbe64f}
+      \strng{authornamehash}{41481a1d3d4970c447539a7ee0fbe64f}
+      \strng{authorfullhash}{24686ac0e315531fb127c38d29f53e55}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Building an Automatic Vehicle License-Plate Recognition System}
+    \endentry
     \entry{4410602}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=479fcd33de2424508c01528820c48056}{%

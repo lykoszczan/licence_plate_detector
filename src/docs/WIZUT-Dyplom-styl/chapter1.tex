@@ -41,7 +41,7 @@ W procesie tym można wyróżnić trzy etapy \cite{1688109}:
     \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
 \end{itemize}
 \FloatBarrier
-\flushleft Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
+Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/schemat_lpr.png}
@@ -95,6 +95,7 @@ Biorąc pod uwagę, że tablica rejestracyjna jest prostokątem o znanych propor
 W większości przypadków kolor tablicy rejestracyjnej jest różny od koloru pojazdu.
 Dzięki temu, granice tablicy zostają uznane za krawędzie.
 Wiele metod wykorzystuje filtr Sobela.
+Jego działania polega dyskretnym różniczkowaniu i aproksymacji pochodnych kierunkowych intensywności obrazu.
 Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}) służących do detekcji krawędzi horyzontalnych i wertykalnych.
 \FloatBarrier
 \begin{figure}[!ht]
@@ -113,6 +114,11 @@ Próg wyznaczany jest na podstawie histogramu obrazu w odcieniach szarości.
 Metoda ta jest użyteczna, ze względu na fakt łatwego odseparowania obiektu od tła.
 Wykorzystuje ona założenie, że krawędzie tablicy są proste i poziome.
 Przy zdeformowanych lub zabrudzonych tablicach, algorytm ten nie osiąga zadowalających wyników.
+
+Szeroko stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha \cite{DuanBuildingAA}.
+Motywacją do jej opracowania była metoda siłowa (ang. \textit{Brute force}), która jest jednak znacznie bardziej zasobożerna.
+Złożoność algorytmu siłowego wynosi $O(n^3)$.
+Transformata Hougha
 
 Innym spotykanym podejściem~\cite{4410602} jest zastosowanie dwóch algorytmów.
 Pierwszy z nich ma za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
