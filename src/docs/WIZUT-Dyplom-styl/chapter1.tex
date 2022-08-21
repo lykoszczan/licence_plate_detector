@@ -45,7 +45,7 @@ Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyżs
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/schemat_lpr.png}
-    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjncyh}
+    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjnych (źródło: opracowanie własne)}
     \label{fig:schemat_lpr}
 \end{figure}
 \FloatBarrier
@@ -101,7 +101,7 @@ Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/sobel_filter}
-    \caption{Macierze detektora krawędzi Sobela}
+    \caption{Macierze detektora krawędzi Sobela (źródło: opracowanie własne)}
     \label{fig:sobel_filter}
 \end{figure}
 \FloatBarrier
@@ -115,12 +115,35 @@ Metoda ta jest użyteczna, ze względu na fakt łatwego odseparowania obiektu od
 Wykorzystuje ona założenie, że krawędzie tablicy są proste i poziome.
 Przy zdeformowanych lub zabrudzonych tablicach, algorytm ten nie osiąga zadowalających wyników.
 
-Szeroko stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha \cite{DuanBuildingAA}.
+Inną stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha \cite{DuanBuildingAA}.
 Motywacją do jej opracowania była metoda siłowa (ang. \textit{Brute force}), która jest jednak znacznie bardziej zasobożerna.
 Złożoność algorytmu siłowego wynosi $O(n^3)$.
-Transformata Hougha
+Transformata Hougha polega na twierdzeniu, że każda prosta może być jednoznacznie przedstawiona za pomocą dwóch parametrów.
+Przestrzeń tych parametrów to właśnie przestrzeń Hougha.
+Najczęściej używanymi parametrami są współczynniki $\rho$ i $\alpha$ z równania prostej w postaci normalnej \eqref{eqn:transform_hough}.
+\begin{equation}
+    \label{eqn:transform_hough}
+    x\cos{\alpha} + y\sin{\alpha} = \rho
+\end{equation}
+W powyższym równaniu $\rho$ jest promieniem wodzącym, natomiast $\alpha$ kątem tworzonym przez $\rho$ z osią X.
+W związku z powyższym, jest to algorytm o liniowej złożoności obliczeniowej.
+Można wykazać następujące własności transformacji Hougha:\\
+\begin{theorem}
+    Prostej przestrzeni kartezjańskiej odpowiada w przestrzeni Hougha punkt, natomiast
+    punktowi przestrzeni kartezjańskiej odpowiada w przestrzeni Hougha sinusoidalna krzywa.
+    Punkty leżące na tej samej prostej korespondują z sinusoidami przechodzącymi przez
+    wspólny punkt w przestrzeni Hougha \cite{hough_transform_definition}.
+\end{theorem}
+Zasadę transformacji ilustruje rysunek \ref{fig:hough_transform}.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=1]{Pictures/hough_transform.jpeg}
+    \caption{Transformata Hougha (źródło: \cite{Lin:01})}
+    \label{fig:hough_transform}
+\end{figure}
+\FloatBarrier
 
-Innym spotykanym podejściem~\cite{4410602} jest zastosowanie dwóch algorytmów.
+Innym spotykanym podejściem~\cite{4410602} jest stosowanie dwóch algorytmów.
 Pierwszy z nich ma za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
 Drugi znajduje obszary o najwyższym zagęszczeniu pionowych krawędzi.
 Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysoką dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
@@ -145,13 +168,28 @@ Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a s
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/tablice}
-    \caption{Tablice rejestracyjne w Polsce dla aut elektrycznych i zabytkowych}
+    \caption{Tablice rejestracyjne w Polsce dla aut elektrycznych i zabytkowych (źródło: opracowanie własne)}
     \label{fig:tablice}
 \end{figure}
 \FloatBarrier
 
 \subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
-sas
+Metody oparte na teksturach wykorzystują fakt znajdowania się znaków na tablicach rejestracyjnych.
+Znaki na tablicy mają z reguły czarny kolor i znajdują się na jasnym tle tworząc duży kontrast.
+Powyższa grupa algorytmów wykorzystuje wysoką częstość zmiany kolorów w obszarze występowania tablic rejestracyjnych.
+W \cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantyzacji wektorów (ang. \textit{Vector Quantization - VQ}).
+W przeciwieństwie do innych metod, które wykorzystywały krawędzi lub kontrast, metoda VQ wykorzystuje aktualną zawartość tablicy rejestracyjnej.
+Autorzy wykorzystali bardzo wysoką skuteczność na poziomie 98\%.
+
+W analizie tekstur, często stosuje się filtr Gabora.
+Jest to filtr liniowy, pozwalający na przefiltrowanie obrazu z precyzyjnie dobranym zakresem częstotliwości.
+Reprezentacje częstotliwości i orientacji filtrów Gabora są uważane przez wielu współczesnych naukowców zajmujących się widzeniem komputerowym za podobne do tych z ludzkiego układu wzrokowego \cite{gabor_human_eye}.
+W \cite{gabor_lpr} zaprezentowano algorytm wykorzystujący filtr Gabora.
+Jest to jednak metoda czasochłonna i nie znajduje zastosowania dla systemów, w których szybkość działania jest jednym z najistotniejszych czynników.
+
+Wszystkie metody oparte na teksturach są odporne na deformacje tablic.
+Jest to kluczowa zaleta ich stosowania.
+Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalających efektów w złożonych środowiskach z różnymi warunkami oświetlenia.
 
 \subsection{Metody oparte na znakach (ang. \textit{Character based)}}
 asd

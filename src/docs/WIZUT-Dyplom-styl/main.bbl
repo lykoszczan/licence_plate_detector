@@ -63,6 +63,45 @@
       \verb 10.1109/TITS.2006.880641
       \endverb
     \endentry
+    \entry{gabor_lpr}{article}{}
+      \name{author}{3}{}{%
+        {{hash=5772fe945422afcba83f089ba405c211}{%
+           family={Caner},
+           familyi={C\bibinitperiod},
+           given={Hakan},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d56e026cd3f807c643a808290cafbd11}{%
+           family={Geçim},
+           familyi={G\bibinitperiod},
+           given={Hatice},
+           giveni={H\bibinitperiod}}}%
+        {{hash=7682dbf40446dc2539f54b3845814467}{%
+           family={Alkar},
+           familyi={A\bibinitperiod},
+           given={Ali},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{39e9b0cd09dd74de58e5f727672ab860}
+      \strng{fullhash}{39e9b0cd09dd74de58e5f727672ab860}
+      \strng{bibnamehash}{39e9b0cd09dd74de58e5f727672ab860}
+      \strng{authorbibnamehash}{39e9b0cd09dd74de58e5f727672ab860}
+      \strng{authornamehash}{39e9b0cd09dd74de58e5f727672ab860}
+      \strng{authorfullhash}{39e9b0cd09dd74de58e5f727672ab860}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Vehicular Technology, IEEE Transactions on}
+      \field{month}{10}
+      \field{title}{Efficient Embedded Neural-Network-Based License Plate Recognition System}
+      \field{volume}{57}
+      \field{year}{2008}
+      \field{pages}{2675\bibrangedash 2683}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TVT.2008.915524
+      \endverb
+    \endentry
     \entry{DuanBuildingAA}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=58af688532decd4fc679546c470ec61f}{%
@@ -187,6 +226,86 @@
       \verb 10.1109/ITSC.2005.1520110
       \endverb
     \endentry
+    \entry{Lin:01}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4009e963a9f7a218cfa1e91b974fefa0}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=bf9aed1909ddb1ede78034d5e9220d19}{%
+           family={Otobe},
+           familyi={O\bibinitperiod},
+           given={Kazunori},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Optica Publishing Group}%
+      }
+      \strng{namehash}{f52e10a7ede525950cdd82aaf8add20e}
+      \strng{fullhash}{f52e10a7ede525950cdd82aaf8add20e}
+      \strng{bibnamehash}{f52e10a7ede525950cdd82aaf8add20e}
+      \strng{authorbibnamehash}{f52e10a7ede525950cdd82aaf8add20e}
+      \strng{authornamehash}{f52e10a7ede525950cdd82aaf8add20e}
+      \strng{authorfullhash}{f52e10a7ede525950cdd82aaf8add20e}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An artificial retina camera (ARC) is employed for real-time preprocessing of images. And the algorithm of Hough transform is advanced for detecting the biology-images with approximate circle edge-information in the two-dimension space. This method also works in parallel for processing multiple input and partial input patterns.}
+      \field{journaltitle}{Opt. Express}
+      \field{month}{4}
+      \field{number}{9}
+      \field{title}{Hough transform algorithm for real-time pattern recognition using an artificial retina camera}
+      \field{volume}{8}
+      \field{year}{2001}
+      \field{pages}{503\bibrangedash 508}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1364/OE.8.000503
+      \endverb
+      \verb{urlraw}
+      \verb http://opg.optica.org/oe/abstract.cfm?URI=oe-8-9-503
+      \endverb
+      \verb{url}
+      \verb http://opg.optica.org/oe/abstract.cfm?URI=oe-8-9-503
+      \endverb
+      \keyw{Pattern recognition; Image processing; Image detection systems; Image processing; Image recognition; Imaging noise; Pattern recognition; Retina}
+    \endentry
+    \entry{gabor_human_eye}{article}{}
+      \name{author}{2}{}{%
+        {{hash=544cd1976e056975bbdefc0dea94e7df}{%
+           family={Olshausen},
+           familyi={O\bibinitperiod},
+           given={Bruno},
+           giveni={B\bibinitperiod}}}%
+        {{hash=306974c26bd8e1e547344c7766d137f7}{%
+           family={Field},
+           familyi={F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{0a6e29551851e6e64424a51fb45e4540}
+      \strng{fullhash}{0a6e29551851e6e64424a51fb45e4540}
+      \strng{bibnamehash}{0a6e29551851e6e64424a51fb45e4540}
+      \strng{authorbibnamehash}{0a6e29551851e6e64424a51fb45e4540}
+      \strng{authornamehash}{0a6e29551851e6e64424a51fb45e4540}
+      \strng{authorfullhash}{0a6e29551851e6e64424a51fb45e4540}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{month}{07}
+      \field{title}{Emergence of simple-cell receptive field properties by learning a sparse code for natural images}
+      \field{volume}{381}
+      \field{year}{1996}
+      \field{pages}{607\bibrangedash 9}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1038/381607a0
+      \endverb
+    \endentry
     \entry{9310202}{article}{}
       \name{author}{4}{}{%
         {{hash=c7b2bbe625ac4084aa5de45e546ec6cb}{%
@@ -229,6 +348,28 @@
       \verb{doi}
       \verb 10.1109/ACCESS.2020.3047929
       \endverb
+    \endentry
+    \entry{hough_transform_definition}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3a2171e65db16f66a6767ba2f65b6b91}{%
+           family={Tarsha-Kurdi},
+           familyi={T\bibinithyphendelim K\bibinitperiod},
+           given={Fayez},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \strng{fullhash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \strng{bibnamehash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \strng{authorbibnamehash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \strng{authornamehash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \strng{authorfullhash}{3a2171e65db16f66a6767ba2f65b6b91}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{09}
+      \field{title}{HOUGH-TRANSFORM AND EXTENDED RANSAC ALGORITHMS FOR AUTOMATIC DETECTION OF 3D BUILDING ROOF PLANES FROM LIDAR DATA}
+      \field{year}{2007}
     \endentry
     \entry{Wang2008FuzzybasedAF}{article}{}
       \name{author}{6}{}{%

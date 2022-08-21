@@ -2186,9 +2186,15 @@
     <bcf:citekey order="2">824138</bcf:citekey>
     <bcf:citekey order="3">9310202</bcf:citekey>
     <bcf:citekey order="4">DuanBuildingAA</bcf:citekey>
-    <bcf:citekey order="5">4410602</bcf:citekey>
-    <bcf:citekey order="6">1520110</bcf:citekey>
-    <bcf:citekey order="7">Wang2008FuzzybasedAF</bcf:citekey>
+    <bcf:citekey order="5">hough_transform_definition</bcf:citekey>
+    <bcf:citekey order="6">Lin:01</bcf:citekey>
+    <bcf:citekey order="7">Lin:01</bcf:citekey>
+    <bcf:citekey order="8">4410602</bcf:citekey>
+    <bcf:citekey order="9">1520110</bcf:citekey>
+    <bcf:citekey order="10">Wang2008FuzzybasedAF</bcf:citekey>
+    <bcf:citekey order="11">824138</bcf:citekey>
+    <bcf:citekey order="12">gabor_human_eye</bcf:citekey>
+    <bcf:citekey order="13">gabor_lpr</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
