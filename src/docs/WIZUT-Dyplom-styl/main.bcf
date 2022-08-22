@@ -2195,6 +2195,8 @@
     <bcf:citekey order="11">824138</bcf:citekey>
     <bcf:citekey order="12">gabor_human_eye</bcf:citekey>
     <bcf:citekey order="13">gabor_lpr</bcf:citekey>
+    <bcf:citekey order="14">990517</bcf:citekey>
+    <bcf:citekey order="15">Freund1996ExperimentsWA</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

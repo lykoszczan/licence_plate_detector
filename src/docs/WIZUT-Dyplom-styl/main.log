@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  21 AUG 2022 21:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  22 AUG 2022 17:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1328,12 +1328,46 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[13 <./Pictures/hough_transform.jpeg> <./Pictures/tablice.png>])
+[13 <./Pictures/hough_transform.jpeg> <./Pictures/tablice.png>]
+<Pictures/haar_feats.png, id=235, 452.69125pt x 115.43124pt>
+File: Pictures/haar_feats.png Graphic file (type png)
+<use Pictures/haar_feats.png>
+Package pdftex.def Info: Pictures/haar_feats.png  used on input line 205.
+(pdftex.def)             Requested size: 271.61684pt x 69.25926pt.
+LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
+206.
+
+(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
+File: t1ntxtt.fd 2012/04/20 v3.1
+)
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 206.
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[14]
+[14 <./Pictures/haar_feats.png>]
+Package mdframed Info: mdframed works in twoside mode on input line 212.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 212.
+<Pictures/ii_cords.png, id=250, 212.29312pt x 149.8097pt>
+File: Pictures/ii_cords.png Graphic file (type png)
+<use Pictures/ii_cords.png>
+Package pdftex.def Info: Pictures/ii_cords.png  used on input line 217.
+(pdftex.def)             Requested size: 127.37685pt x 89.88649pt.
+
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][][][][][]
+ []
+
+[15 <./Pictures/ii_cords.png (PNG copy)>])
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[16]
 \openout2 = `chapter2.aux'.
 
  (./chapter2.tex
@@ -1343,23 +1377,17 @@ Overfull \hbox (10.94658pt too wide) in paragraph at lines 18--18
 | \T1/qhv/m/n/24.88 2.  Przed-sta-wie-nie ze-stawu zde-fi-nio-wa-nych oto-
  []
 
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 
-31.
-(/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 31.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pictures/placeholder.jpg, id=242, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=274, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
 Package pdftex.def Info: Pictures/placeholder.jpg  used on input line 79.
 (pdftex.def)             Requested size: 210.78911pt x 116.23514pt.
-[15
+[17
 
 
 
@@ -1385,7 +1413,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[16 <./Pictures/placeholder.jpg>]
+[18 <./Pictures/placeholder.jpg>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 137.
 
@@ -1424,19 +1452,19 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[17])
+[19])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[18]
+[20]
 \openout2 = `conclusions.aux'.
 
- (./conclusions.tex) [19
+ (./conclusions.tex) [21
 
 
 
-] [20
+] [22
 
 
 ]
@@ -1448,7 +1476,7 @@ LaTeX Warning: Empty bibliography on input line 124.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 130.
-[21]
+[23]
 
 LaTeX Warning: Empty bibliography on input line 135.
 
@@ -1457,12 +1485,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[22]
+[24]
 \openout2 = `appendixA.aux'.
 
  (./appendixA.tex
 Dodatek A.
-[23
+[25
 
 
 ]
@@ -1470,12 +1498,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[24])
+[26])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[25]
+[27]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./main.aux (./title_page.aux) (./statement_page.aux) (./abstract.aux)
@@ -1484,7 +1512,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EBEC5BB47D6EBFB8C131130108B5546D;1389.
+(rerunfilecheck)             Checksum: 3657C42FECCB7D1C9FD79ECC61508242;1353.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1495,11 +1523,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22681 strings out of 483148
- 368342 string characters out of 5965416
- 1087533 words of memory out of 5000000
- 37122 multiletter control sequences out of 15000+600000
- 661110 words of font info for 192 fonts, out of 8000000 for 9000
+ 22720 strings out of 483148
+ 369251 string characters out of 5965416
+ 1089088 words of memory out of 5000000
+ 37148 multiletter control sequences out of 15000+600000
+ 662199 words of font info for 195 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  58i,18n,98p,888b,3700s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-sc.enc}{/usr/
@@ -1509,21 +1537,22 @@ ve/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/shar
-e/texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/publ
-ic/tex-gyre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></
-usr/share/texmf/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/t
-ype1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtm
-r.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txf
-onts/txsya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (25 pages, 674340 bytes).
+fonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/
+fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-g
+yre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/shar
+e/texmf/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/pub
+lic/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></
+usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txs
+ya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (27 pages, 700261 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 379 compressed objects within 4 object streams
- 119 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 496 PDF objects out of 1000 (max. 8388607)
+ 407 compressed objects within 5 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

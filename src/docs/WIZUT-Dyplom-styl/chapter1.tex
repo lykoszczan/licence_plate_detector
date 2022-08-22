@@ -191,69 +191,71 @@ Wszystkie metody oparte na teksturach są odporne na deformacje tablic.
 Jest to kluczowa zaleta ich stosowania.
 Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalających efektów w złożonych środowiskach z różnymi warunkami oświetlenia.
 
-\subsection{Metody oparte na znakach (ang. \textit{Character based)}}
-asd
+\subsection{Klasyfikatory}
+Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting - AdaBoost}) do wyuczenia kaskady klasyfikatorów.
+Podejście takie zostało zaproponowane po raz pierwszy w \cite{990517}.
+Algorytm Viola-Jones został zaprezentowany w 2001.
+Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany co świadczy o jego ponadczasowości i uniwersalności.
+Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np. tablic rejestracyjnych, przy odpowiednim wyuczeniu.
+Aby przedstawić jak działa algorytm Viola-Jones, należy najpierw zrozumieć czym są cechy Haara.
+Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (rysunek \ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami, w szczególności jak ciemne są one względem siebie.
+Wartość cechy obliczana jest jako różnica pomiędzy średnią jasnością pikseli w zbiorze ``białym'' i średnią jasnością pikseli w zbiorze ``czarnym''.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/haar_feats}
+    \caption{Cechy Haara używane w algorytmie Viola-Jones (źródło: \url{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html})}
+    \label{fig:haar_feats}
+\end{figure}
+\FloatBarrier
+Podejście takie powoduje jednak, że dla detektora o rozdzielczości 24x24px, algorytm wymaga obliczenia ponad 180000 cech.
+Z tego powodu autorzy wprowadzili nowe pojęcie obrazu całkowego (ang. \textit{integral image}).
+\begin{theorem}
+    Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowego, w której każdy element w i-tym wierszu i j-tej kolumnie przechowuje sumę pikseli z tej części obrazu, której prawym dolnym wierzchołkiem jest piksel $(i, j)$ (rysunek~\ref{fig:ii_cords}).
+\end{theorem}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/ii_cords}
+    \caption{Obraz całkowy dla punktu $(i, j)$ (źródło: \url{https://www.spoj.com/WIPING5/problems/WIPING50.pdf})}
+    \label{fig:ii_cords}
+\end{figure}
+\FloatBarrier
+Matematycznie obraz całkowy $ii(x,y)$ przedstawiamy jako:
+\begin{equation}
+    \label{eq:integral_image}
+    ii(x,y) = \sum_{1\leq j \leq x} \sum_{1\leq k \leq y} i(j,k)
+\end{equation}
+Natomiast obliczanie obrazu całkowego z definicji \ref{eq:integral_image} dla każdego punktu w obrazie jest czasochłonne i charakteryzuje się złożonością obliczeniową $O(n_x^2 n_y^2)$.
+Aby osiągnąć złożoność niezależną od rozmiaru okna, sumę oblicza się odejmując od sumy wartości obrazu całkowego dla prawego dolnego i lewego górnego wierzchołka sumę wartości obrazu dla pozostałych wierzchołków analizowanego prostokąta.
+Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punktami $(x_1, y_1)$, a $(x_2, y_2)$.
+\begin{equation}
+    \label{eq:integral_image_x_y}
+    \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
+\end{equation}
+Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego.
+Ten sposób charakteryzuje się liniową złożonością obliczeniową $O(1)$.
+Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
+Algorytm Viola-Jones wymaga dużej ilości próbek pozytywnych i negatywnych.
+Do wyuczenia klasyfikatora i wybrania zbioru cech użyto algorytmu AdaBoost.
+Autorzy zaproponowali użycie kaskady klasyfikatorów.
+Takie podejście bazuje na obserwacji, że okna pozytywne stanowią średnio $0.01\%$ wszystkich okien.
+Badane okno w pierwszej kolejności badane są przez słabsze klasyfikatory, które bazują na mniejszej liczbie cech.
+Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
+Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
+Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
+Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory pozytywnej odpowiedzi.
+W algorytmie Viola-Jones kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
+Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
+W trakcie uczenia każdy z klasyfikatorów ma przypisany indywidualny próg decyzyjny.
+Każdy etap kaskady jest uczony w ramach boostingu (np. poprzez AdaBoost lub
+RealBoost).
 
-%Ten szablon wykorzystuje pakiet - menedżer spisu literatury o nazwie {\em biber}\footnote{ \url{http://biblatex-biber.sourceforge.net}}, który jest dostępny w wielu popularnych środowiskach programistycznych dla \LaTeX.
-
-%Najpewniejszym sposobem na poprawną kompilację jest wykonanie jej z wiersza poleceń następującą sekwencją rozkazów:
-%
-%\begin{lstlisting}[language=bash, caption=Skrypt kompilujący, label=alg:1]
-%pdflatex main
-%biber main
-%pdflatex main
-%pdflatex main
-%
-%\end{lstlisting}
-%
-%Szablon wykorzystuje również rozliczne pakiety, które mogą wymagać
-%zaktualizowane do najnowszych wersji. Rekomendowane jest więc, by utrzymywać swoją wersję dystrybucji \LaTeX w najnowszej wersji.
-%
-%
-%\section{Zawartość pakietu}\index{Zawartość pakietu}
-%
-%Pakiet ze stylem zawiera pliki tekstowe z zawartością przykładowej pracy , czyli w tym wypadku niniejszego przewodnika oraz pliki konfiguracyjne. W tabeli \ref{tab:1} znajduje się lista plików wraz z ich krótkim opisem.
-%
-%\begin{table}[h]
-%    \centering
-%    \caption{Pliki w pakiecie szablonu}
-%    \begin{tabular}{p{.2\textwidth}|p{.1\textwidth} | p{.60\textwidth}}
-%        \toprule
-%        \textbf{Nazwa pliku} & \textbf{Edycja} & \textbf{Opis}                                                                                                                                                               \\
-%        \midrule
-%        main.tex             & TAK             & Główny plik pracy. Zawiera otwarcie dokumentu, dołącza pliki konfiguracyjne, spis treści, dołącza wszystkie rozdziały, literaturę oraz zamyka dokument.                     \\
-%        definitions.tex      & TAK             & Zawiera elementy strony tytułowej: autora, tytuł, niezbędne informacje ze strony tytułowej.                                                                                 \\
-%        abstract.tex         & TAK             & Zawartość streszczenia pracy w j. polskim i j. angielskim. Zaleca się, by nie przekroczyć tekstem 1 strony.                                                                 \\
-%        introduction.tex     & TAK             & Wstęp pracy dyplomowej                                                                                                                                                      \\
-%        chapter1.tex         & TAK             & Zawartość rozdziału pierwszego.                                                                                                                                             \\
-%        chapter2.tex         & TAK             & Zawartość rozdziału drugiego.                                                                                                                                               \\
-%        conclusions.tex      & TAK             & Zakończenie/podsumowanie pracy dyplomowej.                                                                                                                                  \\
-%        bibliography.bib     & TAK             & Plik z literaturą w formacie bib.                                                                                                                                           \\
-%        Pictures             & TAK             & Katalog zawierający ilustracje i grafiki z pracy. Nazwa katalogu jest wykorzystana w pliku konfiguracyjnym jako katalog domyślny do każdego osadzonego obiektu graficznego. \\
-%        title\_page.tex      & NIE             & Struktura strony tytułowej.                                                                                                                                                 \\
-%        structure.tex        & NIE             & Plik konfiguracyjny (preambuła). Podłącza i konfiguruje wszystkie niezbędne pakiety oraz definiuje otoczenia wykorzystywane w szablonie.                                    \\
-%        \bottomrule
-%    \end{tabular}
-%    \label{tab:1}
-%\end{table}
-%------------------------------------------------
-
-%\subsection{Podstawowe wymagania dotyczące szablonu}
-%
-%Praca ma ustawiony format wielkości strony A4, w pliku {\em structure.tex} w konfiguracji pakietu {\bf geometry}. Przygotowana jest do druku dwustronnego. Ustawiony jest 1cm margines na oprawę.
-%
-%\noindent{\bf UWAGA!} Każdy rozdział zaczyna się na stronie nieparzystej
-%
-%\subsection{Bibliografia}
-%
-%Po zaktualizowaniu pliku z literaturą należy dokonać kompilacji z użyciem procesora {\em biber} a nie standardowego  {\em Bibtex}. Następnie dwukrotnie skompilować z użyciem {\em pdflatex}, aby zmiany były widoczne. Pakiet do zarządzania bibliografią to {\em biblatex}. Jego konfiguracja jest dostępna w pliku {\em structure.tex}
-%
-%Bibliografia w pracach dyplomowych ma format numeryczny, sortowanie alfabetyczne i jest podzielona na części: książki, artykuły i źródła internetowe i inne. Konfiguracja jest zapisana w niniejszym szablonie.
-
-%Tylko zacytowane prace znajdą się w spisie literatury. Nie należy tego zmieniać. Cytowanie odbywa się przez użycie polecenia $\backslash cite\{\}$ a efekt jest następujący: \cite{book_key}, \cite{article_key}, \cite{lam1994}, \cite{knuthwebsite}.
-
-
-
-
-
+AdaBoost (Adaptive Boosting) jest popularną techniką wzmacniania, której zadaniem jest stworzenie mocnego klasyfikatora na podstawie wielu słabych klasyfikatorów.
+Po raz pierwszy została ona przedstawiona w \cite{Freund1996ExperimentsWA}.
+AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów:
+\begin{itemize}
+    \item AdaBoost + decision stump
+    \item AdaBoost + drzewka decyzyjne
+    \item AdaBoost + klasyfikator liniowy (np. SVM)
+    \item AdaBoost + naiwny Bayes
+\end{itemize}

@@ -137,6 +137,33 @@
       \field{labeltitlesource}{title}
       \field{title}{Building an Automatic Vehicle License-Plate Recognition System}
     \endentry
+    \entry{Freund1996ExperimentsWA}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=9dae54fc70ef3090ef42046937183be2}{%
+           family={Freund},
+           familyi={F\bibinitperiod},
+           given={Yoav},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=08900c47ecc2f4dbcb934ad47bb6db9b}{%
+           family={Schapire},
+           familyi={S\bibinitperiod},
+           given={Robert\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{44393f04b9db3d51c4c344eacdc81606}
+      \strng{fullhash}{44393f04b9db3d51c4c344eacdc81606}
+      \strng{bibnamehash}{44393f04b9db3d51c4c344eacdc81606}
+      \strng{authorbibnamehash}{44393f04b9db3d51c4c344eacdc81606}
+      \strng{authornamehash}{44393f04b9db3d51c4c344eacdc81606}
+      \strng{authorfullhash}{44393f04b9db3d51c4c344eacdc81606}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICML}
+      \field{title}{Experiments with a New Boosting Algorithm}
+      \field{year}{1996}
+    \endentry
     \entry{4410602}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=479fcd33de2424508c01528820c48056}{%
@@ -370,6 +397,39 @@
       \field{month}{09}
       \field{title}{HOUGH-TRANSFORM AND EXTENDED RANSAC ALGORITHMS FOR AUTOMATIC DETECTION OF 3D BUILDING ROOF PLANES FROM LIDAR DATA}
       \field{year}{2007}
+    \endentry
+    \entry{990517}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=03e2a9b081a845bb9dbb7bb508516191}{%
+           family={Viola},
+           familyi={V\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3656094aa90ce6b5927293e625dedee3}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \strng{fullhash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \strng{bibnamehash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \strng{authorbibnamehash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \strng{authornamehash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \strng{authorfullhash}{227ecf38573bbc68c4d6e1852ffa83ff}
+      \field{sortinit}{V}
+      \field{sortinithash}{02432525618c08e2b03cac47c19764af}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition. CVPR 2001}
+      \field{title}{Rapid object detection using a boosted cascade of simple features}
+      \field{volume}{1}
+      \field{year}{2001}
+      \field{pages}{I\bibrangedash I}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/CVPR.2001.990517
+      \endverb
     \endentry
     \entry{Wang2008FuzzybasedAF}{article}{}
       \name{author}{6}{}{%
