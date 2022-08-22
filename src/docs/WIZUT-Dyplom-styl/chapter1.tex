@@ -236,22 +236,29 @@ Ten sposób charakteryzuje się liniową złożonością obliczeniową $O(1)$.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
 Algorytm Viola-Jones wymaga dużej ilości próbek pozytywnych i negatywnych.
-Do wyuczenia klasyfikatora i wybrania zbioru cech użyto algorytmu AdaBoost.
+Do wyuczenia klasyfikatora i wybrania zbioru cech zastosowano algorytm AdaBoost.
 Autorzy zaproponowali użycie kaskady klasyfikatorów.
 Takie podejście bazuje na obserwacji, że okna pozytywne stanowią średnio $0.01\%$ wszystkich okien.
-Badane okno w pierwszej kolejności badane są przez słabsze klasyfikatory, które bazują na mniejszej liczbie cech.
+Rozpatrywane okno w pierwszej kolejności badane jest przez słabsze klasyfikatory, które bazują na mniejszej liczbie cech.
 Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
 Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
 Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
-Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory pozytywnej odpowiedzi.
+Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory odpowiedzi pozytywnej.
 W algorytmie Viola-Jones kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
 Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
 W trakcie uczenia każdy z klasyfikatorów ma przypisany indywidualny próg decyzyjny.
-Każdy etap kaskady jest uczony w ramach boostingu (np. poprzez AdaBoost lub
+Każdy etap kaskady uczony jest w ramach boostingu (np. poprzez AdaBoost lub
 RealBoost).
 
 AdaBoost (Adaptive Boosting) jest popularną techniką wzmacniania, której zadaniem jest stworzenie mocnego klasyfikatora na podstawie wielu słabych klasyfikatorów.
-Po raz pierwszy została ona przedstawiona w \cite{Freund1996ExperimentsWA}.
+Słabym klasyfikatorem nazywamy klasyfikator, który osiąga niską dokładność, jednak wyższą od losowych wyników.
+Za przykład może posłużyć rozpoznawanie płci na podstawie wzrostu.
+Słaby klasyfikator mógłby bazować na założeniu, że każda osoba o wzroście 175cm lub wyższym jest mężczyzną.
+Pozostała grupa osób jest kobietami.
+Wiele osób ze zbioru testowego zostanie określonych błędnie, jednak dokładność klasyfikatora będzie wyższa niż 50\%.
+
+AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
+Po raz pierwszy został on przedstawiony w \cite{Freund1996ExperimentsWA}.
 AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów:
 \begin{itemize}
     \item AdaBoost + decision stump
@@ -259,3 +266,52 @@ AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikat
     \item AdaBoost + klasyfikator liniowy (np. SVM)
     \item AdaBoost + naiwny Bayes
 \end{itemize}
+Głównymi zastosowaniami tej techniki jest wybór najlepszych cech z punktu widzenia klasyfikacji oraz dobór wag dla klasyfikatorów wchodzących w skład kaskady.
+
+Każdy słaby klasyfikator powinien zostać wyuczony na losowym podzbiorze zbioru uczącego.
+Podzbiory mogą się nakładać, natomiast nie powinno się dzielić zbiorów na równe części.
+AdaBoost przypisuje wagi do jednostek treningowych, które określają prawdopodobieństwo pojawienia się w zbiorze uczącym zgodnie ze wzorem \ref{eq:treaning_unit_weight_adaboost}.
+\begin{equation}
+    \label{eq:treaning_unit_weight_adaboost}
+    D_{t+1}(i) = \dfrac{D_t(i)exp(-\alpha_t y_i h_t(x_i))}{Z_t}
+\end{equation}
+$D_t$ oznaczono wektor wszystkich wag, natomiast $Z_t$ reprezentuje ich sumę.
+Indeks $i$ jest numerem kolejnej próbki w zbiorze uczącym.
+Na początku wszystkie próbki posiadają tą sama wartość wag.
+Po zakończeniu uczenia, wagi błędnie sklasyfikowanych próbek zostają zwiększone.
+Dzięki temu, w następnej iteracji uczenia kolejny klasyfikator będzie mógł lepiej rozpoznawać niepoprawnie oznaczone jednostki treningowe w poprzednim kroku.
+W momencie, gdy każdy klasyfikator zostanie wyuczony, AdaBoost przypisuje do nich wagi na podstawie dokładności każdego z nich.
+Ostateczny klasyfikator można opisać wzorem \ref{eq:ada_boost_clf}.
+\begin{equation}
+    \label{eq:ada_boost_clf}
+    H(x) = sign(\sum_{T}^{t=1} \alpha_t h_t(x))
+\end{equation}
+Finalny klasyfikator zawiera $T$ słabych klasyfikatorów.
+Waga klasyfikatora, wyliczona przez AdaBoost, została określona symbolem $\alpha_t$.
+Ostateczny rezultat powyższego równania można opisać jako liniowa kombinacja słabych klasyfikatorów.
+
+Pierwszy klasyfikator ($t=1$) jest trenowany z równym prawdopodobieństwem dla wszystkich próbek.
+Po zakończeniu uczenia, waga obliczana jest na podstawie wzoru \ref{eq:weight_clf}.
+\begin{equation}
+    \label{eq:weight_clf}
+    \alpha_t = \dfrac{1}{2} \ln \dfrac{1-\epsilon_t}{\epsilon_t}
+\end{equation}
+Współczynnik $\alpha_t$ jest skorelowany z poziomem błędu klasyfikatora $\epsilon_t$, który to jest liczony jako liczba błędnie sklasyfikowanych próbek dzielona przez rozmiar zbioru uczącego.
+Rysunek \ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/adaboost_alphacurve}
+    \caption{Zależność współczynnika $\alpha$ od błędu klasyfikatora (źródło: \url{https://chrisjmccormick.files.wordpress.com/2013/12/adaboost_alphacurve.png})}
+    \label{fig:adaboost_alphacurve}
+\end{figure}
+\FloatBarrier
+Z rysunku \ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów o wysokiej dokładności.
+Dla klasyfikatora o poziomie błędu 0.5 waga jest równa zero.
+Oznacza to, że taki klasyfikator jest równie dokładny co losowe zgadywanie, dlatego jest on ignorowany.
+Dla klasyfikatorów o większym poziomie błędu, waga przyjmuje wartość ujemną.
+Jeśli taki klasyfikator uzna próbkę za negatywną, ostatecznie zostanie ona oznaczona jako pozytywna.
+
+AdaBoost jest techniką uczenia progresywnego.
+Ważne jest, aby na wejściu próbki uczące były odpowiedniej jakości.
+Metoda ta jest bardzo czuła na zakłócenia.
+Jednymi z najczęstszych aplikacji tego typu boostingu jest klasyfikacja tekstu oraz zdjęć.

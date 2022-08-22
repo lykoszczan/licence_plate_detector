@@ -17,27 +17,27 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.4}Klasyfikatory}{14}{subsection.1.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{17}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{19}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Listy}{17}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Listy}{19}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Tabele i rysunki w pracy}{17}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Tabele i rysunki w pracy}{19}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Twierdzenia i definicje}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Twierdzenia i definicje}{20}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Przykłady}{19}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Przykłady}{21}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Kod źródłowy}{19}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Kod źródłowy}{21}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{21}{lstnumber.2.1.33}%
+\contentsline {chapter}{Podsumowanie}{23}{lstnumber.2.1.33}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{23}{chapter*.12}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{25}{chapter*.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{23}{section*.13}%
+\contentsline {section}{Książki}{25}{section*.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{23}{section*.14}%
+\contentsline {section}{Artykuły}{25}{section*.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{24}{section*.15}%
+\contentsline {section}{Źródła internetowe i inne}{26}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Dodatek}{25}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Dodatek}{27}{appendix.A}%
 \contentsfinish 
