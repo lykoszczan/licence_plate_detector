@@ -102,6 +102,50 @@
       \verb 10.1109/TVT.2008.915524
       \endverb
     \endentry
+    \entry{6213519}{article}{}
+      \name{author}{4}{}{%
+        {{hash=fab60b411518350f32e57b6f98d86244}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Shan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=650d3e06826dd01043f70d913b51c8ce}{%
+           family={Ibrahim},
+           familyi={I\bibinitperiod},
+           given={Mahmoud},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6b018d6281f260ece84797bd237470da}{%
+           family={Shehata},
+           familyi={S\bibinitperiod},
+           given={Mohamed},
+           giveni={M\bibinitperiod}}}%
+        {{hash=93085fe88a0e6dee86fdb3908fc471e6}{%
+           family={Badawy},
+           familyi={B\bibinitperiod},
+           given={Wael},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{7a9055d3f00a80c29b3c7cbabc4ffb12}
+      \strng{fullhash}{99502800db001507e38f0aaac6316fac}
+      \strng{bibnamehash}{7a9055d3f00a80c29b3c7cbabc4ffb12}
+      \strng{authorbibnamehash}{7a9055d3f00a80c29b3c7cbabc4ffb12}
+      \strng{authornamehash}{7a9055d3f00a80c29b3c7cbabc4ffb12}
+      \strng{authorfullhash}{99502800db001507e38f0aaac6316fac}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Circuits and Systems for Video Technology}
+      \field{number}{2}
+      \field{title}{Automatic License Plate Recognition (ALPR): A State-of-the-Art Review}
+      \field{volume}{23}
+      \field{year}{2013}
+      \field{pages}{311\bibrangedash 325}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1109/TCSVT.2012.2203741
+      \endverb
+    \endentry
     \entry{DuanBuildingAA}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=58af688532decd4fc679546c470ec61f}{%
@@ -609,6 +653,46 @@
       \field{year}{2008}
       \field{pages}{1007\bibrangedash 1020}
       \range{pages}{14}
+    \endentry
+    \entry{Xu2006AMO}{article}{}
+      \name{author}{4}{}{%
+        {{hash=67279134725f02a125f4b4adb229500c}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xiao-wei},
+           giveni={X\bibinithyphendelim w\bibinitperiod}}}%
+        {{hash=5b51d743661f1c668d88c7bd031c4f5b}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Zhiyan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=4ff32db755261c6e2125a5dff13745c7}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Yanqing},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=f0f3f26c2c4caf26998be4e987fc308b}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Ying-hong},
+           giveni={Y\bibinithyphendelim h\bibinitperiod}}}%
+      }
+      \strng{namehash}{c077eed3f5f15103d0f3aeafd3bdd040}
+      \strng{fullhash}{3ddb34c20512bcb196c19be0dabe41e7}
+      \strng{bibnamehash}{c077eed3f5f15103d0f3aeafd3bdd040}
+      \strng{authorbibnamehash}{c077eed3f5f15103d0f3aeafd3bdd040}
+      \strng{authornamehash}{c077eed3f5f15103d0f3aeafd3bdd040}
+      \strng{authorfullhash}{3ddb34c20512bcb196c19be0dabe41e7}
+      \field{sortinit}{X}
+      \field{sortinithash}{e90038f30fa4b9ce59606fc8347e3cc7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{2006 8th international Conference on Signal Processing}
+      \field{title}{A method of multi-view vehicle license plates location based on rectangle features}
+      \field{volume}{3}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
     \endentry
     \entry{824138}{article}{}
       \name{author}{2}{}{%

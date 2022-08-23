@@ -17,9 +17,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.4}Klasyfikatory}{14}{subsection.1.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.5}Metoda głębokiego uczenia}{18}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.5}Metody głębokiego uczenia}{18}{subsection.1.1.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Przegląd istniejących metod segmentacji tablic rejestracyjnych}{19}{section.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}{20}{section.1.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{21}{chapter.2}%
 \defcounter {refsection}{0}\relax 
@@ -35,13 +37,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Podsumowanie}{25}{lstnumber.2.1.33}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{27}{chapter*.14}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{27}{chapter*.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{27}{section*.15}%
+\contentsline {section}{Książki}{27}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{27}{section*.16}%
+\contentsline {section}{Artykuły}{27}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{28}{section*.17}%
+\contentsline {section}{Źródła internetowe i inne}{28}{section*.18}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Dodatek}{29}{appendix.A}%
 \contentsfinish 

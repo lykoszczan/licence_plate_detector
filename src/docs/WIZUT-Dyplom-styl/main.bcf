@@ -2200,6 +2200,8 @@
     <bcf:citekey order="16">10.1023/A:1007614523901</bcf:citekey>
     <bcf:citekey order="17">cnn_detector</bcf:citekey>
     <bcf:citekey order="18">7780460</bcf:citekey>
+    <bcf:citekey order="19">Xu2006AMO</bcf:citekey>
+    <bcf:citekey order="20">6213519</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

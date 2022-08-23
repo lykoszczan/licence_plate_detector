@@ -1,19 +1,16 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
-[53] biber:322> INFO - === Tue Aug 23, 2022, 16:28:53
-[64] Biber.pm:415> INFO - Reading 'main.bcf'
-[113] Biber.pm:943> INFO - Found 16 citekeys in bib section 0
-[124] Biber.pm:4256> INFO - Processing section 0
-[125] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
-[125] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
-[133] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[134] bibtex.pm:1653> INFO - LaTeX decoding ...
-[151] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
-[190] Utils.pm:293> WARN - month field 'Apr' in entry 'Lin:01' is not an integer - this will probably not sort properly.
-[228] Utils.pm:293> WARN - month field 'dec' in entry '10.1023/A:1007614523901' is not an integer - this will probably not sort properly.
-[256] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[256] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[256] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pl-PL'
-[278] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[284] bbl.pm:755> INFO - Output to main.bbl
-[284] Biber.pm:128> INFO - WARNINGS: 2
+[51] biber:322> INFO - === Tue Aug 23, 2022, 18:20:01
+[61] Biber.pm:415> INFO - Reading 'main.bcf'
+[108] Biber.pm:943> INFO - Found 18 citekeys in bib section 0
+[119] Biber.pm:4256> INFO - Processing section 0
+[120] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
+[120] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
+[127] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[128] bibtex.pm:1653> INFO - LaTeX decoding ...
+[145] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
+[254] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[254] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[254] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pl-PL'
+[270] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[278] bbl.pm:755> INFO - Output to main.bbl

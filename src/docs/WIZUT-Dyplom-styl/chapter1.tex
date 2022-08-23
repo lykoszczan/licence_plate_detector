@@ -332,7 +332,7 @@ Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kr
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
-\subsection{Metoda głębokiego uczenia}
+\subsection{Metody głębokiego uczenia}
 W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
 Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} - CNN)\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
@@ -349,9 +349,10 @@ Na obraz wejściowy nałożona zostaje siatka o rozmiarze SxS, która tworzy obw
 Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.
 Ramki o prawdopodobieństwie wyższym od ustalonego progu, zostają nałożone na wejściowy obraz, najczęściej w postaci prostokątów otaczających obiekt.
 Rysunek \ref{fig:yolo} przedstawia opisany schemat.
+Ograniczenia YOLO wynikają z ograniczeń przestrzennych algorytmu.
+W zależności od wielkości siatki, system może mieć problem z wykryciem mniejszych obiektów takich jak np. stado ptaków.
 Algorytm jest stale udoskonalany przez autorów.
 Na moment pisania pracy, udostępniona została trzecia wersja systemu.
-
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/yolo}
@@ -363,3 +364,35 @@ Na moment pisania pracy, udostępniona została trzecia wersja systemu.
 
 \section{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
 \index{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
+
+Drugim etapem w większości systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych jest detekcja i rozpoznanie znaków na tablicy rejestracyjnej zlokalizowanej w poprzednim kroku.
+Jest to szczególny przypadek optycznego rozpoznawania znaków.
+Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy rejestracyjnej.
+Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
+W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
+Działanie takie zwiększa ich czytelność dla ludzkiego oka w gorszych warunkach oświetleniowych.
+Dla aparatów fotograficznych ta cecha tablic często powoduje nieczytelność tablic na wykonanym zdjęciu.
+Tablica odbija na tyle dużą ilość światła, co skutkuje powstaniem na zdjęciu białego prostokąta w miejscu tablicy.
+Przykład takiego obrazu przedstawia rysunek \ref{fig:refleks_swietlny}.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.8]{Pictures/refleks_świetlny}
+    \caption{Refleks świetlny występujący w niewystarczających warunkach oświetleniowych (źródło: opracowanie własne)}
+    \label{fig:refleks_swietlny}
+\end{figure}
+\FloatBarrier
+Poza powyższymi trudnościami, tablice mogą być obrócone lub uszkodzone.
+Aby zwiększyć w jak największym stopniu prawdopodobieństwo prawidłowego odczytania znaków, używa się szereg czynności na obrazie wejściowym.
+Dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina \cite{Xu2006AMO}.
+
+W wielu klasycznych metodach widzenia komputerowego, przed segmentacją znaków, stosuje się binaryzację.
+W zbinaryzowanym obrazie łatwiej jest rozdzielić znaki w porównaniu do obrazu kolorowego lub w skali szarości.
+Podstawowym problemem tej techniki jest odpowiedni dobór wartości progu.
+Wybór ten jest dokonywany w oparciu o różne metody, które można podzielić na zmiennoprogowe i automatyczne.
+Jednakże, wyznaczenie progu binaryzacji musi zostać wykonane właściwie, w celu uniknięcia połączenia znaków lub scalenia ich z obramowaniem tablicy rejestracyjnej \cite{6213519}.
+Jednym z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (ang. \textit{Adaptive Thresholding}).
+Stosuje się to w momencie kiedy różne obszary obrazu mogą charakteryzować się różnymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
+
+
+\section{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
+\index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
