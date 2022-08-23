@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  22 AUG 2022 22:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  23 AUG 2022 17:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1164,12 +1164,12 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-<Pictures/zut.png, id=80, 168.63pt x 65.7657pt>
+<Pictures/zut.png, id=88, 168.63pt x 65.7657pt>
 File: Pictures/zut.png Graphic file (type png)
 <use Pictures/zut.png>
 Package pdftex.def Info: Pictures/zut.png  used on input line 26.
 (pdftex.def)             Requested size: 168.62958pt x 65.76553pt.
-<Pictures/wi.png, id=82, 763.85374pt x 274.02374pt>
+<Pictures/wi.png, id=90, 763.85374pt x 274.02374pt>
 File: Pictures/wi.png Graphic file (type png)
 <use Pictures/wi.png>
 Package pdftex.def Info: Pictures/wi.png  used on input line 26.
@@ -1254,7 +1254,7 @@ This may cause the page layout to be inconsistent, however.
 
  (./chapter1.tex
 Rozdzia\l  1.
-<Pictures/schemat_lpr.png, id=167, 268.00125pt x 638.385pt>
+<Pictures/schemat_lpr.png, id=179, 268.00125pt x 638.385pt>
 File: Pictures/schemat_lpr.png Graphic file (type png)
 <use Pictures/schemat_lpr.png>
 Package pdftex.def Info: Pictures/schemat_lpr.png  used on input line 47.
@@ -1284,7 +1284,7 @@ LaTeX Font Info:    Font shape `T1/qhv/b/n' will be
 (Font)              scaled to size 9.85492pt on input line 71.
 LaTeX Font Info:    Font shape `T1/qhv/b/it' will be
 (Font)              scaled to size 10.79993pt on input line 93.
-<Pictures/sobel_filter.png, id=182, 383.93437pt x 175.40532pt>
+<Pictures/sobel_filter.png, id=195, 383.93437pt x 175.40532pt>
 File: Pictures/sobel_filter.png Graphic file (type png)
 <use Pictures/sobel_filter.png>
 Package pdftex.def Info: Pictures/sobel_filter.png  used on input line 103.
@@ -1303,7 +1303,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 131.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 131.
-<Pictures/hough_transform.jpeg, id=197, 317.988pt x 114.1866pt>
+<Pictures/hough_transform.jpeg, id=209, 317.988pt x 114.1866pt>
 File: Pictures/hough_transform.jpeg Graphic file (type jpg)
 <use Pictures/hough_transform.jpeg>
 Package pdftex.def Info: Pictures/hough_transform.jpeg  used on input line 140.
@@ -1315,7 +1315,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [12 <./Pictures/sobel_filter.png (PNG copy)>]
-<Pictures/tablice.png, id=218, 489.83pt x 68.255pt>
+<Pictures/tablice.png, id=230, 489.83pt x 68.255pt>
 File: Pictures/tablice.png Graphic file (type png)
 <use Pictures/tablice.png>
 Package pdftex.def Info: Pictures/tablice.png  used on input line 170.
@@ -1329,7 +1329,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [13 <./Pictures/hough_transform.jpeg> <./Pictures/tablice.png>]
-<Pictures/haar_feats.png, id=235, 452.69125pt x 115.43124pt>
+<Pictures/haar_feats.png, id=247, 452.69125pt x 115.43124pt>
 File: Pictures/haar_feats.png Graphic file (type png)
 <use Pictures/haar_feats.png>
 Package pdftex.def Info: Pictures/haar_feats.png  used on input line 205.
@@ -1352,7 +1352,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 212.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 212.
-<Pictures/ii_cords.png, id=250, 212.29312pt x 149.8097pt>
+<Pictures/ii_cords.png, id=262, 212.29312pt x 149.8097pt>
 File: Pictures/ii_cords.png Graphic file (type png)
 <use Pictures/ii_cords.png>
 Package pdftex.def Info: Pictures/ii_cords.png  used on input line 217.
@@ -1368,7 +1368,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [16]
-<Pictures/adaboost_alphacurve.png, id=277, 341.02406pt x 296.60812pt>
+<Pictures/adaboost_alphacurve.png, id=289, 341.02406pt x 296.60812pt>
 File: Pictures/adaboost_alphacurve.png Graphic file (type png)
 <use Pictures/adaboost_alphacurve.png>
 Package pdftex.def Info: Pictures/adaboost_alphacurve.png  used on input line 3
@@ -1381,15 +1381,43 @@ Underfull \hbox (badness 6173) in paragraph at lines 304--304
 t/m/n/10.95 https : / /
  []
 
-)
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
 [17 <./Pictures/adaboost_alphacurve.png>]
+<Pictures/yolo.png, id=308, 957.5775pt x 628.3475pt>
+File: Pictures/yolo.png Graphic file (type png)
+<use Pictures/yolo.png>
+Package pdftex.def Info: Pictures/yolo.png  used on input line 357.
+(pdftex.def)             Requested size: 383.02422pt x 251.33455pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 358--358
+[][]\T1/qhv/m/n/10.95 Rysunek 1.8[]: |Al-go-rytm YOLO (¹ró-dªo: []$\T1/ntxtt/m/
+n/10.95 https : / / towardsdatascience . com /
+ []
+
+
+Overfull \hbox (13.64532pt too wide) in paragraph at lines 358--358
+\T1/ntxtt/m/n/10.95 r-[]cnn-[]fast-[]r-[]cnn-[]faster-[]r-[]cnn-[]yolo-[]object
+-[]detection-[]algorithms-[]36d53571365e$[]\T1/qhv/m/n/10.95 )| 
+ []
+
+
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[18])
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][][][][][]
+ []
+
+[19 <./Pictures/yolo.png (PNG copy)>]
 \openout2 = `chapter2.aux'.
 
- (./chapter2.tex [18
+ (./chapter2.tex [20
 
 
 
@@ -1405,12 +1433,12 @@ LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<Pictures/placeholder.jpg, id=296, 351.3125pt x 193.72375pt>
+<Pictures/placeholder.jpg, id=331, 351.3125pt x 193.72375pt>
 File: Pictures/placeholder.jpg Graphic file (type jpg)
 <use Pictures/placeholder.jpg>
 Package pdftex.def Info: Pictures/placeholder.jpg  used on input line 79.
 (pdftex.def)             Requested size: 210.78911pt x 116.23514pt.
-[19]
+[21]
 Package mdframed Info: mdframed works in twoside mode on input line 91.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -1432,7 +1460,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[20 <./Pictures/placeholder.jpg>]
+[22 <./Pictures/placeholder.jpg>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 137.
 
@@ -1471,19 +1499,19 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[21])
+[23])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[22]
+[24]
 \openout2 = `conclusions.aux'.
 
- (./conclusions.tex) [23
+ (./conclusions.tex) [25
 
 
 
-] [24
+] [26
 
 
 ]
@@ -1495,7 +1523,13 @@ LaTeX Warning: Empty bibliography on input line 124.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 130.
-[25]
+
+Overfull \hbox (13.01935pt too wide) in paragraph at lines 130--130
+[]\T1/ntxtlf/m/n/12 Robert E. Scha-pire i Yoram Sin-ger. ``Im-pro-ved Bo-osting
+ Al-go-ri-thms Using Confidence-
+ []
+
+[27]
 
 LaTeX Warning: Empty bibliography on input line 135.
 
@@ -1504,12 +1538,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[26]
+[28]
 \openout2 = `appendixA.aux'.
 
  (./appendixA.tex
 Dodatek A.
-[27
+[29
 
 
 ]
@@ -1517,12 +1551,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[28])
+[30])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[29]
+[31]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
  (./main.aux (./title_page.aux) (./statement_page.aux) (./abstract.aux)
@@ -1531,7 +1565,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B30FD031FC33B4CF4B6FB7ED313EBE09;1353.
+(rerunfilecheck)             Checksum: 6FD28BC8C2F2D0FAF5BDC4B1F9D1CEC0;1544.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1542,13 +1576,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22738 strings out of 483148
- 369678 string characters out of 5965416
- 1089404 words of memory out of 5000000
- 37159 multiletter control sequences out of 15000+600000
+ 22773 strings out of 483148
+ 370578 string characters out of 5965416
+ 1089832 words of memory out of 5000000
+ 37184 multiletter control sequences out of 15000+600000
  662199 words of font info for 195 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
- 58i,18n,98p,888b,3700s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,18n,98p,1305b,3700s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-sc.enc}{/usr/
 share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texli
@@ -1568,10 +1602,10 @@ usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf
 /newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txs
 ya.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (29 pages, 710062 bytes).
+Output written on main.pdf (31 pages, 1129202 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 425 compressed objects within 5 object streams
- 134 named destinations out of 1000 (max. 500000)
- 203 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 560 PDF objects out of 1000 (max. 8388607)
+ 460 compressed objects within 5 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 224 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -315,3 +315,51 @@ AdaBoost jest techniką uczenia progresywnego.
 Ważne jest, aby na wejściu próbki uczące były odpowiedniej jakości.
 Metoda ta jest bardzo czuła na zakłócenia.
 Jednymi z najczęstszych aplikacji tego typu boostingu jest klasyfikacja tekstu oraz zdjęć.
+
+Wzmocnienie AdaBoost spotykane jest w różnych wariantach.
+Jednym z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w \cite{10.1023/A:1007614523901}.
+Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne.
+Odpowiedź słabego klasyfikatora jest zwykle ustalana jako przybliżenie połowy przekształcenia logit:
+\begin{equation}
+    \label{eq:real_boost}
+    f_t(X) =\dfrac{1}{2}\ln\dfrac{\hat{P_w}(y=1|x)}{\hat{P_w}(y=-1|x)}
+\end{equation}
+gdzie $\hat{P_w}(y=\pm1|x)$ stanowi oszacowanie rozkładu klas warunkowego na $x$ z wykorzystaniem aktualnych wag $w_i$.
+W przeciwieństwie do AdaBoost, słabe klasyfikatory nie posiadają wag.
+Mechanizm ważenia słabych klasyfikator jest niejako wpleciony w same odpowiedzi rzeczywistoliczbowe.
+Możliwym jest wykazanie, że wyrażenie \ref{eq:real_boost} jest rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez rozład ${w_i}$ na zbiorze danych (tj. na konkretnej próbie).
+Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$.
+Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
+Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
+
+\subsection{Metoda głębokiego uczenia}
+W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
+Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} - CNN)\cite{cnn_detector}.
+Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
+Sieci kowolucyjne są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw konwolucyjnych i ich rozmiaru.
+Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj. obrazy).
+
+Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once}) \cite{7780460}.
+Algorytm jest bardzo wydajny.
+Bazuje na sieciach R-CNN.
+Autorzy zapewniają o możliwości przetwarzania 45 klatek na sekundę, a dla wersji szybszej, lecz o niższej dokładności, ponad 150 klatek na sekundę.
+Twórcom wzorca przyświecała idea ``spojrzenia tylko raz'', wzorując się na postrzeganiu świata przez człowieka, który po jednym spojrzeniu na badany obraz, jest w stanie zidentyfikować konkretne obiekty.
+W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas procesu uczenia i testowania otrzymuje na wejściu cały obraz.
+Na obraz wejściowy nałożona zostaje siatka o rozmiarze SxS, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
+Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.
+Ramki o prawdopodobieństwie wyższym od ustalonego progu, zostają nałożone na wejściowy obraz, najczęściej w postaci prostokątów otaczających obiekt.
+Rysunek \ref{fig:yolo} przedstawia opisany schemat.
+Algorytm jest stale udoskonalany przez autorów.
+Na moment pisania pracy, udostępniona została trzecia wersja systemu.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.4]{Pictures/yolo}
+    \caption{Algorytm YOLO (źródło: \url{https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e})}
+    \label{fig:yolo}
+\end{figure}
+\FloatBarrier
+
+
+\section{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
+\index{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
