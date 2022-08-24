@@ -30,10 +30,11 @@ Analogicznie dla algorytmu detekcji
 Należy opisać użyte bilbioteki, na pewno opencv, tesseract
 Starczy czasu, można użyć jakiejś gotowej bilbioteki do głębokiego uczenia (może np. jakaś głęboka sieć neuronowa - korzystając
 np. z biblioteki Keras/tensor flow)
+omówienie progu dla detektora
 
 Zakres pracy
 1. Omówienie wybranych algorytmów z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych
 do realizacji postawionego zadania.
 2. Przygotowania odpowiedniego materiału (sekwencje wideo) na potrzeby uczenia maszynowego i testowania.
 3. Przedstawienie ostatecznego schematu algorytmicznego dla całego procesu.
-4. Przeprowadzenie eksperymetów, pomiary dokładności i czasów wykonania, wnioski końcowe.
+4. Przeprowadzenie eksperymentów, pomiary dokładności i czasów wykonania, wnioski końcowe.

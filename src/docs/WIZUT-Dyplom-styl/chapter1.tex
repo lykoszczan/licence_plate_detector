@@ -332,7 +332,7 @@ Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kr
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
-\subsection{Metody głębokiego uczenia}
+\subsection{Metody głębokiego uczenia (ang. \textit{Deep learning})}
 W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
 Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} - CNN)\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
@@ -365,7 +365,8 @@ Na moment pisania pracy, udostępniona została trzecia wersja systemu.
 \section{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
 \index{Przegląd istniejących metod segmentacji tablic rejestracyjnych}
 
-Drugim etapem w większości systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych jest detekcja i rozpoznanie znaków na tablicy rejestracyjnej zlokalizowanej w poprzednim kroku.
+Drugim etapem w większości systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych jest rozpoznanie znaków na tablicy rejestracyjnej zlokalizowanej w poprzednim kroku.
+Zanim dojdzie do klasyfikacji znaków, często są one wpierw segmentowane.
 Jest to szczególny przypadek optycznego rozpoznawania znaków.
 Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy rejestracyjnej.
 Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
@@ -446,6 +447,19 @@ Liczbę wszystkich pikseli zapisano literą $N$.
 Metoda Otsu implementowana przez wiele środowisk obliczeniowych (np. MATLAB) \cite{otsu_inzynieria_rolnicza}.
 Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone \cite{10.1117/1.1631315}.
 
+\subsection{Metoda k-średnich}
+todo
+
+\subsection{Metoda rzutów jasności}
+todo
+
+\subsection{Metoda elementów połączonych (ang. \textit{Connected components})}
+todo
+
 
 \section{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
 \index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
+
+\subsection{OCR}
+
+\subsection{TEMPLATE AND PATTERN MATCHING TECHNIQUES}

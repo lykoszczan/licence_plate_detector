@@ -54,8 +54,8 @@
 %----------------------------------------------------------------------------------------
 \newpage
 \thispagestyle{empty}
-\include{abstract} %abstract.tex 
- 
+\include{abstract} %abstract.tex
+
 %----------------------------------------------------------------------------------------
 %	SPIS TREŚCI (JK - design and implementation)
 %----------------------------------------------------------------------------------------
@@ -63,9 +63,9 @@
 \tableofcontents % wyświetl spis
 \addtocontents{toc}{\protect\thispagestyle{empty}} % Zachowaj pusty nagłówek i stopkę w TOC
 % Wymuszenie rozpoczęcie pierwszego rozdziału na nieparzystej stronie, aby znajdował się po prawej stronie 
-\cleardoublepage 
+\cleardoublepage
 % Ponownie włącz nagłówki i stopki
-\pagestyle{fancy} 
+\pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
 %	WSTĘP W PRACY DYPLOMOWEJ (JK - design and implementation)
@@ -82,6 +82,10 @@
 %	ROZDZIAŁ 2
 %----------------------------------------------------------------------------------------
 \include{chapter2} % chapter2.tex zawiera treść rozdziału 2
+\include{chapter3} % chapter2.tex zawiera treść rozdziału 2
+\include{chapter4} % chapter2.tex zawiera treść rozdziału 2
+%\include{chapter5} % chapter2.tex zawiera treść rozdziału 2
+%\include{chapter6} % chapter2.tex zawiera treść rozdziału 2
 
 %----------------------------------------------------------------------------------------
 %	ROZDZIAŁy kolejne należy dodać analogicznie do 1 i 2 
@@ -98,12 +102,12 @@
 %----------------------------------------------------------------------------------------
 %	SPIS LITERATURY (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-\pagestyle{empty} 
+\pagestyle{empty}
 \chapter*{Spis literatury}
 \addcontentsline{toc}{chapter}{\textcolor{blueZUT}{Spis literatury}}
 % Poniżej zdefiniowane są filtry do dzielenia spisu literatury na kategorie
 \defbibfilter{articles}{
-  type=article or 
+  type=article or
   type=inproceedings
 }
 \defbibfilter{other}{
@@ -138,11 +142,11 @@
 %----------------------------------------------------------------------------------------
 %	APPENDIX (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-\pagestyle{fancy} 
-\begin{appendix}
-\appendix
-\include{appendixA} % conclusions.tex zawiera treść zakończenia/podsumowania pracy dyplomowej
-\end{appendix}
+%\pagestyle{fancy}
+%\begin{appendix}
+%\appendix
+%\include{appendixA} % conclusions.tex zawiera treść zakończenia/podsumowania pracy dyplomowej
+%\end{appendix}
 %----------------------------------------------------------------------------------------
 % Koniec dokumentu
 \end{document}

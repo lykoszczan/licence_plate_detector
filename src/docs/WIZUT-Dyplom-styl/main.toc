@@ -17,35 +17,43 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.4}Klasyfikatory}{14}{subsection.1.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.1.5}Metody głębokiego uczenia}{18}{subsection.1.1.5}%
+\contentsline {subsection}{\numberline {1.1.5}Metody głębokiego uczenia (ang. \textit {Deep learning})}{18}{subsection.1.1.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Przegląd istniejących metod segmentacji tablic rejestracyjnych}{19}{section.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.1}Binaryzacja}{20}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}{21}{section.1.3}%
+\contentsline {subsection}{\numberline {1.2.2}Metoda k-średnich}{22}{subsection.1.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{23}{chapter.2}%
+\contentsline {subsection}{\numberline {1.2.3}Metoda rzutów jasności}{22}{subsection.1.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Listy}{23}{section.2.1}%
+\contentsline {subsection}{\numberline {1.2.4}Metoda elementów połączonych (ang. \textit {Connected components})}{22}{subsection.1.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Tabele i rysunki w pracy}{23}{section.2.2}%
+\contentsline {section}{\numberline {1.3}Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}{22}{section.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Twierdzenia i definicje}{24}{section.2.3}%
+\contentsline {subsection}{\numberline {1.3.1}OCR}{22}{subsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Przykłady}{25}{section.2.4}%
+\contentsline {subsection}{\numberline {1.3.2}TEMPLATE AND PATTERN MATCHING TECHNIQUES}{22}{subsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Kod źródłowy}{25}{section.2.5}%
+\contentsline {chapter}{\numberline {2}Zebranie materiału uczącego}{23}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{27}{lstnumber.2.1.33}%
+\contentsline {chapter}{\numberline {3}Opracowany algorytm}{25}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{29}{chapter*.16}%
+\contentsline {subsection}{\numberline {3.0.1}Proces uczenia klasyfikatora}{25}{subsection.3.0.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{29}{section*.17}%
+\contentsline {subsection}{\numberline {3.0.2}Schemat algorytmu}{25}{subsection.3.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{29}{section*.18}%
+\contentsline {subsection}{\numberline {3.0.3}Biblioteki użyte w programie}{25}{subsection.3.0.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{30}{section*.19}%
+\contentsline {chapter}{\numberline {4}Wyniki badań}{27}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Dodatek}{31}{appendix.A}%
+\contentsline {chapter}{Podsumowanie}{28}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{31}{chapter*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Książki}{31}{section*.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Artykuły}{31}{section*.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Źródła internetowe i inne}{32}{section*.17}%
 \contentsfinish 
