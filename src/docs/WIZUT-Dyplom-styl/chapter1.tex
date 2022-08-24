@@ -424,7 +424,7 @@ Ten rodzaj adaptycyjnego progowania jest bardziej wydajny od algorytmu Chow i Ka
 Charakteryzuje się wysoką jakością oddzielania obiektów od tła i znajduje szerokie zastosowanie w wielu aplikacjach.
 
 Innym znanym algorytmem stosowanym do wyznaczania progu binaryzacji jest algorytm Otsu \cite{4310076}.
-Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości progowej, przy której ważona wariancja między pikselami pierwszego planu i tła jest najmniejsza.
+Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości progowej, przy której ważona wariancja między pikselami pierwszego planu i tła jest najmniejsza \cite{otsu_article}.
 Kluczową ideą jest tutaj iteracja przez wszystkie możliwe wartości progu i pomiar rozproszenia pikseli tła i pierwszego planu.
 Następnie znajdowany jest próg, w którym rozproszenie jest najmniejsze.
 Algorytm iteracyjnie wyszukuje próg, który minimalizuje wariancję wewnątrz klasy, zdefiniowaną jako ważona suma wariancji dwóch klas (tła i pierwszego planu).

@@ -435,6 +435,30 @@
       \verb 10.1038/381607a0
       \endverb
     \endentry
+    \entry{open_cv_docs}{online}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{OpenCV documentation}
+      \verb{urlraw}
+      \verb https://docs.opencv.org/4.x/
+      \endverb
+      \verb{url}
+      \verb https://docs.opencv.org/4.x/
+      \endverb
+    \endentry
+    \entry{open_cv}{online}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{OpenCV overview}
+      \verb{urlraw}
+      \verb https://opencv.org/about/
+      \endverb
+      \verb{url}
+      \verb https://opencv.org/about/
+      \endverb
+    \endentry
     \entry{4310076}{article}{}
       \name{author}{1}{}{%
         {{hash=4c9490b4888796e772e507d10bb89b3f}{%
@@ -463,6 +487,19 @@
       \verb{doi}
       \verb 10.1109/TSMC.1979.4310076
       \endverb
+    \endentry
+    \entry{otsu_article}{online}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Otsu’s method for image thresholding explained and implemented}
+      \verb{urlraw}
+      \verb https://muthu.co/otsus-method-for-image-thresholding-explained-and-implemented/
+      \endverb
+      \verb{url}
+      \verb https://muthu.co/otsus-method-for-image-thresholding-explained-and-implemented/
+      \endverb
+      \keyw{Algorithms,Computer Vision,Mathematics,Statistics}
     \endentry
     \entry{7780460}{inproceedings}{}
       \name{author}{4}{}{%

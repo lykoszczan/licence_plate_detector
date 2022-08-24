@@ -18,12 +18,42 @@
 \chapter{Opracowany algorytm}
 \chaptermark{Opracowany algorytm} % Tekst, który wyświetli się w nagłówku strony,  jeżeli jest za długi tytuł rozdziału
 
-\subsection{Proces uczenia klasyfikatora}
+
+\section{Proces uczenia klasyfikatora}
 @todo
 
-\subsection{Schemat algorytmu}
+
+\section{Schemat algorytmu}
 @todo
 diagram graficzny
 
-\subsection{Biblioteki użyte w programie}
-@todo
+
+\section{Biblioteki użyte w programie}
+Środowisko Python jest niezwykle popularne m.in. ze względu na mnogość dostępnych gotowych bilbiotek.
+Jednym z celów pracy było zaimplementowanie algorytmu uczącego i klasyfikującego.
+Cel ten udało się zrealizować, natomiast nie byłoby to możliwe bez użycia gotowych rozwiązań do elementarnych operacji t.j. listowanie plików w katalogach, odczyt i zapis zdjęć, pobieranie pojedynczych klatek z filmu wideo czy operacje na tablicach.
+Poniżej wymieniono i opisano najważniejsze oraz najczęściej używane biblioteki w opisywanej pracy.
+
+\subsection{OpenCV}
+Open CV jest biblioteką o otwartym źródle (ang. \textit{open source}) \cite{open_cv,open_cv_docs} .
+Do jej głównych zastosowań należą przetwarzanie obrazów oraz uczenie maszynowe.
+W niniejszej pracy wykorzystano najnowszą dostępną wersję na moment pisania pracy $4.6.0$.
+Została zaprojektowana, aby zapewnić ustandaryzowaną infrastrukturę dla aplikacji widzenia komputerowego.
+Oprogramowanie dystrybuowane jest na licencji BSD.
+Pierwsza wersja została opracowana w roku 1999.
+Oryginalnie powstała w języku C++, natomiast istnieją biblioteki pozwalające używać jej w innych językach programowania.
+Bibliotekę można podzielić na kilka głównych modułów:
+\begin{itemize}
+    \item Przetwarzanie obrazów - moduł zawiera zestaw metod do przeprowadzania takich operacji jak filtrowanie, przekształcenia geometryczne, zmiana przestrzeni kolorów, histogramy
+    \item Przetwarzanie wideo - zestaw metod, które pozwalają na m. in. usuwanie tła, śledzenie obiektów, wykrywanie ruchu
+    \item Operacje wejścia/wyjścia na wideo - wyciąganie poszczególnych klatek z wideo, kodowanie, zapis i odczyt wideo
+    \item HighGUI - moduł służący do wizualizacji wyników, wyświetlania okien, zaznaczania ROI (ang. \textit{Region of interest})
+\end{itemize}
+
+\subsection{Tesseract OCR}
+
+\subsection{Numpy}
+
+\subsection{Sklearn}
+
+\subsection{Matplotlib}

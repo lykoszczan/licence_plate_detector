@@ -39,11 +39,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Opracowany algorytm}{25}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.0.1}Proces uczenia klasyfikatora}{25}{subsection.3.0.1}%
+\contentsline {section}{\numberline {3.1}Proces uczenia klasyfikatora}{25}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.0.2}Schemat algorytmu}{25}{subsection.3.0.2}%
+\contentsline {section}{\numberline {3.2}Schemat algorytmu}{25}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.0.3}Biblioteki użyte w programie}{25}{subsection.3.0.3}%
+\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{25}{section.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.1}OpenCV}{25}{subsection.3.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.2}Tesseract OCR}{26}{subsection.3.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.3}Numpy}{26}{subsection.3.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.4}Sklearn}{26}{subsection.3.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.3.5}Matplotlib}{26}{subsection.3.3.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Wyniki badań}{27}{chapter.4}%
 \defcounter {refsection}{0}\relax 

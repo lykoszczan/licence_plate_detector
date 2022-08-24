@@ -16,12 +16,17 @@
 \BOOKMARK [2][-]{subsection.1.3.2}{TEMPLATE AND PATTERN MATCHING TECHNIQUES}{section.1.3}% 16
 \BOOKMARK [0][-]{chapter.2}{Zebranie materia\233u uczacego}{}% 17
 \BOOKMARK [0][-]{chapter.3}{Opracowany algorytm}{}% 18
-\BOOKMARK [1][-]{subsection.3.0.1}{Proces uczenia klasyfikatora}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.0.2}{Schemat algorytmu}{subsection.3.0.1}% 20
-\BOOKMARK [2][-]{subsection.3.0.3}{Biblioteki uzyte w programie}{subsection.3.0.1}% 21
-\BOOKMARK [0][-]{chapter.4}{Wyniki badan}{}% 22
-\BOOKMARK [0][-]{chapter.4}{Podsumowanie}{}% 23
-\BOOKMARK [0][-]{chapter*.14}{Spis literatury}{}% 24
-\BOOKMARK [1][-]{section*.15}{Ksiazki}{chapter*.14}% 25
-\BOOKMARK [1][-]{section*.16}{Artyku\233y}{chapter*.14}% 26
-\BOOKMARK [1][-]{section*.17}{Zr\363d\233a internetowe i inne}{chapter*.14}% 27
+\BOOKMARK [1][-]{section.3.1}{Proces uczenia klasyfikatora}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Schemat algorytmu}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.3}{Biblioteki uzyte w programie}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.1}{OpenCV}{section.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.2}{Tesseract OCR}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.3}{Numpy}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.4}{Sklearn}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.5}{Matplotlib}{section.3.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Wyniki badan}{}% 27
+\BOOKMARK [0][-]{chapter.4}{Podsumowanie}{}% 28
+\BOOKMARK [0][-]{chapter*.14}{Spis literatury}{}% 29
+\BOOKMARK [1][-]{section*.15}{Ksiazki}{chapter*.14}% 30
+\BOOKMARK [1][-]{section*.16}{Artyku\233y}{chapter*.14}% 31
+\BOOKMARK [1][-]{section*.17}{Zr\363d\233a internetowe i inne}{chapter*.14}% 32
