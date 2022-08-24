@@ -102,6 +102,33 @@
       \verb 10.1109/TVT.2008.915524
       \endverb
     \endentry
+    \entry{Chow1971BoundaryDO}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=dc9ab002d1d4ba82745c4ddf45c8d96f}{%
+           family={Chow},
+           familyi={C\bibinitperiod},
+           given={C.\bibnamedelimi K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=3837409de46f6cb41e1006a5b5488c12}{%
+           family={Kaneko},
+           familyi={K\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \strng{fullhash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \strng{bibnamehash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \strng{authorbibnamehash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \strng{authornamehash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \strng{authorfullhash}{1b9c9bf5606107c12cfb5bce171a8821}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{IFIP Congress}
+      \field{title}{Boundary Detection of Radiographic Images by a Threshold Method}
+      \field{year}{1971}
+    \endentry
     \entry{6213519}{article}{}
       \name{author}{4}{}{%
         {{hash=fab60b411518350f32e57b6f98d86244}{%
@@ -343,6 +370,37 @@
       \endverb
       \keyw{Pattern recognition; Image processing; Image detection systems; Image processing; Image recognition; Imaging noise; Pattern recognition; Retina}
     \endentry
+    \entry{otsu_inzynieria_rolnicza}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3528799d9c51db48590aa760b28d2d90}{%
+           family={Lipiński},
+           familyi={L\bibinitperiod},
+           given={Adam},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f1d8a87a82770012677d7e949ab462b7}{%
+           family={Lipiński},
+           familyi={L\bibinitperiod},
+           given={Seweryn},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{bfa71db85a58bb286737e239db092491}
+      \strng{fullhash}{bfa71db85a58bb286737e239db092491}
+      \strng{bibnamehash}{bfa71db85a58bb286737e239db092491}
+      \strng{authorbibnamehash}{bfa71db85a58bb286737e239db092491}
+      \strng{authornamehash}{bfa71db85a58bb286737e239db092491}
+      \strng{authorfullhash}{bfa71db85a58bb286737e239db092491}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Inżynieria Rolnicza}
+      \field{month}{01}
+      \field{title}{Automatyczna ocena jakości oprysku na podstawie śladów kropel przy użyciu komputerowej analizy obrazu}
+      \field{volume}{13}
+      \field{year}{2009}
+      \field{pages}{163\bibrangedash 168}
+      \range{pages}{6}
+    \endentry
     \entry{gabor_human_eye}{article}{}
       \name{author}{2}{}{%
         {{hash=544cd1976e056975bbdefc0dea94e7df}{%
@@ -375,6 +433,35 @@
       \range{pages}{3}
       \verb{doi}
       \verb 10.1038/381607a0
+      \endverb
+    \endentry
+    \entry{4310076}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4c9490b4888796e772e507d10bb89b3f}{%
+           family={Otsu},
+           familyi={O\bibinitperiod},
+           given={Nobuyuki},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c9490b4888796e772e507d10bb89b3f}
+      \strng{fullhash}{4c9490b4888796e772e507d10bb89b3f}
+      \strng{bibnamehash}{4c9490b4888796e772e507d10bb89b3f}
+      \strng{authorbibnamehash}{4c9490b4888796e772e507d10bb89b3f}
+      \strng{authornamehash}{4c9490b4888796e772e507d10bb89b3f}
+      \strng{authorfullhash}{4c9490b4888796e772e507d10bb89b3f}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
+      \field{number}{1}
+      \field{title}{A Threshold Selection Method from Gray-Level Histograms}
+      \field{volume}{9}
+      \field{year}{1979}
+      \field{pages}{62\bibrangedash 66}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/TSMC.1979.4310076
       \endverb
     \endentry
     \entry{7780460}{inproceedings}{}
@@ -504,6 +591,40 @@
       \range{pages}{7}
       \verb{doi}
       \verb 10.1109/ICDAR.2017.187
+      \endverb
+    \endentry
+    \entry{10.1117/1.1631315}{article}{}
+      \name{author}{2}{}{%
+        {{hash=94153c3c7a868fabd86e6eefe883aa63}{%
+           family={Sezgin},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2b60872b6557cdb90572d2f3614b4f9f}{%
+           family={Sankur},
+           familyi={S\bibinitperiod},
+           given={Bulent},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \strng{fullhash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \strng{bibnamehash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \strng{authorbibnamehash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \strng{authornamehash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \strng{authorfullhash}{b87970f3c4d48b0ae0efd02961fc1b54}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Electronic Imaging}
+      \field{month}{01}
+      \field{title}{Survey over image thresholding techniques and quantitative performance evaluation}
+      \field{volume}{13}
+      \field{year}{2004}
+      \field{pages}{146\bibrangedash 168}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1117/1.1631315
       \endverb
     \endentry
     \entry{9310202}{article}{}

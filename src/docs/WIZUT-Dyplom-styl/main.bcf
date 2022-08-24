@@ -2202,6 +2202,10 @@
     <bcf:citekey order="18">7780460</bcf:citekey>
     <bcf:citekey order="19">Xu2006AMO</bcf:citekey>
     <bcf:citekey order="20">6213519</bcf:citekey>
+    <bcf:citekey order="21">Chow1971BoundaryDO</bcf:citekey>
+    <bcf:citekey order="22">4310076</bcf:citekey>
+    <bcf:citekey order="23">otsu_inzynieria_rolnicza</bcf:citekey>
+    <bcf:citekey order="24">10.1117/1.1631315</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

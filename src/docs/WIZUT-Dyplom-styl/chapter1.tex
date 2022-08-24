@@ -385,13 +385,66 @@ Poza powyższymi trudnościami, tablice mogą być obrócone lub uszkodzone.
 Aby zwiększyć w jak największym stopniu prawdopodobieństwo prawidłowego odczytania znaków, używa się szereg czynności na obrazie wejściowym.
 Dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina \cite{Xu2006AMO}.
 
-W wielu klasycznych metodach widzenia komputerowego, przed segmentacją znaków, stosuje się binaryzację.
+\subsection{Binaryzacja}
+W wielu klasycznych metodach widzenia komputerowego, w celu segmentacji znaków, stosuje się binaryzację.
 W zbinaryzowanym obrazie łatwiej jest rozdzielić znaki w porównaniu do obrazu kolorowego lub w skali szarości.
 Podstawowym problemem tej techniki jest odpowiedni dobór wartości progu.
 Wybór ten jest dokonywany w oparciu o różne metody, które można podzielić na zmiennoprogowe i automatyczne.
 Jednakże, wyznaczenie progu binaryzacji musi zostać wykonane właściwie, w celu uniknięcia połączenia znaków lub scalenia ich z obramowaniem tablicy rejestracyjnej \cite{6213519}.
 Jednym z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (ang. \textit{Adaptive Thresholding}).
 Stosuje się to w momencie kiedy różne obszary obrazu mogą charakteryzować się różnymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
+Algorytm wyznacza próg dla konkretnego piksela na podstawie niewielkiego regionu wokoło.
+Dla tego samego obrazu wyliczane są różne wartości progu dla różnych regionów co prowadzi do uzyskania lepszych wyników niż w przypadku stałego progu binaryzacji.
+Na rysunku \ref{fig:threshold} przedstawiono przykłady binaryzacji obrazu stałym progiem globalnym i progiem wyznaczonym adaptacyjnie.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/threshold}
+    \caption{Przykład binaryzacji obrazu przy niejednorodnym oświetleniu za pomocą globalnego i lokalnego produ (źródło: \url{https://docs.opencv.org/3.4/d7/d4d/tutorial_py_thresholding.html})}
+    \label{fig:threshold}
+\end{figure}
+\FloatBarrier
+
+Algorytm progowania adaptacyjnego otrzymuje najczęściej na wejściu obraz w skali szarości lub kolorowy.
+Próg jest wyliczany dla wszystkich pikseli w obrazie z osobna.
+Jednym ze znanych podejść jest to zaproponowane przez Chow i Kaneko \cite{Chow1971BoundaryDO}.
+W tym przypadku obraz dzielony jest na zbiór nakładających się fragmentów.
+Optymalny próg wyznaczy jest dla konkretnego fragmentu na podstawie analizy histogramu.
+Próg dla każdego piksela wyliczany jest na podstawie interpolacji wyników dla odpowiedniego fragmentu.
+Wadą tej metody jest jej złożoność obliczeniowa.
+Jest to jeden z głównych powodów, dlaczego algorytm ten nie znalazł zastosowania w aplikacjach działających w czasie rzeczywistym.
+
+Alternatywnym podejściem do znalezienia lokalnego progu jest statystyczne zbadanie intensywności lokalnego sąsiedztwa każdego piksela.
+Wybór metody statystycznej jest skorelowany z obrazem wejściowym.
+Najczęściej używa się średniej, mediany, średniej z wartości maksymalnej i minimalnej badanego otoczenia lub funkcji Gaussa.
+Dobór wielkości sąsiedztwa ma duży wpływ na wyliczenie progu.
+Rozmiar musi być na tyle duży, aby zawierać zarówno piksele tła jak i badanego obiektu.
+Z drugiej strony wybranie zbyt dużych obszarów może naruszyć założenie o równomiernym oświetleniu rozpatrywanego fragmentu.
+Ten rodzaj adaptycyjnego progowania jest bardziej wydajny od algorytmu Chow i Kaneko.
+Charakteryzuje się wysoką jakością oddzielania obiektów od tła i znajduje szerokie zastosowanie w wielu aplikacjach.
+
+Innym znanym algorytmem stosowanym do wyznaczania progu binaryzacji jest algorytm Otsu \cite{4310076}.
+Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości progowej, przy której ważona wariancja między pikselami pierwszego planu i tła jest najmniejsza.
+Kluczową ideą jest tutaj iteracja przez wszystkie możliwe wartości progu i pomiar rozproszenia pikseli tła i pierwszego planu.
+Następnie znajdowany jest próg, w którym rozproszenie jest najmniejsze.
+Algorytm iteracyjnie wyszukuje próg, który minimalizuje wariancję wewnątrz klasy, zdefiniowaną jako ważona suma wariancji dwóch klas (tła i pierwszego planu).
+Kolory w skali szarości zwykle mieszczą się w zakresie 0-255.
+Tak więc, jeśli wybierzemy próg 100, to wszystkie piksele o wartościach mniejszych niż 100 staną się tłem, a wszystkie piksele o wartościach większych lub równych 100 staną się pierwszym planem obrazu.
+Wzór na znalezienie wariancji wewnątrzklasowej przy dowolnym progu $t$ jest określony wzorem \ref{eq:otsu_variance}
+\begin{equation}
+    \label{eq:otsu_variance}
+    \sigma^2(t)=\omega_{bg}(t)\sigma_{bg}^2(t)+\omega_{fg}(t)\sigma_{fg}^2(t)
+\end{equation}
+gdzie $\omega_{bg}(t)$ i $\omega_{fg}(t)$ reprezentują prawdopodobieństwo liczby pikseli dla każdej klasy przy progu $t$, natomiast $\sigma^2$ oznaczono wariancję wartości kolorów.
+Wyliczanie wariancji dla konkretnej klasy pikseli przedstawiono na wzorze \ref{eq:otsu_variance_value}.
+\begin{equation}
+    \label{eq:otsu_variance_value}
+    \sigma_{bg | fg}^2(t)=\dfrac{\sum_{}^{}(x_i-\hat{x})^2}{N-1}
+\end{equation}
+Wartość piksela odpowiedniej klasy reprezentuje symbol $x_i$, natomiast $\hat{x}$ reprezentuje średnią pikseli rozpatrywanej klasy.
+Liczbę wszystkich pikseli zapisano literą $N$.
+
+Metoda Otsu implementowana przez wiele środowisk obliczeniowych (np. MATLAB) \cite{otsu_inzynieria_rolnicza}.
+Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone \cite{10.1117/1.1631315}.
 
 
 \section{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}

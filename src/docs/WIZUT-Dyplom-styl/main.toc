@@ -21,29 +21,31 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.2}Przegląd istniejących metod segmentacji tablic rejestracyjnych}{19}{section.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}{20}{section.1.3}%
+\contentsline {subsection}{\numberline {1.2.1}Binaryzacja}{20}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{21}{chapter.2}%
+\contentsline {section}{\numberline {1.3}Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}{21}{section.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Listy}{21}{section.2.1}%
+\contentsline {chapter}{\numberline {2}Przedstawienie zestawu zdefiniowanych otoczeń możliwych do wykorzystania w pracy}{23}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Tabele i rysunki w pracy}{21}{section.2.2}%
+\contentsline {section}{\numberline {2.1}Listy}{23}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Twierdzenia i definicje}{22}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Tabele i rysunki w pracy}{23}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Przykłady}{23}{section.2.4}%
+\contentsline {section}{\numberline {2.3}Twierdzenia i definicje}{24}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Kod źródłowy}{23}{section.2.5}%
+\contentsline {section}{\numberline {2.4}Przykłady}{25}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{25}{lstnumber.2.1.33}%
+\contentsline {section}{\numberline {2.5}Kod źródłowy}{25}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{27}{chapter*.15}%
+\contentsline {chapter}{Podsumowanie}{27}{lstnumber.2.1.33}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{27}{section*.16}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{29}{chapter*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{27}{section*.17}%
+\contentsline {section}{Książki}{29}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{28}{section*.18}%
+\contentsline {section}{Artykuły}{29}{section*.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Dodatek}{29}{appendix.A}%
+\contentsline {section}{Źródła internetowe i inne}{30}{section*.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Dodatek}{31}{appendix.A}%
 \contentsfinish 
