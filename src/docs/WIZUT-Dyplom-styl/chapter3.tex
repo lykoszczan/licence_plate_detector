@@ -35,9 +35,9 @@ Cel ten udało się zrealizować, natomiast nie byłoby to możliwe bez użycia 
 Poniżej wymieniono i opisano najważniejsze oraz najczęściej używane biblioteki w opisywanej pracy.
 
 \subsection{OpenCV}
-Open CV jest biblioteką o otwartym źródle (ang. \textit{open source}) \cite{open_cv,open_cv_docs} .
+OpenCV jest biblioteką o otwartym źródle (ang. \textit{open source}) \cite{open_cv,open_cv_docs} .
 Do jej głównych zastosowań należą przetwarzanie obrazów oraz uczenie maszynowe.
-W niniejszej pracy wykorzystano najnowszą dostępną wersję na moment pisania pracy $4.6.0$.
+W przedstawionym programie wykorzystano najnowszą dostępną wersję na moment pisania pracy $4.6.0$.
 Została zaprojektowana, aby zapewnić ustandaryzowaną infrastrukturę dla aplikacji widzenia komputerowego.
 Oprogramowanie dystrybuowane jest na licencji BSD.
 Pierwsza wersja została opracowana w roku 1999.
@@ -50,7 +50,34 @@ Bibliotekę można podzielić na kilka głównych modułów:
     \item HighGUI - moduł służący do wizualizacji wyników, wyświetlania okien, zaznaczania ROI (ang. \textit{Region of interest})
 \end{itemize}
 
+Poniżej wymieniono użyte w stworzonym programie funkcje wraz z krótkim opisem ich zastosowania:
+\begin{itemize}
+    \item \textit{videoCapture} - przechwytywanie obrazów z pliku wideo
+    \item \textit{cvtColor} - zmiana przestrzeni barw w obrazie
+    \item \textit{imread} - wczytanie obrazu z pliku
+    \item \textit{imshow} - wyświetlenie obrazu
+    \item \textit{imwrite} - zapis obrazu do pliku
+    \item \textit{rectangle} - rysowanie prostokąta na obrazie
+    \item \textit{putText} - umiejscowienie tekstu na obrazie
+    \item \textit{addWeighted} - połączenie dwóch obrazów poprzez nałożenie ich na siebie
+    \item \textit{thresholding} - binaryzacja obrazu
+    \item \textit{GaussianBlur} - wygładzanie obrazu za pomocą funkcji Gaussa
+    \item \textit{Canny} - wykrywanie krawędzi za pomocą algorytmu Johna F. Canny'ego \cite{4767851}
+    \item \textit{findContours} - wykrywanie konturów obiektów (punktów o tym samym kolorze lub intensywności łączących się w krzywe)
+    \item \textit{resize} - zmiana wielkości obrazu
+    \item \textit{imdecode} - odczytywanie zdjęcia z bufora
+\end{itemize}
+
 \subsection{Tesseract OCR}
+Biblioteka Tesseract jest pakietem składającym się z programu lini poleceń \textit{tesseract} oraz silnika OCR \textit{libtesseract} \cite{tesseract}.
+Tesseract powstał między rokiem 1985, a 1994 na potrzeby firmy Hewlett-Packard.
+W roku 2005 firma upubliczniła bibliotekę jako rozwiązanie \textit{open-source}.
+Od początku 2006 do listopada 2018 za rozwój Tesseract odpowiedzialna była firma Google.
+Obecnie głównym programistą projektu jest Ray Smith.
+Silnik programu oparty jest o język programowania C++.
+W celu wykorzystania jej w opisywanym programie, użyto nakładki \textit{pytesseract} \cite{pytesseract}.
+Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera ponad 100 języków.
+Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory}) \cite{lstm}.
 
 \subsection{Numpy}
 

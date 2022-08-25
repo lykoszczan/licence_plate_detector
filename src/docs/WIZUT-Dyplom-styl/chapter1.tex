@@ -259,7 +259,7 @@ Wiele osób ze zbioru testowego zostanie określonych błędnie, jednak dokładn
 
 AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
 Po raz pierwszy został on przedstawiony w \cite{Freund1996ExperimentsWA}.
-AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów:
+AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów \cite{szybka_detekcja_klesk}:
 \begin{itemize}
     \item AdaBoost + decision stump
     \item AdaBoost + drzewka decyzyjne
@@ -318,7 +318,7 @@ Jednymi z najczęstszych aplikacji tego typu boostingu jest klasyfikacja tekstu 
 
 Wzmocnienie AdaBoost spotykane jest w różnych wariantach.
 Jednym z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w \cite{10.1023/A:1007614523901}.
-Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne.
+Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne \cite{szybka_detekcja_klesk}.
 Odpowiedź słabego klasyfikatora jest zwykle ustalana jako przybliżenie połowy przekształcenia logit:
 \begin{equation}
     \label{eq:real_boost}
@@ -337,7 +337,7 @@ W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komput
 Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} - CNN)\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
 Sieci kowolucyjne są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw konwolucyjnych i ich rozmiaru.
-Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj. obrazy).
+Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj. obrazy) \cite{cnn_agh}.
 
 Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once}) \cite{7780460}.
 Algorytm jest bardzo wydajny.
@@ -461,5 +461,8 @@ todo
 \index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
 
 \subsection{OCR}
+tesseract korzysta z sieci lstm wiec warto by to opisac i jakieś inne sieci
+https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
+
 
 \subsection{TEMPLATE AND PATTERN MATCHING TECHNIQUES}

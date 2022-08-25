@@ -2197,18 +2197,25 @@
     <bcf:citekey order="13">gabor_lpr</bcf:citekey>
     <bcf:citekey order="14">990517</bcf:citekey>
     <bcf:citekey order="15">Freund1996ExperimentsWA</bcf:citekey>
-    <bcf:citekey order="16">10.1023/A:1007614523901</bcf:citekey>
-    <bcf:citekey order="17">cnn_detector</bcf:citekey>
-    <bcf:citekey order="18">7780460</bcf:citekey>
-    <bcf:citekey order="19">Xu2006AMO</bcf:citekey>
-    <bcf:citekey order="20">6213519</bcf:citekey>
-    <bcf:citekey order="21">Chow1971BoundaryDO</bcf:citekey>
-    <bcf:citekey order="22">4310076</bcf:citekey>
-    <bcf:citekey order="23">otsu_article</bcf:citekey>
-    <bcf:citekey order="24">otsu_inzynieria_rolnicza</bcf:citekey>
-    <bcf:citekey order="25">10.1117/1.1631315</bcf:citekey>
-    <bcf:citekey order="26">open_cv</bcf:citekey>
-    <bcf:citekey order="26">open_cv_docs</bcf:citekey>
+    <bcf:citekey order="16">szybka_detekcja_klesk</bcf:citekey>
+    <bcf:citekey order="17">10.1023/A:1007614523901</bcf:citekey>
+    <bcf:citekey order="18">szybka_detekcja_klesk</bcf:citekey>
+    <bcf:citekey order="19">cnn_detector</bcf:citekey>
+    <bcf:citekey order="20">cnn_agh</bcf:citekey>
+    <bcf:citekey order="21">7780460</bcf:citekey>
+    <bcf:citekey order="22">Xu2006AMO</bcf:citekey>
+    <bcf:citekey order="23">6213519</bcf:citekey>
+    <bcf:citekey order="24">Chow1971BoundaryDO</bcf:citekey>
+    <bcf:citekey order="25">4310076</bcf:citekey>
+    <bcf:citekey order="26">otsu_article</bcf:citekey>
+    <bcf:citekey order="27">otsu_inzynieria_rolnicza</bcf:citekey>
+    <bcf:citekey order="28">10.1117/1.1631315</bcf:citekey>
+    <bcf:citekey order="29">open_cv</bcf:citekey>
+    <bcf:citekey order="29">open_cv_docs</bcf:citekey>
+    <bcf:citekey order="30">4767851</bcf:citekey>
+    <bcf:citekey order="31">tesseract</bcf:citekey>
+    <bcf:citekey order="32">pytesseract</bcf:citekey>
+    <bcf:citekey order="33">lstm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

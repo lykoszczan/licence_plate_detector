@@ -65,5 +65,5 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Artykuły}{31}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{32}{section*.17}%
+\contentsline {section}{Źródła internetowe i inne}{33}{section*.17}%
 \contentsfinish 

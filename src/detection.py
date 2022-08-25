@@ -21,4 +21,4 @@ def detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes,
             decision = clf.decision_function(np.array([features]))
             if decision > threshold:
                 detections.append([j, k, h, w])
-                print(f"! FACE DETECTED, DECISION: {decision}, size: {w}x{h}")
+                print(f"! PLATE DETECTED, DECISION: {decision}, size: {w}x{h}")

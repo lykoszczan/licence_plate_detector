@@ -1,6 +1,7 @@
 import multiprocessing as mp
 import random
 import time
+from datetime import datetime
 
 import cv2
 import matplotlib.pyplot as plt
@@ -411,8 +412,6 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
     # połaczone
     rects = non_max_supression(detections, 0.1)
     for rect in rects:
-        cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
-
         [k, j] = rect[0]
         [k_end, j_end] = rect[1]
         h = j_end - j
@@ -422,6 +421,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
         # cv2.imshow("OUTPUT", rect_cropped)
         # cv2.waitKey()
 
+        good_detection = not ocr
         if ocr:
             plate_text = detect_licence_plate_characters(rect_cropped)
             if plate_text:
@@ -429,6 +429,18 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
                 if len(plate_text) > 3:
                     font = cv2.FONT_HERSHEY_DUPLEX
                     cv2.putText(i_scaled, plate_text, (k + 2, j - 5), font, 0.5, (0, 0, 255), 1)
+                    good_detection = True
+                else:
+                    good_detection = False
+            else:
+                good_detection = False
+
+        if good_detection:
+            cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
+        else:
+            if ocr:
+                cv2.imwrite('test_samples/' + str(datetime.timestamp(datetime.now())) + '.png', rect_cropped)
+            cv2.rectangle(i_scaled, rect[0], rect[1], (0, 255, 255), 1)
 
     t2 = time.time()
     print(f"DETECTION DONE IN {t2 - t1} s")
@@ -509,9 +521,10 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-# test_video("test_data/video/test_video_1.mp4")
-# exit()
+test_video("test_data/video/test_video_1.mp4")
+exit()
 
+# i = cv2.imread("test_data/blurred_plate.png")
 i = cv2.imread("test_data/car.png")
 # i = cv2.imread("test_data/camera.jpg")
 
@@ -524,4 +537,4 @@ i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
 # ii = integral_image(i_gray_cropped)
 ii = integral_image(i_gray)
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=i, show_output=True, ocr=True)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.9, original_image=i, show_output=True, ocr=True)

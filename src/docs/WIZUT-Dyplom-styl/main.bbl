@@ -19,6 +19,18 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{pytesseract}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{A Python wrapper for Google Tesseract}
+      \verb{urlraw}
+      \verb https://github.com/madmaze/pytesseract
+      \endverb
+      \verb{url}
+      \verb https://github.com/madmaze/pytesseract
+      \endverb
+    \endentry
     \entry{1688109}{article}{}
       \name{author}{4}{}{%
         {{hash=18516ce21cc404d3fbc78e92ca62bf0f}{%
@@ -100,6 +112,35 @@
       \range{pages}{9}
       \verb{doi}
       \verb 10.1109/TVT.2008.915524
+      \endverb
+    \endentry
+    \entry{4767851}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fa344b67077711bfaa0525254de2977a}{%
+           family={Canny},
+           familyi={C\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa344b67077711bfaa0525254de2977a}
+      \strng{fullhash}{fa344b67077711bfaa0525254de2977a}
+      \strng{bibnamehash}{fa344b67077711bfaa0525254de2977a}
+      \strng{authorbibnamehash}{fa344b67077711bfaa0525254de2977a}
+      \strng{authornamehash}{fa344b67077711bfaa0525254de2977a}
+      \strng{authorfullhash}{fa344b67077711bfaa0525254de2977a}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{6}
+      \field{title}{A Computational Approach to Edge Detection}
+      \field{volume}{PAMI-8}
+      \field{year}{1986}
+      \field{pages}{679\bibrangedash 698}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/TPAMI.1986.4767851
       \endverb
     \endentry
     \entry{Chow1971BoundaryDO}{inproceedings}{}
@@ -282,6 +323,66 @@
       \verb 10.1109/ISITC.2007.79
       \endverb
     \endentry
+    \entry{lstm}{article}{}
+      \name{author}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural computation}
+      \field{month}{12}
+      \field{title}{Long Short-term Memory}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{pages}{1735\bibrangedash 80}
+      \range{pages}{51}
+      \verb{doi}
+      \verb 10.1162/neco.1997.9.8.1735
+      \endverb
+    \endentry
+    \entry{cnn_agh}{online}{}
+      \name{author}{1}{}{%
+        {{hash=141b553821e4b3ace93f3ed4c728105f}{%
+           family={Horzyk},
+           familyi={H\bibinitperiod},
+           given={Adrian},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{141b553821e4b3ace93f3ed4c728105f}
+      \strng{fullhash}{141b553821e4b3ace93f3ed4c728105f}
+      \strng{bibnamehash}{141b553821e4b3ace93f3ed4c728105f}
+      \strng{authorbibnamehash}{141b553821e4b3ace93f3ed4c728105f}
+      \strng{authornamehash}{141b553821e4b3ace93f3ed4c728105f}
+      \strng{authorfullhash}{141b553821e4b3ace93f3ed4c728105f}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Uczenie głębokich sieci neuronowych}
+      \verb{urlraw}
+      \verb https://home.agh.edu.pl/~horzyk/lectures/miw/MIW-UczenieG%c5%82%c4%99bokichSieciNeuronowych.pdf
+      \endverb
+      \verb{url}
+      \verb https://home.agh.edu.pl/~horzyk/lectures/miw/MIW-UczenieG%c5%82%c4%99bokichSieciNeuronowych.pdf
+      \endverb
+    \endentry
     \entry{1520110}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=e11b3db81db996b3366420a5427ae73a}{%
@@ -322,6 +423,32 @@
       \range{pages}{6}
       \verb{doi}
       \verb 10.1109/ITSC.2005.1520110
+      \endverb
+    \endentry
+    \entry{szybka_detekcja_klesk}{online}{}
+      \name{author}{1}{}{%
+        {{hash=df3c0588976a2d204de4f0c6ca25046f}{%
+           family={Klęsk},
+           familyi={K\bibinitperiod},
+           given={Przemysław},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{df3c0588976a2d204de4f0c6ca25046f}
+      \strng{fullhash}{df3c0588976a2d204de4f0c6ca25046f}
+      \strng{bibnamehash}{df3c0588976a2d204de4f0c6ca25046f}
+      \strng{authorbibnamehash}{df3c0588976a2d204de4f0c6ca25046f}
+      \strng{authornamehash}{df3c0588976a2d204de4f0c6ca25046f}
+      \strng{authorfullhash}{df3c0588976a2d204de4f0c6ca25046f}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Techniki szybkiej detekcji: ekstrakcja cech poprzez obrazy całkowe, boosting, kaskady klasyfikatorów}
+      \verb{urlraw}
+      \verb https://wikizmsi.zut.edu.pl/uploads/4/4a/Szybka_detekcja.pdf
+      \endverb
+      \verb{url}
+      \verb https://wikizmsi.zut.edu.pl/uploads/4/4a/Szybka_detekcja.pdf
       \endverb
     \endentry
     \entry{Lin:01}{article}{}
@@ -728,6 +855,18 @@
       \field{month}{09}
       \field{title}{HOUGH-TRANSFORM AND EXTENDED RANSAC ALGORITHMS FOR AUTOMATIC DETECTION OF 3D BUILDING ROOF PLANES FROM LIDAR DATA}
       \field{year}{2007}
+    \endentry
+    \entry{tesseract}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labeltitlesource}{title}
+      \field{title}{Tesseract Open Source OCR Engine}
+      \verb{urlraw}
+      \verb https://github.com/tesseract-ocr/tesseract
+      \endverb
+      \verb{url}
+      \verb https://github.com/tesseract-ocr/tesseract
+      \endverb
     \endentry
     \entry{990517}{inproceedings}{}
       \name{author}{2}{}{%
