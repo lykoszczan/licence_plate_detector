@@ -4,7 +4,7 @@ import time
 import cv2
 import numpy as np
 
-import consts
+import src.consts as consts
 
 
 def transform_to_original(j, k, h, w, i_scaled, i_original):
