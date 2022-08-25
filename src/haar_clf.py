@@ -31,7 +31,7 @@ def test_video(path):
         i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
         i_gray_cropped = i_gray[0:-80, 0:]
         ii = integral_image(i_gray_cropped)
-        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.6, original_image=frame,
+        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1, original_image=frame,
                           show_output=False, ocr=True)
 
         cv2.imshow('window-name', i_scaled)

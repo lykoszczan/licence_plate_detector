@@ -61,6 +61,9 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
     for c in cnts:
         x, y, w, h = cv2.boundingRect(c)
         area = w * h
+        if h >= image.shape[0] - 5:
+            continue
+
         if w / h > 2 or h / w > 5 or area < 100:
             if verbose:
                 cv2.rectangle(image, (x, y), (x + w, y + h), (255, 100, 255), 3)
@@ -111,12 +114,12 @@ def ocr_with_segmentation(image, verbose=False):
     avg_height = np.mean(avg_sizes)
     if verbose:
         print('avg_height', avg_height)
+        # print('std_dev', statistics.pstdev(avg_sizes))
+        # print('variance', statistics.variance(avg_sizes))
         print(np.sort(avg_sizes))
 
     for el in candidates:
         x, y, w, h = el
-        if h >= image.shape[0] - 5:
-            continue
 
         if h < (avg_height - 10):
             continue
