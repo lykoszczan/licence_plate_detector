@@ -528,6 +528,38 @@
       \field{pages}{163\bibrangedash 168}
       \range{pages}{6}
     \endentry
+    \entry{Mitchell97}{book}{}
+      \name{author}{1}{}{%
+        {{hash=d331eeb7f00e650950ccadcb9c47efec}{%
+           family={Mitchell},
+           familyi={M\bibinitperiod},
+           given={Tom\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {McGraw-Hill}%
+      }
+      \strng{namehash}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{fullhash}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{bibnamehash}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{authorbibnamehash}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{authornamehash}{d331eeb7f00e650950ccadcb9c47efec}
+      \strng{authorfullhash}{d331eeb7f00e650950ccadcb9c47efec}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-07-042807-2}
+      \field{title}{Machine Learning}
+      \field{year}{1997}
+      \verb{file}
+      \verb eBook:1900-99/Mitchell97.pdf:PDF;McGraw-Hill Product page:http\://www.mhprofessional.com/product.php?isbn=0070428077:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/0070428077/:URL
+      \endverb
+      \keyw{01624 105 book shelf ai learn algorithm}
+    \endentry
     \entry{gabor_human_eye}{article}{}
       \name{author}{2}{}{%
         {{hash=544cd1976e056975bbdefc0dea94e7df}{%
