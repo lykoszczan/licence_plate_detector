@@ -9,7 +9,9 @@ test_dict = {
     # 'test_data/plate_ocr_test.png': 'ZS750LM',
     # 'test_data/1661452014.770696.png': 'FZ5055K',
     # 'test_data/1661452165.056953.png': 'DJ93282',
-    'test_data/1661448258.096648.png': 'FZ2942J',
+    # 'test_data/1661448258.096648.png': 'FZ2942J',
+    # 'test_data/1661454606.268474.png': 'FZ2942J',
+    'test_data/1661455167.149186.png': 'FZ2942J',
 }
 
 for key in test_dict:

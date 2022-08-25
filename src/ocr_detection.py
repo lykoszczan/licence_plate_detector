@@ -77,14 +77,10 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
 
 
 def ocr_with_segmentation(image, verbose=False):
-    candidate_color = (36, 255, 12)
+    candidate_color = (255, 0, 0)
 
     img_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(img_gray, 200, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-
-    if verbose:
-        cv2.imshow('Binary image', thresh)
-        cv2.waitKey(0)
 
     result = np.zeros(image.shape, dtype=np.uint8)
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
@@ -119,7 +115,10 @@ def ocr_with_segmentation(image, verbose=False):
 
     for el in candidates:
         x, y, w, h = el
-        if h < (avg_height - 5):
+        if h >= image.shape[0] - 5:
+            continue
+
+        if h < (avg_height - 10):
             continue
         if verbose:
             cv2.rectangle(image, (x, y), (x + w, y + h), candidate_color, 3)
@@ -139,6 +138,7 @@ def ocr_with_segmentation(image, verbose=False):
 
     if verbose:
         cv2.imshow('image', image)
+        cv2.imshow('Binary image', thresh)
         cv2.imshow('close', close)
         cv2.imshow('invert', invert)
         cv2.waitKey()
