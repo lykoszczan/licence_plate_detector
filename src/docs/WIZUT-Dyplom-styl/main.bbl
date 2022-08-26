@@ -31,6 +31,18 @@
       \verb https://github.com/madmaze/pytesseract
       \endverb
     \endentry
+    \entry{haar_object_marker}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{A small python tool for creating positive text file for OpenCV haar training.}
+      \verb{urlraw}
+      \verb https://github.com/dhruvvyas90/haar-object-marker
+      \endverb
+      \verb{url}
+      \verb https://github.com/dhruvvyas90/haar-object-marker
+      \endverb
+    \endentry
     \entry{1688109}{article}{}
       \name{author}{4}{}{%
         {{hash=18516ce21cc404d3fbc78e92ca62bf0f}{%
