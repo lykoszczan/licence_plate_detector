@@ -2211,16 +2211,17 @@
     <bcf:citekey order="27">otsu_article</bcf:citekey>
     <bcf:citekey order="28">otsu_inzynieria_rolnicza</bcf:citekey>
     <bcf:citekey order="29">10.1117/1.1631315</bcf:citekey>
-    <bcf:citekey order="30">Mitchell97</bcf:citekey>
-    <bcf:citekey order="31">haar_object_marker</bcf:citekey>
-    <bcf:citekey order="32">overfitting</bcf:citekey>
-    <bcf:citekey order="33">1689652</bcf:citekey>
-    <bcf:citekey order="34">open_cv</bcf:citekey>
-    <bcf:citekey order="34">open_cv_docs</bcf:citekey>
-    <bcf:citekey order="35">4767851</bcf:citekey>
-    <bcf:citekey order="36">tesseract</bcf:citekey>
-    <bcf:citekey order="37">pytesseract</bcf:citekey>
-    <bcf:citekey order="38">lstm</bcf:citekey>
+    <bcf:citekey order="30">segmentation_kmeans</bcf:citekey>
+    <bcf:citekey order="31">Mitchell97</bcf:citekey>
+    <bcf:citekey order="32">haar_object_marker</bcf:citekey>
+    <bcf:citekey order="33">overfitting</bcf:citekey>
+    <bcf:citekey order="34">1689652</bcf:citekey>
+    <bcf:citekey order="35">open_cv</bcf:citekey>
+    <bcf:citekey order="35">open_cv_docs</bcf:citekey>
+    <bcf:citekey order="36">4767851</bcf:citekey>
+    <bcf:citekey order="37">tesseract</bcf:citekey>
+    <bcf:citekey order="38">pytesseract</bcf:citekey>
+    <bcf:citekey order="39">lstm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

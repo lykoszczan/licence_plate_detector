@@ -1084,6 +1084,39 @@
       \field{pages}{1\bibrangedash 4}
       \range{pages}{4}
     \endentry
+    \entry{segmentation_kmeans}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c36cb06e9931d6ea6cd9267b0ad0fb8c}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Lihong},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1b7a4fd1ae9f62d241c8dfa6d9d6b38a}{%
+           family={He},
+           familyi={H\bibinitperiod},
+           given={Xiangjian},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{2c23686afdc3e8644b47e988302d42e1}
+      \strng{fullhash}{2c23686afdc3e8644b47e988302d42e1}
+      \strng{bibnamehash}{2c23686afdc3e8644b47e988302d42e1}
+      \strng{authorbibnamehash}{2c23686afdc3e8644b47e988302d42e1}
+      \strng{authornamehash}{2c23686afdc3e8644b47e988302d42e1}
+      \strng{authorfullhash}{2c23686afdc3e8644b47e988302d42e1}
+      \field{sortinit}{Z}
+      \field{sortinithash}{8f7b480688e809b50b6f6577b16f3db5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-24087-4}
+      \field{month}{09}
+      \field{title}{Character Segmentation for License Plate Recognition by K-Means Algorithm}
+      \field{year}{2011}
+      \field{pages}{444\bibrangedash 453}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1007/978-3-642-24088-1_46
+      \endverb
+    \endentry
     \entry{824138}{article}{}
       \name{author}{2}{}{%
         {{hash=ce34cef36160659d8e8be125fc3ddd5b}{%
