@@ -31,7 +31,7 @@ def test_video(path):
         i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
         i_gray_cropped = i_gray[0:-80, 0:]
         ii = integral_image(i_gray_cropped)
-        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1, original_image=frame,
+        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.5, original_image=frame,
                           show_output=False, ocr=True)
 
         cv2.imshow('window-name', i_scaled)
@@ -410,7 +410,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
     # cv2.waitKey()
 
     # połaczone
-    rects = non_max_supression(detections, 0.1)
+    rects = non_max_supression(detections, 0.2)
     for rect in rects:
         [k, j] = rect[0]
         [k_end, j_end] = rect[1]
@@ -497,7 +497,7 @@ n = indexes.shape[0]  # number of all features
 print("N: " + str(n))
 hcs = haar_coords(s, p, indexes)
 
-neg_per_image = 50
+neg_per_image = 100
 data_name = "licence_plates_n_" + str(n) + "_s_" + str(s) + "_p_" + str(p) + "_negs_" + str(neg_per_image) + ".bin"
 # X_train, y_train, X_test, y_test = fddb_data(hcs, neg_per_image, n)
 # utils.pickle_all(data_path + data_name, [X_train, y_train, X_test, y_test])
@@ -521,6 +521,7 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
+# test_video("test_data/video/70mai-a800s-dzien.mp4")
 test_video("test_data/video/test_video_1.mp4")
 exit()
 

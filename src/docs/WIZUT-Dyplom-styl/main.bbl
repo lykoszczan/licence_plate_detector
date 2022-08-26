@@ -983,6 +983,18 @@
       \field{pages}{1007\bibrangedash 1020}
       \range{pages}{14}
     \endentry
+    \entry{overfitting}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{title}{Wprowadzenie do uczenia maszynowego}
+      \verb{urlraw}
+      \verb https://kcir.pwr.edu.pl/~witold/ai/ml_intro_s.pdf
+      \endverb
+      \verb{url}
+      \verb https://kcir.pwr.edu.pl/~witold/ai/ml_intro_s.pdf
+      \endverb
+    \endentry
     \entry{Xu2006AMO}{article}{}
       \name{author}{4}{}{%
         {{hash=67279134725f02a125f4b4adb229500c}{%

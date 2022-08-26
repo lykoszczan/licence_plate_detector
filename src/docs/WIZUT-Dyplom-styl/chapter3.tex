@@ -16,16 +16,43 @@
 %----------------------------------------------------------------------------------------
 
 \chapter{Opracowany algorytm}
+\label{ch:opracowany-algorytm}
 \chaptermark{Opracowany algorytm} % Tekst, który wyświetli się w nagłówku strony,  jeżeli jest za długi tytuł rozdziału
 
 
 \section{Proces uczenia klasyfikatora}
+\label{sec:proces-uczenia-klasyfikatora}
+Proces uczenia klasyfikatora jest kluczowym etapem budowy modelu uczenia maszynowego.
+Jeżeli na tym etapie dojdzie do błędu, będzie to rzutować na działanie całej aplikacji.
+Częstym zjawiskiem w uczeniu maszynowym jest przeuczenie (ang. \textit{overfitting}).
+Polega ono na wykrywaniu pozornych prawidłowości w dużej ilości danych, gdzie prawdziwe prawidłowości są prostsze lub słabsze, lub są maskowane przez błędy, lub są całkowicie nieistniejące \cite{overfitting}
+
+\subsection{Przygotowanie danych uczących}
+\label{subsec:przygotowanie-danych-uczacych}
+W rozdziale \ref{ch:preparing_data_set} przedstawiono opracowany zbiór zdjęć z kamery samochodowej zawierający poruszające się pojazdy wraz z ich tablicami rejestracyjnymi.
+Klasyfikatora działają jednak w inny sposób niż ludzki mózg i wymagają innych wartości, na których będą mogły podejmować decyzje.
+W niniejszej pracy zdecydowano się wykorzystać cechy Haara jako cechy reprezentujące poszukiwane obiekty.
+W celu wyuczenia klasyfikatora, należało opracowany wcześniej zbiór przetworzyć, aby każda negatywna i pozytywna próbka miała swoją reprezentację liczbową.
+Na rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy procesu przygotowania danych uczących dla klasyfikatora.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.4]{Pictures/prepare_haar_dataset}
+    \caption{Schemat blokowy przygotowania danych uczących dla klasyfikatora (źródło: opracowanie własne)}
+    \label{fig:haar_feats_dataset_prepare}
+\end{figure}
+\FloatBarrier
 @todo
 
 
 \section{Schemat algorytmu}
 @todo
 diagram graficzny
+
+\subsection{Algorytm detekcji}
+@todo
+
+\subsection{Algorytm segmentacji i rozpoznawania znaków}
+@todo
 
 
 \section{Biblioteki użyte w programie}
@@ -83,7 +110,7 @@ Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Sho
 
 \subsection{Sklearn}
 
-\subsection{Matplotlib}
+\subsection{Pickle}
 
 \subsection{Numba}
 Biblioteka od przyspieszania kodu (jit)

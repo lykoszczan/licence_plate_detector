@@ -2211,12 +2211,13 @@
     <bcf:citekey order="27">otsu_inzynieria_rolnicza</bcf:citekey>
     <bcf:citekey order="28">10.1117/1.1631315</bcf:citekey>
     <bcf:citekey order="29">Mitchell97</bcf:citekey>
-    <bcf:citekey order="30">open_cv</bcf:citekey>
-    <bcf:citekey order="30">open_cv_docs</bcf:citekey>
-    <bcf:citekey order="31">4767851</bcf:citekey>
-    <bcf:citekey order="32">tesseract</bcf:citekey>
-    <bcf:citekey order="33">pytesseract</bcf:citekey>
-    <bcf:citekey order="34">lstm</bcf:citekey>
+    <bcf:citekey order="30">overfitting</bcf:citekey>
+    <bcf:citekey order="31">open_cv</bcf:citekey>
+    <bcf:citekey order="31">open_cv_docs</bcf:citekey>
+    <bcf:citekey order="32">4767851</bcf:citekey>
+    <bcf:citekey order="33">tesseract</bcf:citekey>
+    <bcf:citekey order="34">pytesseract</bcf:citekey>
+    <bcf:citekey order="35">lstm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
