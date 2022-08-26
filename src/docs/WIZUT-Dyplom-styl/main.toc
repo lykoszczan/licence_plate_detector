@@ -49,9 +49,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.1}Algorytm detekcji}{30}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Algorytm segmentacji i rozpoznawania znaków}{31}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Algorytm segmentacji i rozpoznawania znaków}{30}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{31}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{30}{section.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.1}OpenCV}{31}{subsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
