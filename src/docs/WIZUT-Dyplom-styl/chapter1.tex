@@ -71,9 +71,9 @@ Zgodnie ze słowikiem języka polskiego, definicja tablicy rejestracyjnej brzmi 
 \begin{definition}[Tablica rejestracyjna]
     Płytka zawierająca numery identyfikacyjne pojazdu, umieszczana z przodu i z tyłu pojazdu.
 \end{definition}
-Dla programu komputerowego powyższe zdanie nie jest zrozumiałe.
+Dla programu komputerowego powyższe zdanie jest niezrozumiałe.
 W zadaniu detekcji tablicy rejestracyjnej, wymagane jest, aby maszyna ``zrozumiała'' jakich obiektów należy szukać.
-W kontekście detekcji, za definicję można uznać ``prostokątny obszar, z dużym zagęszczeniem horyzontalnych i wertykalnych krawędzi''\cite{824138}.
+W tym kontekście, za definicję można uznać ``prostokątny obszar, z dużym zagęszczeniem horyzontalnych i wertykalnych krawędzi''\cite{824138}.
 W oparciu o powyższe cechy zaprezentowano wiele algorytmów do rozwiązania zadania wykrywania tablic rejestracyjnych.
 Część z nich wywodzi się z tradycyjnych metod widzenia komputerowego i metod głębokiego uczenia.
 Każda z metod ma swoje zalety, ale również często ograniczenia.
@@ -163,7 +163,7 @@ Do tego typu metod wykorzystywany jest m. in. algorytm \textit{Mean shift} \cite
 Opisywana grupa metod może zostać użyta do detekcji zdeformowanych i pochylonych tablic.
 Rzadko występują one osobno w metodach detekcji, głównie ze względu na ich dużą czułość na zmiany naświetlenia.
 Dodatkowo w zależności od kraju oraz przeznaczenia pojazdu, kolory tablic mogą się znacznie różnić.
-Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a samochody zabytkowe żółty (\ref{fig:tablice}).
+Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a samochodów zabytkowych żółty (\ref{fig:tablice}).
 \FloatBarrier
 \begin{figure}[!ht]
     \centering
@@ -179,7 +179,7 @@ Znaki na tablicy mają z reguły czarny kolor i znajdują się na jasnym tle two
 Powyższa grupa algorytmów wykorzystuje wysoką częstość zmiany kolorów w obszarze występowania tablic rejestracyjnych.
 W \cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantyzacji wektorów (ang. \textit{Vector Quantization - VQ}).
 W przeciwieństwie do innych metod, które wykorzystywały krawędzi lub kontrast, metoda VQ wykorzystuje aktualną zawartość tablicy rejestracyjnej.
-Autorzy wykorzystali bardzo wysoką skuteczność na poziomie 98\%.
+Autorzy wykazali bardzo wysoką skuteczność rozwiązania na poziomie 98\%.
 
 W analizie tekstur, często stosuje się filtr Gabora.
 Jest to filtr liniowy, pozwalający na przefiltrowanie obrazu z precyzyjnie dobranym zakresem częstotliwości.
@@ -192,7 +192,7 @@ Jest to kluczowa zaleta ich stosowania.
 Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalających efektów w złożonych środowiskach z różnymi warunkami oświetlenia.
 
 \subsection{Klasyfikatory}
-Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting - AdaBoost}) do wyuczenia kaskady klasyfikatorów.
+Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting - AdaBoost}) do wyuczenia kaskady klasyfikatorów \cite{9310202}.
 Podejście takie zostało zaproponowane po raz pierwszy w \cite{990517}.
 Algorytm Viola-Jones został zaprezentowany w 2001.
 Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany co świadczy o jego ponadczasowości i uniwersalności.
@@ -231,7 +231,7 @@ Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punkt
     \label{eq:integral_image_x_y}
     \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
 \end{equation}
-Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego.
+Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego \cite{szybka_detekcja_klesk}.
 Ten sposób charakteryzuje się liniową złożonością obliczeniową $O(1)$.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
@@ -281,7 +281,7 @@ Na początku wszystkie próbki posiadają tą sama wartość wag.
 Po zakończeniu uczenia, wagi błędnie sklasyfikowanych próbek zostają zwiększone.
 Dzięki temu, w następnej iteracji uczenia kolejny klasyfikator będzie mógł lepiej rozpoznawać niepoprawnie oznaczone jednostki treningowe w poprzednim kroku.
 W momencie, gdy każdy klasyfikator zostanie wyuczony, AdaBoost przypisuje do nich wagi na podstawie dokładności każdego z nich.
-Ostateczny klasyfikator można opisać wzorem \ref{eq:ada_boost_clf}.
+Ostateczną odpowiedź klasyfikatora można opisać wzorem~\ref{eq:ada_boost_clf}.
 \begin{equation}
     \label{eq:ada_boost_clf}
     H(x) = sign(\sum_{T}^{t=1} \alpha_t h_t(x))
@@ -328,7 +328,7 @@ gdzie $\hat{P_w}(y=\pm1|x)$ stanowi oszacowanie rozkładu klas warunkowego na $x
 W przeciwieństwie do AdaBoost, słabe klasyfikatory nie posiadają wag.
 Mechanizm ważenia słabych klasyfikator jest niejako wpleciony w same odpowiedzi rzeczywistoliczbowe.
 Możliwym jest wykazanie, że wyrażenie \ref{eq:real_boost} jest rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez rozład ${w_i}$ na zbiorze danych (tj. na konkretnej próbie).
-Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$.
+Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$ \cite{szybka_detekcja_klesk}.
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
@@ -369,7 +369,7 @@ Na moment pisania pracy, udostępniona została trzecia wersja systemu.
 
 Drugim etapem w większości systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych jest rozpoznanie znaków na tablicy rejestracyjnej zlokalizowanej w poprzednim kroku.
 Zanim dojdzie do klasyfikacji znaków, często są one wpierw segmentowane.
-Jest to szczególny przypadek optycznego rozpoznawania znaków.
+Jest to szczególny przypadek optycznego rozpoznawania znaków \cite{9310202}.
 Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy rejestracyjnej.
 Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
 W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
@@ -416,7 +416,7 @@ Próg dla każdego piksela wyliczany jest na podstawie interpolacji wyników dla
 Wadą tej metody jest jej złożoność obliczeniowa.
 Jest to jeden z głównych powodów, dlaczego algorytm ten nie znalazł zastosowania w aplikacjach działających w czasie rzeczywistym.
 
-Alternatywnym podejściem do znalezienia lokalnego progu jest statystyczne zbadanie intensywności lokalnego sąsiedztwa każdego piksela.
+Alternatywnym podejściem do znalezienia lokalnego progu jest statystyczne zbadanie intensywności sąsiedztwa każdego piksela.
 Wybór metody statystycznej jest skorelowany z obrazem wejściowym.
 Najczęściej używa się średniej, mediany, średniej z wartości maksymalnej i minimalnej badanego otoczenia lub funkcji Gaussa.
 Dobór wielkości sąsiedztwa ma duży wpływ na wyliczenie progu.
@@ -449,7 +449,7 @@ Liczbę wszystkich pikseli zapisano literą $N$.
 Metoda Otsu implementowana przez wiele środowisk obliczeniowych (np. MATLAB) \cite{otsu_inzynieria_rolnicza}.
 Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone \cite{10.1117/1.1631315}.
 
-\subsection{Metoda k-średnich}
+\subsection{Metoda k-średnich (ang. \textit{ang. K-Means algorithm})}
 todo \cite{segmentation_kmeans}
 
 \subsection{Metoda rzutów jasności}
@@ -466,4 +466,5 @@ todo
 tesseract korzysta z sieci lstm wiec warto by to opisac i jakieś inne sieci
 %https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
 
-\subsection{TEMPLATE AND PATTERN MATCHING TECHNIQUES}
+\subsection{Metody oparte na wzorcach}
+@TODO - TEMPLATE AND PATTERN MATCHING TECHNIQUES

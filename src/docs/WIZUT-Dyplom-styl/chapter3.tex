@@ -27,10 +27,12 @@ Jeżeli na tym etapie dojdzie do błędu, będzie to rzutować na działanie ca�
 Częstym zjawiskiem w uczeniu maszynowym jest przeuczenie (ang. \textit{overfitting}).
 Polega ono na wykrywaniu pozornych prawidłowości w dużej ilości danych, gdzie prawdziwe prawidłowości są prostsze lub słabsze, lub są maskowane przez błędy, lub są całkowicie nieistniejące \cite{overfitting}.
 
+TODO - do dokończenia
+
 \subsection{Przygotowanie danych uczących}
 \label{subsec:przygotowanie-danych-uczacych}
 W rozdziale \ref{ch:preparing_data_set} przedstawiono opracowany zbiór zdjęć z kamery samochodowej zawierający poruszające się pojazdy wraz z ich tablicami rejestracyjnymi.
-Klasyfikatora działają jednak w inny sposób niż ludzki mózg i wymagają innych wartości, na których będą mogły podejmować decyzje.
+Klasyfikatory działają jednak w inny sposób niż ludzki mózg i wymagają innych wartości, na których będą mogły podejmować decyzje.
 W niniejszej pracy zdecydowano się wykorzystać cechy Haara jako cechy reprezentujące poszukiwane obiekty.
 W celu wyuczenia klasyfikatora, należało opracowany wcześniej zbiór przetworzyć, aby każda negatywna i pozytywna próbka miała swoją reprezentację liczbową.
 Na rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy procesu przygotowania danych uczących dla klasyfikatora.
@@ -42,7 +44,7 @@ Na rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy pr
 \end{figure}
 \FloatBarrier
 @todo
-jakie cechy haara (przedstawienie szablonów)
+jakie cechy haara (przedstawienie szablonów), opisać blok, pokazać zdjęcia z uczenia z szablonami
 
 \subsection{Uczenie klasyfikatora}
 W niniejszej pracy zaimplementowano i wykorzystano algorytm wzmacniający RealBoost oparty o koszyki (ang. \textit{bins}).
@@ -57,7 +59,7 @@ Następnie przypisywane są indeksy koszyków do poszczególnych cech.
 Kolejnym krokiem jest przygotowanie indeksów, które przechowują informację o tym czy cecha dla konkretnego koszyka powiązana jest z próbką pozytywną czy negatywną.
 Po przygotowaniu powyższych danych, algorytm przechodzi do wybrania najważniejszych cech z punktu widzenia klasyfikatora.
 Obliczane jest to poprzez iterację po wszystkich cechach i określeniu cechy dla każdego klasyfikatora o najmniejszym błędzie.
-Wyznaczane jest to za pomocą funkcji logit, która jest wyznacza dla każdego z koszyków z osobna.
+Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków z osobna.
 Na koniec dochodzi do reważenia wag.
 Czynność jest powtarza dla każdego słabego klasyfikatora.
 Algorytm \ref{lst:fit_realboostbins} ukazuje fragment metody uczącej odpowiedzialny za wyliczenie odpowiedzi dla każdego ze słabych klasyfikatorów i wyznaczenie indeksów najlepszych cech.
@@ -82,10 +84,7 @@ for t in range(self.T_):
     self.logits_[t] = logits_best
     w = w * np.exp(-yy * logits_best[X_binned[:, j_best]])
     w /= err_exp_best
-    print(f"T: {t}, "
-          f"J: {j_best}, "
-          f"ERR_EXP: {err_exp_best}, "
-          f"LOGITS: {np.round(logits_best, 2)}")
+
 \end{lstlisting}
 Na rysunku \ref{fig:fit_realboostbins} przedstawiono schemat blokowy uczenia klasyfikatora.
 \begin{figure}[!ht]

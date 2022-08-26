@@ -23,7 +23,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.1}Binaryzacja}{20}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.2}Metoda k-średnich}{22}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.2}Metoda k-średnich (ang. \textit {ang. K-Means algorithm})}{22}{subsection.1.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.3}Metoda rzutów jasności}{22}{subsection.1.2.3}%
 \defcounter {refsection}{0}\relax 
@@ -33,7 +33,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.3.1}OCR}{22}{subsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}TEMPLATE AND PATTERN MATCHING TECHNIQUES}{22}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}Metody oparte na wzorcach}{22}{subsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Zebranie materiału uczącego}{23}{chapter.2}%
 \defcounter {refsection}{0}\relax 
@@ -43,7 +43,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.1}Przygotowanie danych uczących}{27}{subsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Uczenie klasyfikatora}{28}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.2}Uczenie klasyfikatora}{29}{subsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Schemat algorytmu}{30}{section.3.2}%
 \defcounter {refsection}{0}\relax 

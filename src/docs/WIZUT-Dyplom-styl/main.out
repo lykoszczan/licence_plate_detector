@@ -8,12 +8,12 @@
 \BOOKMARK [2][-]{subsection.1.1.5}{Metody g\233ebokiego uczenia \(ang. Deep learning\)}{section.1.1}% 8
 \BOOKMARK [1][-]{section.1.2}{Przeglad istniejacych metod segmentacji tablic rejestracyjnych}{chapter.1}% 9
 \BOOKMARK [2][-]{subsection.1.2.1}{Binaryzacja}{section.1.2}% 10
-\BOOKMARK [2][-]{subsection.1.2.2}{Metoda k-srednich}{section.1.2}% 11
+\BOOKMARK [2][-]{subsection.1.2.2}{Metoda k-srednich \(ang. ang. K-Means algorithm\)}{section.1.2}% 11
 \BOOKMARK [2][-]{subsection.1.2.3}{Metoda rzut\363w jasnosci}{section.1.2}% 12
 \BOOKMARK [2][-]{subsection.1.2.4}{Metoda element\363w po\233aczonych \(ang. Connected components\)}{section.1.2}% 13
 \BOOKMARK [1][-]{section.1.3}{Przeglad istniejacych metod rozpoznawania tablic rejestracyjnych}{chapter.1}% 14
 \BOOKMARK [2][-]{subsection.1.3.1}{OCR}{section.1.3}% 15
-\BOOKMARK [2][-]{subsection.1.3.2}{TEMPLATE AND PATTERN MATCHING TECHNIQUES}{section.1.3}% 16
+\BOOKMARK [2][-]{subsection.1.3.2}{Metody oparte na wzorcach}{section.1.3}% 16
 \BOOKMARK [0][-]{chapter.2}{Zebranie materia\233u uczacego}{}% 17
 \BOOKMARK [0][-]{chapter.3}{Opracowany algorytm}{}% 18
 \BOOKMARK [1][-]{section.3.1}{Proces uczenia klasyfikatora}{chapter.3}% 19
