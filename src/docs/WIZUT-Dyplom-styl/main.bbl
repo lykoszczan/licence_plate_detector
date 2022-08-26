@@ -672,6 +672,43 @@
       \endverb
       \keyw{Algorithms,Computer Vision,Mathematics,Statistics}
     \endentry
+    \entry{1689652}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=d95087886dbc0bb8adb17e367a3fde37}{%
+           family={Rasolzadeh},
+           familyi={R\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bfeec948c07d9e43a9c97aabaf0c059d}{%
+           family={Petersson},
+           familyi={P\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=5a56b03f23fdbea7949e4857ca49390c}{%
+           family={Pettersson},
+           familyi={P\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6f1926a5bbe0650cf788d019dcd59246}
+      \strng{fullhash}{6f1926a5bbe0650cf788d019dcd59246}
+      \strng{bibnamehash}{6f1926a5bbe0650cf788d019dcd59246}
+      \strng{authorbibnamehash}{6f1926a5bbe0650cf788d019dcd59246}
+      \strng{authornamehash}{6f1926a5bbe0650cf788d019dcd59246}
+      \strng{authorfullhash}{6f1926a5bbe0650cf788d019dcd59246}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2006 IEEE Intelligent Vehicles Symposium}
+      \field{title}{Response Binning: Improved Weak Classifiers for Boosting}
+      \field{year}{2006}
+      \field{pages}{344\bibrangedash 349}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IVS.2006.1689652
+      \endverb
+    \endentry
     \entry{7780460}{inproceedings}{}
       \name{author}{4}{}{%
         {{hash=99bced2e56a5253f3fe98a5f04e6d9b2}{%

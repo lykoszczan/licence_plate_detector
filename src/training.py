@@ -1,7 +1,9 @@
 import time
+
 from sklearn.ensemble import AdaBoostClassifier
-import utils
+
 import boosting
+import utils
 
 
 def learn(X_train, y_train, clf_path, n, s, p, adaBoost=False, force=False):

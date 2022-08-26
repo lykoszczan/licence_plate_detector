@@ -37,9 +37,19 @@ class RealBoostBins(BaseEstimator, ClassifierMixin):
         self.maxes_ = np.zeros(n)
         for j in range(n):
             sorted_j = np.sort(X[:, j])
-            self.mins_[j] = sorted_j[int(np.ceil(self.OUTLIERS_RATIO_ * m))]
-            self.maxes_[j] = sorted_j[int(np.floor((1.0 - self.OUTLIERS_RATIO_) * m))]
-        X_binned = np.clip(np.int8((X - self.mins_) / (self.maxes_ - self.mins_) * self.B_), 0, self.B_ - 1)
+            self.mins_[j] = sorted_j[
+                int(np.ceil(self.OUTLIERS_RATIO_ * m))
+            ]
+            self.maxes_[j] = sorted_j[
+                int(np.floor((1.0 - self.OUTLIERS_RATIO_) * m))
+            ]
+        X_binned = np.clip(
+            np.int8(
+                (X - self.mins_) / (self.maxes_ - self.mins_) * self.B_
+            ),
+            0,
+            self.B_ - 1
+        )
 
         print("PREPARING INDEXER...")
         indexer_positive = np.zeros((n, self.B_, m), dtype="bool")
@@ -47,8 +57,14 @@ class RealBoostBins(BaseEstimator, ClassifierMixin):
         for j in range(n):
             for b in range(self.B_):
                 indexes_j_b = X_binned[:, j] == b
-                indexer_positive[j, b] = np.logical_and(indexes_j_b, indexes_positive)
-                indexer_negative[j, b] = np.logical_and(indexes_j_b, indexes_negative)
+                indexer_positive[j, b] = np.logical_and(
+                    indexes_j_b,
+                    indexes_positive
+                )
+                indexer_negative[j, b] = np.logical_and(
+                    indexes_j_b,
+                    indexes_negative
+                )
         print("PREPARING INDEXER DONE.")
 
         w = np.ones(m) / m
@@ -71,7 +87,10 @@ class RealBoostBins(BaseEstimator, ClassifierMixin):
             self.logits_[t] = logits_best
             w = w * np.exp(-yy * logits_best[X_binned[:, j_best]])
             w /= err_exp_best
-            print(f"T: {t}, J: {j_best}, ERR_EXP: {err_exp_best}, LOGITS: {np.round(logits_best, 2)}")
+            print(f"T: {t}, "
+                  f"J: {j_best}, "
+                  f"ERR_EXP: {err_exp_best}, "
+                  f"LOGITS: {np.round(logits_best, 2)}")
 
     def predict(self, X):
         return self.class_labels_[(self.decision_function(X) > 0.0) * 1]
