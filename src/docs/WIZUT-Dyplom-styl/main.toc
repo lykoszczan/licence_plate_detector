@@ -67,13 +67,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Wyniki badań}{35}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{36}{chapter.4}%
+\contentsline {chapter}{Podsumowanie}{36}{table.caption.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{39}{chapter*.19}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{39}{chapter*.20}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{39}{section*.20}%
+\contentsline {section}{Książki}{39}{section*.21}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{39}{section*.21}%
+\contentsline {section}{Artykuły}{39}{section*.22}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{41}{section*.22}%
+\contentsline {section}{Źródła internetowe i inne}{41}{section*.23}%
 \contentsfinish 
