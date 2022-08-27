@@ -2219,13 +2219,15 @@
     <bcf:citekey order="35">Mitchell97</bcf:citekey>
     <bcf:citekey order="36">haar_object_marker</bcf:citekey>
     <bcf:citekey order="37">overfitting</bcf:citekey>
-    <bcf:citekey order="38">1689652</bcf:citekey>
-    <bcf:citekey order="39">open_cv</bcf:citekey>
-    <bcf:citekey order="39">open_cv_docs</bcf:citekey>
-    <bcf:citekey order="40">4767851</bcf:citekey>
-    <bcf:citekey order="41">tesseract</bcf:citekey>
-    <bcf:citekey order="42">pytesseract</bcf:citekey>
-    <bcf:citekey order="43">lstm</bcf:citekey>
+    <bcf:citekey order="38">overfitting</bcf:citekey>
+    <bcf:citekey order="39">szybka_detekcja_klesk</bcf:citekey>
+    <bcf:citekey order="40">1689652</bcf:citekey>
+    <bcf:citekey order="41">open_cv</bcf:citekey>
+    <bcf:citekey order="41">open_cv_docs</bcf:citekey>
+    <bcf:citekey order="42">4767851</bcf:citekey>
+    <bcf:citekey order="43">tesseract</bcf:citekey>
+    <bcf:citekey order="44">pytesseract</bcf:citekey>
+    <bcf:citekey order="45">lstm</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

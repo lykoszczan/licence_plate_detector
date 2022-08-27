@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import pytesseract
 
+from src.nms import non_max_supression
 from src.utils import scale_image
 
 
@@ -31,7 +32,8 @@ def get_contours(img):
 def detect_licence_plate_characters(test_license_plate, with_contours=True):
     # test_license_plate = cv2.imread('test_data/blurred_plate.png')
     test_license_plate = scale_image(test_license_plate, 300)
-    return ocr_with_segmentation(test_license_plate)
+    # return ocr_with_segmentation(test_license_plate)
+    return ocr_with_segmentation(test_license_plate, True)
 
     cv2.imshow('before process', test_license_plate)
     cv2.waitKey()
@@ -80,7 +82,10 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
 
 
 def ocr_with_segmentation(image, verbose=False):
+    # blue
     candidate_color = (255, 0, 0)
+    # grey
+    non_max_color = (192, 192, 192)
 
     img_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     _, thresh = cv2.threshold(img_gray, 200, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
@@ -118,14 +123,21 @@ def ocr_with_segmentation(image, verbose=False):
         # print('variance', statistics.variance(avg_sizes))
         print(np.sort(avg_sizes))
 
+    nms_candidates = []
     for el in candidates:
         x, y, w, h = el
-
+        nms_candidates.append([y, x, h, w])
         if h < (avg_height - 10):
             continue
+
         if verbose:
             cv2.rectangle(image, (x, y), (x + w, y + h), candidate_color, 3)
         result[y:y + h, x:x + w] = extract[y:y + h, x:x + w]
+
+    rects = non_max_supression(nms_candidates, 0.01)
+    for rect in rects:
+        if verbose:
+            cv2.rectangle(image, rect[0], rect[1], non_max_color, 3)
 
     if verbose:
         print('contours count', counter)

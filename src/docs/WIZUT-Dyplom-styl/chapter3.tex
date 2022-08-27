@@ -1,23 +1,16 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Szablon pracy dyplomowej
-% Wydział Informatyki 
-% Zachodniopomorski Uniwersytet Technologiczny w Szczecinie
-% autor Joanna Kołodziejczyk (jkolodziejczyk@zut.edu.pl)
-% Bardzo wczesnym pierwowzorem szablonu był
-% The Legrand Orange Book
-% Version 2.1 (26/09/2018)
-%
-% Modifications to LOB assigned by %JK
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %----------------------------------------------------------------------------------------
-%	CHAPTER 2
+%	CHAPTER 3
 %----------------------------------------------------------------------------------------
 
 \chapter{Opracowany algorytm}
 \label{ch:opracowany-algorytm}
-\chaptermark{Opracowany algorytm} % Tekst, który wyświetli się w nagłówku strony,  jeżeli jest za długi tytuł rozdziału
+\chaptermark{Opracowany algorytm}
+W przedstawionej pracy zrealizowano program rozpoznający tablice rejestracyjne na sekwencjach wideo pochodzących z kamery samochodowej.
+Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech za pomocą algorytmu RealBoost opartego o koszyki.
+Do ekstrakcji cech zastosowano obrazy całkowe wykorzystujące cechy Haara.
+Rozpoznane fragmenty obrazu zawierające tablice poddano operacjom morfologicznym.
+Z przetworzonych obrazów segmentowano znaki tablicy rejestracyjnej.
+Do rozpoznania znaków użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
 
 
 \section{Proces uczenia klasyfikatora}
@@ -25,9 +18,11 @@
 Proces uczenia klasyfikatora jest kluczowym etapem budowy modelu uczenia maszynowego.
 Jeżeli na tym etapie dojdzie do błędu, będzie to rzutować na działanie całej aplikacji.
 Częstym zjawiskiem w uczeniu maszynowym jest przeuczenie (ang. \textit{overfitting}).
-Polega ono na wykrywaniu pozornych prawidłowości w dużej ilości danych, gdzie prawdziwe prawidłowości są prostsze lub słabsze, lub są maskowane przez błędy, lub są całkowicie nieistniejące \cite{overfitting}.
-
-TODO - do dokończenia
+Polega ono na wykrywaniu pozornych prawidłowości w dużej ilości danych, gdzie prawdziwe prawidłowości są prostsze lub słabsze, lub są maskowane przez błędy, lub są całkowicie nieistniejące~\cite{overfitting}.
+Innym niepożądanym przypadkiem błędnego wyuczenia jest niedouczenie (ang. \textit{underfitting}).
+Wynika ono najczęściej z zastosowania zbyt uproszczonego modelu lub niewystarczającej liczby próbek uczących~\cite{overfitting}.
+Mając powyższe na uwadze, należy przyłożyć staranną uwagę do przygotowania odpowiedniego zbioru uczącego.
+Nieprawidłowości na tym etapie będą bardzo trudno do wyeliminowania w późniejszych częściach systemu.
 
 \subsection{Przygotowanie danych uczących}
 \label{subsec:przygotowanie-danych-uczacych}
@@ -43,8 +38,64 @@ Na rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy pr
     \label{fig:haar_feats_dataset_prepare}
 \end{figure}
 \FloatBarrier
-@todo
-jakie cechy haara (przedstawienie szablonów), opisać blok, pokazać zdjęcia z uczenia z szablonami
+Pierwszą czynnością jest określenie parametrów zbioru uczącego.
+Przed rozpoczęciem uczenia należy określić ile cech ma być liczonych z jednej próbki.
+Każdy szablon może być odpowiednią ilość razy skalowany wzdłuż każdego z kierunków.
+Parametr ten oznacza się literą $s$.
+Parametrem $p$ oznacza rozmiary regularnej siatki ($(2p-1)x(2p-1)$) punktów zaczepienia cech \cite{szybka_detekcja_klesk}.
+Na podstawie powyższych parametrów określa się liczbę cech niezbędnych do wyliczenia w trakcie przetwarzania jednego okna wg wzoru \ref{eq:features_count}.
+\begin{equation}
+    \label{eq:features_count}
+    n(s,p)=6s^2(2p-1)^2
+\end{equation}
+Przykładowo, dla $s=3$ i $p=4$ liczba niezbędnych do wyliczenia cech jest równa 2205.
+Dla $s=p=5$ liczba ta rośnie do 10125.
+Im większa jest liczba cech tym dokładność detekcji powinna rosnąć.
+Jednak wraz ze wzrostem liczby cech, rośnie też czas wykonania skryptu ze względu na większą ilość niezbędnych do wykonania obliczeń.
+Innym wejściowym parametrem jest ustalenie stosunku próbek pozytywnych do próbek negatywnych.
+
+Po ustaleniu wejściowych parametrów, wczytywany jest plik tekstowy ze współrzędnymi tablic dla konkretnych plików.
+Dla każdego rekordu w zbiorze, wczytywane jest odpowiednie zdjęcie.
+Następnie algorytm iteruje po wszystkich pozytywnych próbkach znajdujących się w rozpatrywanym pliku.
+Dla każdej próbki wyliczane są cechy Haara za pomocą wygenerowanych wcześniej szablonów.
+
+W opisywanym programie użyto 5 szablonów cech Haara.
+Szablony są skalowane odpowiednim skokiem zależnym od $s$.
+Poniżej zamieszczono kod procedury generującej współrzędne szablonu dla każdej cechy \ref{lst:haar_cords}.
+\begin{lstlisting}[language=Python, caption=Procedura generujące szablony cech Haara dla konkretnych wpsółrzędnych, label={lst:haar_cords}]
+def haar_coords(s, p, indexes):
+    coords = []
+    f_jump = (FEATURE_MAX - FEATURE_MIN) / (s - 1)
+    for t, s_j, s_k, p_j, p_k in indexes:
+        f_h = FEATURE_MIN + s_j * f_jump
+        f_w = FEATURE_MIN + s_k * f_jump
+        p_jump_h = (1.0 - f_h) / (2 * p - 2)
+        p_jump_w = (1.0 - f_w) / (2 * p - 2)
+        pos_j = 0.5 + p_j * p_jump_h - 0.5 * f_h
+        pos_k = 0.5 + p_k * p_jump_w - 0.5 * f_w
+        single_coords = [np.array([pos_j, pos_k, f_h, f_w])]  # whole rectangle for single feature
+        for white in HAAR_TEMPLATES[t]:
+            white_coords = np.array([pos_j, pos_k, 0.0, 0.0]) + white * np.array([f_h, f_w, f_h, f_w])
+            single_coords.append(white_coords)
+        coords.append(np.array(single_coords))
+    return np.array(coords, dtype=object)
+\end{lstlisting}
+Na rysunku~\ref{fig:haar_feats_examples} pokazano przykładowe szablony podczas procesu uczenia.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/haar_tepmplates}
+    \caption{Ekstrakcja cech za pomocą obrazów całkowych (źródło: opracowanie własne)}
+    \label{fig:haar_feats_examples}
+\end{figure}
+\FloatBarrier
+
+Po przeprocesowaniu wszystkich pozytywnych próbek, algorytm generuje negatywy.
+Negatywne próbki są generowane losowo.
+Losowana jest szerokość okna jako wartość w przedziale od 1 do 10 procent szerokości całego obrazu.
+Wysokość okna jest zależna od szerokości.
+Przyjęto, że wysokość okna powinna być równa $\dfrac{1}{3}, \dfrac{1}{4}$ lub $\dfrac{1}{5}$ szerokości.
+Następnie dane są zapisywane do pliku.
+W ten sposób przygotowane dane w następnym etapie posłużą do wyuczenia klasyfikatora.
 
 \subsection{Uczenie klasyfikatora}
 W niniejszej pracy zaimplementowano i wykorzystano algorytm wzmacniający RealBoost oparty o koszyki (ang. \textit{bins}).
@@ -159,10 +210,13 @@ Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera p
 Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory}) \cite{lstm}.
 
 \subsection{Numpy}
+TODO
 
 \subsection{Sklearn}
+TODO - do zastanowienia czy sklearn jest istotny w niniejszej pracy
 
 \subsection{Pickle}
+TODO
 
 \subsection{Numba}
 Biblioteka od przyspieszania kodu (jit)

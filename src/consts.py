@@ -14,13 +14,12 @@ FEATURE_MIN = 0.25
 FEATURE_MAX = 0.5
 
 DETECTION_SCALES = 4
-DETECTION_W_MIN = 48
 DETECTION_W_GROWTH = 1.2
 DETECTION_W_JUMP_RATIO = 0.1
 
 DETECTION_SIZES = [
-    [45, 15],
-    [75, 25],
+    # [45, 15],
+    # [75, 25],
     # [105, 35],
-    # [165, 55],
+    [165, 55],
 ]

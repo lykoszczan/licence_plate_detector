@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  26 AUG 2022 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  27 AUG 2022 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,14 +1500,14 @@ This may cause the page layout to be inconsistent, however.
 
 ]
 Rozdzia\l  3.
-<Pictures/prepare_haar_dataset.png, id=540, 300.12125pt x 1296.845pt>
+<Pictures/prepare_haar_dataset.png, id=541, 300.12125pt x 1296.845pt>
 File: Pictures/prepare_haar_dataset.png Graphic file (type png)
 <use Pictures/prepare_haar_dataset.png>
 Package pdftex.def Info: Pictures/prepare_haar_dataset.png  used on input line 
-41.
+36.
 (pdftex.def)             Requested size: 120.04637pt x 518.72882pt.
 [27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7613) has occurred while \output is active []
 
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1515,12 +1515,11 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [28 <./Pictures/prepare_haar_dataset.png>]
-<Pictures/fit_realboostbins.png, id=555, 257.96375pt x 944.52875pt>
-File: Pictures/fit_realboostbins.png Graphic file (type png)
-<use Pictures/fit_realboostbins.png>
-Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 92.
-
-(pdftex.def)             Requested size: 103.18365pt x 377.80481pt.
+<Pictures/haar_tepmplates.png, id=557, 491.8375pt x 211.79124pt>
+File: Pictures/haar_tepmplates.png Graphic file (type png)
+<use Pictures/haar_tepmplates.png>
+Package pdftex.def Info: Pictures/haar_tepmplates.png  used on input line 86.
+(pdftex.def)             Requested size: 295.10477pt x 127.07571pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
@@ -1531,7 +1530,24 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[30 <./Pictures/fit_realboostbins.png>]
+[30 <./Pictures/haar_tepmplates.png>]
+<Pictures/fit_realboostbins.png, id=596, 257.96375pt x 944.52875pt>
+File: Pictures/fit_realboostbins.png Graphic file (type png)
+<use Pictures/fit_realboostbins.png>
+Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 143
+.
+(pdftex.def)             Requested size: 103.18365pt x 377.80481pt.
+
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][][][][][]
+ []
+
+[31]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[32 <./Pictures/fit_realboostbins.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1539,28 +1555,28 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[31])
+[33])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[32]
+[34]
 \openout2 = `chapter4.aux'.
 
  (./chapter4.tex
 Rozdzia\l  4.
-) [33
+) [35
 
 
 
 ]
 \openout2 = `conclusions.aux'.
 
- (./conclusions.tex [34
+ (./conclusions.tex [36
 
 
 
-]) [35] [36
+]) [37] [38
 
 
 ]
@@ -1568,20 +1584,20 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.0pt on input line 128.
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 12.0pt on input line 134.
- [37]
+ [39]
 Overfull \hbox (13.01935pt too wide) in paragraph at lines 134--134
 []\T1/ntxtlf/m/n/12 Robert E. Scha-pire i Yoram Sin-ger. ``Im-pro-ved Bo-osting
  Al-go-ri-thms Using Confidence-
  []
 
-[38]
+[40]
 Overfull \hbox (77.9496pt too wide) in paragraph at lines 139--139
 \T1/ntxtt/m/n/12 edu . pl / ~horzyk / lectures / miw / MIW -[] UczenieG % c5 % 
 82 % c4 % 99bokichSieciNeuronowych .
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 152.
-[39]
+[41]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
  (./main.aux (./title_page.aux) (./statement_page.aux) (./abstract.aux)
 (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
@@ -1589,16 +1605,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BB200CA0C1C0876B153464BDD7AADA3D;2773.
+(rerunfilecheck)             Checksum: E8B3F222A2BA338B784E6B77B2278305;2773.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22888 strings out of 483148
- 374795 string characters out of 5965416
- 1094560 words of memory out of 5000000
- 37238 multiletter control sequences out of 15000+600000
+ 22944 strings out of 483148
+ 375663 string characters out of 5965416
+ 1105840 words of memory out of 5000000
+ 37272 multiletter control sequences out of 15000+600000
  627925 words of font info for 126 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  58i,15n,98p,1305b,2131s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1619,10 +1635,10 @@ e/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newt
 x/txsys.pfb>
-Output written on main.pdf (39 pages, 2743343 bytes).
+Output written on main.pdf (41 pages, 2917886 bytes).
 PDF statistics:
- 793 PDF objects out of 1000 (max. 8388607)
- 662 compressed objects within 7 object streams
- 201 named destinations out of 1000 (max. 500000)
- 372 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 698 compressed objects within 7 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 377 words of extra memory for PDF output out of 10000 (max. 10000000)
 

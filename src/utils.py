@@ -37,8 +37,8 @@ def scale_image(i, height=consts.DEFAULT_HEIGHT):
 
 
 def readDataFile():
-    outputPath = r'C:\Users\lykos\Desktop\py-mgr\src\tools\data.txt'
-    # outputPath = r'/home/mlykowski/PycharmProjects/licence_plate_detector/src/tools/data.txt'
+    # outputPath = r'C:\Users\lykos\Desktop\py-mgr\src\tools\data.txt'
+    outputPath = r'/home/mlykowski/PycharmProjects/licence_plate_detector/src/tools/data.txt'
 
     with open(outputPath, 'r') as f:
         lines = f.readlines()
