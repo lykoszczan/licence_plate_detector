@@ -159,7 +159,7 @@ Na rysunku~\ref{fig:main_alg} przedstawiono schemat blokowy algorytmu rozpoznawa
 \FloatBarrier
 
 \subsection{Algorytm detekcji}
-@todo
+@todo - opis schematu blokowego
 Na rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detekcji tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
@@ -170,13 +170,28 @@ Na rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detek
 \FloatBarrier
 
 \subsection{Algorytm segmentacji i rozpoznawania znaków}
-@todo
+@todo - opis schematu blokowego
 Na rysunku~\ref{fig:characters_alg} przedstawiono schemat blokowy algorytmu rozpoznawania znaków.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/characters_alg}
     \caption{Schemat blokowy algorytmu rozpoznawania tablic (źródło: opracowanie własne)}
     \label{fig:characters_alg}
+\end{figure}
+\FloatBarrier
+Na rysunku~\ref{fig:segmentation} przedstawiono przykładowy proces segmentacji znaków.
+Pierwszy obraz jest obrazem wejściowym, który trafił do algorytmu z detektora tablic rejestracyjnych.
+Ostatni obraz jest wynikiem segmentacji.
+Obraz środkowy jest obrazem wejściowym, na który nałożono wykryte pozycje znaków (kolor niebieski).
+Kolorem różowym oznaczono kontury, które zostały wykryte, ale nie zostały spełniły kryteriów geometrycznych.
+Założono, że kontur musi być prostokątem o dłuższych bokach zorientowanych w pionie.
+Dodatkowo ustalono minimalną wartość powierzchni prostokąta.
+Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zbyt dużego odchylenia od średniej wysokości konturów.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.4]{Pictures/segmentation}
+    \caption{Proces segmentacji znaków (źródło: opracowanie własne)}
+    \label{fig:segmentation}
 \end{figure}
 \FloatBarrier
 

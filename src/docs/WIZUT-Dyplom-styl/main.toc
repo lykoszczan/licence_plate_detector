@@ -51,13 +51,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.2}Algorytm segmentacji i rozpoznawania znaków}{34}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{35}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{36}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}OpenCV}{35}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.1}OpenCV}{36}{subsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Tesseract OCR}{36}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Tesseract OCR}{37}{subsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Numpy}{36}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Numpy}{37}{subsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3.4}Sklearn}{37}{subsection.3.3.4}%
 \defcounter {refsection}{0}\relax 
@@ -73,11 +73,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Podsumowanie}{40}{subsection.4.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{43}{chapter*.23}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{43}{chapter*.24}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{43}{section*.24}%
+\contentsline {section}{Książki}{43}{section*.25}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{43}{section*.25}%
+\contentsline {section}{Artykuły}{43}{section*.26}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{45}{section*.26}%
+\contentsline {section}{Źródła internetowe i inne}{45}{section*.27}%
 \contentsfinish 

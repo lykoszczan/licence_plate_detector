@@ -4,7 +4,6 @@ import cv2
 import numpy as np
 import pytesseract
 
-from src.nms import non_max_supression
 from src.utils import scale_image
 
 
@@ -68,6 +67,7 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
 
         if w / h > 2 or h / w > 5 or area < 100:
             if verbose:
+                # różowy
                 cv2.rectangle(image, (x, y), (x + w, y + h), (255, 100, 255), 3)
             continue
         counter += 1
@@ -134,10 +134,10 @@ def ocr_with_segmentation(image, verbose=False):
             cv2.rectangle(image, (x, y), (x + w, y + h), candidate_color, 3)
         result[y:y + h, x:x + w] = extract[y:y + h, x:x + w]
 
-    rects = non_max_supression(nms_candidates, 0.01)
-    for rect in rects:
-        if verbose:
-            cv2.rectangle(image, rect[0], rect[1], non_max_color, 3)
+    # rects = non_max_supression(nms_candidates, 0.01)
+    # for rect in rects:
+    #     if verbose:
+    #         cv2.rectangle(image, rect[0], rect[1], non_max_color, 3)
 
     if verbose:
         print('contours count', counter)
