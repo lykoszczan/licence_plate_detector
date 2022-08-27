@@ -341,7 +341,7 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
     # cv2.waitKey()
 
     # połaczone
-    rects = nms.non_max_supression(detections, 0.2)
+    rects = nms.non_max_supression(detections, 0.1)
     for rect in rects:
         [k, j] = rect[0]
         [k_end, j_end] = rect[1]
@@ -469,4 +469,4 @@ i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
 # ii = integral_image(i_gray_cropped)
 ii = integral_image(i_gray)
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.9, original_image=i, show_output=True, ocr=True)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=4.9, original_image=i, show_output=True, ocr=True)

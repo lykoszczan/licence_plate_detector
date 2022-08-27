@@ -47,33 +47,37 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.2}Schemat algorytmu}{32}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Algorytm detekcji}{32}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Algorytm detekcji}{33}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Algorytm segmentacji i rozpoznawania znaków}{32}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Algorytm segmentacji i rozpoznawania znaków}{34}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Biblioteki użyte w programie}{35}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}OpenCV}{33}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.1}OpenCV}{35}{subsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Tesseract OCR}{34}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.2}Tesseract OCR}{36}{subsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.3}Numpy}{34}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Numpy}{36}{subsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.4}Sklearn}{34}{subsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.3.4}Sklearn}{37}{subsection.3.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.5}Pickle}{34}{subsection.3.3.5}%
+\contentsline {subsection}{\numberline {3.3.5}Pickle}{37}{subsection.3.3.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.6}Numba}{34}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.6}Numba}{37}{subsection.3.3.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Wyniki badań}{35}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Wyniki badań}{39}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{36}{table.caption.18}%
+\contentsline {subsection}{\numberline {4.0.1}Wyniki detekcji tablic rejestracyjnych}{39}{subsection.4.0.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{39}{chapter*.20}%
+\contentsline {subsection}{\numberline {4.0.2}Wyniki rozpoznawaniu znaków}{39}{subsection.4.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{39}{section*.21}%
+\contentsline {chapter}{Podsumowanie}{40}{subsection.4.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{39}{section*.22}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{43}{chapter*.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{41}{section*.23}%
+\contentsline {section}{Książki}{43}{section*.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Artykuły}{43}{section*.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Źródła internetowe i inne}{45}{section*.26}%
 \contentsfinish 
