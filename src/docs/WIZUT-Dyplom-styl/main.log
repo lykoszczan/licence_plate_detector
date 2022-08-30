@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  27 AUG 2022 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  30 AUG 2022 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1404,19 +1404,23 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [17 <./Pictures/adaboost_alphacurve.png>]
-<Pictures/yolo.png, id=423, 957.5775pt x 628.3475pt>
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 8.8pt on input line 345.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.6pt on input line 345.
+<Pictures/yolo.png, id=427, 957.5775pt x 628.3475pt>
 File: Pictures/yolo.png Graphic file (type png)
 <use Pictures/yolo.png>
-Package pdftex.def Info: Pictures/yolo.png  used on input line 360.
+Package pdftex.def Info: Pictures/yolo.png  used on input line 383.
 (pdftex.def)             Requested size: 383.02422pt x 251.33455pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--361
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
 [][]\T1/qhv/m/n/10.95 Rysunek 1.8[]: |Al-go-rytm YOLO (�r�-d�o: []$\T1/ntxtt/m/
 n/10.95 https : / / towardsdatascience . com /
  []
 
 
-Overfull \hbox (13.64532pt too wide) in paragraph at lines 361--361
+Overfull \hbox (13.64532pt too wide) in paragraph at lines 384--384
 \T1/ntxtt/m/n/10.95 r-[]cnn-[]fast-[]r-[]cnn-[]faster-[]r-[]cnn-[]yolo-[]object
 -[]detection-[]algorithms-[]36d53571365e$[]\T1/qhv/m/n/10.95 )| 
  []
@@ -1427,10 +1431,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [18]
-<Pictures/refleks_świetlny.png, id=437, 267.24844pt x 139.27031pt>
+<Pictures/refleks_świetlny.png, id=441, 267.24844pt x 139.27031pt>
 File: Pictures/refleks_świetlny.png Graphic file (type png)
 <use Pictures/refleks_świetlny.png>
-Package pdftex.def Info: Pictures/refleks_świetlny.png  used on input line 382
+Package pdftex.def Info: Pictures/refleks_świetlny.png  used on input line 405
 .
 (pdftex.def)             Requested size: 213.79904pt x 111.41638pt.
 
@@ -1439,22 +1443,22 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [19 <./Pictures/yolo.png (PNG copy)>]
-<Pictures/threshold.png, id=448, 514.92375pt x 178.86826pt>
+<Pictures/threshold.png, id=454, 514.92375pt x 178.86826pt>
 File: Pictures/threshold.png Graphic file (type png)
 <use Pictures/threshold.png>
-Package pdftex.def Info: Pictures/threshold.png  used on input line 404.
+Package pdftex.def Info: Pictures/threshold.png  used on input line 427.
 (pdftex.def)             Requested size: 308.95662pt x 107.32178pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[20 <./Pictures/refleks_świetlny.png (PNG copy)> <./Pictures/threshold.png>]
+[20 <./Pictures/refleks_świetlny.png (PNG copy)>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[21])
+[21 <./Pictures/threshold.png>])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
@@ -1464,7 +1468,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 
  (./chapter2.tex
 Rozdzia\l  2.
-<Pictures/captured_frames.png, id=485, 1064.97874pt x 597.23125pt>
+<Pictures/captured_frames.png, id=492, 1064.97874pt x 597.23125pt>
 File: Pictures/captured_frames.png Graphic file (type png)
 <use Pictures/captured_frames.png>
 Package pdftex.def Info: Pictures/captured_frames.png  used on input line 49.
@@ -1517,7 +1521,7 @@ This may cause the page layout to be inconsistent, however.
 
 ]
 Rozdzia\l  3.
-<Pictures/prepare_haar_dataset.png, id=553, 300.12125pt x 1296.845pt>
+<Pictures/prepare_haar_dataset.png, id=560, 300.12125pt x 1296.845pt>
 File: Pictures/prepare_haar_dataset.png Graphic file (type png)
 <use Pictures/prepare_haar_dataset.png>
 Package pdftex.def Info: Pictures/prepare_haar_dataset.png  used on input line 
@@ -1532,7 +1536,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [28 <./Pictures/prepare_haar_dataset.png>]
-<Pictures/haar_tepmplates.png, id=569, 491.8375pt x 211.79124pt>
+<Pictures/haar_tepmplates.png, id=576, 491.8375pt x 211.79124pt>
 File: Pictures/haar_tepmplates.png Graphic file (type png)
 <use Pictures/haar_tepmplates.png>
 Package pdftex.def Info: Pictures/haar_tepmplates.png  used on input line 86.
@@ -1548,7 +1552,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [30 <./Pictures/haar_tepmplates.png>]
-<Pictures/fit_realboostbins.png, id=608, 257.96375pt x 944.52875pt>
+<Pictures/fit_realboostbins.png, id=616, 257.96375pt x 944.52875pt>
 File: Pictures/fit_realboostbins.png Graphic file (type png)
 <use Pictures/fit_realboostbins.png>
 Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 143
@@ -1560,7 +1564,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [31]
-<Pictures/main_alg.png, id=631, 362.35374pt x 1315.91624pt>
+<Pictures/main_alg.png, id=638, 362.35374pt x 1315.91624pt>
 File: Pictures/main_alg.png Graphic file (type png)
 <use Pictures/main_alg.png>
 Package pdftex.def Info: Pictures/main_alg.png  used on input line 155.
@@ -1571,7 +1575,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [32 <./Pictures/fit_realboostbins.png>]
-<Pictures/detection_alg.png, id=639, 499.8675pt x 691.58376pt>
+<Pictures/detection_alg.png, id=646, 499.8675pt x 691.58376pt>
 File: Pictures/detection_alg.png Graphic file (type png)
 <use Pictures/detection_alg.png>
 Package pdftex.def Info: Pictures/detection_alg.png  used on input line 166.
@@ -1582,7 +1586,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [33 <./Pictures/main_alg.png>]
-<Pictures/characters_alg.png, id=647, 452.69125pt x 934.49126pt>
+<Pictures/characters_alg.png, id=654, 452.69125pt x 934.49126pt>
 File: Pictures/characters_alg.png Graphic file (type png)
 <use Pictures/characters_alg.png>
 Package pdftex.def Info: Pictures/characters_alg.png  used on input line 177.
@@ -1593,7 +1597,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [34 <./Pictures/detection_alg.png>]
-<Pictures/segmentation.png, id=655, 371.3875pt x 429.605pt>
+<Pictures/segmentation.png, id=662, 371.3875pt x 429.605pt>
 File: Pictures/segmentation.png Graphic file (type png)
 <use Pictures/segmentation.png>
 Package pdftex.def Info: Pictures/segmentation.png  used on input line 192.
@@ -1684,11 +1688,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23230 strings out of 483148
- 379472 string characters out of 5965416
- 1110182 words of memory out of 5000000
- 37534 multiletter control sequences out of 15000+600000
- 640937 words of font info for 154 fonts, out of 8000000 for 9000
+ 23238 strings out of 483148
+ 379581 string characters out of 5965416
+ 1110305 words of memory out of 5000000
+ 37538 multiletter control sequences out of 15000+600000
+ 647357 words of font info for 158 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  58i,17n,98p,1305b,2131s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-sc.enc}{/usr/
@@ -1696,22 +1700,23 @@ share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/
 lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texli
 ve/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share
-/texmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/publi
-c/tex-gyre/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></u
-sr/share/texmf/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/ty
-pe1/public/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr
-.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newt
-x/txsys.pfb>
-Output written on main.pdf (45 pages, 3164094 bytes).
+pe1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fon
+ts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre
+/qhvbi.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/t
+exmf/fonts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/public
+/tex-gyre/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr
+/share/texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
+wtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pf
+b>
+Output written on main.pdf (45 pages, 3174446 bytes).
 PDF statistics:
- 882 PDF objects out of 1000 (max. 8388607)
- 732 compressed objects within 8 object streams
- 233 named destinations out of 1000 (max. 500000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 742 compressed objects within 8 object streams
+ 235 named destinations out of 1000 (max. 500000)
  413 words of extra memory for PDF output out of 10000 (max. 10000000)
 

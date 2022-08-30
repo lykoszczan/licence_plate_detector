@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Szablon pracy dyplomowej
-% Wydział Informatyki 
+% Wydział Informatyki
 % Zachodniopomorski Uniwersytet Technologiczny w Szczecinie
 % autor Joanna Kołodziejczyk (jkolodziejczyk@zut.edu.pl)
 % Bardzo wczesnym pierwowzorem szablonu był
@@ -332,7 +332,30 @@ Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kr
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
-TODO - coś może o real boost bins - bo to de facto jest w pracy zaimplementowane \cite{1689652}
+Jednym ze słabych klasyfikatorów stosowanych razem z algorytmem RealBoost są tzw. koszyki (ang. \textit{Response binning}).
+Ten typ klasyfikatora został zaprezentowany w~\cite{1689652}.
+Przedstawiony sposób działania polega na przybliżaniu rozkładów warunkowych przez funkcje kawałkami stałe~\cite{szybka_detekcja_klesk}.
+Przed uczeniem algorytmu wyznacza na jest liczba koszyków o równej szerokości oznaczana literą $B$.
+Na podstawie ustalonych przedziałów $[a_1,a_2]$, każdej z cech przypisywany jest odpowiedni indeks koszyka.
+Indeks koszyka $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jest na podstawie wzoru \ref{eq:bin_index}.
+\begin{equation}
+    \label{eq:bin_index}
+    \beta(x)=\left.
+    \begin{cases}
+        B(x - a_1)/(a_2-a_1), & \text{dla } a_1 \leq x \leq a_2 \\
+        1, & \text{dla } x \leq a_1 \\
+        B, & \text{dla } a_2 < x
+    \end{cases}
+    \right.
+\end{equation}
+Odpowiedź słabego klasyfikatora dla $j^*$-tej cechy przedstawia wzór~\ref{eq:bin_weak_clf}, gdzie $\hat{P_w}(y=-1, j\;jest\;w\;b)=\sum_{\{i:y_i=-1,\beta(x_ij)=b\}}^{} w_i$ oznacza szacowane prawdopodobieństwo zdarzenia, że przykład jest negatywny a jego $j$-ta cecha należy do kosza $b$.
+\begin{equation}
+    \label{eq:bin_weak_clf}
+    f_t(x;j^*) = \dfrac{1}{2} \ln\dfrac{\hat{P_w}(y=1, j^*\;jest\;w\;\beta(x_j^*))}{\hat{P_w}(y=-1, j^*\;jest\;w\;\beta(x_j^*))}
+\end{equation}
+Autorzy algorytmu zalecają stosowanie dużej ilości koszyków dla gładkiego histogramu rozkładu cech.
+Jeżeli histogram zawiera wiele maksimum lokalnych, należy zmniejszyć ilość koszyków.
+W przeciwnym razie zbyt duża rozdzielczość może wprowadzić szum do klasyfikatora, natomiast zbyt niska liczba koszyków może pozbawić klasyfikatora istotnych cech~\cite{1689652}.
 
 \subsection{Metody głębokiego uczenia (ang. \textit{Deep learning})}
 W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
