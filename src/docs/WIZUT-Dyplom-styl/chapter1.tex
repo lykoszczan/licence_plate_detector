@@ -237,20 +237,23 @@ Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowe
 Matematycznie obraz całkowy $ii(x,y)$ przedstawiamy jako:
 \begin{equation}
     \label{eq:integral_image}
-    ii(x,y) = \sum_{1\leq j \leq x} \sum_{1\leq k \leq y} i(j,k)
+    ii(x,y) = \sum_{1\leq j \leq x} \sum_{1\leq k \leq y} i(j,k).
 \end{equation}
-
-czym innym jest obliczanie sumy a czym inne szybkie obliczanie obrazu całkowego
-
+%czym innym jest obliczanie sumy a czym inne szybkie obliczanie obrazu całkowego
 Obliczanie obrazu całkowego z definicji~\eqref{eq:integral_image} dla każdego punktu w obrazie jest czasochłonne i charakteryzuje się złożonością obliczeniową $O(n_x^2 n_y^2)$.
 Sposobem na szybsze obliczenie obrazu całkowego może być wykorzystanie wzorów rekurencyjnych:
-%\begin{equation}
-%    \label{eq:integral_image_induction}
-%    s(j,k)=s(j, k-1)+f(j,k)
-%\end{equation}
+\begin{equation}
+    \label{eq:integral_image_induction}
+    s(j,k)=s(j, k-1)+f(j,k),
+\end{equation}
+\begin{equation}
+    \label{eq:integral_image_induction2}
+    ii(j,k)=ii(j,k-1)+s(j,k),
+\end{equation}
+gdzie $s(j,k)$ to skumulowana suma w wierszu, $f(j,k)$ to wartość obrazu w punkcie $(j,k)$~\cite{990517}.
+Dzięki takiemu rozwiązaniu, wyznaczanie obrazu całkowego charakteryzuje się złożonością obliczeniową $O(n_x n_y)$.
 
-to jest osobny akapit dotyczący szybkiego wyliczania sum jasności na podstawie obrazu całkowego
-\\
+Kiedy obraz całkowy został wyznaczony, obliczenie sumy jasności dla dowolnego fragmentu obrazu jest operacją o stałej złożoności obliczeniowej $O(1)$.
 Aby osiągnąć złożoność niezależną od rozmiaru okna, sumę oblicza się odejmując od sumy wartości obrazu całkowego dla prawego dolnego i lewego górnego wierzchołka sumę wartości obrazu dla pozostałych wierzchołków analizowanego prostokąta.
 Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punktami $(x_1, y_1)$, a $(x_2, y_2)$.
 \begin{equation}
@@ -258,7 +261,6 @@ Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punkt
     \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
 \end{equation}
 Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego~\cite{szybka_detekcja_klesk}.
-Ten sposób charakteryzuje się stałą złożonością obliczeniową $O(1)$.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
 Algorytm Violi-Jonesa wymaga dużej ilości próbek pozytywnych i negatywnych.
