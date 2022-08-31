@@ -23,7 +23,7 @@ W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty z
 W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym oparte są o technologie ARTR.
 Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są \\w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
 Innym z możliwych przykładów zastosowania wspomnianych systemów są odcinkowe pomiary prędkości, opłaty za przejazd płatnymi drogami lub wykrywanie kierowców łamiących przepisy.
-Dzięki nieustannemu rozwojowi technologii i co raz wydajniejszym komputerom, systemy stają się tańszą i łatwiej dostępną alternatywą dla systemów opartych na RFID (ang. \textit{Radio-frequency identification}), które to wymagają specjalnej etykiety do prawidłowego działania.
+Dzięki nieustannemu rozwojowi technologii i coraz wydajniejszym komputerom, systemy stają się tańszą i łatwiej dostępną alternatywą dla systemów opartych na RFID (ang. \textit{Radio-frequency identification}), które to wymagają specjalnej etykiety do prawidłowego działania.
 
 Rozpoznawanie tablic rejestracyjnych jest techniką polegająca na wykryciu i odczytaniu znaków z tablicy rejestracyjnych na podstawie zarejestrowanego obrazu.
 Do tego celu wykorzystywany jest aparat o wysokiej rozdzielczości oraz odpowiedni program komputerowy.
@@ -32,13 +32,12 @@ Dla zdjęć kolorowych każdy piksel opisany jest wartościami z palety barw RGB
 Dla zdjęć monochromatycznych barwy opisywane są najczęściej za pomocą wartości luminacji obrazu.
 
 W procesie automatycznego rozpoznawania tablic rejestracyjnych pozyskany obraz jest odpowiednio przetwarzany.
-Przed przejściem do rozpoznawania, obraz często jest konwertowany do skali szarości i filtrowany za pomocą filtrów np.
-(Gaussa lub średnio-przepustowego) w celu redukcji szumu.
+Przed przejściem do rozpoznawania, obraz często jest konwertowany do skali szarości i filtrowany za pomocą filtrów (np.\ Gaussa lub średnio-przepustowego) w celu redukcji szumu.
 W procesie tym można wyróżnić trzy etapy~\cite{1688109}:
 \begin{itemize}
-    \item \textbf{detekcję} - określenie położenia tablicy rejestracyjnej w analizowanym obrazie
-    \item \textbf{segmentację} - wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą
-    \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
+    \item \textbf{detekcję} --- określenie położenia tablicy rejestracyjnej w analizowanym obrazie,
+    \item \textbf{segmentację} --- wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą,
+    \item \textbf{identyfikację} --- rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu.
 \end{itemize}
 \FloatBarrier
 Na Rysunku~\ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
@@ -50,8 +49,8 @@ Na Rysunku~\ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyżs
 \end{figure}
 \FloatBarrier
 Kolejne etapy korzystają z wyników uzyskanych w poprzednich krokach, co oznacza, że błąd powstały we wcześniejszej fazie, będzie rzutował na jakość działania całego systemu.
-W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest wpierw odpowiednio przetwarzany.
-Jednymi z najpowszechniej stosowanych czynności są skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
+W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest w pierwszej kolejności odpowiednio przetwarzany.
+Powszechnie stosowanymi czynnościami są: skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
 W zależności od wymagań stawianych przed danym mechanizmem i środowiskiem jego działania, czynności te mogą znacznie się od siebie różnić.
 Najbardziej podstawowe systemy wymagają, aby pojazd znajdował się nieruchomo w określonym miejscu.
 Tego typu rozwiązania najczęściej stosowane są na parkingach, gdzie szlaban otwiera się po odczycie numerów rejestracyjnych pojazdu i potwierdzeniu opłaty za postój w zewnętrznej bazie danych.
@@ -72,8 +71,8 @@ Zgodnie ze słowikiem języka polskiego, definicja tablicy rejestracyjnej brzmi 
     Płytka zawierająca numery identyfikacyjne pojazdu, umieszczana z przodu i z tyłu pojazdu.
 \end{definition}
 Dla programu komputerowego powyższe zdanie jest niezrozumiałe.
-W zadaniu detekcji tablicy rejestracyjnej, wymagane jest, aby maszyna ``zrozumiała'' jakich obiektów należy szukać.
-W tym kontekście, za definicję można uznać ``prostokątny obszar, z dużym zagęszczeniem horyzontalnych i wertykalnych krawędzi''\cite{824138}.
+W zadaniu detekcji tablicy rejestracyjnej, wymagane jest, aby maszyna ,,zrozumiała'' jakich obiektów należy szukać.
+W tym kontekście, za definicję można uznać ,,prostokątny obszar, z dużym zagęszczeniem horyzontalnych i wertykalnych krawędzi''~\cite{824138}.
 W oparciu o powyższe cechy zaprezentowano wiele algorytmów do rozwiązania zadania wykrywania tablic rejestracyjnych.
 Część z nich wywodzi się z tradycyjnych metod widzenia komputerowego i metod głębokiego uczenia.
 Każda z metod ma swoje zalety, ale również często ograniczenia.
@@ -81,33 +80,43 @@ W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardz
 
 Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poniższe czynniki:
 \begin{itemize}
-    \item tablica rejestracyjna zajmuje niewielki obszar na zdjęciu
-    \item istnienie ogromnej ilości formatów tablic rejestracyjnych (w zależności od kraju rejestracji lub rodzaju pojazdu)
-    \item słabe oświetlenie, rozmazany obraz, refleksy świetlne
-    \item ruch pojazdu, zabrudzone tablice
+    \item zajmowanie niewielkiego obszaru na zdjęciu przez tablicę rejestracyjną,
+    \item istnienie ogromnej ilości formatów tablic rejestracyjnych (w zależności od kraju rejestracji lub rodzaju pojazdu),
+    \item słabe oświetlenie, rozmazany obraz, refleksy świetlne,
+    \item ruch pojazdu, zabrudzone tablice.
 \end{itemize}
 Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}.
 W celu uzyskania lepszych wyników, spotyka się rozwiązania, w których łączy się wiele technik.
 Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
 
 \subsection{Metody oparte na krawędziach (ang. \textit{edge based)}}
-Biorąc pod uwagę, że tablica rejestracyjna jest prostokątem o znanych proporcjach, większość badań bazuje na podejściu opartym o wykrywanie krawędzi.
+\label{subsec:edge-based}
+W większości krajów tablice rejestracyjne posiadają prostokątny kształt.
+Dla poprawienia widoczności numerów pojazdów, stosuje się kolory o wysokim kontraście dla czcionki i tła.
+Dzięki temu, tablice rejestracyjne zawierają wiele równoległych i prostopadłych linii.
+Z uwagi na to, znaczna część badań bazuje na podejściu opartym o wykrywanie krawędzi.
 W większości przypadków kolor tablicy rejestracyjnej jest różny od koloru pojazdu.
 Dzięki temu, granice tablicy zostają uznane za krawędzie.
 Wiele metod wykorzystuje filtr Sobela.
-Jego działania polega dyskretnym różniczkowaniu i aproksymacji pochodnych kierunkowych intensywności obrazu.
-Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}) służących do detekcji krawędzi horyzontalnych i wertykalnych.
-\FloatBarrier
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[scale=0.6]{Pictures/sobel_filter}
-    \caption{Macierze detektora krawędzi Sobela (źródło: opracowanie własne).}
-    \label{fig:sobel_filter}
-\end{figure}
-\FloatBarrier
+Jego działania polega na dyskretnym różniczkowaniu i aproksymacji pochodnych kierunkowych intensywności obrazu.
+Filtr ten składa się z dwóch macierzy o wymiarach $3\times3$~\eqref{eq:sobel_matrices} służących do detekcji krawędzi horyzontalnych i wertykalnych.
+\begin{equation}
+    \begin{bmatrix}
+        -1 & 0 & +1 \\
+        -2 & 0 & +2 \\
+        -1 & 0 & +1
+    \end{bmatrix}
+%
+    \begin{bmatrix}
+        +1 & +2 & +1 \\
+        0  & 0  & 0  \\
+        -1 & -2 & -1
+    \end{bmatrix}
+    \label{eq:sobel_matrices}
+\end{equation}
 Zaletą takiego podejścia jest niewątpliwa łatwość użycia, natomiast jedną z głównych wad jest jego wrażliwość na szum.
 
-Często wykorzystywaną metodą do wykrywania krawędzi obiektów w obrazach jest \textit{Binary Image Processing}.
+Często wykorzystywaną metodą do wykrywania krawędzi obiektów w obrazach jest \textit{Binary Image Processing}~\cite{4310039}.
 Technika ta polega na sprowadzenia obrazu do postaci, w której kolory pikseli przyjmują tylko dwie wartości - czarną lub białą.
 Osiąga się to za pomocą ustalenia progu, który determinuje kolor piksela.
 Próg wyznaczany jest na podstawie histogramu obrazu w odcieniach szarości.
@@ -117,13 +126,13 @@ Przy zdeformowanych lub zabrudzonych tablicach, algorytm ten nie osiąga zadowal
 
 Inną stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha~\cite{DuanBuildingAA}.
 Motywacją do jej opracowania była metoda siłowa (ang. \textit{brute force}), która jest jednak znacznie bardziej zasobożerna.
-Złożoność algorytmu siłowego wynosi $O(n^3)$.
+Złożoność algorytmu siłowego wynosi $O(n^3)$, gdzie $n$ oznacza liczbę niezbędnych operacji do wykonania.
 Transformata Hougha polega na twierdzeniu, że każda prosta może być jednoznacznie przedstawiona za pomocą dwóch parametrów.
 Przestrzeń tych parametrów to właśnie przestrzeń Hougha.
-Najczęściej używanymi parametrami są współczynniki $\rho$ i $\alpha$ z równania prostej w postaci normalnej~\eqref{eqn:transform_hough}.
+Najczęściej używanymi parametrami są współczynniki $\rho$ i $\alpha$ z równania prostej w postaci normalnej~\eqref{eq:transform_hough}
 \begin{equation}
-    \label{eqn:transform_hough}
-    x\cos{\alpha} + y\sin{\alpha} = \rho
+    \label{eq:transform_hough}
+    x\cos{\alpha} + y\sin{\alpha} = \rho.
 \end{equation}
 W powyższym równaniu $\rho$ jest promieniem wodzącym, natomiast $\alpha$ kątem tworzonym przez $\rho$ z osią X.
 W związku z powyższym, jest to algorytm o liniowej złożoności obliczeniowej.
@@ -148,9 +157,10 @@ Pierwszy z nich ma za zadanie wyodrębnić odcinki linii i pogrupować je na pod
 Drugi znajduje obszary o najwyższym zagęszczeniu pionowych krawędzi.
 Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysoką dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
 Metode oparte na krawędziach są stosowane w wielu rozwiązaniach ze względu na ich szybkość działania i prostotę.
-Jednakże, rozwiązania te są silenie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
+Jednakże, rozwiązania te są silnie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
 
 \subsection{Metody oparte na kolorach (ang. \textit{color based)}}
+\label{subsec:color-based}
 Metody oparte na kolorach bazują na fakcie, że kolor tablicy jest różny od koloru tła pojazdu.
 Dla tej grupy rozwiązań, zamiast modelu barw RGB, stosuje się model HSL oparty o nasycenie koloru.
 Model ten jest jednak wrażliwy na szum.
@@ -163,7 +173,7 @@ Do tego typu metod wykorzystywany jest m.\ in.\ algorytm \textit{Mean shift}~\ci
 Opisywana grupa metod może zostać użyta do detekcji zdeformowanych i pochylonych tablic.
 Rzadko występują one osobno w metodach detekcji, głównie ze względu na ich dużą czułość na zmiany naświetlenia.
 Dodatkowo w zależności od kraju oraz przeznaczenia pojazdu, kolory tablic mogą się znacznie różnić.
-Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a samochodów zabytkowych żółty (\ref{fig:tablice}).
+Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a samochodów zabytkowych żółty, patrz Rys.~\ref{fig:tablice}.
 \FloatBarrier
 \begin{figure}[!ht]
     \centering
@@ -178,54 +188,69 @@ Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a s
 Metody oparte na teksturach wykorzystują fakt znajdowania się znaków na tablicach rejestracyjnych.
 Znaki na tablicy mają z reguły czarny kolor i znajdują się na jasnym tle tworząc duży kontrast.
 Powyższa grupa algorytmów wykorzystuje wysoką częstość zmiany kolorów w obszarze występowania tablic rejestracyjnych.
-W~\cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantyzacji wektorów (ang. \textit{Vector Quantization - VQ}).
-W przeciwieństwie do innych metod, które wykorzystywały krawędzi lub kontrast, metoda VQ wykorzystuje aktualną zawartość tablicy rejestracyjnej.
+W~\cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantowania wektorowego (ang. \textit{Vector Quantization - VQ}).
+W przeciwieństwie do innych metod, które wykorzystywały krawędzie lub kontrast, metoda VQ wykorzystuje aktualną zawartość tablicy rejestracyjnej.
 Autorzy wykazali bardzo wysoką skuteczność rozwiązania na poziomie 98\%.
 
 W analizie tekstur, często stosuje się filtr Gabora.
 Jest to filtr liniowy, pozwalający na przefiltrowanie obrazu z precyzyjnie dobranym zakresem częstotliwości.
 Reprezentacje częstotliwości i orientacji filtrów Gabora są uważane przez wielu współczesnych naukowców zajmujących się widzeniem komputerowym za podobne do tych z ludzkiego układu wzrokowego~\cite{gabor_human_eye}.
 W~\cite{gabor_lpr} zaprezentowano algorytm wykorzystujący filtr Gabora.
-Jest to jednak metoda czasochłonna i nie znajduje zastosowania dla systemów, w których szybkość działania jest jednym z najistotniejszych czynników.
+Jest to jednak metoda czasochłonna i nie znajduje zastosowania w systemach, w których szybkość działania jest jednym z najistotniejszych czynników.
 
 Wszystkie metody oparte na teksturach są odporne na deformacje tablic.
 Jest to kluczowa zaleta ich stosowania.
 Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalających efektów w złożonych środowiskach z różnymi warunkami oświetlenia.
 
 \subsection{Klasyfikatory}\label{subsec:klasyfikatory}
-Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting --- AdaBoost}) do wyuczenia kaskady klasyfikatorów~\cite{9310202}.
+Wiele badań wykorzystuje cechy Haara razem z algorytmem AdaBoost (ang. \textit{Adaptative Boosting --- AdaBoost}) do wyuczenia kaskady klasyfikatorów~\cite{9310202}.
 Podejście takie zostało zaproponowane po raz pierwszy w~\cite{990517}.
-Algorytm Viola-Jones został zaprezentowany w 2001.
-Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany co świadczy o jego ponadczasowości i uniwersalności.
+Algorytm Violi-Jonesa został zaprezentowany w 2001.
+Wykorzystuje on algorytm AdaBoost, który został zaproponowany w pracy~\cite{Freund1996ExperimentsWA}.
+Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany, co świadczy o jego ponadczasowości i uniwersalności.
 Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np\. tablic rejestracyjnych, przy odpowiednim wyuczeniu.
-Aby przedstawić jak działa algorytm Viola-Jones, należy najpierw zrozumieć czym są cechy Haara.
-Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (Rysunek~\ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami, w szczególności jak ciemne są one względem siebie.
-Wartość cechy obliczana jest jako różnica pomiędzy średnią jasnością pikseli w zbiorze ``białym'' i średnią jasnością pikseli w zbiorze ``czarnym''.
+Aby przedstawić, jak działa algorytm Violi-Jonesa, należy najpierw zrozumieć czym są cechy Haara.
+
+Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (Rysunek~\ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami.
+Reprezentują one zgrubne kontury obiektu.
+Obraz skanowany jest oknem przesuwnym o rozmiarze zbliżonym do poszukiwanego obiektu.
+Dla każdego okna obliczane są wartości cech Haara, na podstawie, których klasyfikator podejmuje decyzję.
+Wartość pojedynczej cechy obliczana jest jako różnica pomiędzy średnią jasnością pikseli w zbiorze ,,białym'' i średnią jasnością pikseli w zbiorze ,,czarnym''~\cite{szybka_detekcja_klesk}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/haar_feats}
-    \caption{Cechy Haara używane w algorytmie Viola-Jones (źródło: \url{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html}).}
+    \caption{Cechy Haara używane w algorytmie Violi-Jonesa (źródło: \url{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html}).}
     \label{fig:haar_feats}
 \end{figure}
 \FloatBarrier
-Podejście takie powoduje jednak, że dla detektora o rozdzielczości 24x24px, algorytm wymaga obliczenia ponad 180000 cech.
-Z tego powodu autorzy wprowadzili nowe pojęcie obrazu całkowego (ang. \textit{integral image}).
-\begin{theorem}
-    Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowego, w której każdy element w i-tym wierszu i j-tej kolumnie przechowuje sumę pikseli z tej części obrazu, której prawym dolnym wierzchołkiem jest piksel $(i, j)$ (Rysunek~\ref{fig:ii_cords}).
-\end{theorem}
-\begin{figure}[!htb]
-    \centering
-    \includegraphics[scale=0.6]{Pictures/ii_cords}
-    \caption{Obraz całkowy dla punktu $(i, j)$ (źródło: \url{https://www.spoj.com/WIPING5/problems/WIPING50.pdf}).}
-    \label{fig:ii_cords}
-\end{figure}
-\FloatBarrier
+Im większa będzie ilość okien w procedurze skanującej, tym większa będzie niezbędna liczba cech do wyliczenia.
+Zauważono, że cechy mogą być jednak wyznaczane w czasie stałym, niezależnym od rozmiaru okna.
+W tym celu należy przygotować przed procedurą detekcji dodatkową tablicę zwaną obrazem całkowym (ang. \textit{integral image}).
+Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowego, w której każdy element w i-tym wierszu i j-tej kolumnie przechowuje sumę pikseli z tej części obrazu, której prawym dolnym wierzchołkiem jest piksel $(i, j)$.
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[scale=0.6]{Pictures/ii_cords}
+%    \caption{Obraz całkowy dla punktu $(i, j)$ (źródło: \url{https://www.spoj.com/WIPING5/problems/WIPING50.pdf}).}
+%    \label{fig:ii_cords}
+%\end{figure}
+%\FloatBarrier
 Matematycznie obraz całkowy $ii(x,y)$ przedstawiamy jako:
 \begin{equation}
     \label{eq:integral_image}
     ii(x,y) = \sum_{1\leq j \leq x} \sum_{1\leq k \leq y} i(j,k)
 \end{equation}
-Natomiast obliczanie obrazu całkowego z definicji~\eqref{eq:integral_image} dla każdego punktu w obrazie jest czasochłonne i charakteryzuje się złożonością obliczeniową $O(n_x^2 n_y^2)$.
+
+czym innym jest obliczanie sumy a czym inne szybkie obliczanie obrazu całkowego
+
+Obliczanie obrazu całkowego z definicji~\eqref{eq:integral_image} dla każdego punktu w obrazie jest czasochłonne i charakteryzuje się złożonością obliczeniową $O(n_x^2 n_y^2)$.
+Sposobem na szybsze obliczenie obrazu całkowego może być wykorzystanie wzorów rekurencyjnych:
+%\begin{equation}
+%    \label{eq:integral_image_induction}
+%    s(j,k)=s(j, k-1)+f(j,k)
+%\end{equation}
+
+to jest osobny akapit dotyczący szybkiego wyliczania sum jasności na podstawie obrazu całkowego
+\\
 Aby osiągnąć złożoność niezależną od rozmiaru okna, sumę oblicza się odejmując od sumy wartości obrazu całkowego dla prawego dolnego i lewego górnego wierzchołka sumę wartości obrazu dla pozostałych wierzchołków analizowanego prostokąta.
 Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punktami $(x_1, y_1)$, a $(x_2, y_2)$.
 \begin{equation}
@@ -233,10 +258,10 @@ Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punkt
     \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
 \end{equation}
 Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego~\cite{szybka_detekcja_klesk}.
-Ten sposób charakteryzuje się liniową złożonością obliczeniową $O(1)$.
+Ten sposób charakteryzuje się stałą złożonością obliczeniową $O(1)$.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
-Algorytm Viola-Jones wymaga dużej ilości próbek pozytywnych i negatywnych.
+Algorytm Violi-Jonesa wymaga dużej ilości próbek pozytywnych i negatywnych.
 Do wyuczenia klasyfikatora i wybrania zbioru cech zastosowano algorytm AdaBoost.
 Autorzy zaproponowali użycie kaskady klasyfikatorów.
 Takie podejście bazuje na obserwacji, że okna pozytywne stanowią średnio $0.01\%$ wszystkich okien.
@@ -245,7 +270,7 @@ Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
 Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
 Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
 Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory odpowiedzi pozytywnej.
-W algorytmie Viola-Jones kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
+W algorytmie Violi-Jonesa kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
 Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
 W trakcie uczenia każdy z klasyfikatorów ma przypisany indywidualny próg decyzyjny.
 Każdy etap kaskady uczony jest w ramach boostingu (np. poprzez AdaBoost lub
@@ -370,7 +395,7 @@ Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest al
 Algorytm jest bardzo wydajny.
 Bazuje na sieciach R-CNN.
 Autorzy zapewniają o możliwości przetwarzania 45 klatek na sekundę, a dla wersji szybszej, lecz o niższej dokładności, ponad 150 klatek na sekundę.
-Twórcom wzorca przyświecała idea ``spojrzenia tylko raz'', wzorując się na postrzeganiu świata przez człowieka, który po jednym spojrzeniu na badany obraz, jest w stanie zidentyfikować konkretne obiekty.
+Twórcom wzorca przyświecała idea ,,spojrzenia tylko raz'', wzorując się na postrzeganiu świata przez człowieka, który po jednym spojrzeniu na badany obraz, jest w stanie zidentyfikować konkretne obiekty.
 W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas procesu uczenia i testowania otrzymuje na wejściu cały obraz.
 Na obraz wejściowy nałożona zostaje siatka o rozmiarze SxS, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
 Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.

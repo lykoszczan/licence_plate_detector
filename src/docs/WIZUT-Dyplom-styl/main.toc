@@ -19,7 +19,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.1.5}Metody głębokiego uczenia (ang. \textit {Deep learning})}{18}{subsection.1.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Przegląd istniejących metod segmentacji tablic rejestracyjnych}{19}{section.1.2}%
+\contentsline {section}{\numberline {1.2}Przegląd istniejących metod segmentacji tablic rejestracyjnych}{20}{section.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2.1}Binaryzacja}{20}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
@@ -73,11 +73,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Podsumowanie}{40}{subsection.4.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{43}{chapter*.24}%
+\contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{43}{chapter*.22}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Książki}{43}{section*.25}%
+\contentsline {section}{Książki}{43}{section*.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Artykuły}{43}{section*.26}%
+\contentsline {section}{Artykuły}{43}{section*.24}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Źródła internetowe i inne}{45}{section*.27}%
+\contentsline {section}{Źródła internetowe i inne}{45}{section*.25}%
 \contentsfinish 

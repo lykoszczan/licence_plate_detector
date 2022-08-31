@@ -672,6 +672,21 @@
       \endverb
       \keyw{Algorithms,Computer Vision,Mathematics,Statistics}
     \endentry
+    \entry{4310039}{article}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Systems, Man, and Cybernetics}
+      \field{number}{8}
+      \field{title}{Picture Thresholding Using an Iterative Selection Method}
+      \field{volume}{8}
+      \field{year}{1978}
+      \field{pages}{630\bibrangedash 632}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1109/TSMC.1978.4310039
+      \endverb
+    \endentry
     \entry{1689652}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=d95087886dbc0bb8adb17e367a3fde37}{%
