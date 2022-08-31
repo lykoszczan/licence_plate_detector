@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  31 AUG 2022 11:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.8.18)  31 AUG 2022 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1405,22 +1405,22 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 
 [17 <./Pictures/adaboost_alphacurve.png>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 346.
+(Font)              scaled to size 8.8pt on input line 347.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 346.
+(Font)              scaled to size 6.6pt on input line 347.
 <Pictures/yolo.png, id=427, 957.5775pt x 628.3475pt>
 File: Pictures/yolo.png Graphic file (type png)
 <use Pictures/yolo.png>
-Package pdftex.def Info: Pictures/yolo.png  used on input line 384.
+Package pdftex.def Info: Pictures/yolo.png  used on input line 385.
 (pdftex.def)             Requested size: 383.02422pt x 251.33455pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--385
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
 [][]\T1/qhv/m/n/10.95 Rysunek 1.8[]: |Al-go-rytm YOLO (¹ró-dªo: []$\T1/ntxtt/m/
 n/10.95 https : / / towardsdatascience . com /
  []
 
 
-Overfull \hbox (16.38498pt too wide) in paragraph at lines 385--385
+Overfull \hbox (16.38498pt too wide) in paragraph at lines 386--386
 \T1/ntxtt/m/n/10.95 r-[]cnn-[]fast-[]r-[]cnn-[]faster-[]r-[]cnn-[]yolo-[]object
 -[]detection-[]algorithms-[]36d53571365e$[]\T1/qhv/m/n/10.95 ).| 
  []
@@ -1434,7 +1434,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 <Pictures/refleks_Å›wietlny.png, id=441, 267.24844pt x 139.27031pt>
 File: Pictures/refleks_Å›wietlny.png Graphic file (type png)
 <use Pictures/refleks_Å›wietlny.png>
-Package pdftex.def Info: Pictures/refleks_Å›wietlny.png  used on input line 406
+Package pdftex.def Info: Pictures/refleks_Å›wietlny.png  used on input line 407
 .
 (pdftex.def)             Requested size: 213.79904pt x 111.41638pt.
 
@@ -1446,7 +1446,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 <Pictures/threshold.png, id=454, 514.92375pt x 178.86826pt>
 File: Pictures/threshold.png Graphic file (type png)
 <use Pictures/threshold.png>
-Package pdftex.def Info: Pictures/threshold.png  used on input line 428.
+Package pdftex.def Info: Pictures/threshold.png  used on input line 429.
 (pdftex.def)             Requested size: 308.95662pt x 107.32178pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1677,7 +1677,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 152.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 152.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 152.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 49F310AC4657FFAB73F2CBA061D4B3EA;2959.
+(rerunfilecheck)             Checksum: E6169FD58466F1D5F42DF1C20A00489A;2959.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1688,10 +1688,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23244 strings out of 483148
- 379710 string characters out of 5965416
- 1110522 words of memory out of 5000000
- 37544 multiletter control sequences out of 15000+600000
+ 23246 strings out of 483148
+ 379746 string characters out of 5965416
+ 1110569 words of memory out of 5000000
+ 37546 multiletter control sequences out of 15000+600000
  647357 words of font info for 158 fonts, out of 8000000 for 9000
  34 hyphenation exceptions out of 8191
  58i,17n,98p,1305b,2131s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1713,7 +1713,7 @@ st/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
 wtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pf
 b>
-Output written on main.pdf (45 pages, 3175017 bytes).
+Output written on main.pdf (45 pages, 3174740 bytes).
 PDF statistics:
  893 PDF objects out of 1000 (max. 8388607)
  742 compressed objects within 8 object streams

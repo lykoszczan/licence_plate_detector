@@ -15,13 +15,13 @@
 % 	author: Joanna Kolodziejczyk (jkolodziejczyk@zut.edu.pl)
 %----------------------------------------------------------------------------------------
 
-\chapter{Wprowadzenie teoretyczne}
+\chapter{Wprowadzenie teoretyczne}\label{ch:wprowadzenie-teoretyczne}
 \chaptermark{Wprowadzenie teoretyczne}
 
 Na przestrzeni ostatnich lat stosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR) (ang. \textit{Automatic Licence Plate Recognition} --- ALPR) stało się znacznie bardziej powszechne.
 W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty za postój, przy zbliżeniu się do wyjazdu, szlaban otwiera się automatycznie po rozpoznaniu numeru rejestracyjnego pojazdu, w którym się poruszamy.
 W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym oparte są o technologie ARTR.
-Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
+Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są \\w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
 Innym z możliwych przykładów zastosowania wspomnianych systemów są odcinkowe pomiary prędkości, opłaty za przejazd płatnymi drogami lub wykrywanie kierowców łamiących przepisy.
 Dzięki nieustannemu rozwojowi technologii i co raz wydajniejszym komputerom, systemy stają się tańszą i łatwiej dostępną alternatywą dla systemów opartych na RFID (ang. \textit{Radio-frequency identification}), które to wymagają specjalnej etykiety do prawidłowego działania.
 
@@ -61,7 +61,7 @@ Taki rodzaj systemów ARTR nazywany systemami statycznymi.
 Dużo większą złożonością charakteryzują się systemy dynamiczne, w których znacznie większą rolę odgrywają zakłócenia wynikające ze zmiennych warunków oświetlenia.
 W obecnych czasach stworzenie dynamicznego systemu ARTR o wysokiej dokładności wciąż stanowi wyzwanie i jest tematem wielu prac naukowych.
 Celem niniejszej pracy jest analizowanie obrazów pochodzących z kamery samochodowej, co zdecydowanie sprawia, że jest to system dynamiczny.
-Poniżej przedstawiono najczęściej stosowane metody widzenia komputerowego w systemach ARTR.
+Poniżej przedstawiono najczęściej stosowane metody widzenia komputerowego w systemach ARTR\@.
 
 
 \section{Przegląd istniejących metod detekcji tablic rejestracyjnych}
@@ -90,7 +90,7 @@ Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kszta�
 W celu uzyskania lepszych wyników, spotyka się rozwiązania, w których łączy się wiele technik.
 Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
 
-\subsection{Metody oparte na krawędziach (ang. \textit{Edge based)}}
+\subsection{Metody oparte na krawędziach (ang. \textit{edge based)}}
 Biorąc pod uwagę, że tablica rejestracyjna jest prostokątem o znanych proporcjach, większość badań bazuje na podejściu opartym o wykrywanie krawędzi.
 W większości przypadków kolor tablicy rejestracyjnej jest różny od koloru pojazdu.
 Dzięki temu, granice tablicy zostają uznane za krawędzie.
@@ -150,7 +150,7 @@ Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysok
 Metode oparte na krawędziach są stosowane w wielu rozwiązaniach ze względu na ich szybkość działania i prostotę.
 Jednakże, rozwiązania te są silenie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
 
-\subsection{Metody oparte na kolorach (ang. \textit{Color based)}}
+\subsection{Metody oparte na kolorach (ang. \textit{color based)}}
 Metody oparte na kolorach bazują na fakcie, że kolor tablicy jest różny od koloru tła pojazdu.
 Dla tej grupy rozwiązań, zamiast modelu barw RGB, stosuje się model HSL oparty o nasycenie koloru.
 Model ten jest jednak wrażliwy na szum.
@@ -173,7 +173,7 @@ Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a s
 \end{figure}
 \FloatBarrier
 
-\subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
+\subsection{Metody oparte na teksturach (ang. \textit{texture based)}}
 \label{subsec:metody-oparte-na-teksturach}
 Metody oparte na teksturach wykorzystują fakt znajdowania się znaków na tablicach rejestracyjnych.
 Znaki na tablicy mają z reguły czarny kolor i znajdują się na jasnym tle tworząc duży kontrast.
@@ -232,7 +232,7 @@ Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punkt
     \label{eq:integral_image_x_y}
     \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
 \end{equation}
-Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego \cite{szybka_detekcja_klesk}.
+Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego~\cite{szybka_detekcja_klesk}.
 Ten sposób charakteryzuje się liniową złożonością obliczeniową $O(1)$.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 
@@ -259,8 +259,8 @@ Pozostała grupa osób jest kobietami.
 Wiele osób ze zbioru testowego zostanie określonych błędnie, jednak dokładność klasyfikatora będzie wyższa niż 50\%.
 
 AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
-Po raz pierwszy został on przedstawiony w \cite{Freund1996ExperimentsWA}.
-AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów \cite{szybka_detekcja_klesk}:
+Po raz pierwszy został on przedstawiony w~\cite{Freund1996ExperimentsWA}.
+AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów~\cite{szybka_detekcja_klesk}:
 \begin{itemize}
     \item AdaBoost + decision stump
     \item AdaBoost + drzewka decyzyjne
@@ -271,7 +271,7 @@ Głównymi zastosowaniami tej techniki jest wybór najlepszych cech z punktu wid
 
 Każdy słaby klasyfikator powinien zostać wyuczony na losowym podzbiorze zbioru uczącego.
 Podzbiory mogą się nakładać, natomiast nie powinno się dzielić zbiorów na równe części.
-AdaBoost przypisuje wagi do jednostek treningowych, które określają prawdopodobieństwo pojawienia się w zbiorze uczącym zgodnie ze wzorem \eqref{eq:treaning_unit_weight_adaboost}.
+AdaBoost przypisuje wagi do jednostek treningowych, które określają prawdopodobieństwo pojawienia się w zbiorze uczącym zgodnie ze wzorem~\eqref{eq:treaning_unit_weight_adaboost}.
 \begin{equation}
     \label{eq:treaning_unit_weight_adaboost}
     D_{t+1}(i) = \dfrac{D_t(i)exp(-\alpha_t y_i h_t(x_i))}{Z_t}
@@ -292,7 +292,7 @@ Waga klasyfikatora, wyliczona przez AdaBoost, została określona symbolem $\alp
 Ostateczny rezultat powyższego równania można opisać jako liniowa kombinacja słabych klasyfikatorów.
 
 Pierwszy klasyfikator ($t=1$) jest trenowany z równym prawdopodobieństwem dla wszystkich próbek.
-Po zakończeniu uczenia, waga obliczana jest na podstawie wzoru \eqref{eq:weight_clf}.
+Po zakończeniu uczenia, waga obliczana jest na podstawie wzoru~\eqref{eq:weight_clf}.
 \begin{equation}
     \label{eq:weight_clf}
     \alpha_t = \dfrac{1}{2} \ln \dfrac{1-\epsilon_t}{\epsilon_t}
@@ -318,8 +318,8 @@ Metoda ta jest bardzo czuła na zakłócenia.
 Jednymi z najczęstszych aplikacji tego typu boostingu jest klasyfikacja tekstu oraz zdjęć.
 
 Wzmocnienie AdaBoost spotykane jest w różnych wariantach.
-Jednym z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w \cite{10.1023/A:1007614523901}.
-Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne \cite{szybka_detekcja_klesk}.
+Jednym z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w~\cite{10.1023/A:1007614523901}.
+Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne~\cite{szybka_detekcja_klesk}.
 Odpowiedź słabego klasyfikatora jest zwykle ustalana jako przybliżenie połowy przekształcenia logit:
 \begin{equation}
     \label{eq:real_boost}
@@ -328,17 +328,18 @@ Odpowiedź słabego klasyfikatora jest zwykle ustalana jako przybliżenie połow
 gdzie $\hat{P_w}(y=\pm1|x)$ stanowi oszacowanie rozkładu klas warunkowego na $x$ z wykorzystaniem aktualnych wag $w_i$.
 W przeciwieństwie do AdaBoost, słabe klasyfikatory nie posiadają wag.
 Mechanizm ważenia słabych klasyfikator jest niejako wpleciony w same odpowiedzi rzeczywistoliczbowe.
-Możliwym jest wykazanie, że wyrażenie \eqref{eq:real_boost} jest rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez rozład ${w_i}$ na zbiorze danych (tj. na konkretnej próbie).
-Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$ \cite{szybka_detekcja_klesk}.
+Możliwym jest wykazanie, że wyrażenie~\eqref{eq:real_boost} jest rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez rozkład ${w_i}$ na zbiorze danych (tj.\ na konkretnej próbie).
+Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$~\cite{szybka_detekcja_klesk}.
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
-Jednym ze słabych klasyfikatorów stosowanych razem z algorytmem RealBoost są tzw. koszyki (ang. \textit{Response binning}).
+%TODO - poprawka koszyków
+Jednym ze słabych klasyfikatorów stosowanych razem z algorytmem RealBoost są tzw.\ koszyki (ang. \textit{response binning}).
 Ten typ klasyfikatora został zaprezentowany w~\cite{1689652}.
 Przedstawiony sposób działania polega na przybliżaniu rozkładów warunkowych przez funkcje kawałkami stałe~\cite{szybka_detekcja_klesk}.
 Przed uczeniem algorytmu wyznacza na jest liczba koszyków o równej szerokości oznaczana literą $B$.
 Na podstawie ustalonych przedziałów $[a_1,a_2]$, każdej z cech przypisywany jest odpowiedni indeks koszyka.
-Indeks koszyka $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jest na podstawie wzoru \eqref{eq:bin_index}.
+Indeks koszyka $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jest na podstawie wzoru~\eqref{eq:bin_index}.
 \begin{equation}
     \label{eq:bin_index}
     \beta(x)=\left.
@@ -363,9 +364,9 @@ W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komput
 Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} --- CNN)\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
 Sieci kowolucyjne są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw konwolucyjnych i ich rozmiaru.
-Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj. obrazy) \cite{cnn_agh}.
+Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj\. obrazy)~\cite{cnn_agh}.
 
-Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once}) \cite{7780460}.
+Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once})~\cite{7780460}.
 Algorytm jest bardzo wydajny.
 Bazuje na sieciach R-CNN.
 Autorzy zapewniają o możliwości przetwarzania 45 klatek na sekundę, a dla wersji szybszej, lecz o niższej dokładności, ponad 150 klatek na sekundę.
@@ -393,7 +394,7 @@ Na moment pisania pracy, udostępniona została trzecia wersja systemu.
 
 Drugim etapem w większości systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych jest rozpoznanie znaków na tablicy rejestracyjnej zlokalizowanej w poprzednim kroku.
 Zanim dojdzie do klasyfikacji znaków, często są one wpierw segmentowane.
-Jest to szczególny przypadek optycznego rozpoznawania znaków \cite{9310202}.
+Jest to szczególny przypadek optycznego rozpoznawania znaków~\cite{9310202}.
 Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy rejestracyjnej.
 Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
 W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
@@ -417,7 +418,7 @@ W wielu klasycznych metodach widzenia komputerowego, w celu segmentacji znaków,
 W zbinaryzowanym obrazie łatwiej jest rozdzielić znaki w porównaniu do obrazu kolorowego lub w skali szarości.
 Podstawowym problemem tej techniki jest odpowiedni dobór wartości progu.
 Wybór ten jest dokonywany w oparciu o różne metody, które można podzielić na zmiennoprogowe i automatyczne.
-Jednakże, wyznaczenie progu binaryzacji musi zostać wykonane właściwie, w celu uniknięcia połączenia znaków lub scalenia ich z obramowaniem tablicy rejestracyjnej \cite{6213519}.
+Jednakże, wyznaczenie progu binaryzacji musi zostać wykonane właściwie, w celu uniknięcia połączenia znaków lub scalenia ich z obramowaniem tablicy rejestracyjnej~\cite{6213519}.
 Jednym z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (ang. \textit{Adaptive Thresholding}).
 Stosuje się to w momencie kiedy różne obszary obrazu mogą charakteryzować się różnymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
 Algorytm wyznacza próg dla konkretnego piksela na podstawie niewielkiego regionu wokoło.
@@ -433,7 +434,7 @@ Na Rysunku~\ref{fig:threshold} przedstawiono przykłady binaryzacji obrazu stał
 
 Algorytm progowania adaptacyjnego otrzymuje najczęściej na wejściu obraz w skali szarości lub kolorowy.
 Próg jest wyliczany dla wszystkich pikseli w obrazie z osobna.
-Jednym ze znanych podejść jest to zaproponowane przez Chow i Kaneko \cite{Chow1971BoundaryDO}.
+Jednym ze znanych podejść jest to zaproponowane przez Chow i Kaneko~\cite{Chow1971BoundaryDO}.
 W tym przypadku obraz dzielony jest na zbiór nakładających się fragmentów.
 Optymalny próg wyznaczy jest dla konkretnego fragmentu na podstawie analizy histogramu.
 Próg dla każdego piksela wyliczany jest na podstawie interpolacji wyników dla odpowiedniego fragmentu.
@@ -449,8 +450,8 @@ Z drugiej strony wybranie zbyt dużych obszarów może naruszyć założenie o r
 Ten rodzaj adaptycyjnego progowania jest bardziej wydajny od algorytmu Chow i Kaneko.
 Charakteryzuje się wysoką jakością oddzielania obiektów od tła i znajduje szerokie zastosowanie w wielu aplikacjach.
 
-Innym znanym algorytmem stosowanym do wyznaczania progu binaryzacji jest algorytm Otsu \cite{4310076}.
-Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości progowej, przy której ważona wariancja między pikselami pierwszego planu i tła jest najmniejsza \cite{otsu_article}.
+Innym znanym algorytmem stosowanym do wyznaczania progu binaryzacji jest algorytm Otsu~\cite{4310076}.
+Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości progowej, przy której ważona wariancja między pikselami pierwszego planu i tła jest najmniejsza~\cite{otsu_article}.
 Kluczową ideą jest tutaj iteracja przez wszystkie możliwe wartości progu i pomiar rozproszenia pikseli tła i pierwszego planu.
 Następnie znajdowany jest próg, w którym rozproszenie jest najmniejsze.
 Algorytm iteracyjnie wyszukuje próg, który minimalizuje wariancję wewnątrz klasy, zdefiniowaną jako ważona suma wariancji dwóch klas (tła i pierwszego planu).
@@ -474,7 +475,7 @@ Metoda Otsu implementowana przez wiele środowisk obliczeniowych (np. MATLAB)~\c
 Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone~\cite{10.1117/1.1631315}.
 
 \subsection{Metoda k-średnich (ang. \textit{ang. K-Means algorithm})}
-todo \cite{segmentation_kmeans}
+todo~\cite{segmentation_kmeans}
 
 \subsection{Metoda rzutów jasności}
 todo
@@ -487,7 +488,7 @@ todo
 \index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
 
 \subsection{OCR}
-tesseract korzysta z sieci lstm wiec warto by to opisac i jakieś inne sieci
+tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
 %https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
 
 \subsection{Metody oparte na wzorcach}
