@@ -30,11 +30,11 @@ W rozdziale \ref{ch:preparing_data_set} przedstawiono opracowany zbiór zdjęć 
 Klasyfikatory działają jednak w inny sposób niż ludzki mózg i wymagają innych wartości, na których będą mogły podejmować decyzje.
 W niniejszej pracy zdecydowano się wykorzystać cechy Haara jako cechy reprezentujące poszukiwane obiekty.
 W celu wyuczenia klasyfikatora, należało opracowany wcześniej zbiór przetworzyć, aby każda negatywna i pozytywna próbka miała swoją reprezentację liczbową.
-Na rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy procesu przygotowania danych uczących dla klasyfikatora.
+Na Rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy procesu przygotowania danych uczących dla klasyfikatora.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/prepare_haar_dataset}
-    \caption{Schemat blokowy przygotowania danych uczących dla klasyfikatora (źródło: opracowanie własne)}
+    \caption{Schemat blokowy przygotowania danych uczących dla klasyfikatora (źródło: opracowanie własne).}
     \label{fig:haar_feats_dataset_prepare}
 \end{figure}
 \FloatBarrier
@@ -80,11 +80,11 @@ def haar_coords(s, p, indexes):
         coords.append(np.array(single_coords))
     return np.array(coords, dtype=object)
 \end{lstlisting}
-Na rysunku~\ref{fig:haar_feats_examples} pokazano przykładowe szablony podczas procesu uczenia.
+Na Rysunku~\ref{fig:haar_feats_examples} pokazano przykładowe szablony podczas procesu uczenia.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/haar_tepmplates}
-    \caption{Ekstrakcja cech za pomocą obrazów całkowych (źródło: opracowanie własne)}
+    \caption{Ekstrakcja cech za pomocą obrazów całkowych (źródło: opracowanie własne).}
     \label{fig:haar_feats_examples}
 \end{figure}
 \FloatBarrier
@@ -137,11 +137,11 @@ for t in range(self.T_):
     w /= err_exp_best
 
 \end{lstlisting}
-Na rysunku \ref{fig:fit_realboostbins} przedstawiono schemat blokowy uczenia klasyfikatora.
+Na Rysunku~\ref{fig:fit_realboostbins} przedstawiono schemat blokowy uczenia klasyfikatora.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/fit_realboostbins}
-    \caption{Schemat blokowy funkcji uczącej klasyfikatora RealBoostBins (źródło: opracowanie własne)}
+    \caption{Schemat blokowy funkcji uczącej klasyfikatora RealBoostBins (źródło: opracowanie własne).}
     \label{fig:fit_realboostbins}
 \end{figure}
 \FloatBarrier
@@ -149,37 +149,37 @@ Na rysunku \ref{fig:fit_realboostbins} przedstawiono schemat blokowy uczenia kla
 
 \section{Schemat algorytmu}
 @todo - opis schematu blokowego
-Na rysunku~\ref{fig:main_alg} przedstawiono schemat blokowy algorytmu rozpoznawania tablic rejestracyjnych.
+Na Rysunku~\ref{fig:main_alg} przedstawiono schemat blokowy algorytmu rozpoznawania tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/main_alg}
-    \caption{Schemat blokowy algorytmu rozpoznawania tablic rejestracyjnych (źródło: opracowanie własne)}
+    \caption{Schemat blokowy algorytmu rozpoznawania tablic rejestracyjnych (źródło: opracowanie własne).}
     \label{fig:main_alg}
 \end{figure}
 \FloatBarrier
 
 \subsection{Algorytm detekcji}
 @todo - opis schematu blokowego
-Na rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detekcji tablic rejestracyjnych.
+Na Rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detekcji tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/detection_alg}
-    \caption{Schemat blokowy algorytmu detekcji tablic rejestracyjnych (źródło: opracowanie własne)}
+    \caption{Schemat blokowy algorytmu detekcji tablic rejestracyjnych (źródło: opracowanie własne).}
     \label{fig:detection_alg}
 \end{figure}
 \FloatBarrier
 
 \subsection{Algorytm segmentacji i rozpoznawania znaków}
 @todo - opis schematu blokowego
-Na rysunku~\ref{fig:characters_alg} przedstawiono schemat blokowy algorytmu rozpoznawania znaków.
+Na Rysunku~\ref{fig:characters_alg} przedstawiono schemat blokowy algorytmu rozpoznawania znaków.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/characters_alg}
-    \caption{Schemat blokowy algorytmu rozpoznawania tablic (źródło: opracowanie własne)}
+    \caption{Schemat blokowy algorytmu rozpoznawania tablic (źródło: opracowanie własne).}
     \label{fig:characters_alg}
 \end{figure}
 \FloatBarrier
-Na rysunku~\ref{fig:segmentation} przedstawiono przykładowy proces segmentacji znaków.
+Na Rysunku~\ref{fig:segmentation} przedstawiono przykładowy proces segmentacji znaków.
 Pierwszy obraz jest obrazem wejściowym, który trafił do algorytmu z detektora tablic rejestracyjnych.
 Ostatni obraz jest wynikiem segmentacji.
 Obraz środkowy jest obrazem wejściowym, na który nałożono wykryte pozycje znaków (kolor niebieski).
@@ -190,7 +190,7 @@ Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zby
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/segmentation}
-    \caption{Proces segmentacji znaków (źródło: opracowanie własne)}
+    \caption{Proces segmentacji znaków (źródło: opracowanie własne).}
     \label{fig:segmentation}
 \end{figure}
 \FloatBarrier

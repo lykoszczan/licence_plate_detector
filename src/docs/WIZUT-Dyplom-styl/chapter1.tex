@@ -18,7 +18,7 @@
 \chapter{Wprowadzenie teoretyczne}
 \chaptermark{Wprowadzenie teoretyczne}
 
-Na przestrzeni ostatnich lat stosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR)(ang. \textit{Automatic Licence Plate Recognition} - ALPR) stało się znacznie bardziej powszechne.
+Na przestrzeni ostatnich lat stosowanie Systemów Automatycznego Rozpoznawania Tablic Rejestracyjnych (ARTR) (ang. \textit{Automatic Licence Plate Recognition} --- ALPR) stało się znacznie bardziej powszechne.
 W większości dużych miast istnieją parkingi, gdzie po umieszczeniu opłaty za postój, przy zbliżeniu się do wyjazdu, szlaban otwiera się automatycznie po rozpoznaniu numeru rejestracyjnego pojazdu, w którym się poruszamy.
 W obecnych czasach wszystkie nowoczesne systemy do zarządzania i sterowania ruchem drogowym oparte są o technologie ARTR.
 Instytucje takie jak służby drogowe, dzięki rejestrowanym i przetwarzanym w czasie rzeczywistym ogromnym ilościom danych, są w stanie odpowiednio szybko reagować na wydarzenia na drogach takie jak kolizje, korki lub innego rodzaju utrudnienia.
@@ -34,18 +34,18 @@ Dla zdjęć monochromatycznych barwy opisywane są najczęściej za pomocą wart
 W procesie automatycznego rozpoznawania tablic rejestracyjnych pozyskany obraz jest odpowiednio przetwarzany.
 Przed przejściem do rozpoznawania, obraz często jest konwertowany do skali szarości i filtrowany za pomocą filtrów np.
 (Gaussa lub średnio-przepustowego) w celu redukcji szumu.
-W procesie tym można wyróżnić trzy etapy \cite{1688109}:
+W procesie tym można wyróżnić trzy etapy~\cite{1688109}:
 \begin{itemize}
     \item \textbf{detekcję} - określenie położenia tablicy rejestracyjnej w analizowanym obrazie
     \item \textbf{segmentację} - wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą
     \item \textbf{identyfikację} - rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu
 \end{itemize}
 \FloatBarrier
-Na rysunku \ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
+Na Rysunku~\ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyższego procesu.
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.6]{Pictures/schemat_lpr.png}
-    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjnych (źródło: opracowanie własne)}
+    \includegraphics[scale=0.6]{Pictures/schemat_lpr}
+    \caption{Etapy procesu automatycznego rozpoznawania tablic rejestracyjnych (źródło: opracowanie własne).}
     \label{fig:schemat_lpr}
 \end{figure}
 \FloatBarrier
@@ -101,7 +101,7 @@ Filtr ten składa się z dwóch macierzy o wymiarach 3x3 (\ref{fig:sobel_filter}
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/sobel_filter}
-    \caption{Macierze detektora krawędzi Sobela (źródło: opracowanie własne)}
+    \caption{Macierze detektora krawędzi Sobela (źródło: opracowanie własne).}
     \label{fig:sobel_filter}
 \end{figure}
 \FloatBarrier
@@ -115,12 +115,12 @@ Metoda ta jest użyteczna, ze względu na fakt łatwego odseparowania obiektu od
 Wykorzystuje ona założenie, że krawędzie tablicy są proste i poziome.
 Przy zdeformowanych lub zabrudzonych tablicach, algorytm ten nie osiąga zadowalających wyników.
 
-Inną stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha \cite{DuanBuildingAA}.
-Motywacją do jej opracowania była metoda siłowa (ang. \textit{Brute force}), która jest jednak znacznie bardziej zasobożerna.
+Inną stosowaną metodą do wykrywania linii na obrazach binarnych jest transformata Hougha~\cite{DuanBuildingAA}.
+Motywacją do jej opracowania była metoda siłowa (ang. \textit{brute force}), która jest jednak znacznie bardziej zasobożerna.
 Złożoność algorytmu siłowego wynosi $O(n^3)$.
 Transformata Hougha polega na twierdzeniu, że każda prosta może być jednoznacznie przedstawiona za pomocą dwóch parametrów.
 Przestrzeń tych parametrów to właśnie przestrzeń Hougha.
-Najczęściej używanymi parametrami są współczynniki $\rho$ i $\alpha$ z równania prostej w postaci normalnej \eqref{eqn:transform_hough}.
+Najczęściej używanymi parametrami są współczynniki $\rho$ i $\alpha$ z równania prostej w postaci normalnej~\eqref{eqn:transform_hough}.
 \begin{equation}
     \label{eqn:transform_hough}
     x\cos{\alpha} + y\sin{\alpha} = \rho
@@ -132,13 +132,13 @@ Można wykazać następujące własności transformacji Hougha:\\
     Prostej przestrzeni kartezjańskiej odpowiada w przestrzeni Hougha punkt, natomiast
     punktowi przestrzeni kartezjańskiej odpowiada w przestrzeni Hougha sinusoidalna krzywa.
     Punkty leżące na tej samej prostej korespondują z sinusoidami przechodzącymi przez
-    wspólny punkt w przestrzeni Hougha \cite{hough_transform_definition}.
+    wspólny punkt w przestrzeni Hougha~\cite{hough_transform_definition}.
 \end{theorem}
-Zasadę transformacji ilustruje rysunek \ref{fig:hough_transform}.
+Zasadę transformacji ilustruje Rysunek~\ref{fig:hough_transform}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=1]{Pictures/hough_transform.jpeg}
-    \caption{Transformata Hougha (źródło: \cite{Lin:01})}
+    \caption{Transformata Hougha (źródło:~\cite{Lin:01}).}
     \label{fig:hough_transform}
 \end{figure}
 \FloatBarrier
@@ -158,7 +158,7 @@ Model ten jest jednak wrażliwy na szum.
 Często metody wykorzystujące kolor tablicy rejestracyjnej są używane do wyselekcjonowania kandydatów.
 Innymi słowy, oznacza to wybrania obszarów obrazu, w których może znajdować się tablica rejestracyjna.
 Technika ta łączona jest z innymi algorytmami, które na kolejnych etapach decydują, czy wskazany obszar rzeczywiście zawiera poszukiwany obiekt.
-Do tego typu metod wykorzystywany jest m. in. algorytm \textit{Mean shift} \cite{1520110} i logika rozmyta \cite{Wang2008FuzzybasedAF}.
+Do tego typu metod wykorzystywany jest m.\ in.\ algorytm \textit{Mean shift}~\cite{1520110} i logika rozmyta~\cite{Wang2008FuzzybasedAF}.
 
 Opisywana grupa metod może zostać użyta do detekcji zdeformowanych i pochylonych tablic.
 Rzadko występują one osobno w metodach detekcji, głównie ze względu na ich dużą czułość na zmiany naświetlenia.
@@ -168,54 +168,55 @@ Przykładowo obecnie w Polsce tablice aut elektrycznych mają kolor zielony, a s
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/tablice}
-    \caption{Tablice rejestracyjne w Polsce dla aut elektrycznych i zabytkowych (źródło: opracowanie własne)}
+    \caption{Tablice rejestracyjne w Polsce dla aut elektrycznych i zabytkowych (źródło: opracowanie własne).}
     \label{fig:tablice}
 \end{figure}
 \FloatBarrier
 
 \subsection{Metody oparte na teksturach (ang. \textit{Texture based)}}
+\label{subsec:metody-oparte-na-teksturach}
 Metody oparte na teksturach wykorzystują fakt znajdowania się znaków na tablicach rejestracyjnych.
 Znaki na tablicy mają z reguły czarny kolor i znajdują się na jasnym tle tworząc duży kontrast.
 Powyższa grupa algorytmów wykorzystuje wysoką częstość zmiany kolorów w obszarze występowania tablic rejestracyjnych.
-W \cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantyzacji wektorów (ang. \textit{Vector Quantization - VQ}).
+W~\cite{824138} autorzy zaproponowali metodę lokalizacji tablic wykorzystując algorytm kwantyzacji wektorów (ang. \textit{Vector Quantization - VQ}).
 W przeciwieństwie do innych metod, które wykorzystywały krawędzi lub kontrast, metoda VQ wykorzystuje aktualną zawartość tablicy rejestracyjnej.
 Autorzy wykazali bardzo wysoką skuteczność rozwiązania na poziomie 98\%.
 
 W analizie tekstur, często stosuje się filtr Gabora.
 Jest to filtr liniowy, pozwalający na przefiltrowanie obrazu z precyzyjnie dobranym zakresem częstotliwości.
-Reprezentacje częstotliwości i orientacji filtrów Gabora są uważane przez wielu współczesnych naukowców zajmujących się widzeniem komputerowym za podobne do tych z ludzkiego układu wzrokowego \cite{gabor_human_eye}.
-W \cite{gabor_lpr} zaprezentowano algorytm wykorzystujący filtr Gabora.
+Reprezentacje częstotliwości i orientacji filtrów Gabora są uważane przez wielu współczesnych naukowców zajmujących się widzeniem komputerowym za podobne do tych z ludzkiego układu wzrokowego~\cite{gabor_human_eye}.
+W~\cite{gabor_lpr} zaprezentowano algorytm wykorzystujący filtr Gabora.
 Jest to jednak metoda czasochłonna i nie znajduje zastosowania dla systemów, w których szybkość działania jest jednym z najistotniejszych czynników.
 
 Wszystkie metody oparte na teksturach są odporne na deformacje tablic.
 Jest to kluczowa zaleta ich stosowania.
 Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalających efektów w złożonych środowiskach z różnymi warunkami oświetlenia.
 
-\subsection{Klasyfikatory}
-Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting - AdaBoost}) do wyuczenia kaskady klasyfikatorów \cite{9310202}.
-Podejście takie zostało zaproponowane po raz pierwszy w \cite{990517}.
+\subsection{Klasyfikatory}\label{subsec:klasyfikatory}
+Wiele badań wykorzystuje cechy Haara razem ze wzmocnieniem adaptacyjnym (ang. \textit{Adaptative Boosting --- AdaBoost}) do wyuczenia kaskady klasyfikatorów~\cite{9310202}.
+Podejście takie zostało zaproponowane po raz pierwszy w~\cite{990517}.
 Algorytm Viola-Jones został zaprezentowany w 2001.
 Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany co świadczy o jego ponadczasowości i uniwersalności.
-Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np. tablic rejestracyjnych, przy odpowiednim wyuczeniu.
+Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np\. tablic rejestracyjnych, przy odpowiednim wyuczeniu.
 Aby przedstawić jak działa algorytm Viola-Jones, należy najpierw zrozumieć czym są cechy Haara.
-Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (rysunek \ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami, w szczególności jak ciemne są one względem siebie.
+Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (Rysunek~\ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami, w szczególności jak ciemne są one względem siebie.
 Wartość cechy obliczana jest jako różnica pomiędzy średnią jasnością pikseli w zbiorze ``białym'' i średnią jasnością pikseli w zbiorze ``czarnym''.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/haar_feats}
-    \caption{Cechy Haara używane w algorytmie Viola-Jones (źródło: \url{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html})}
+    \caption{Cechy Haara używane w algorytmie Viola-Jones (źródło: \url{https://docs.opencv.org/4.x/d2/d99/tutorial_js_face_detection.html}).}
     \label{fig:haar_feats}
 \end{figure}
 \FloatBarrier
 Podejście takie powoduje jednak, że dla detektora o rozdzielczości 24x24px, algorytm wymaga obliczenia ponad 180000 cech.
 Z tego powodu autorzy wprowadzili nowe pojęcie obrazu całkowego (ang. \textit{integral image}).
 \begin{theorem}
-    Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowego, w której każdy element w i-tym wierszu i j-tej kolumnie przechowuje sumę pikseli z tej części obrazu, której prawym dolnym wierzchołkiem jest piksel $(i, j)$ (rysunek~\ref{fig:ii_cords}).
+    Obrazem całkowym nazywamy tablicę dwuwymiarową o rozmiarze obrazu źródłowego, w której każdy element w i-tym wierszu i j-tej kolumnie przechowuje sumę pikseli z tej części obrazu, której prawym dolnym wierzchołkiem jest piksel $(i, j)$ (Rysunek~\ref{fig:ii_cords}).
 \end{theorem}
 \begin{figure}[!htb]
     \centering
     \includegraphics[scale=0.6]{Pictures/ii_cords}
-    \caption{Obraz całkowy dla punktu $(i, j)$ (źródło: \url{https://www.spoj.com/WIPING5/problems/WIPING50.pdf})}
+    \caption{Obraz całkowy dla punktu $(i, j)$ (źródło: \url{https://www.spoj.com/WIPING5/problems/WIPING50.pdf}).}
     \label{fig:ii_cords}
 \end{figure}
 \FloatBarrier
@@ -297,15 +298,15 @@ Po zakończeniu uczenia, waga obliczana jest na podstawie wzoru \eqref{eq:weight
     \alpha_t = \dfrac{1}{2} \ln \dfrac{1-\epsilon_t}{\epsilon_t}
 \end{equation}
 Współczynnik $\alpha_t$ jest skorelowany z poziomem błędu klasyfikatora $\epsilon_t$, który to jest liczony jako liczba błędnie sklasyfikowanych próbek dzielona przez rozmiar zbioru uczącego.
-Rysunek \ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
+Rysunek~\ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/adaboost_alphacurve}
-    \caption{Zależność współczynnika $\alpha$ od błędu klasyfikatora (źródło: \url{https://chrisjmccormick.files.wordpress.com/2013/12/adaboost_alphacurve.png})}
+    \caption{Zależność współczynnika $\alpha$ od błędu klasyfikatora (źródło: \url{https://chrisjmccormick.files.wordpress.com/2013/12/adaboost_alphacurve.png}).}
     \label{fig:adaboost_alphacurve}
 \end{figure}
 \FloatBarrier
-Z rysunku \ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów o wysokiej dokładności.
+Z Rysunku~\ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów o wysokiej dokładności.
 Dla klasyfikatora o poziomie błędu 0.5 waga jest równa zero.
 Oznacza to, że taki klasyfikator jest równie dokładny co losowe zgadywanie, dlatego jest on ignorowany.
 Dla klasyfikatorów o większym poziomie błędu, waga przyjmuje wartość ujemną.
@@ -359,7 +360,7 @@ W przeciwnym razie zbyt duża rozdzielczość może wprowadzić szum do klasyfik
 
 \subsection{Metody głębokiego uczenia (ang. \textit{Deep learning})}
 W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
-Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} - CNN)\cite{cnn_detector}.
+Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} --- CNN)\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
 Sieci kowolucyjne są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw konwolucyjnych i ich rozmiaru.
 Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj. obrazy) \cite{cnn_agh}.
@@ -373,7 +374,7 @@ W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas proces
 Na obraz wejściowy nałożona zostaje siatka o rozmiarze SxS, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
 Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.
 Ramki o prawdopodobieństwie wyższym od ustalonego progu, zostają nałożone na wejściowy obraz, najczęściej w postaci prostokątów otaczających obiekt.
-Rysunek \ref{fig:yolo} przedstawia opisany schemat.
+Rysunek~\ref{fig:yolo} przedstawia opisany schemat.
 Ograniczenia YOLO wynikają z ograniczeń przestrzennych algorytmu.
 W zależności od wielkości siatki, system może mieć problem z wykryciem mniejszych obiektów takich jak np. stado ptaków.
 Algorytm jest stale udoskonalany przez autorów.
@@ -381,7 +382,7 @@ Na moment pisania pracy, udostępniona została trzecia wersja systemu.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/yolo}
-    \caption{Algorytm YOLO (źródło: \url{https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e})}
+    \caption{Algorytm YOLO (źródło: \url{https://towardsdatascience.com/r-cnn-fast-r-cnn-faster-r-cnn-yolo-object-detection-algorithms-36d53571365e}).}
     \label{fig:yolo}
 \end{figure}
 \FloatBarrier
@@ -399,19 +400,19 @@ W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną
 Działanie takie zwiększa ich czytelność dla ludzkiego oka w gorszych warunkach oświetleniowych.
 Dla aparatów fotograficznych ta cecha tablic często powoduje nieczytelność tablic na wykonanym zdjęciu.
 Tablica odbija na tyle dużą ilość światła, co skutkuje powstaniem na zdjęciu białego prostokąta w miejscu tablicy.
-Przykład takiego obrazu przedstawia rysunek \ref{fig:refleks_swietlny}.
+Przykład takiego obrazu przedstawia Rysunek~\ref{fig:refleks_swietlny}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.8]{Pictures/refleks_świetlny}
-    \caption{Refleks świetlny występujący w niewystarczających warunkach oświetleniowych (źródło: opracowanie własne)}
+    \caption{Refleks świetlny występujący w niewystarczających warunkach oświetleniowych (źródło: opracowanie własne).}
     \label{fig:refleks_swietlny}
 \end{figure}
 \FloatBarrier
 Poza powyższymi trudnościami, tablice mogą być obrócone lub uszkodzone.
 Aby zwiększyć w jak największym stopniu prawdopodobieństwo prawidłowego odczytania znaków, używa się szereg czynności na obrazie wejściowym.
-Dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina \cite{Xu2006AMO}.
+Dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina~\cite{Xu2006AMO}.
 
-\subsection{Binaryzacja}
+\subsection{Binaryzacja}\label{subsec:binaryzacja}
 W wielu klasycznych metodach widzenia komputerowego, w celu segmentacji znaków, stosuje się binaryzację.
 W zbinaryzowanym obrazie łatwiej jest rozdzielić znaki w porównaniu do obrazu kolorowego lub w skali szarości.
 Podstawowym problemem tej techniki jest odpowiedni dobór wartości progu.
@@ -421,11 +422,11 @@ Jednym z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (a
 Stosuje się to w momencie kiedy różne obszary obrazu mogą charakteryzować się różnymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
 Algorytm wyznacza próg dla konkretnego piksela na podstawie niewielkiego regionu wokoło.
 Dla tego samego obrazu wyliczane są różne wartości progu dla różnych regionów co prowadzi do uzyskania lepszych wyników niż w przypadku stałego progu binaryzacji.
-Na rysunku \ref{fig:threshold} przedstawiono przykłady binaryzacji obrazu stałym progiem globalnym i progiem wyznaczonym adaptacyjnie.
+Na Rysunku~\ref{fig:threshold} przedstawiono przykłady binaryzacji obrazu stałym progiem globalnym i progiem wyznaczonym adaptacyjnie.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.6]{Pictures/threshold}
-    \caption{Przykład binaryzacji obrazu przy niejednorodnym oświetleniu za pomocą globalnego i lokalnego produ (źródło: \url{https://docs.opencv.org/3.4/d7/d4d/tutorial_py_thresholding.html})}
+    \caption{Przykład binaryzacji obrazu przy niejednorodnym oświetleniu za pomocą globalnego i lokalnego progu (źródło: \url{https://docs.opencv.org/3.4/d7/d4d/tutorial_py_thresholding.html}).}
     \label{fig:threshold}
 \end{figure}
 \FloatBarrier
@@ -455,13 +456,13 @@ Następnie znajdowany jest próg, w którym rozproszenie jest najmniejsze.
 Algorytm iteracyjnie wyszukuje próg, który minimalizuje wariancję wewnątrz klasy, zdefiniowaną jako ważona suma wariancji dwóch klas (tła i pierwszego planu).
 Kolory w skali szarości zwykle mieszczą się w zakresie 0-255.
 Tak więc, jeśli wybierzemy próg 100, to wszystkie piksele o wartościach mniejszych niż 100 staną się tłem, a wszystkie piksele o wartościach większych lub równych 100 staną się pierwszym planem obrazu.
-Wzór na znalezienie wariancji wewnątrzklasowej przy dowolnym progu $t$ jest określony wzorem \eqref{eq:otsu_variance}
+Wzór na znalezienie wariancji wewnątrz klasowej przy dowolnym progu $t$ jest określony wzorem~\eqref{eq:otsu_variance}
 \begin{equation}
     \label{eq:otsu_variance}
     \sigma^2(t)=\omega_{bg}(t)\sigma_{bg}^2(t)+\omega_{fg}(t)\sigma_{fg}^2(t)
 \end{equation}
 gdzie $\omega_{bg}(t)$ i $\omega_{fg}(t)$ reprezentują prawdopodobieństwo liczby pikseli dla każdej klasy przy progu $t$, natomiast $\sigma^2$ oznaczono wariancję wartości kolorów.
-Wyliczanie wariancji dla konkretnej klasy pikseli przedstawiono na wzorze \eqref{eq:otsu_variance_value}.
+Wyliczanie wariancji dla konkretnej klasy pikseli przedstawiono na wzorze~\eqref{eq:otsu_variance_value}.
 \begin{equation}
     \label{eq:otsu_variance_value}
     \sigma_{bg | fg}^2(t)=\dfrac{\sum_{}^{}(x_i-\hat{x})^2}{N-1}
