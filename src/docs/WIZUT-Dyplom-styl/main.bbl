@@ -182,6 +182,49 @@
       \field{title}{Boundary Detection of Radiographic Images by a Threshold Method}
       \field{year}{1971}
     \endentry
+    \entry{10.1145/800031.808600}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=7531d7b512b2219a3dc9f3938dee652b}{%
+           family={Crow},
+           familyi={C\bibinitperiod},
+           given={Franklin\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{7531d7b512b2219a3dc9f3938dee652b}
+      \strng{fullhash}{7531d7b512b2219a3dc9f3938dee652b}
+      \strng{bibnamehash}{7531d7b512b2219a3dc9f3938dee652b}
+      \strng{authorbibnamehash}{7531d7b512b2219a3dc9f3938dee652b}
+      \strng{authornamehash}{7531d7b512b2219a3dc9f3938dee652b}
+      \strng{authorfullhash}{7531d7b512b2219a3dc9f3938dee652b}
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Texture-map computations can be made tractable through use of precalculated tables which allow computational costs independent of the texture density. The first example of this technique, the “mip” map, uses a set of tables containing successively lower-resolution representations filtered down from the discrete texture function. An alternative method using a single table of values representing the integral over the texture function rather than the function itself may yield superior results at similar cost. The necessary algorithms to support the new technique are explained. Finally, the cost and performance of the new technique is compared to previous techniques.}
+      \field{booktitle}{Proceedings of the 11th Annual Conference on Computer Graphics and Interactive Techniques}
+      \field{isbn}{0897911385}
+      \field{series}{SIGGRAPH '84}
+      \field{title}{Summed-Area Tables for Texture Mapping}
+      \field{year}{1984}
+      \field{pages}{207\bibrangedash 212}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1145/800031.808600
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/800031.808600
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/800031.808600
+      \endverb
+      \keyw{Antialiasing,Shading algorithms,Table lookup algorithms,texture mapping}
+    \endentry
     \entry{6213519}{article}{}
       \name{author}{4}{}{%
         {{hash=fab60b411518350f32e57b6f98d86244}{%
