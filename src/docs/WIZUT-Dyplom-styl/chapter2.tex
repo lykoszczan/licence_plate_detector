@@ -56,7 +56,7 @@ Kolejnym krokiem niezbędnym przed rozpoczęciem procesu uczenia było nadanie e
 W tym celu opracowano skrypt służący do ręcznego oznaczania tablic rejestracyjnych.
 Skrypt powstał na podstawie narzędzia \cite{haar_object_marker}.
 Jego fragment przedstawiono na algorytmie \ref{alg:positive_creator}.
-\begin{lstlisting}[language=Python, caption=Funkcja do oznaczania fragmentów obrazu zawierających poszukiwany obiekt, label=alg:positive_creator]
+\begin{lstlisting}[language=Python, caption=Funkcja do oznaczania fragmentów obrazu zawierających poszukiwany obiekt., label=alg:positive_creator]
 import cv2
 
 def obj_marker(event, x, y):
@@ -104,19 +104,19 @@ W tabeli \ref{tab:tab_data_set_characteristics} przedstawiono cechy charakteryst
     \caption{Parametry opracowanego zbioru.}
     \begin{tabular}{l l l}
         \toprule
-        \textbf{Parametr}                      & \textbf{Wartość}                                    \\
+        \textbf{Parametr}                      & \textbf{Wartość}                                     \\
         \midrule
-        Liczba zdjęć                           & 10985                                               \\
-        Format zdjęć                           & JPG                                                 \\
-        Liczba zdjęć zawierających tablice     & 5248                                                \\
-        Ogółem liczba tablic                   & 10301                                               \\
-        Zakres liczby tablic na jednym zdjęciu & 0--6                                                \\
-        Średnia wysokość próbki                & 38px                                                \\
-        Średnia szerokość próbki               & 91px                                                \\
-        Maksymalne rozmiary próbki             & $378\times 136px$                                   \\
-        Minimalne rozmiary próbki              & $15\times 11px$                                     \\
-        Rozdzielczości zdjęć                   & $1920\times 1080, 2560\times 1440, 3840\times 2160$ \\
-        Liczba klatek na sekundę               & 30 kl/s, 60 kl/s                                    \\
+        Liczba zdjęć                           & 10985                                                \\
+        Format zdjęć                           & JPG                                                  \\
+        Liczba zdjęć zawierających tablice     & 5248                                                 \\
+        Ogółem liczba tablic                   & 10301                                                \\
+        Zakres liczby tablic na jednym zdjęciu & 0--6                                                 \\
+        Średnia wysokość próbki                & 38px                                                 \\
+        Średnia szerokość próbki               & 91px                                                 \\
+        Maksymalne rozmiary próbki             & 378$\times$136px                                     \\
+        Minimalne rozmiary próbki              & 15$\times$11px                                       \\
+        Rozdzielczości zdjęć                   & 1920$\times$1080, 2560$\times$1440, 3840$\times$2160 \\
+        Liczba klatek na sekundę               & 30 kl/s, 60 kl/s                                     \\
         \bottomrule
     \end{tabular}
     \label{tab:tab_data_set_characteristics}

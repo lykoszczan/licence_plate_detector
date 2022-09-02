@@ -374,6 +374,33 @@
       \field{title}{Experiments with a New Boosting Algorithm}
       \field{year}{1996}
     \endentry
+    \entry{10.5555/3153997}{book}{}
+      \name{author}{1}{}{%
+        {{hash=8e3ac032ff739d7816b9f807586f53cf}{%
+           family={Gron},
+           familyi={G\bibinitperiod},
+           given={Aurlien},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{8e3ac032ff739d7816b9f807586f53cf}
+      \strng{fullhash}{8e3ac032ff739d7816b9f807586f53cf}
+      \strng{bibnamehash}{8e3ac032ff739d7816b9f807586f53cf}
+      \strng{authorbibnamehash}{8e3ac032ff739d7816b9f807586f53cf}
+      \strng{authornamehash}{8e3ac032ff739d7816b9f807586f53cf}
+      \strng{authorfullhash}{8e3ac032ff739d7816b9f807586f53cf}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Graphics in this book are printed in black and white. Through a series of recent breakthroughs, deep learning has boosted the entire field of machine learning. Now, even programmers who know close to nothing about this technology can use simple, efficient tools to implement programs capable of learning from data. This practical book shows you how. By using concrete examples, minimal theory, and two production-ready Python frameworksscikit-learn and Tensor Flowauthor Aurlien Gron helps you gain an intuitive understanding of the concepts and tools for building intelligent systems. Youll learn a range of techniques, starting with simple linear regression and progressing to deep neural networks. With exercises in each chapter to help you apply what youve learned, all you need is programming experience to get started. Explore the machine learning landscape, particularly neural nets Use scikit-learn to track an example machine-learning project end-to-end Explore several training models, including support vector machines, decision trees, random forests, and ensemble methods Use the Tensor Flow library to build and train neural nets Dive into neural net architectures, including convolutional nets, recurrent nets, and deep reinforcement learning Learn techniques for training and scaling deep neural nets Apply practical code examples without acquiring excessive machine learning theory or algorithm details}
+      \field{edition}{1st}
+      \field{isbn}{1491962291}
+      \field{title}{Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems}
+      \field{year}{2017}
+    \endentry
     \entry{4410602}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=479fcd33de2424508c01528820c48056}{%
@@ -421,6 +448,41 @@
       \verb 10.1109/ISITC.2007.79
       \endverb
     \endentry
+    \entry{6795963}{article}{}
+      \name{author}{2}{}{%
+        {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
+           family={Hochreiter},
+           familyi={H\bibinitperiod},
+           given={Sepp},
+           giveni={S\bibinitperiod}}}%
+        {{hash=288bdbcfe1b91ad7484d7a24f74f99ed}{%
+           family={Schmidhuber},
+           familyi={S\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{fullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{bibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{extraname}{1}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Computation}
+      \field{number}{8}
+      \field{title}{Long Short-Term Memory}
+      \field{volume}{9}
+      \field{year}{1997}
+      \field{pages}{1735\bibrangedash 1780}
+      \range{pages}{46}
+      \verb{doi}
+      \verb 10.1162/neco.1997.9.8.1735
+      \endverb
+    \endentry
     \entry{lstm}{article}{}
       \name{author}{2}{}{%
         {{hash=41b31e29fb2bdbf9f5c9c1b0d5b3e815}{%
@@ -440,6 +502,7 @@
       \strng{authorbibnamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
       \strng{authornamehash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
       \strng{authorfullhash}{4c2e1e2e1ac91e1df9d4f7b85ebe39b4}
+      \field{extraname}{2}
       \field{sortinit}{H}
       \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
       \field{labelnamesource}{author}
@@ -479,6 +542,43 @@
       \endverb
       \verb{url}
       \verb https://home.agh.edu.pl/~horzyk/lectures/miw/MIW-UczenieG%c5%82%c4%99bokichSieciNeuronowych.pdf
+      \endverb
+    \endentry
+    \entry{8563237}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=f45a43eafaea1bfd1551f7e96ae564fe}{%
+           family={Jenckel},
+           familyi={J\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=15f769241f39502d37ebe86fc5ca8104}{%
+           family={Bukhari},
+           familyi={B\bibinitperiod},
+           given={Saqib\bibnamedelima Syed},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=39509991baf1f5b54ef9eede853edd37}{%
+           family={Dengel},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \strng{fullhash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \strng{bibnamehash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \strng{authorbibnamehash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \strng{authornamehash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \strng{authorfullhash}{3a563b3a413d0ff71e6e675c9085a39b}
+      \field{sortinit}{J}
+      \field{sortinithash}{c45040a764d616897e7f5b30174d7b92}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 16th International Conference on Frontiers in Handwriting Recognition (ICFHR)}
+      \field{title}{Transcription Free LSTM OCR Model Evaluation}
+      \field{year}{2018}
+      \field{pages}{122\bibrangedash 126}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICFHR-2018.2018.00030
       \endverb
     \endentry
     \entry{1520110}{inproceedings}{}
@@ -730,6 +830,32 @@
       \verb 10.1023/B:VISI.0000029664.99615.94
       \endverb
     \endentry
+    \entry{lawrynowicz_lstm}{online}{}
+      \name{author}{1}{}{%
+        {{hash=41bf953c4c1d5eb6481cf6f57c0e5572}{%
+           family={Ławrynowicz},
+           familyi={Ł\bibinitperiod},
+           given={Agnieszka},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \strng{fullhash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \strng{bibnamehash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \strng{authorbibnamehash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \strng{authornamehash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \strng{authorfullhash}{41bf953c4c1d5eb6481cf6f57c0e5572}
+      \field{sortinit}{Ł}
+      \field{sortinithash}{208df72e4e449cdfb438e958deff94c6}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Rekurencyjne sieci neuronowe, LSTM i GRU}
+      \verb{urlraw}
+      \verb https://www.cs.put.poznan.pl/alawrynowicz/PJN_5.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cs.put.poznan.pl/alawrynowicz/PJN_5.pdf
+      \endverb
+    \endentry
     \entry{Mitchell97}{book}{}
       \name{author}{1}{}{%
         {{hash=d331eeb7f00e650950ccadcb9c47efec}{%
@@ -761,6 +887,38 @@
       \verb eBook:1900-99/Mitchell97.pdf:PDF;McGraw-Hill Product page:http\://www.mhprofessional.com/product.php?isbn=0070428077:URL;Amazon Search inside:http\://www.amazon.de/gp/reader/0070428077/:URL
       \endverb
       \keyw{01624 105 book shelf ai learn algorithm}
+    \endentry
+    \entry{10.1109}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=78893f924496ba800882dca1cc033f42}{%
+           family={Namysl},
+           familyi={N\bibinitperiod},
+           given={Marcin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1f3e81b55ea13181b37f13dee363b785}{%
+           family={Konya},
+           familyi={K\bibinitperiod},
+           given={Iuliu},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a1c4aee561cd42a87cde860c5544e622}
+      \strng{fullhash}{a1c4aee561cd42a87cde860c5544e622}
+      \strng{bibnamehash}{a1c4aee561cd42a87cde860c5544e622}
+      \strng{authorbibnamehash}{a1c4aee561cd42a87cde860c5544e622}
+      \strng{authornamehash}{a1c4aee561cd42a87cde860c5544e622}
+      \strng{authorfullhash}{a1c4aee561cd42a87cde860c5544e622}
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{09}
+      \field{title}{Efficient, Lexicon-Free OCR using Deep Learning}
+      \field{year}{2019}
+      \field{pages}{295\bibrangedash 301}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/ICDAR.2019.00055
+      \endverb
     \endentry
     \entry{gabor_human_eye}{article}{}
       \name{author}{2}{}{%
@@ -1334,6 +1492,34 @@
       \verb https://www.sciencedirect.com/science/article/pii/089360809090049Q
       \endverb
       \keyw{Neural network,Probability density function,Parallel processor,“Neuron”,Pattern recognition,Parzen window,Bayes strategy,Associative memory}
+    \endentry
+    \entry{Lexicon_on_Neural_networks}{book}{}
+      \name{author}{2}{}{%
+        {{hash=955918dbcbe10f35cc8d71846591e307}{%
+           family={Szaleniec},
+           familyi={S\bibinitperiod},
+           given={Maciej},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c5bcd7b0efd9233a872ba517e005eaf8}{%
+           family={Tadeusiewicz},
+           familyi={T\bibinitperiod},
+           given={Ryszard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e0b596b4621ea428c80d9220cf766bfc}
+      \strng{fullhash}{e0b596b4621ea428c80d9220cf766bfc}
+      \strng{bibnamehash}{e0b596b4621ea428c80d9220cf766bfc}
+      \strng{authorbibnamehash}{e0b596b4621ea428c80d9220cf766bfc}
+      \strng{authornamehash}{e0b596b4621ea428c80d9220cf766bfc}
+      \strng{authorfullhash}{e0b596b4621ea428c80d9220cf766bfc}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-83-63270-10-0}
+      \field{month}{01}
+      \field{title}{LEKSYKON SIECI NEURONOWYCH [Lexicon on Neural Networks]}
+      \field{year}{2015}
     \endentry
     \entry{hough_transform_definition}{article}{}
       \name{author}{1}{}{%
