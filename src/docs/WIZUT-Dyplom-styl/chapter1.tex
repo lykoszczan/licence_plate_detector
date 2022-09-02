@@ -578,7 +578,7 @@ Główna idea wyglądała następująco:
 Dokładność takiego rozwiązania jest mocno skorelowana z odpowiednim wyborem $k$ oraz początkowym zbiorze klastrów.
 W celu właściwego wyboru $k$, autorzy użyli algorytmu SIFT (ang. \textit{Scale Invariant Feature Transform --- SIFT})~\cite{sift}.
 Algorytm ten jest odporny na skalę i rotację obrazu.
-Zaproponowana technika uzyskała wysoką dokładność segmentacji na poziomie $98,82\%$.
+Zaproponowana technika uzyskała wysoką dokładność segmentacji na poziomie $98.82\%$.
 
 
 \section{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
@@ -597,12 +597,13 @@ Jest to zagadnienie pojawiające się w wielu pracach naukowych.
 Poniżej przedstawiono najczęściej stosowane metody do realizacji tego zadania.
 
 \subsection{Metody oparte na sieciach neuronowych}
+\label{subsec:neural_networks}
 W pracy~\cite{1688109} autorzy przedstawili system OCR oparty o wykorzystanie probabilistycznej sieci neuronowej (ang. \textit{Probabilistic Neural Network } --- PNN).
 Sieć PNN jest rozwiązaniem pamięciowym identyfikacji obiektów~\cite{Praczyk_2011}.
 Klasyfikacja obiektów przy pomocy sieci PNN realizowana jest za pomocą funkcji decyzyjnej~\cite{SPECHT1990109}:
 \begin{equation}
     \label{eq:pnn_network}
-    g(x)=\dfrac{1}{n}\sum_{i=1}^{n}\exp\left[ -\left( \dfrac{d(x,x_i)}{p\rho} \right)^2 \right],
+    f(x)=\dfrac{1}{n}\sum_{i=1}^{n}\exp\left[ -\left( \dfrac{d(x,x_i)}{p\rho} \right)^2 \right],
 \end{equation}
 gdzie:
 \begin{itemize}
@@ -611,14 +612,71 @@ gdzie:
     \item $p$ jest rozmiarem wektora $x$ oraz wszystkich wektorów $x_i$,
     \item $\rho$ jest parametrem kształtu.
 \end{itemize}
-%Ostateczna decyzja o przyporządkowaniu obiektu reprezentowanego przez wektor $x$ do kategorii j-tej opiera się na relacji przedstawionej na wzorze~\eqref{eq:pnn_relation}~\cite{Praczyk_2011}.
-%\begin{equation}
-%    \label{eq:pnn_relation}
-%    h_j c_j g_j(x) > h_k c_k g_k(x) \ \forall j\neq k
-%\end{equation}
+Ostateczna decyzja o przyporządkowaniu obiektu reprezentowanego przez wektor $x$ do kategorii j-tej opiera się na relacji przedstawionej na wzorze~\eqref{eq:pnn_relation}~\cite{Praczyk_2011}
+\begin{equation}
+    \label{eq:pnn_relation}
+    h_j c_j f_j(x) > h_k c_k f_k(x) \qquad \forall j\neq k,
+\end{equation}
+gdzie:
+\begin{itemize}
+    \item $h_j$ oznacza prawdopodobieństwo a prori przynależności obiektu do j-tej klasy,
+    \item $c_j$ oznacza koszt błędnej klasyfikacji obiektu należącego do j-tej kategorii.
+\end{itemize}
+W sieci PNN wyróżnia się trzy warstwy.
+Pomiędzy warstwami wejściowym i wyjściowymi, znajduje się warstwa radialna, zawierająca neurony radialne.
+Każdy neuron można określić jako funkcje radialną z centrum nad swoim przypadkiem uczącym~\cite{Praczyk_2011}.
+Warstwa zawiera liczbę neuronów równej liczbie wzorców w ciągu uczącym.
+Na wyjściu sygnały pochodzące z neuronów są sumowane.
+Sygnał wyjściowy jest normalizowany, w taki sposób, iż suma na wszystkich wyjściach sieci jest równa 1.
+Wartość pojedynczego wyjścia odpowiada prawdopodobieństwu kategorii przypisanej do tego wyjścia~\cite{Lexicon_on_Neural_networks}.
+Rysunek~\ref{fig:pnn_architecture} przedstawia architekturę zaproponowanej sieci PNN w~\cite{1688109}.
+Autorzy zaraportowali dokładność rozpoznawania znaków na poziomie $89.1\%$
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/pnn_architecture}
+    \caption{Architektura sieci PNN (źródło:~\cite{1688109}).}
+    \label{fig:pnn_architecture}
+\end{figure}
+\FloatBarrier
 
-tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
-%https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
+Innym rodzajem sieci wykorzystywanych w celu rozpoznawania znaków jest sieć LSTM (ang. \textit{Long Short-Term Memory} --- LSTM)~\cite{6795963}.
+Jest to szczególny rodzaj rekurencyjnych sieci neuronowych (ang. \textit{Recursive Neural Networks} --- RNNs).
+Bazują one na wykorzystaniu informacji sekwencyjnych.
+W tradycyjnych sieciach wszystkie wejścia i wyjścia są od siebie niezależne.
+W sieciach rekurencyjnych dane wyjściowe zależą od poprzednich obliczeń.
+Przykładowo chcąc przewidzieć kolejny wyraz w zdaniu, istotne jest wiedzieć, które wyrazy pojawiły się do tej pory~\cite{lawrynowicz_lstm}.
+Sieci RNN posiadają zdolność ,,pamiętania" wcześniej obliczonych informacji~\cite{lawrynowicz_lstm}.
+Natomiast im upłynął dłuższy czas od przetworzenia pewnej informacji, komórki sieci stopniowo ,,zapominają" tą informację.
+Sieci LSTM zostały zaprojektowane do rozwiązania problem zaniku pierwszych wejść.
+Rysunek~\ref{fig:lstm} przedstawia architekturę komórki sieci LSTM\@.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/lstm}
+    \caption{Architektura komórki sieci LSTM (źródło:~\cite{10.5555/3153997}).}
+    \label{fig:lstm}
+\end{figure}
+\FloatBarrier
+Kluczową ideą sieci jest jej możliwość nauczenia się co warto przechowywać w stanie długoterminowym, co z niego usunąć i co z niego czytać~\cite{lawrynowicz_lstm}.
+Stan komórki sieci LSTM jest podzielony na dwa wektory $h^{(t)}$ i $c^{(t)}$, odpowiadające odpowiednio stanowi krótko- i długoterminowemu.
+Literą $t$ oznaczono daną chwilę czasu.
+Wyróżnia się trzy bramki: wejściową, wyjściową oraz ,,zapomnij''.
+Stan długoterminowy $c^{(t-1)}$ przemierza sieć od lewej do prawej, porzucając niektóre wspomnienia w bramce ,,zapomnij", a następnie dodając nowe.
+Wspomnienia dodawane są przez bramkę wejściową.
+Po operacji dodawania, stan długoterminowy jest kopiowany i przechodzi przez funkcję $\tanh$.
+Ostatecznie wynik jest filtrowany przez bramkę wyjściową.
+Stan krótkoterminowy $h^{(t)}$ powstaje jako stan równy wyjściu dla kroku czasowego $y^{(t)}$.
+Wektor wejściowy $x^{(t)}$ oraz poprzedni stan krótkoterminowy $h^{(t-1)}$ przekazywane są do warstwy głównej oraz trzech warstw kontrolerów bramkowych.
+Warstwy te są w pełni połączone.
+Kontrolery bramkowe używają logistycznej funkcji aktywacji.
+Na ich wyjściu wartości są z zakresu od 0 do 1.
+
+W zastosowaniach OCR, ten rodzaj sieci pracuje na poziomie znaku.
+Oznacza to, że sieci LSTM mogą być wykorzystywane do rozpoznawania tekstu niezależnie od użytego języka.
+Na przestrzeni ostatnich lat pojawiło się wiele opracowań wykorzystujących sieci LSTM do realizacji systemów OCR~\cite{10.1109, 8563237}.
+Warto również wspomnieć, że jedna z najpopularniejszych bibliotek programistycznych Tesseract~\cite{tesseract} od wersji 4 wykorzystuje sieci LSTM\@.
+
+%tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
+%%https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
 
 \subsection{Metody oparte na wzorcach}
 Jedną z popularnych technik klasyfikacji znaków jest metoda oparta na wzorcach (ang. \textit{template matching})~\cite{1219663, 1217917}.

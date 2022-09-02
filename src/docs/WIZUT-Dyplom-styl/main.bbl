@@ -954,6 +954,32 @@
       \field{pages}{176\bibrangedash 179}
       \range{pages}{4}
     \endentry
+    \entry{Praczyk_2011}{article}{}
+      \name{author}{1}{}{%
+        {{hash=0ae680a964fe35a1049d4e46582cb6c4}{%
+           family={Praczyk},
+           familyi={P\bibinitperiod},
+           given={Tomasz},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \strng{fullhash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \strng{bibnamehash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \strng{authorbibnamehash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \strng{authornamehash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \strng{authorfullhash}{0ae680a964fe35a1049d4e46582cb6c4}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1231-5478}
+      \field{journaltitle}{Logistyka}
+      \field{number}{nr 3, CD}
+      \field{title}{Użycie sieci probabilistycznej oraz metody najbliższego sąsiada do identyfikacji obcych radiostacji okrętowych}
+      \field{year}{2011}
+      \field{pages}{2235\bibrangedash 2242}
+      \range{pages}{8}
+    \endentry
     \entry{1217917}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=978e916d16f1f0e67ed8ec302def1ef8}{%
@@ -1270,6 +1296,44 @@
       \verb{doi}
       \verb 10.1109/ACCESS.2020.3047929
       \endverb
+    \endentry
+    \entry{SPECHT1990109}{article}{}
+      \name{author}{1}{}{%
+        {{hash=13cae5ba7b4b286ebc2b1c7d803f9c0d}{%
+           family={Specht},
+           familyi={S\bibinitperiod},
+           given={Donald\bibnamedelima F.},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \strng{fullhash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \strng{bibnamehash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \strng{authorbibnamehash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \strng{authornamehash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \strng{authorfullhash}{13cae5ba7b4b286ebc2b1c7d803f9c0d}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{By replacing the sigmoid activation function often used in neural networks with an exponential function, a probabilistic neural network (PNN) that can compute nonlinear decision boundaries which approach the Bayes optimal is formed. Alternate activation functions having similar properties are also discussed. A fourlayer neural network of the type proposed can map any input pattern to any number of classifications. The decision boundaries can be modified in real-time using new data as they become available, and can be implemented using artificial hardware “neurons” that operate entirely in parallel. Provision is also made for estimating the probability and reliability of a classification as well as making the decision. The technique offers a tremendous speed advantage for problems in which the incremental adaptation time of back propagation is a significant fraction of the total computation time. For one application, the PNN paradigm was 200,000 times faster than back-propagation.}
+      \field{issn}{0893-6080}
+      \field{journaltitle}{Neural Networks}
+      \field{number}{1}
+      \field{title}{Probabilistic neural networks}
+      \field{volume}{3}
+      \field{year}{1990}
+      \field{pages}{109\bibrangedash 118}
+      \range{pages}{10}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0893-6080(90)90049-Q
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/089360809090049Q
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/089360809090049Q
+      \endverb
+      \keyw{Neural network,Probability density function,Parallel processor,“Neuron”,Pattern recognition,Parzen window,Bayes strategy,Associative memory}
     \endentry
     \entry{hough_transform_definition}{article}{}
       \name{author}{1}{}{%

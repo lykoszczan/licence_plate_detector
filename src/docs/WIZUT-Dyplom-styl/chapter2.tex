@@ -31,7 +31,7 @@ Do przygotowania danych uczących wykorzystano nagrania z rejestratorów wideo z
 Zgromadzony materiał został zarejestrowany za pomocą wielu rejestratorów, stąd rozdzielczość oraz liczba klatek na sekundę różni się pomiędzy plikami wideo.
 Pozyskane zdjęcia pochodzą zarówna z przejazdów nocnych jak i za dnia.
 Udało się również zebrać materiał ze zróżnicowanymi warunkami atmosferycznymi (tj. jazda w deszczu lub jazda w bezchmurny dzień).
-Rozdzielczość obrazu zawierała się w zakresie 1920x1080 do 3840x2160 pikseli.
+Rozdzielczość obrazu zawierała się w zakresie $1920\times 1080$ do $3840\times 2160$ pikseli.
 Liczba klatek na sekundę dla części kamer wynosiła 60 klatek na sekundę, a dla pozostałej części 30 klatek na sekundę.
 Algorytm przygotowujący dane uczące potrzebował na wejściu wyekstrahowane cechy z konkretnych obiektów.
 Aby to osiągnąć, należało przygotować zdjęcia, na których następnie zaznaczone zostaną obiekty.
@@ -104,19 +104,19 @@ W tabeli \ref{tab:tab_data_set_characteristics} przedstawiono cechy charakteryst
     \caption{Parametry opracowanego zbioru.}
     \begin{tabular}{l l l}
         \toprule
-        \textbf{Parametr}                      & \textbf{Wartość}                \\
+        \textbf{Parametr}                      & \textbf{Wartość}                                    \\
         \midrule
-        Liczba zdjęć                           & 10985                           \\
-        Format zdjęć                           & JPG                             \\
-        Liczba zdjęć zawierających tablice     & 5248                            \\
-        Ogółem liczba tablic                   & 10301                           \\
-        Zakres liczby tablic na jednym zdjęciu & 0--6                            \\
-        Średnia wysokość próbki                & 38px                            \\
-        Średnia szerokość próbki               & 91px                            \\
-        Maksymalne rozmiary próbki             & 378x136px                       \\
-        Minimalne rozmiary próbki              & 15x11px                         \\
-        Rozdzielczości zdjęć                   & 1920x1080, 2560x1440, 3840x2160 \\
-        Liczba klatek na sekundę               & 30 kl/s, 60 kl/s                \\
+        Liczba zdjęć                           & 10985                                               \\
+        Format zdjęć                           & JPG                                                 \\
+        Liczba zdjęć zawierających tablice     & 5248                                                \\
+        Ogółem liczba tablic                   & 10301                                               \\
+        Zakres liczby tablic na jednym zdjęciu & 0--6                                                \\
+        Średnia wysokość próbki                & 38px                                                \\
+        Średnia szerokość próbki               & 91px                                                \\
+        Maksymalne rozmiary próbki             & $378\times 136px$                                   \\
+        Minimalne rozmiary próbki              & $15\times 11px$                                     \\
+        Rozdzielczości zdjęć                   & $1920\times 1080, 2560\times 1440, 3840\times 2160$ \\
+        Liczba klatek na sekundę               & 30 kl/s, 60 kl/s                                    \\
         \bottomrule
     \end{tabular}
     \label{tab:tab_data_set_characteristics}
