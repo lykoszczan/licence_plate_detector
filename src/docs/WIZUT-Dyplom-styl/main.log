@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  2 SEP 2022 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  2 SEP 2022 22:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1669,10 +1669,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [36 <./Pictures/haar_tepmplates.png>]
-<Pictures/fit_realboostbins.png, id=704, 257.96375pt x 944.52875pt>
+<Pictures/fit_realboostbins.png, id=703, 257.96375pt x 944.52875pt>
 File: Pictures/fit_realboostbins.png Graphic file (type png)
 <use Pictures/fit_realboostbins.png>
-Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 143
+Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 142
 .
 (pdftex.def)             Requested size: 103.18365pt x 377.80481pt.
 
@@ -1681,10 +1681,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [37]
-<Pictures/main_alg.png, id=726, 362.35374pt x 1315.91624pt>
+<Pictures/main_alg.png, id=725, 362.35374pt x 1315.91624pt>
 File: Pictures/main_alg.png Graphic file (type png)
 <use Pictures/main_alg.png>
-Package pdftex.def Info: Pictures/main_alg.png  used on input line 155.
+Package pdftex.def Info: Pictures/main_alg.png  used on input line 154.
 (pdftex.def)             Requested size: 144.93892pt x 526.35718pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1692,10 +1692,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [38 <./Pictures/fit_realboostbins.png>]
-<Pictures/detection_alg.png, id=734, 499.8675pt x 691.58376pt>
+<Pictures/detection_alg.png, id=733, 499.8675pt x 691.58376pt>
 File: Pictures/detection_alg.png Graphic file (type png)
 <use Pictures/detection_alg.png>
-Package pdftex.def Info: Pictures/detection_alg.png  used on input line 166.
+Package pdftex.def Info: Pictures/detection_alg.png  used on input line 165.
 (pdftex.def)             Requested size: 199.94345pt x 276.6286pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1703,10 +1703,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [39 <./Pictures/main_alg.png>]
-<Pictures/characters_alg.png, id=742, 452.69125pt x 934.49126pt>
+<Pictures/characters_alg.png, id=741, 452.69125pt x 934.49126pt>
 File: Pictures/characters_alg.png Graphic file (type png)
 <use Pictures/characters_alg.png>
-Package pdftex.def Info: Pictures/characters_alg.png  used on input line 177.
+Package pdftex.def Info: Pictures/characters_alg.png  used on input line 176.
 (pdftex.def)             Requested size: 181.07329pt x 373.78989pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1714,10 +1714,10 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [40 <./Pictures/detection_alg.png>]
-<Pictures/segmentation.png, id=750, 371.3875pt x 429.605pt>
+<Pictures/segmentation.png, id=749, 371.3875pt x 429.605pt>
 File: Pictures/segmentation.png Graphic file (type png)
 <use Pictures/segmentation.png>
-Package pdftex.def Info: Pictures/segmentation.png  used on input line 192.
+Package pdftex.def Info: Pictures/segmentation.png  used on input line 191.
 (pdftex.def)             Requested size: 148.55235pt x 171.83894pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1834,10 +1834,10 @@ pe1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
 wtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (53 pages, 3477730 bytes).
+Output written on main.pdf (53 pages, 3477659 bytes).
 PDF statistics:
- 1024 PDF objects out of 1200 (max. 8388607)
- 859 compressed objects within 9 object streams
+ 1023 PDF objects out of 1200 (max. 8388607)
+ 858 compressed objects within 9 object streams
  271 named destinations out of 1000 (max. 500000)
  415 words of extra memory for PDF output out of 10000 (max. 10000000)
 

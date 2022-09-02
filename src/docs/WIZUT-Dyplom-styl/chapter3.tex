@@ -6,8 +6,8 @@
 \label{ch:opracowany-algorytm}
 \chaptermark{Opracowany algorytm}
 W przedstawionej pracy zrealizowano program rozpoznający tablice rejestracyjne na sekwencjach wideo pochodzących z kamery samochodowej.
-Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech za pomocą algorytmu RealBoost opartego o koszyki.
-Do ekstrakcji cech zastosowano obrazy całkowe wykorzystujące cechy Haara.
+Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech Haara za pomocą algorytmu RealBoost.
+Jako słaby klasyfikator wykorzystano algorytm koszykowania wartości funkcją logit.
 Rozpoznane fragmenty obrazu zawierające tablice poddano operacjom morfologicznym.
 Z przetworzonych obrazów segmentowano znaki tablicy rejestracyjnej.
 Do rozpoznania znaków użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
@@ -98,8 +98,7 @@ Następnie dane są zapisywane do pliku.
 W ten sposób przygotowane dane w następnym etapie posłużą do wyuczenia klasyfikatora.
 
 \subsection{Uczenie klasyfikatora}
-W niniejszej pracy zaimplementowano i wykorzystano algorytm wzmacniający RealBoost oparty o koszyki (ang. \textit{bins}).
-Takie podejście zostało zaprezentowane po raz pierwszy w \cite{1689652}.
+W niniejszej pracy zaimplementowano i wykorzystano algorytm wzmacniający RealBoost oparty o koszykowanie wartości funkcji logit.
 Na wejściu metody uczącej funkcja przyjmuje cechy uczące oraz ich etykiety.
 Dla każdej cechy obliczane są wartości maksymalne i minimalne.
 Ustalane są one poprzez posortowanie wartości konkretnej cechy ze wszystkich próbek ze zbioru uczącego.
