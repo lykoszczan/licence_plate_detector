@@ -87,6 +87,49 @@
       \verb 10.1109/TITS.2006.880641
       \endverb
     \endentry
+    \entry{686064}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=36349ba91a3c4f56836107f327269c2d}{%
+           family={Busch},
+           familyi={B\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=eb5e33ab3fe2cdfe41fa345af648b4ef}{%
+           family={Domer},
+           familyi={D\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=584771350215f424d7fbcf7c1550c087}{%
+           family={Freytag},
+           familyi={F\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=9b4dd058f35747b1e06acb1a2869d809}{%
+           family={Ziegler},
+           familyi={Z\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{273cdd22e1378a0c15156b733020a15f}
+      \strng{fullhash}{8a74e0182dbd32d3c05e4b2e1a31eb27}
+      \strng{bibnamehash}{273cdd22e1378a0c15156b733020a15f}
+      \strng{authorbibnamehash}{273cdd22e1378a0c15156b733020a15f}
+      \strng{authornamehash}{273cdd22e1378a0c15156b733020a15f}
+      \strng{authorfullhash}{8a74e0182dbd32d3c05e4b2e1a31eb27}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{VTC '98. 48th IEEE Vehicular Technology Conference. Pathway to Global Wireless Revolution (Cat. No.98CH36151)}
+      \field{title}{Feature based recognition of traffic video streams for online route tracing}
+      \field{volume}{3}
+      \field{year}{1998}
+      \field{pages}{1790\bibrangedash 1794 vol.3}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/VETEC.1998.686064
+      \endverb
+    \endentry
     \entry{gabor_lpr}{article}{}
       \name{author}{3}{}{%
         {{hash=5772fe945422afcba83f089ba405c211}{%
@@ -480,6 +523,60 @@
       \verb 10.1109/ITSC.2005.1520110
       \endverb
     \endentry
+    \entry{1017616}{article}{}
+      \name{author}{6}{}{%
+        {{hash=1839d41ce400bf050ecc5ae3db9d6240}{%
+           family={Kanungo},
+           familyi={K\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3206b4e8ff40111fd5070bf5a1782cad}{%
+           family={Mount},
+           familyi={M\bibinitperiod},
+           given={D.M.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0df879cd8225d6ae5650f8d5546cb99b}{%
+           family={Netanyahu},
+           familyi={N\bibinitperiod},
+           given={N.S.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=918e4f9e16f00957817548f2ca16cf84}{%
+           family={Piatko},
+           familyi={P\bibinitperiod},
+           given={C.D.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2118fc0ca060270a948cdfbf95f677af}{%
+           family={Silverman},
+           familyi={S\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=16de5a2bead820468e9727928cb7a262}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={A.Y.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{2deea2be2d8431d307cabbf8eb0cd29b}
+      \strng{fullhash}{08bb292646b63c69c348341f6edac48d}
+      \strng{bibnamehash}{2deea2be2d8431d307cabbf8eb0cd29b}
+      \strng{authorbibnamehash}{2deea2be2d8431d307cabbf8eb0cd29b}
+      \strng{authornamehash}{2deea2be2d8431d307cabbf8eb0cd29b}
+      \strng{authorfullhash}{08bb292646b63c69c348341f6edac48d}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{7}
+      \field{title}{An efficient k-means clustering algorithm: analysis and implementation}
+      \field{volume}{24}
+      \field{year}{2002}
+      \field{pages}{881\bibrangedash 892}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TPAMI.2002.1017616
+      \endverb
+    \endentry
     \entry{szybka_detekcja_klesk}{online}{}
       \name{author}{1}{}{%
         {{hash=df3c0588976a2d204de4f0c6ca25046f}{%
@@ -505,6 +602,27 @@
       \verb{url}
       \verb https://wikizmsi.zut.edu.pl/uploads/4/4a/Szybka_detekcja.pdf
       \endverb
+    \endentry
+    \entry{Li1993AnIO}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=3ba0424c07438c03c7c726eaf071d0c2}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ningyang},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \strng{fullhash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \strng{bibnamehash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \strng{authorbibnamehash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \strng{authornamehash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \strng{authorfullhash}{3ba0424c07438c03c7c726eaf071d0c2}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Implementation of OCR System Based on Skeleton Matching}
+      \field{year}{1993}
     \endentry
     \entry{Lin:01}{article}{}
       \name{author}{2}{}{%
@@ -582,6 +700,35 @@
       \field{year}{2009}
       \field{pages}{163\bibrangedash 168}
       \range{pages}{6}
+    \endentry
+    \entry{sift}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e64010314c19be3da24d7e3854c7a0e6}{%
+           family={Lowe},
+           familyi={L\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e64010314c19be3da24d7e3854c7a0e6}
+      \strng{fullhash}{e64010314c19be3da24d7e3854c7a0e6}
+      \strng{bibnamehash}{e64010314c19be3da24d7e3854c7a0e6}
+      \strng{authorbibnamehash}{e64010314c19be3da24d7e3854c7a0e6}
+      \strng{authornamehash}{e64010314c19be3da24d7e3854c7a0e6}
+      \strng{authorfullhash}{e64010314c19be3da24d7e3854c7a0e6}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Computer Vision}
+      \field{month}{11}
+      \field{title}{Distinctive Image Features from Scale-Invariant Keypoints}
+      \field{volume}{60}
+      \field{year}{2004}
+      \field{pages}{91\bibrangedash}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1023/B:VISI.0000029664.99615.94
+      \endverb
     \endentry
     \entry{Mitchell97}{book}{}
       \name{author}{1}{}{%
@@ -715,6 +862,54 @@
       \endverb
       \keyw{Algorithms,Computer Vision,Mathematics,Statistics}
     \endentry
+    \entry{1381137}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=5dd11a77feffff98ef54e46e49195064}{%
+           family={Paliy},
+           familyi={P\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=63389508404ba2d43faf925733e577fa}{%
+           family={Turchenko},
+           familyi={T\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=8146bfe9e52b50516962254dc1ff901a}{%
+           family={Koval},
+           familyi={K\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=75de8334869a1befb4165f42e74596ad}{%
+           family={Sachenko},
+           familyi={S\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ee615aad866e238ddb17e86e2f3cd80f}{%
+           family={Markowsky},
+           familyi={M\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee0307d9223b66c257c6c9132a9cf741}
+      \strng{fullhash}{91874a5c853c33f6c2097906ccf61832}
+      \strng{bibnamehash}{ee0307d9223b66c257c6c9132a9cf741}
+      \strng{authorbibnamehash}{ee0307d9223b66c257c6c9132a9cf741}
+      \strng{authornamehash}{ee0307d9223b66c257c6c9132a9cf741}
+      \strng{authorfullhash}{91874a5c853c33f6c2097906ccf61832}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2004 IEEE International Joint Conference on Neural Networks (IEEE Cat. No.04CH37541)}
+      \field{title}{Approach to recognition of license plate numbers using neural networks}
+      \field{volume}{4}
+      \field{year}{2004}
+      \field{pages}{2965\bibrangedash 2970 vol.4}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1109/IJCNN.2004.1381137
+      \endverb
+    \endentry
     \entry{4310039}{article}{}
       \field{sortinit}{P}
       \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
@@ -728,6 +923,72 @@
       \range{pages}{3}
       \verb{doi}
       \verb 10.1109/TSMC.1978.4310039
+      \endverb
+    \endentry
+    \entry{Półrolniczak_2012}{article}{}
+      \name{author}{1}{}{%
+        {{hash=d22b4499330edcd2d3f3c1c8ecab1345}{%
+           family={Półrolniczak},
+           familyi={P\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Stowarzyszenie Inżynierów i Techników Mechaników Polskich}%
+      }
+      \strng{namehash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \strng{fullhash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \strng{bibnamehash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \strng{authorbibnamehash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \strng{authornamehash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \strng{authorfullhash}{d22b4499330edcd2d3f3c1c8ecab1345}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Pomiary Automatyka Kontrola}
+      \field{number}{2}
+      \field{title}{Metoda aktywnych konturów w segmentacji znaków na tablicach rejestracyjnych}
+      \field{volume}{R. 58, nr 2}
+      \field{year}{2012}
+      \field{pages}{176\bibrangedash 179}
+      \range{pages}{4}
+    \endentry
+    \entry{1217917}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=978e916d16f1f0e67ed8ec302def1ef8}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={C.A.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=245dd0a23a76d72508f75d2966aef3ca}{%
+           family={Badawy},
+           familyi={B\bibinitperiod},
+           given={W.},
+           giveni={W\bibinitperiod}}}%
+        {{hash=86510ae9fe5e75e1d81104b856922369}{%
+           family={Radmanesh},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \strng{fullhash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \strng{bibnamehash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \strng{authorbibnamehash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \strng{authornamehash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \strng{authorfullhash}{e03df210f444ceec8c8cc5b2daa64c42}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Conference on Advanced Video and Signal Based Surveillance, 2003.}
+      \field{title}{A real time vehicle's license plate recognition system}
+      \field{year}{2003}
+      \field{pages}{163\bibrangedash 166}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/AVSS.2003.1217917
       \endverb
     \endentry
     \entry{1689652}{inproceedings}{}
@@ -807,6 +1068,43 @@
       \range{pages}{10}
       \verb{doi}
       \verb 10.1109/CVPR.2016.91
+      \endverb
+    \endentry
+    \entry{1219663}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=6f3f2444baa67fb46b5c9e5ce457b13d}{%
+           family={Sarfraz},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=1ac66f5250471f06c8e3bcddf61ad849}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={M.J.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8d2a90dde3271a2b36679c3c74e9faa9}{%
+           family={Ghazi},
+           familyi={G\bibinitperiod},
+           given={S.A.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{764bc050f231809b48d647c3aa57f34d}
+      \strng{fullhash}{764bc050f231809b48d647c3aa57f34d}
+      \strng{bibnamehash}{764bc050f231809b48d647c3aa57f34d}
+      \strng{authorbibnamehash}{764bc050f231809b48d647c3aa57f34d}
+      \strng{authornamehash}{764bc050f231809b48d647c3aa57f34d}
+      \strng{authorfullhash}{764bc050f231809b48d647c3aa57f34d}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2003 International Conference on Geometric Modeling and Graphics, 2003. Proceedings}
+      \field{title}{Saudi Arabian license plate recognition system}
+      \field{year}{2003}
+      \field{pages}{36\bibrangedash 41}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/GMAG.2003.1219663
       \endverb
     \endentry
     \entry{10.1023/A:1007614523901}{article}{}

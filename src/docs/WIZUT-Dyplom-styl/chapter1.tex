@@ -470,6 +470,7 @@ Przykład takiego obrazu przedstawia Rysunek~\ref{fig:refleks_swietlny}.
 \end{figure}
 \FloatBarrier
 Poza powyższymi trudnościami, tablice mogą być obrócone lub uszkodzone.
+Tablice często zawierają również śruby mocujące, które mogą utrudnić proces segmentacji.
 Aby zwiększyć w jak największym stopniu prawdopodobieństwo prawidłowego odczytania znaków, używa się szereg czynności na obrazie wejściowym.
 Na przykład dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina~\cite{Xu2006AMO}.
 
@@ -532,19 +533,94 @@ Liczbę wszystkich pikseli zapisano literą $N$.
 Metoda Otsu implementowana jest przez wiele środowisk obliczeniowych (np. MATLAB)~\cite{otsu_inzynieria_rolnicza}.
 Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone~\cite{10.1117/1.1631315}.
 
-\subsection{Metoda rzutów jasności}
-todo
+\subsection{Metoda rzutu jasności}
+W kontekście segmentacji znaków, metoda rzutu jasności wykonywana jest na fragmencie obrazu potencjalnie zawierającym tablicę rejestracyjną.
+W celu obliczenia rzutu jasności, sumowane są wartości pikseli w kolumnach dla obrazu w skali szarości.
+Możliwe też jest generowanie rzutów jasności w poziomie, natomiast taka technika ma większe zastosowanie w detekcji tablic.
+Rysunek~\ref{fig:hist_projection} przedstawia działanie metody pionowego rzutu jasności.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.6]{Pictures/hist_projection}
+    \caption{Pionowy rzut jasności dla obrazu tablicy rejestracyjnej (źródło: opracowanie własne).}
+    \label{fig:hist_projection}
+\end{figure}
+\FloatBarrier
+Dolna część rysunku przedstawia rozkład ilości ciemnych pikseli w danej kolumnie obrazu.
+Dla wyższej liczby ciemnych pikseli, linie rzutu jasności przyjmują wyższe wartości.
+Przerwy pomiędzy znakami są wyraźnie widoczne na wykresie.
+Na tej podstawie, możliwe jest osiągnięcie segmentacji znaków.
+Powyższy przykład zawierał jednak idealnie wyciętą tablicę rejestracyjną.
+W rzeczywistych systemach często zdarza się, że potencjalne fragmenty zawierające tablice mają większy rozmiar niż sama tablica.
+Może to wynikać z powiększania zlokalizowanego obszaru w celu uniknięcia przycięcia tablicy przez algorytm detekcji.
+Ograniczeniem tej metody jest wymaganie równoległości tablicy do krawędzi obrazu.
+Dodatkowo, dla niektórych liter, widoczne są minima lokalne wynikające z ich budowy, co może prowadzić do błędnej interpretacji wyników~\cite{Półrolniczak_2012}.
 
-\subsection{Metoda elementów połączonych (ang. \textit{connected components})}
-todo
+\subsection{Pozostałe metody}
+Wyodrębnienie znaków od tła jest problemem rozważanym w wielu pracach.
+Wciąż poszukiwane są sposoby segmentacji o wyższej skuteczności niż te obecnie stosowane.
+W~\cite{686064} autorzy skanowali w poziomie obraz binarny, w celu znalezienia obszarów, w których stosunek pikseli tła do pikseli znaków przekraczał predefiniowany próg.
+Jeżeli takie miejsce znaleziono, uznawano je za początek znaku.
+Dla odnalezienia końca znaku wykonywano odwrotną procedurę.
+
+W pracy~\cite{1381137} zaproponowano podejście bazujące na cechach geometrycznych tablicy rejestracyjnej.
+Odnalezioną tablicę skalowano to stałego rozmiaru.
+Dzięki znajomości wymiarów tablicy, stosunku wysokości znaków i tablicy oraz miejsca, w którym rozpoczyna się numer rejestracyjny, próbowano dokonać segmentacji znaków.
+Taki sposób jest łatwy w implementacji, natomiast jest ściśle powiązany z konkretnym formatem tablic i nie nadaje się do użycia dla różnych rodzajów.
+
+W~\cite{segmentation_kmeans} zaprezentowano technikę segmentacji opartą o algorytm k-średnich~\cite{1017616}.
+Główna idea wyglądała następująco:
+\begin{enumerate}
+    \item Wybranie w obrazie $k$ środków losowo,
+    \item Przypisanie każdego z pikseli w obrazie do jednego z klastrów na podstawie parametru podobieństwa (np. odległości Euklidesowej),
+    \item Przekalkulowanie środków klastrów poprzez uśrednienie wszystkich pikseli w klastrze,
+    \item Powtórzenie kroku 2 i 3, do momentu kiedy piksele przestaną zmieniać klastry.
+\end{enumerate}
+Dokładność takiego rozwiązania jest mocno skorelowana z odpowiednim wyborem $k$ oraz początkowym zbiorze klastrów.
+W celu właściwego wyboru $k$, autorzy użyli algorytmu SIFT (ang. \textit{Scale Invariant Feature Transform --- SIFT})~\cite{sift}.
+Algorytm ten jest odporny na skalę i rotację obrazu.
+Zaproponowana technika uzyskała wysoką dokładność segmentacji na poziomie $98,82\%$.
 
 
 \section{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
 \index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
+W wyniku operacji segmentowania znaków, otrzymywane są obrazy z oddzielonymi znakami od tła.
+Kolejną częścią automatycznego systemu rozpoznawania tablic rejestracyjnych jest odczytanie numeru identyfikującego dany pojazd.
+Jest to ostatni etap w systemie.
+Rezultat tego działania przeważnie wysyłany jest już do innego modułu lub systemu odpowiedzialnego za logikę biznesową danego rozwiązania.
 
 \subsection{OCR}
+Optyczne rozpoznawanie znaków (ang. \textit{Optical Character Recognition} --- OCR) jest obszerną dziedziną algorytmów przetwarzających obraz na tekst.
+
+
 tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
 %https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
 
 \subsection{Metody oparte na wzorcach}
-@TODO - TEMPLATE AND PATTERN MATCHING TECHNIQUES
+Jedną z popularnych technik klasyfikacji znaków jest metoda oparta na wzorcach (ang. \textit{template matching})~\cite{1219663, 1217917}.
+Bazuje ona na założeniu, że czcionka oraz rozmiar znaków na tablicy jest znany.
+Dopasowanie wzorca odbywa się z reguły na zbinaryzowanym obrazie.
+Dla każdego możliwego znaku, tworzony jest odpowiedni wzorzec.
+Podczas procesu rozpoznawania, każdy wzorzec badany jest pod kątem podobieństwa do rozpatrywanego znaku.
+Za miarę podobieństwa służą najczęściej:
+\begin{itemize}
+    \item odległość Mahalanobisa,
+    \item indeks Jaccarda,
+    \item metryka Hausdorffa,
+    \item odległość Hamminga,
+    \item korelacja wzajemna.
+\end{itemize}
+Rysunek~\ref{fig:ocr_template_matching} przedstawia schemat opisywanej techniki na przykładzie litery $B$.
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.3]{Pictures/ocr_template}
+    \caption{Rozpoznanie litery B za pomocą wzorców (źródło:~\cite{Li1993AnIO}).}
+    \label{fig:ocr_template_matching}
+\end{figure}
+\FloatBarrier
+Cyfrową reprezentacją znaku jest tablica, gdzie 1 to punkt wchodzący w skład znaku, a 0 to tło.
+Tablica musi mieć ten sam rozmiar co tablica wzorca, więc obrazy są najczęściej skalowane.
+Dla litery $A$ wykryto 17, a dla litery $C$ 6 niepoprawnych punktów.
+Metoda ta jest stosunkowo prosta w implementacji.
+Problematyczne stają się różne czcionki.
+Aby umożliwić rozpoznawanie wielu formatów oraz zniwelować rotację znaków, dodaje się nowe wzorce.
+To z kolei zwiększa złożoność obliczeniową systemu i zapotrzebowanie na pamięć operacyjną~\cite{9310202}.

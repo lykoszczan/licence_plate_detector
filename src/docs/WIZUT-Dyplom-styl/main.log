@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  2 SEP 2022 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  2 SEP 2022 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1516,7 +1516,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 <Pictures/threshold.png, id=456, 514.92375pt x 178.86826pt>
 File: Pictures/threshold.png Graphic file (type png)
 <use Pictures/threshold.png>
-Package pdftex.def Info: Pictures/threshold.png  used on input line 489.
+Package pdftex.def Info: Pictures/threshold.png  used on input line 490.
 (pdftex.def)             Requested size: 308.95662pt x 107.32178pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1528,26 +1528,48 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[22 <./Pictures/threshold.png>])
+[22 <./Pictures/threshold.png>]
+<Pictures/hist_projection.png, id=484, 426.09187pt x 196.48407pt>
+File: Pictures/hist_projection.png Graphic file (type png)
+<use Pictures/hist_projection.png>
+Package pdftex.def Info: Pictures/hist_projection.png  used on input line 543.
+(pdftex.def)             Requested size: 255.65709pt x 117.89134pt.
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[23]
+[23 <./Pictures/hist_projection.png (PNG copy)>]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[24]
+<Pictures/ocr_template.png, id=519, 1031.855pt x 602.25pt>
+File: Pictures/ocr_template.png Graphic file (type png)
+<use Pictures/ocr_template.png>
+Package pdftex.def Info: Pictures/ocr_template.png  used on input line 615.
+(pdftex.def)             Requested size: 309.55888pt x 180.67639pt.
+)
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+ [][][][][][][][][][][]
+ []
+
+[25 <./Pictures/ocr_template.png>]
 \openout2 = `chapter2.aux'.
 
- (./chapter2.tex [24
+ (./chapter2.tex [26
 
 
 
 ]
 Rozdzia\l  2.
-<Pictures/captured_frames.png, id=496, 1064.97874pt x 597.23125pt>
+<Pictures/captured_frames.png, id=535, 1064.97874pt x 597.23125pt>
 File: Pictures/captured_frames.png Graphic file (type png)
 <use Pictures/captured_frames.png>
 Package pdftex.def Info: Pictures/captured_frames.png  used on input line 49.
 (pdftex.def)             Requested size: 425.98395pt x 238.88826pt.
-[25] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[27] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5
@@ -1566,7 +1588,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[26 <./Pictures/captured_frames.png>]
+[28 <./Pictures/captured_frames.png>]
 LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
 91.
  (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
@@ -1582,22 +1604,22 @@ Make it at least 32.1919pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[27]
+[29]
 \openout2 = `chapter3.aux'.
 
- (./chapter3.tex [28
+ (./chapter3.tex [30
 
 
 
 ]
 Rozdzia\l  3.
-<Pictures/prepare_haar_dataset.png, id=564, 300.12125pt x 1296.845pt>
+<Pictures/prepare_haar_dataset.png, id=601, 300.12125pt x 1296.845pt>
 File: Pictures/prepare_haar_dataset.png Graphic file (type png)
 <use Pictures/prepare_haar_dataset.png>
 Package pdftex.def Info: Pictures/prepare_haar_dataset.png  used on input line 
 36.
 (pdftex.def)             Requested size: 120.04637pt x 518.72882pt.
-[29]
+[31]
 Underfull \vbox (badness 7613) has occurred while \output is active []
 
 
@@ -1605,8 +1627,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[30 <./Pictures/prepare_haar_dataset.png>]
-<Pictures/haar_tepmplates.png, id=580, 491.8375pt x 211.79124pt>
+[32 <./Pictures/prepare_haar_dataset.png>]
+<Pictures/haar_tepmplates.png, id=618, 491.8375pt x 211.79124pt>
 File: Pictures/haar_tepmplates.png Graphic file (type png)
 <use Pictures/haar_tepmplates.png>
 Package pdftex.def Info: Pictures/haar_tepmplates.png  used on input line 86.
@@ -1616,13 +1638,13 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[31]
+[33]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[32 <./Pictures/haar_tepmplates.png>]
-<Pictures/fit_realboostbins.png, id=621, 257.96375pt x 944.52875pt>
+[34 <./Pictures/haar_tepmplates.png>]
+<Pictures/fit_realboostbins.png, id=658, 257.96375pt x 944.52875pt>
 File: Pictures/fit_realboostbins.png Graphic file (type png)
 <use Pictures/fit_realboostbins.png>
 Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 143
@@ -1633,8 +1655,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[33]
-<Pictures/main_alg.png, id=642, 362.35374pt x 1315.91624pt>
+[35]
+<Pictures/main_alg.png, id=679, 362.35374pt x 1315.91624pt>
 File: Pictures/main_alg.png Graphic file (type png)
 <use Pictures/main_alg.png>
 Package pdftex.def Info: Pictures/main_alg.png  used on input line 155.
@@ -1644,8 +1666,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[34 <./Pictures/fit_realboostbins.png>]
-<Pictures/detection_alg.png, id=650, 499.8675pt x 691.58376pt>
+[36 <./Pictures/fit_realboostbins.png>]
+<Pictures/detection_alg.png, id=687, 499.8675pt x 691.58376pt>
 File: Pictures/detection_alg.png Graphic file (type png)
 <use Pictures/detection_alg.png>
 Package pdftex.def Info: Pictures/detection_alg.png  used on input line 166.
@@ -1655,8 +1677,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[35 <./Pictures/main_alg.png>]
-<Pictures/characters_alg.png, id=658, 452.69125pt x 934.49126pt>
+[37 <./Pictures/main_alg.png>]
+<Pictures/characters_alg.png, id=696, 452.69125pt x 934.49126pt>
 File: Pictures/characters_alg.png Graphic file (type png)
 <use Pictures/characters_alg.png>
 Package pdftex.def Info: Pictures/characters_alg.png  used on input line 177.
@@ -1666,8 +1688,8 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[36 <./Pictures/detection_alg.png>]
-<Pictures/segmentation.png, id=666, 371.3875pt x 429.605pt>
+[38 <./Pictures/detection_alg.png>]
+<Pictures/segmentation.png, id=704, 371.3875pt x 429.605pt>
 File: Pictures/segmentation.png Graphic file (type png)
 <use Pictures/segmentation.png>
 Package pdftex.def Info: Pictures/segmentation.png  used on input line 192.
@@ -1677,20 +1699,20 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[37 <./Pictures/characters_alg.png>]
+[39 <./Pictures/characters_alg.png>]
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
-[38 <./Pictures/segmentation.png>])
+[40 <./Pictures/segmentation.png>])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
-[39]
+[41]
 \openout2 = `chapter4.aux'.
 
- (./chapter4.tex [40
+ (./chapter4.tex [42
 
 
 
@@ -1711,30 +1733,30 @@ Overfull \hbox (10.7687pt too wide) in paragraph at lines 17--25
  [][] 
  []
 
-) [41]
+) [43]
 \openout2 = `conclusions.aux'.
 
- (./conclusions.tex [42
+ (./conclusions.tex [44
 
 
 
-]) [43] [44
+]) [45] [46
 
 
-] [45]
-Overfull \hbox (7.01935pt too wide) in paragraph at lines 135--135
+] [47] [48]
+Overfull \hbox (13.01935pt too wide) in paragraph at lines 135--135
 []\T1/ntxtlf/m/n/12 Robert E. Scha-pire i Yoram Sin-ger. ``Im-pro-ved Bo-osting
  Al-go-ri-thms Using Confidence-
  []
 
-[46]
-Overfull \hbox (71.9496pt too wide) in paragraph at lines 140--140
+[49]
+Overfull \hbox (77.9496pt too wide) in paragraph at lines 140--140
 \T1/ntxtt/m/n/12 edu . pl / ~horzyk / lectures / miw / MIW -[] UczenieG % c5 % 
 82 % c4 % 99bokichSieciNeuronowych .
  []
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 153.
-[47]
+[50]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
  (./main.aux (./title_page.aux) (./statement_page.aux) (./abstract.aux)
 (./introduction.aux) (./chapter1.aux) (./chapter2.aux) (./chapter3.aux)
@@ -1742,24 +1764,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A18D3C8526F2F5E37BC4D1995CE456CD;2856.
+(rerunfilecheck)             Checksum: 41F1C66EA26D3CB005E58081D6E8B87D;2807.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
-
-
-Package biblatex Warning: Please rerun LaTeX.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24362 strings out of 481239
- 397979 string characters out of 5920378
- 1140092 words of memory out of 5000000
- 38875 multiletter control sequences out of 15000+600000
+ 24421 strings out of 481239
+ 399702 string characters out of 5920378
+ 1148181 words of memory out of 5000000
+ 38915 multiletter control sequences out of 15000+600000
  652187 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  58i,17n,98p,1305b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1782,10 +1801,10 @@ pe1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
 wtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (47 pages, 3179068 bytes).
+Output written on main.pdf (50 pages, 3258912 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 757 compressed objects within 8 object streams
- 239 named destinations out of 1000 (max. 500000)
- 395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 962 PDF objects out of 1000 (max. 8388607)
+ 804 compressed objects within 9 object streams
+ 256 named destinations out of 1000 (max. 500000)
+ 405 words of extra memory for PDF output out of 10000 (max. 10000000)
 
