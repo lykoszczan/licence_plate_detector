@@ -266,79 +266,54 @@ Poprzez zastosowanie skalowania szablonów i zakotwiczanie ich w różnych miejs
 Tak duża liczba cech wymagana jest na etapie uczenia klasyfikatora.
 Dzięki zastosowaniu boostingu, algorytm dokonuje selekcji znacznie mniejszej liczby cech, które zapewnią dobry opis rozpatrywanych obiektów w danym zagadnieniu detekcji.
 
-%TODO - przenieść to dalej, a tutaj dać o boostingu
-%Algorytm Violi-Jonesa wymaga dużej ilości próbek pozytywnych i negatywnych.
-%Do wyuczenia klasyfikatora i wybrania zbioru cech zastosowano algorytm AdaBoost.
-%Autorzy zaproponowali użycie kaskady klasyfikatorów.
-%Takie podejście bazuje na obserwacji, że okna pozytywne stanowią średnio $0.01\%$ wszystkich okien.
-%Rozpatrywane okno w pierwszej kolejności badane jest przez słabsze klasyfikatory, które bazują na mniejszej liczbie cech.
-%Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
-%Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
-%Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
-%Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory odpowiedzi pozytywnej.
-%W algorytmie Violi-Jonesa kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
-%Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
-%W trakcie uczenia każdy z klasyfikatorów ma przypisany indywidualny próg decyzyjny.
-%Każdy etap kaskady uczony jest w ramach boostingu (np. poprzez AdaBoost lub RealBoost).
-
-AdaBoost (Adaptive Boosting) to algorytm, którego zadaniem jest stworzenie mocnego klasyfikatora na podstawie wielu słabych klasyfikatorów.
-Słabym klasyfikatorem nazywamy klasyfikator, który osiąga niską dokładność, jednak wyższą od losowych wyników.
+AdaBoost (Adaptive Boosting) to jedna z technik boostingu.
+Takie podejście zostało zaprezentowane po raz pierwszy w~\cite{Freund1996ExperimentsWA}.
+Boostingiem nazywamy algorytm, którego zadaniem jest stworzenie mocnego klasyfikatora na podstawie wielu słabych klasyfikatorów.
+Słabym klasyfikatorem jest klasyfikator, który osiąga niską dokładność, jednak wyższą od losowych wyników.
 Za przykład może posłużyć rozpoznawanie płci na podstawie wzrostu.
 Słaby klasyfikator mógłby bazować na założeniu, że każda osoba o wzroście 175cm lub wyższym jest mężczyzną.
 Pozostała grupa osób jest kobietami.
 Wiele osób ze zbioru testowego zostanie określonych błędnie, jednak dokładność klasyfikatora będzie wyższa niż 50\%.
-AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
-Po raz pierwszy został on przedstawiony w~\cite{Freund1996ExperimentsWA}.
-AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów~\cite{szybka_detekcja_klesk}:
-\begin{itemize}
-    \item AdaBoost + decision stump
-    \item AdaBoost + drzewka decyzyjne
-    \item AdaBoost + klasyfikator liniowy (np. SVM)
-    \item AdaBoost + naiwny Bayes
-\end{itemize}
-Głównymi zastosowaniami tej techniki jest wybór najlepszych cech z punktu widzenia klasyfikacji oraz dobór wag dla klasyfikatorów wchodzących w skład kaskady.
-
-
-Tutaj dać pseudokod algorytmu i następnie go opisać\\
-%\begin{algorithmic}
-%    \If {$i\geq maxval$}
-%        \State $i\gets 0$
-%    \Else
-%        \If {$i+k\leq maxval$}
-%            \State $i\gets i+k$
-%        \EndIf
-%    \EndIf
-%\end{algorithmic}
-
-Każdy słaby klasyfikator uczony jest na tym samym podzbiorze.
-Każda próbka ma przypisaną wagę, która mówi o jej istotności z punktu uczenia klasyfikatora.
-Dla każdego kolejnego słabego klasyfikatora, próbki są reważone w ten sposób, aby błędnie sklasyfikowane próbki
-AdaBoost przypisuje wagi do jednostek treningowych, które określają prawdopodobieństwo pojawienia się w zbiorze uczącym zgodnie ze wzorem~\eqref{eq:treaning_unit_weight_adaboost}.
-\begin{equation}
-    \label{eq:treaning_unit_weight_adaboost}
-    D_{t+1}(i) = \dfrac{D_t(i) \exp(-\alpha_t y_i h_t(x_i))}{Z_t}
-\end{equation}
-$D_t$ oznaczono wektor wszystkich wag, natomiast $Z_t$ reprezentuje ich sumę.
-Indeks $i$ jest numerem kolejnej próbki w zbiorze uczącym.
-Na początku wszystkie próbki posiadają tą sama wartość wag.
-Po zakończeniu uczenia, wagi błędnie sklasyfikowanych próbek zostają zwiększone.
+Na poniższych schemacie przedstawiono pseudokod algorytmu uczącego AdaBoost.
+\begin{algorithm}
+    \caption{Algorytm uczący klasyfikatora AdaBoost}
+    \begin{algorithmic}[1]
+        \label{adaboost_alg}
+        \Procedure{DiscreteAdaBoost}{$(x_i,y_i)$}
+            \Comment{$i=1, \dots, m, y_i \in \{-1,+1\}$}
+            \State Rozpocznij od jednostajnego rozkładu wag: $w_i \coloneqq \dfrac{1}{m}, i=1, \dots, m$.
+            \For{\texttt{$t \coloneq 1, \dots, T$}}
+                \State Naucz klasyfikator $f_t(x) \in \{-1, +1\}$ na danych uczących używając wag $w_i$.
+                \State Oblicz błąd uczący:
+                \State \hskip1em $\epsilon_t \coloneq \sum_{i=1}^{m} w_i[f(x_i)\neq y_i]$.
+                \State Oblicz wagę klasyfikatora:
+                \State \hskip1em $\alpha_t \coloneq \dfrac{1}{2} \ln \dfrac{1-\epsilon_t}{\epsilon_t}$.
+                \State Aktualizuj wagi przykładów wg:
+                \State \hskip1em $Z_t \coloneq \sum_{i=1}^{m} w_i \exp(-\alpha_t f_t(x_i) y_i)$,
+                \State \hskip1em $w_i \coloneq \dfrac{w_i \exp(-\alpha_t f_t(x_i) y_i)}{Z_t}$.
+            \EndFor
+            \State \textbf{Zwróć} zbiorowy klasyfikator $F(x) \coloneq \sum_{t=1}^{T} \alpha_t f_t(x)$.
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\FloatBarrier
+Algorytm przyjmuje na wejściu zbiór uczący wraz z etykietami opisującymi poszczególne elementy zbioru.
+Do każdej pary uczącej $(x_i, y_i)$ przypisywana jest waga równa $w_i$.
+Na początku uczenia, wszystkie wagi mają taką samą wartość, a ich suma jest równa 1.
+Na koniec każdej pętli uczącej dochodzi do reważenia wag przykładów, a wagi błędnie sklasyfikowanych próbek zostają zwiększone.
+Wagi ustalane są na podstawie błędu klasyfikacji $\epsilon_t$.
 Dzięki temu, w następnej iteracji uczenia kolejny klasyfikator będzie mógł lepiej rozpoznawać niepoprawnie oznaczone jednostki treningowe w poprzednim kroku.
 W momencie, gdy każdy klasyfikator zostanie wyuczony, AdaBoost przypisuje do nich wagi na podstawie dokładności każdego z nich.
 Ostateczną odpowiedź klasyfikatora można opisać wzorem~\eqref{eq:ada_boost_clf}.
 \begin{equation}
     \label{eq:ada_boost_clf}
-    H(x) = \sign\left(\sum_{t=1}^{T} \alpha_t h_t(x))\right)
+    F(x) = \sign\left(\sum_{t=1}^{T} \alpha_t f_t(x))\right)
 \end{equation}
 Finalny klasyfikator zawiera $T$ słabych klasyfikatorów.
+Każdy ze słabych klasyfikatorów zwraca jedną z dwóch odpowiedzi $\{-1, 1\}$.
 Waga klasyfikatora, wyliczona przez AdaBoost, została określona symbolem $\alpha_t$.
 Ostateczny rezultat powyższego równania można opisać jako liniowa kombinacja słabych klasyfikatorów.
 
-Pierwszy klasyfikator ($t=1$) jest trenowany z równym prawdopodobieństwem dla wszystkich próbek.
-Po zakończeniu uczenia, waga obliczana jest na podstawie wzoru~\eqref{eq:weight_clf}.
-\begin{equation}
-    \label{eq:weight_clf}
-    \alpha_t = \dfrac{1}{2} \ln \dfrac{1-\epsilon_t}{\epsilon_t}
-\end{equation}
 Współczynnik $\alpha_t$ jest skorelowany z poziomem błędu klasyfikatora $\epsilon_t$, który to jest liczony jako liczba błędnie sklasyfikowanych próbek dzielona przez rozmiar zbioru uczącego.
 Rysunek~\ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
 \begin{figure}[!ht]
@@ -349,39 +324,68 @@ Rysunek~\ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
 \end{figure}
 \FloatBarrier
 Z Rysunku~\ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów o wysokiej dokładności.
-Dla klasyfikatora o poziomie błędu 0.5 waga jest równa zero.
+Dla klasyfikatora o poziomie błędu $0.5$ waga jest równa zero.
 Oznacza to, że taki klasyfikator jest równie dokładny co losowe zgadywanie, dlatego jest on ignorowany.
 Dla klasyfikatorów o większym poziomie błędu, waga przyjmuje wartość ujemną.
 Jeśli taki klasyfikator uzna próbkę za negatywną, ostatecznie zostanie ona oznaczona jako pozytywna.
 
-AdaBoost jest techniką uczenia progresywnego.
-Ważne jest, aby na wejściu próbki uczące były odpowiedniej jakości.
-Metoda ta jest bardzo czuła na zakłócenia.
-Jednymi z najczęstszych aplikacji tego typu boostingu jest klasyfikacja tekstu oraz zdjęć.
+AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
+AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów~\cite{szybka_detekcja_klesk}:
+\begin{itemize}
+    \item AdaBoost + decision stump
+    \item AdaBoost + drzewka decyzyjne
+    \item AdaBoost + klasyfikator liniowy (np. SVM)
+    \item AdaBoost + naiwny Bayes
+\end{itemize}
+Głównymi zastosowaniami tej techniki jest wybór najlepszych cech z punktu widzenia klasyfikacji oraz dobór wag dla klasyfikatorów wchodzących w skład kaskady.
+Dzięki selekcji cech najlepiej opisujących dany obiekt, jest odporna na zakłócenia.
 
-Wzmocnienie AdaBoost spotykane jest w różnych wariantach.
-Jednym z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w~\cite{10.1023/A:1007614523901}.
+Poza algorytmem AdaBoost, stosowane są również inne metody boostingu.
+Jedną z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w~\cite{10.1023/A:1007614523901}.
 Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne~\cite{szybka_detekcja_klesk}.
+Na poniższych schemacie przedstawiono pseudokod algorytmu uczącego RealBoost.
+\begin{algorithm}
+    \caption{Algorytm uczący klasyfikatora RealBoost}
+    \begin{algorithmic}[1]
+        \label{realboost_alg}
+        \Procedure{RealAdaBoost}{$(x_i,y_i)$}
+            \Comment{$i=1, \dots, m, y_i \in \{-1,+1\}$}
+            \State Rozpocznij od jednostajnego rozkładu wag: $w_i \coloneqq \dfrac{1}{m}, i=1, \dots, m$.
+            \For{\texttt{$t \coloneq 1, \dots, T$}}
+                \State Naucz klasyfikator $f_t(x) \in \mathbb{R}$ na danych uczących używając wag $w_i$, tak aby $f_t$ minimalizowało \textit{kryterium wykładnicze} $\sum_{i=1}^{m} w_i \exp(-f_t(x_i) y_i)$ lub równoważnie aby $f_t$ było przybliżeniem połowy przekształcenia logit:
+                \State \hskip1em $f_t(X) =\dfrac{1}{2}\ln\dfrac{\hat{P_w}(y=1|x)}{\hat{P_w}(y=-1|x)}$.
+                \State Aktualizuj wagi przykładów wg:
+                \State \hskip1em $Z_t \coloneq \sum_{i=1}^{m} w_i \exp(-f_t(x_i) y_i)$,
+                \State \hskip1em $w_i \coloneq \dfrac{w_i \exp(-f_t(x_i) y_i)}{Z_t}$.
+            \EndFor
+            \State \textbf{Zwróć} zbiorowy klasyfikator $F(x) \coloneq \sum_{t=1}^{T} f_t(x)$.
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\FloatBarrier
+Schemat ten jest bardzo podobny do schematu algorytmu AdaBoost.
+W przeciwieństwie do AdaBoost, słabe klasyfikatory nie posiadają wag.
+Mechanizm ważenia słabych klasyfikatorów jest niejako wpleciony w same odpowiedzi rzeczywistoliczbowe~\cite{szybka_detekcja_klesk}.
 Odpowiedź słabego klasyfikatora jest zwykle ustalana jako przybliżenie połowy przekształcenia logit:
 \begin{equation}
     \label{eq:real_boost}
-    f_t(X) =\dfrac{1}{2}\ln\dfrac{\hat{P_w}(y=1|x)}{\hat{P_w}(y=-1|x)}
+    f_t(X) =\dfrac{1}{2}\ln\dfrac{\hat{P_w}(y=1|x)}{\hat{P_w}(y=-1|x)},
 \end{equation}
 gdzie $\hat{P_w}(y=\pm1|x)$ stanowi oszacowanie rozkładu klas warunkowego na $x$ z wykorzystaniem aktualnych wag $w_i$.
-W przeciwieństwie do AdaBoost, słabe klasyfikatory nie posiadają wag.
-Mechanizm ważenia słabych klasyfikator jest niejako wpleciony w same odpowiedzi rzeczywistoliczbowe.
-Możliwym jest wykazanie, że wyrażenie~\eqref{eq:real_boost} jest rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez rozkład ${w_i}$ na zbiorze danych (tj.\ na konkretnej próbie).
-Analogicznie wyrażenie to jest również rozwiązaniem zadania minimalizacji kryterium wykładniczego określonego poprzez prawdziwy ale nieznany rozkład łączny generujący dane tj. $P(x,y)=p(x)P(y|x)$~\cite{szybka_detekcja_klesk}.
+Ostateczną odpowiedź klasyfikatora można opisać wzorem~\eqref{eq:real_boost_clf}.
+\begin{equation}
+    \label{eq:real_boost_clf}
+    F(x) = \sign\left(\sum_{t=1}^{T} f_t(x))\right)
+\end{equation}
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
 
-%TODO - poprawka koszyków
-Jednym ze słabych klasyfikatorów stosowanych razem z algorytmem RealBoost są tzw.\ koszyki (ang. \textit{response binning}).
+Słabe klasyfikatory stosowane w algorytmach boostingowych mogą być realizowane poprzez koszykowanie wartości funkcji logit (ang. \textit{response binning}).
 Ten typ klasyfikatora został zaprezentowany w~\cite{1689652}.
 Przedstawiony sposób działania polega na przybliżaniu rozkładów warunkowych przez funkcje kawałkami stałe~\cite{szybka_detekcja_klesk}.
-Przed uczeniem algorytmu wyznacza na jest liczba koszyków o równej szerokości oznaczana literą $B$.
-Na podstawie ustalonych przedziałów $[a_1,a_2]$, każdej z cech przypisywany jest odpowiedni indeks koszyka.
-Indeks koszyka $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jest na podstawie wzoru~\eqref{eq:bin_index}.
+Przed uczeniem algorytmu wyznaczana jest liczba koszy o równej szerokości oznaczana literą $B$.
+Na podstawie ustalonych przedziałów $[a_1,a_2]$, każdej z cech przypisywany jest odpowiedni indeks kosza.
+Indeks kosza $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jest na podstawie wzoru~\eqref{eq:bin_index}.
 \begin{equation}
     \label{eq:bin_index}
     \beta(x)=\left.
@@ -392,29 +396,43 @@ Indeks koszyka $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany j
     \end{cases}
     \right.
 \end{equation}
-Odpowiedź słabego klasyfikatora dla $j^*$-tej cechy przedstawia wzór~\eqref{eq:bin_weak_clf}, gdzie $\hat{P_w}(y=-1, j\;jest\;w\;b)=\sum_{\{i:y_i=-1,\beta(x_ij)=b\}}^{} w_i$ oznacza szacowane prawdopodobieństwo zdarzenia, że przykład jest negatywny a jego $j$-ta cecha należy do kosza $b$.
+Odpowiedź słabego klasyfikatora dla $j^*$-tej cechy przedstawia wzór~\eqref{eq:bin_weak_clf}, gdzie $\hat{P_w}(y=-1, j\;\text{jest}\;w\;b)=\sum_{\{i:y_i=-1,\beta(x_{ij})=b\}}^{} w_i$ oznacza szacowane prawdopodobieństwo zdarzenia, że przykład jest negatywny, a jego $j$-ta cecha należy do kosza $b$.
 \begin{equation}
     \label{eq:bin_weak_clf}
-    f_t(x;j^*) = \dfrac{1}{2} \ln\dfrac{\hat{P_w}(y=1, j^*\;jest\;w\;\beta(x_j^*))}{\hat{P_w}(y=-1, j^*\;jest\;w\;\beta(x_j^*))}
+    f_t(x;j^*) = \dfrac{1}{2} \ln\dfrac{\hat{P_w}(y=1, j^*\;\text{jest}\;w\;\beta(x_{j^*}))}{\hat{P_w}(y=-1, j^*\;\text{jest}\;w\;\beta(x_{j^*}))}
 \end{equation}
-Autorzy algorytmu zalecają stosowanie dużej ilości koszyków dla gładkiego histogramu rozkładu cech.
-Jeżeli histogram zawiera wiele maksimum lokalnych, należy zmniejszyć liczbę koszyków.
-W przeciwnym razie zbyt duża rozdzielczość może wprowadzić szum do klasyfikatora, natomiast zbyt niska liczba koszyków może pozbawić klasyfikatora istotnych cech~\cite{1689652}.
+Autorzy algorytmu zalecają stosowanie dużej ilości koszy dla gładkiego histogramu rozkładu cech.
+Jeżeli histogram zawiera wiele maksimów lokalnych, należy zmniejszyć liczbę koszyków.
+W przeciwnym razie zbyt duża rozdzielczość może wprowadzić szum do klasyfikatora, natomiast zbyt niska liczba koszy może pozbawić klasyfikatora istotnych cech~\cite{1689652}.
+
+%nie wiem czy to ma tutaj sens ale niech bedzie
+We wspomnianym wcześniej algorytmie Violi-Jonesa wykorzystano boosting techniką AdaBoost.
+Autorzy zaproponowali użycie kaskady klasyfikatorów.
+Takie podejście bazuje na obserwacji, że okna pozytywne stanowią średnio $0.01\%$ wszystkich okien.
+Rozpatrywane okno w pierwszej kolejności badane jest przez słabsze klasyfikatory, które bazują na mniejszej liczbie cech.
+Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
+Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
+Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
+Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory odpowiedzi pozytywnej.
+W algorytmie Violi-Jonesa kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
+Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
+Algorytm jest ceniony za szybkość detekcji.
+Pomimo faktu, że jego dokładność jest niższa od dokładności nowoczesnych metod opartych na sieciach neuronowych, stosowany jest on w rozwiązaniach o ograniczonej mocy obliczeniowej.
+Wynika to z faktu, że algorytm Violi-Jonesa jest bardzo wydajny oraz bazuje na stosunkowo niewielkiej liczbie cech.
 
 \subsection{Metody głębokiego uczenia (ang. \textit{Deep learning})}
-W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w detekcji obiektów.
-Jednym z zaproponowanych podejść jest użycie sieci konwolucyjnych (ang. \textit{Convolutional Neural Network} --- CNN)\cite{cnn_detector}.
-Składają się one z jednej lub wielu warstw konwolucyjnych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci, np. MLP,SVM, SoftMax itp.
-Sieci kowolucyjne są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw konwolucyjnych i ich rozmiaru.
+W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komputerów na przestrzeni ostatnich lat, wiele metod statystycznych zostało zastąpionych przez sieci neuronowe z powodu ich wysokiej skuteczności w rozpoznawaniu obiektów.
+Jednym z zaproponowanych podejść jest użycie sieci splotowych (ang. \textit{Convolutional Neural Network} --- CNN)~\cite{cnn_detector}.
+Składają się one z jednej lub wielu warstw splotowych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci.
+Sieci splotowe są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw splotowych i ich rozmiaru.
 Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj\. obrazy)~\cite{cnn_agh}.
 
 Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once})~\cite{7780460}.
 Algorytm jest bardzo wydajny.
-Bazuje na sieciach R-CNN.
+Bazuje on na odpowiednio zaprojektowanym zadaniu regresji do predykcji tzw.\ bounding boxów obiektów.
 Autorzy zapewniają o możliwości przetwarzania 45 klatek na sekundę, a dla wersji szybszej, lecz o niższej dokładności, ponad 150 klatek na sekundę.
-Twórcom wzorca przyświecała idea ,,spojrzenia tylko raz'', wzorując się na postrzeganiu świata przez człowieka, który po jednym spojrzeniu na badany obraz, jest w stanie zidentyfikować konkretne obiekty.
 W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas procesu uczenia i testowania otrzymuje na wejściu cały obraz.
-Na obraz wejściowy nałożona zostaje siatka o rozmiarze SxS, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
+Na obraz wejściowy nałożona zostaje siatka o rozmiarze $S\times S$, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
 Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.
 Ramki o prawdopodobieństwie wyższym od ustalonego progu, zostają nałożone na wejściowy obraz, najczęściej w postaci prostokątów otaczających obiekt.
 Rysunek~\ref{fig:yolo} przedstawia opisany schemat.
@@ -441,7 +459,7 @@ Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy re
 Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
 W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
 Działanie takie zwiększa ich czytelność dla ludzkiego oka w gorszych warunkach oświetleniowych.
-Dla aparatów fotograficznych ta cecha tablic często powoduje nieczytelność tablic na wykonanym zdjęciu.
+Efektem takiej cechy tablic, może być ich nieczytelność na zdjęciu wykonanym aparatem fotograficznym.
 Tablica odbija na tyle dużą ilość światła, co skutkuje powstaniem na zdjęciu białego prostokąta w miejscu tablicy.
 Przykład takiego obrazu przedstawia Rysunek~\ref{fig:refleks_swietlny}.
 \begin{figure}[!ht]
@@ -453,7 +471,7 @@ Przykład takiego obrazu przedstawia Rysunek~\ref{fig:refleks_swietlny}.
 \FloatBarrier
 Poza powyższymi trudnościami, tablice mogą być obrócone lub uszkodzone.
 Aby zwiększyć w jak największym stopniu prawdopodobieństwo prawidłowego odczytania znaków, używa się szereg czynności na obrazie wejściowym.
-Dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina~\cite{Xu2006AMO}.
+Na przykład dla obróconych obiektów stosuje się transformatę biliniową, zwaną również metodą Tustina~\cite{Xu2006AMO}.
 
 \subsection{Binaryzacja}\label{subsec:binaryzacja}
 W wielu klasycznych metodach widzenia komputerowego, w celu segmentacji znaków, stosuje się binaryzację.
@@ -461,10 +479,10 @@ W zbinaryzowanym obrazie łatwiej jest rozdzielić znaki w porównaniu do obrazu
 Podstawowym problemem tej techniki jest odpowiedni dobór wartości progu.
 Wybór ten jest dokonywany w oparciu o różne metody, które można podzielić na zmiennoprogowe i automatyczne.
 Jednakże, wyznaczenie progu binaryzacji musi zostać wykonane właściwie, w celu uniknięcia połączenia znaków lub scalenia ich z obramowaniem tablicy rejestracyjnej~\cite{6213519}.
-Jednym z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (ang. \textit{Adaptive Thresholding}).
-Stosuje się to w momencie kiedy różne obszary obrazu mogą charakteryzować się różnymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
+Jedną z częściej stosowanych metod binaryzacji jest progowanie adaptacyjne (ang. \textit{Adaptive Thresholding}).
+Stosuje się je w momencie kiedy różne obszary obrazu mogą charakteryzować się odmiennymi warunkami oświetlenia i stosowanie stałej wartości nie dałoby zadowalających efektów.
 Algorytm wyznacza próg dla konkretnego piksela na podstawie niewielkiego regionu wokoło.
-Dla tego samego obrazu wyliczane są różne wartości progu dla różnych regionów co prowadzi do uzyskania lepszych wyników niż w przypadku stałego progu binaryzacji.
+Dla tego samego obrazu wyliczane są różne wartości progu dla różnych regionów, co prowadzi do uzyskania lepszych wyników niż w przypadku stałego progu binaryzacji.
 Na Rysunku~\ref{fig:threshold} przedstawiono przykłady binaryzacji obrazu stałym progiem globalnym i progiem wyznaczonym adaptacyjnie.
 \begin{figure}[!ht]
     \centering
@@ -478,7 +496,7 @@ Algorytm progowania adaptacyjnego otrzymuje najczęściej na wejściu obraz w sk
 Próg jest wyliczany dla wszystkich pikseli w obrazie z osobna.
 Jednym ze znanych podejść jest to zaproponowane przez Chow i Kaneko~\cite{Chow1971BoundaryDO}.
 W tym przypadku obraz dzielony jest na zbiór nakładających się fragmentów.
-Optymalny próg wyznaczy jest dla konkretnego fragmentu na podstawie analizy histogramu.
+Optymalny próg wyznaczany jest dla konkretnego fragmentu na podstawie analizy histogramu.
 Próg dla każdego piksela wyliczany jest na podstawie interpolacji wyników dla odpowiedniego fragmentu.
 Wadą tej metody jest jej złożoność obliczeniowa.
 Jest to jeden z głównych powodów, dlaczego algorytm ten nie znalazł zastosowania w aplikacjach działających w czasie rzeczywistym.
@@ -488,8 +506,8 @@ Wybór metody statystycznej jest skorelowany z obrazem wejściowym.
 Najczęściej używa się średniej, mediany, średniej z wartości maksymalnej i minimalnej badanego otoczenia lub funkcji Gaussa.
 Dobór wielkości sąsiedztwa ma duży wpływ na wyliczenie progu.
 Rozmiar musi być na tyle duży, aby zawierać zarówno piksele tła jak i badanego obiektu.
-Z drugiej strony wybranie zbyt dużych obszarów może naruszyć założenie o równomiernym oświetleniu rozpatrywanego fragmentu.
-Ten rodzaj adaptycyjnego progowania jest bardziej wydajny od algorytmu Chow i Kaneko.
+Z drugiej strony, wybranie zbyt dużych obszarów może naruszyć założenie o równomiernym oświetleniu rozpatrywanego fragmentu.
+Ten rodzaj progowania adaptacyjnego jest bardziej wydajny od algorytmu Chow i Kaneko.
 Charakteryzuje się wysoką jakością oddzielania obiektów od tła i znajduje szerokie zastosowanie w wielu aplikacjach.
 
 Innym znanym algorytmem stosowanym do wyznaczania progu binaryzacji jest algorytm Otsu~\cite{4310076}.
@@ -497,12 +515,10 @@ Metoda Otsu jest techniką opartą na wariancji w celu znalezienia wartości pro
 Kluczową ideą jest tutaj iteracja przez wszystkie możliwe wartości progu i pomiar rozproszenia pikseli tła i pierwszego planu.
 Następnie znajdowany jest próg, w którym rozproszenie jest najmniejsze.
 Algorytm iteracyjnie wyszukuje próg, który minimalizuje wariancję wewnątrz klasy, zdefiniowaną jako ważona suma wariancji dwóch klas (tła i pierwszego planu).
-Kolory w skali szarości zwykle mieszczą się w zakresie 0-255.
-Tak więc, jeśli wybierzemy próg 100, to wszystkie piksele o wartościach mniejszych niż 100 staną się tłem, a wszystkie piksele o wartościach większych lub równych 100 staną się pierwszym planem obrazu.
 Wzór na znalezienie wariancji wewnątrz klasowej przy dowolnym progu $t$ jest określony wzorem~\eqref{eq:otsu_variance}
 \begin{equation}
     \label{eq:otsu_variance}
-    \sigma^2(t)=\omega_{bg}(t)\sigma_{bg}^2(t)+\omega_{fg}(t)\sigma_{fg}^2(t)
+    \sigma^2(t)=\omega_{bg}(t)\sigma_{bg}^2(t)+\omega_{fg}(t)\sigma_{fg}^2(t),
 \end{equation}
 gdzie $\omega_{bg}(t)$ i $\omega_{fg}(t)$ reprezentują prawdopodobieństwo liczby pikseli dla każdej klasy przy progu $t$, natomiast $\sigma^2$ oznaczono wariancję wartości kolorów.
 Wyliczanie wariancji dla konkretnej klasy pikseli przedstawiono na wzorze~\eqref{eq:otsu_variance_value}.
@@ -513,11 +529,8 @@ Wyliczanie wariancji dla konkretnej klasy pikseli przedstawiono na wzorze~\eqref
 Wartość piksela odpowiedniej klasy reprezentuje symbol $x_i$, natomiast $\hat{x}$ reprezentuje średnią pikseli rozpatrywanej klasy.
 Liczbę wszystkich pikseli zapisano literą $N$.
 
-Metoda Otsu implementowana przez wiele środowisk obliczeniowych (np. MATLAB)~\cite{otsu_inzynieria_rolnicza}.
+Metoda Otsu implementowana jest przez wiele środowisk obliczeniowych (np. MATLAB)~\cite{otsu_inzynieria_rolnicza}.
 Algorytm szczególnie dobrze sprawdza się w przypadkach, gdy liczby pikseli tła i obiektów pierwszego planu są zbliżone~\cite{10.1117/1.1631315}.
-
-\subsection{Metoda k-średnich (ang. \textit{ang. K-Means algorithm})}
-todo~\cite{segmentation_kmeans}
 
 \subsection{Metoda rzutów jasności}
 todo

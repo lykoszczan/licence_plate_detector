@@ -16,7 +16,8 @@
 %	PAKIETY ORAZ PLIKI ZAWIERAJĄCE DEFINICJE STYLI I KONFIGURACJĘ OTOCZEŃ LATEX
 %----------------------------------------------------------------------------------------
 
-\documentclass[12pt,fleqn,twoside]{book} % JK Rozmiary czcionek są zgodne z wymaganiami uczelni
+\documentclass[12pt,fleqn,twoside]{book}
+\usepackage{mathtools} % JK Rozmiary czcionek są zgodne z wymaganiami uczelni
 % UWAGA! - wydruk jest dwustronny i jest to zabieg zamierzony
 
 \input{structure.tex} % JK - Plik zawierający podstawowe elementy konfigurujące układ dokumentu
@@ -33,57 +34,57 @@
 %----------------------------------------------------------------------------------------
 % STRONA TYTUŁOWA 
 %----------------------------------------------------------------------------------------
-  \include{title_page}
+    \include{title_page}
 
 %----------------------------------------------------------------------------------------
 % PUSTA STRONA PO STRONIE TYUŁOWEJ (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \newpage
-  \thispagestyle{empty}
-  ~\vfill
+    \newpage
+    \thispagestyle{empty}
+    ~\vfill
 
 %----------------------------------------------------------------------------------------
 % STRONA Z OŚWIADCZENIEM AUTORA (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \newpage
-  \thispagestyle{empty}
-  \include{statement_page}
+    \newpage
+    \thispagestyle{empty}
+    \include{statement_page}
 
 %----------------------------------------------------------------------------------------
 %	STRESZCZENIE I SŁOWA KLUCZOWE (1 STRONA) (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \newpage
-  \thispagestyle{empty}
-  \include{abstract} %abstract.tex
+    \newpage
+    \thispagestyle{empty}
+    \include{abstract} %abstract.tex
 
 %----------------------------------------------------------------------------------------
 %	SPIS TREŚCI (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \pagestyle{empty}  % Wyłącz stopkę i nagłówek w TOC
-  \tableofcontents % wyświetl spis
-  \addtocontents{toc}{\protect\thispagestyle{empty}} % Zachowaj pusty nagłówek i stopkę w TOC
+    \pagestyle{empty}  % Wyłącz stopkę i nagłówek w TOC
+    \tableofcontents % wyświetl spis
+    \addtocontents{toc}{\protect\thispagestyle{empty}} % Zachowaj pusty nagłówek i stopkę w TOC
 % Wymuszenie rozpoczęcie pierwszego rozdziału na nieparzystej stronie, aby znajdował się po prawej stronie 
-  \cleardoublepage
+    \cleardoublepage
 % Ponownie włącz nagłówki i stopki
-  \pagestyle{fancy}
+    \pagestyle{fancy}
 
 %----------------------------------------------------------------------------------------
 %	WSTĘP W PRACY DYPLOMOWEJ (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \addcontentsline{toc}{chapter}{Wstęp}
-  \include{introduction} % introduction.tex zawiera treść wstępu
+    \addcontentsline{toc}{chapter}{Wstęp}
+    \include{introduction} % introduction.tex zawiera treść wstępu
 
 %----------------------------------------------------------------------------------------
 %	ROZDZIAŁ 1
 %----------------------------------------------------------------------------------------
-  \include{chapter1} % chapter1.tex zawiera treść rozdziału 1
+    \include{chapter1} % chapter1.tex zawiera treść rozdziału 1
 
 %----------------------------------------------------------------------------------------
 %	ROZDZIAŁ 2
 %----------------------------------------------------------------------------------------
-  \include{chapter2} % chapter2.tex zawiera treść rozdziału 2
-  \include{chapter3} % chapter2.tex zawiera treść rozdziału 2
-  \include{chapter4} % chapter2.tex zawiera treść rozdziału 2
+    \include{chapter2} % chapter2.tex zawiera treść rozdziału 2
+    \include{chapter3} % chapter2.tex zawiera treść rozdziału 2
+    \include{chapter4} % chapter2.tex zawiera treść rozdziału 2
 %\include{chapter5} % chapter2.tex zawiera treść rozdziału 2
 %\include{chapter6} % chapter2.tex zawiera treść rozdziału 2
 
@@ -95,27 +96,27 @@
 %----------------------------------------------------------------------------------------
 %	ZAKOŃCZENIE PRACY DYPLOMOWEJ (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \addcontentsline{toc}{chapter}{Podsumowanie}
-  \include{conclusions} % conclusions.tex zawiera treść zakończenia/podsumowania pracy dyplomowej
+    \addcontentsline{toc}{chapter}{Podsumowanie}
+    \include{conclusions} % conclusions.tex zawiera treść zakończenia/podsumowania pracy dyplomowej
 
 
 %----------------------------------------------------------------------------------------
 %	SPIS LITERATURY (JK - design and implementation)
 %----------------------------------------------------------------------------------------
-  \pagestyle{empty}
-  \chapter*{Spis literatury}
-  \addcontentsline{toc}{chapter}{\textcolor{blueZUT}{Spis literatury}}
+    \pagestyle{empty}
+    \chapter*{Spis literatury}
+    \addcontentsline{toc}{chapter}{\textcolor{blueZUT}{Spis literatury}}
 % Poniżej zdefiniowane są filtry do dzielenia spisu literatury na kategorie
-  \defbibfilter{articles}{
-    type=article or
-    type=inproceedings
-  }
-  \defbibfilter{other}{
-    type=url or
-    type=online or
-    type=manual or
-    type=misc
-  }
+    \defbibfilter{articles}{
+        type=article or
+        type=inproceedings
+    }
+    \defbibfilter{other}{
+        type=url or
+        type=online or
+        type=manual or
+        type=misc
+    }
 
 % UWAGA! -aby zmienić zawartość spisu literatury należy wyedytować plik
 % bibliography.bib
@@ -123,20 +124,20 @@
 %------------------------------------------------
 % Spis literartury podzielony jest na 3 kategorie
 % 1
-  \section*{Książki}
-  \addcontentsline{toc}{section}{Książki}
-  \printbibliography[heading=bibempty,type=book]
+    \section*{Książki}
+    \addcontentsline{toc}{section}{Książki}
+    \printbibliography[heading=bibempty,type=book]
 
 %------------------------------------------------
 % 2
-  \section*{Artykuły}
-  \addcontentsline{toc}{section}{Artykuły}
-  \printbibliography[heading=bibempty,filter=articles]
+    \section*{Artykuły}
+    \addcontentsline{toc}{section}{Artykuły}
+    \printbibliography[heading=bibempty,filter=articles]
 %------------------------------------------------
 % 3
-  \section*{Źródła internetowe i inne}
-  \addcontentsline{toc}{section}{Źródła internetowe i inne}
-  \printbibliography[heading=bibempty,filter=other]
+    \section*{Źródła internetowe i inne}
+    \addcontentsline{toc}{section}{Źródła internetowe i inne}
+    \printbibliography[heading=bibempty,filter=other]
 
 
 %----------------------------------------------------------------------------------------
