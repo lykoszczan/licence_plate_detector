@@ -588,9 +588,34 @@ Kolejną częścią automatycznego systemu rozpoznawania tablic rejestracyjnych 
 Jest to ostatni etap w systemie.
 Rezultat tego działania przeważnie wysyłany jest już do innego modułu lub systemu odpowiedzialnego za logikę biznesową danego rozwiązania.
 
-\subsection{OCR}
 Optyczne rozpoznawanie znaków (ang. \textit{Optical Character Recognition} --- OCR) jest obszerną dziedziną algorytmów przetwarzających obraz na tekst.
+Systemy te potrafią zarówno odczytywać tekst drukowany jak i pisany odręcznie.
+Zeskanowanie dokumentów i przetworzenie ich na tekst jest już dzisiaj dość powszechną operacją.
+Dzieje się tak, ponieważ proces ten zachodzi w kontrolowanych warunkach.
+W dynamicznym systemie rozpoznawania numerów rejestracyjnych prawidłowe odczytanie znaków jest znacznie trudniejsze.
+Jest to zagadnienie pojawiające się w wielu pracach naukowych.
+Poniżej przedstawiono najczęściej stosowane metody do realizacji tego zadania.
 
+\subsection{Metody oparte na sieciach neuronowych}
+W pracy~\cite{1688109} autorzy przedstawili system OCR oparty o wykorzystanie probabilistycznej sieci neuronowej (ang. \textit{Probabilistic Neural Network } --- PNN).
+Sieć PNN jest rozwiązaniem pamięciowym identyfikacji obiektów~\cite{Praczyk_2011}.
+Klasyfikacja obiektów przy pomocy sieci PNN realizowana jest za pomocą funkcji decyzyjnej~\cite{SPECHT1990109}:
+\begin{equation}
+    \label{eq:pnn_network}
+    g(x)=\dfrac{1}{n}\sum_{i=1}^{n}\exp\left[ -\left( \dfrac{d(x,x_i)}{p\rho} \right)^2 \right],
+\end{equation}
+gdzie:
+\begin{itemize}
+    \item $d$ jest odległością euklidesową pomiędzy wektorami identyfikowanego obiektu $x$ o i-tego przykładu uczącego $x_i$,
+    \item $n$ jest liczbą wektorów uczących danej kategorii,
+    \item $p$ jest rozmiarem wektora $x$ oraz wszystkich wektorów $x_i$,
+    \item $\rho$ jest parametrem kształtu.
+\end{itemize}
+%Ostateczna decyzja o przyporządkowaniu obiektu reprezentowanego przez wektor $x$ do kategorii j-tej opiera się na relacji przedstawionej na wzorze~\eqref{eq:pnn_relation}~\cite{Praczyk_2011}.
+%\begin{equation}
+%    \label{eq:pnn_relation}
+%    h_j c_j g_j(x) > h_k c_k g_k(x) \ \forall j\neq k
+%\end{equation}
 
 tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
 %https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
@@ -601,7 +626,7 @@ Bazuje ona na założeniu, że czcionka oraz rozmiar znaków na tablicy jest zna
 Dopasowanie wzorca odbywa się z reguły na zbinaryzowanym obrazie.
 Dla każdego możliwego znaku, tworzony jest odpowiedni wzorzec.
 Podczas procesu rozpoznawania, każdy wzorzec badany jest pod kątem podobieństwa do rozpatrywanego znaku.
-Za miarę podobieństwa służą najczęściej:
+Za miarę podobieństwa służą najczęściej~\cite{9310202}:
 \begin{itemize}
     \item odległość Mahalanobisa,
     \item indeks Jaccarda,
