@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  2 SEP 2022 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  3 SEP 2022 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1594,31 +1594,12 @@ File: Pictures/captured_frames.png Graphic file (type png)
 <use Pictures/captured_frames.png>
 Package pdftex.def Info: Pictures/captured_frames.png  used on input line 49.
 (pdftex.def)             Requested size: 425.98395pt x 238.88826pt.
-[29] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 5
-9.
-
-(/usr/share/texmf/tex/latex/lm/t1lmss.fd
-File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 60.
-
-Underfull \vbox (badness 2205) has occurred while \output is active []
-
-
+[29])
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
 
 [30 <./Pictures/captured_frames.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
-91.
- (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
-File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
@@ -1638,7 +1619,7 @@ This may cause the page layout to be inconsistent, however.
 
 ]
 Rozdzia\l  3.
-<Pictures/prepare_haar_dataset.png, id=649, 300.12125pt x 1296.845pt>
+<Pictures/prepare_haar_dataset.png, id=611, 300.12125pt x 1296.845pt>
 File: Pictures/prepare_haar_dataset.png Graphic file (type png)
 <use Pictures/prepare_haar_dataset.png>
 Package pdftex.def Info: Pictures/prepare_haar_dataset.png  used on input line 
@@ -1653,7 +1634,24 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [34 <./Pictures/prepare_haar_dataset.png>]
-<Pictures/haar_tepmplates.png, id=665, 491.8375pt x 211.79124pt>
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 6
+5.
+
+(/usr/share/texmf/tex/latex/lm/t1lmss.fd
+File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 66.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+70.
+
+(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+<Pictures/haar_tepmplates.png, id=627, 491.8375pt x 211.79124pt>
 File: Pictures/haar_tepmplates.png Graphic file (type png)
 <use Pictures/haar_tepmplates.png>
 Package pdftex.def Info: Pictures/haar_tepmplates.png  used on input line 86.
@@ -1669,7 +1667,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [36 <./Pictures/haar_tepmplates.png>]
-<Pictures/fit_realboostbins.png, id=703, 257.96375pt x 944.52875pt>
+<Pictures/fit_realboostbins.png, id=668, 257.96375pt x 944.52875pt>
 File: Pictures/fit_realboostbins.png Graphic file (type png)
 <use Pictures/fit_realboostbins.png>
 Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 142
@@ -1681,7 +1679,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [37]
-<Pictures/main_alg.png, id=725, 362.35374pt x 1315.91624pt>
+<Pictures/main_alg.png, id=690, 362.35374pt x 1315.91624pt>
 File: Pictures/main_alg.png Graphic file (type png)
 <use Pictures/main_alg.png>
 Package pdftex.def Info: Pictures/main_alg.png  used on input line 154.
@@ -1692,7 +1690,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [38 <./Pictures/fit_realboostbins.png>]
-<Pictures/detection_alg.png, id=733, 499.8675pt x 691.58376pt>
+<Pictures/detection_alg.png, id=698, 499.8675pt x 691.58376pt>
 File: Pictures/detection_alg.png Graphic file (type png)
 <use Pictures/detection_alg.png>
 Package pdftex.def Info: Pictures/detection_alg.png  used on input line 165.
@@ -1703,7 +1701,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [39 <./Pictures/main_alg.png>]
-<Pictures/characters_alg.png, id=741, 452.69125pt x 934.49126pt>
+<Pictures/characters_alg.png, id=706, 452.69125pt x 934.49126pt>
 File: Pictures/characters_alg.png Graphic file (type png)
 <use Pictures/characters_alg.png>
 Package pdftex.def Info: Pictures/characters_alg.png  used on input line 176.
@@ -1714,7 +1712,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [40 <./Pictures/detection_alg.png>]
-<Pictures/segmentation.png, id=749, 371.3875pt x 429.605pt>
+<Pictures/segmentation.png, id=714, 371.3875pt x 429.605pt>
 File: Pictures/segmentation.png Graphic file (type png)
 <use Pictures/segmentation.png>
 Package pdftex.def Info: Pictures/segmentation.png  used on input line 191.
@@ -1808,13 +1806,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24497 strings out of 481239
- 401876 string characters out of 5920378
- 1157883 words of memory out of 5000000
- 38974 multiletter control sequences out of 15000+600000
+ 24452 strings out of 481239
+ 401243 string characters out of 5920378
+ 1158438 words of memory out of 5000000
+ 38963 multiletter control sequences out of 15000+600000
  652187 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,17n,98p,1519b,2130s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,17n,98p,1519b,2005s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-t
 lf-sc.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texli
@@ -1834,10 +1832,10 @@ pe1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ne
 wtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (53 pages, 3477659 bytes).
+Output written on main.pdf (53 pages, 3474879 bytes).
 PDF statistics:
- 1023 PDF objects out of 1200 (max. 8388607)
- 858 compressed objects within 9 object streams
- 271 named destinations out of 1000 (max. 500000)
+ 981 PDF objects out of 1000 (max. 8388607)
+ 816 compressed objects within 9 object streams
+ 237 named destinations out of 1000 (max. 500000)
  415 words of extra memory for PDF output out of 10000 (max. 10000000)
 

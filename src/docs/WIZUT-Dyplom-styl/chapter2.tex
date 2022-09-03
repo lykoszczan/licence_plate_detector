@@ -54,51 +54,75 @@ Dla algorytmu rozpoznawania tablic rejestracyjnych może to stanowić trudność
 
 Kolejnym krokiem niezbędnym przed rozpoczęciem procesu uczenia było nadanie etykiet obiektom na wyeksportowanych zdjęciach.
 W tym celu opracowano skrypt służący do ręcznego oznaczania tablic rejestracyjnych.
-Skrypt powstał na podstawie narzędzia \cite{haar_object_marker}.
-Jego fragment przedstawiono na algorytmie \ref{alg:positive_creator}.
-\begin{lstlisting}[language=Python, caption=Funkcja do oznaczania fragmentów obrazu zawierających poszukiwany obiekt., label=alg:positive_creator]
-import cv2
+Skrypt powstał na podstawie narzędzia~\cite{haar_object_marker}.
+Jego fragment w postaci pseudokodu przedstawiono na poniższym schemacie.
+\begin{algorithm}
+    \caption{Procedura zapisująca współrzędne pozytywnych próbek.}
+    \begin{algorithmic}[1]
+        \label{create_positives}
+        \Procedure{ObjectMarkerOnClick}{$(event, x, y)$}
+            \If{$event == $ kliknięcie lewego przycisku myszy}
+                \If {Liczba kliknięć jest nieparzysta}
+                    \State Przypisz współrzędne $(x,y)$ kliknięcia jako początek obszaru próbki.
+                \Else
+                    \State Przypisz współrzędne $(x,y)$ kliknięcia jako koniec obszaru próbki.
+                    \State Zwiększ liczbę obiektów w obrazie.
+                    \State Przeskaluj współrzędne do stałej wartości.
+                    \State Dodaj do listy pozytywów zaznaczony fragment.
+                \EndIf
+            \EndIf
+        \EndProcedure
+    \end{algorithmic}
+\end{algorithm}
+\FloatBarrier
 
-def obj_marker(event, x, y):
-    global click_count
-    global debug
-    global obj_list
-    global obj_count
-    global frameName
-    global x1
-    global y1
-    global w
-    global h
-    global frame
-    global frameResized
-    if event == cv2.EVENT_LBUTTONDOWN:
-        click_count += 1
-        if click_count % 2 == 1:
-            x1 = x
-            y1 = y
-        else:
-            orgShape = frame.shape
-            ratioH = orgShape[0] / 1080
-            ratioW = orgShape[1] / 1920
 
-            w = abs(x1 - x)
-            h = abs(y1 - y)
-            obj_count += 1
-            if x1 > x:
-                x1 = x
-            if y1 > y:
-                y1 = y
-            obj_list.append('%d %d %d %d ' % (x1 * ratioW, y1 * ratioH, w * ratioW, h * ratioH))
-            cv2.rectangle(frameResized, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 1)
-            cv2.imshow(frameName, frameResized)
-\end{lstlisting}
+%\begin{lstlisting}[language=Python, caption=Funkcja do oznaczania fragmentów obrazu zawierających poszukiwany obiekt., label=alg:positive_creator]
+%import cv2
+%
+%def obj_marker(event, x, y):
+%    global click_count
+%    global debug
+%    global obj_list
+%    global obj_count
+%    global frameName
+%    global x1
+%    global y1
+%    global w
+%    global h
+%    global frame
+%    global frameResized
+%    if event == cv2.EVENT_LBUTTONDOWN:
+%        click_count += 1
+%        if click_count % 2 == 1:
+%            x1 = x
+%            y1 = y
+%        else:
+%            orgShape = frame.shape
+%            ratioH = orgShape[0] / 1080
+%            ratioW = orgShape[1] / 1920
+%
+%            w = abs(x1 - x)
+%            h = abs(y1 - y)
+%            obj_count += 1
+%            if x1 > x:
+%                x1 = x
+%            if y1 > y:
+%                y1 = y
+%            obj_list.append('%d %d %d %d ' % (x1 * ratioW, y1 * ratioH, w * ratioW, h * ratioH))
+%            cv2.rectangle(frameResized, (x1, y1), (x1 + w, y1 + h), (0, 255, 0), 1)
+%            cv2.imshow(frameName, frameResized)
+%\end{lstlisting}
+Wszystkie zdjęcia wyświetlano po kolei na ekranie.
+Zdarzenie kliknięcia myszką na obrazie przechwytywano w programie.
+Pierwsze kliknięcie oznaczało współrzędne początku obszaru pozytywnej próbki.
+Drugie kliknięcie oznaczało współrzędne końca rozpatrywanego obszaru.
 Jak wspomniano wcześniej, obrazy posiadały różne rozdzielczości, często przewyższające rozdzielczość monitora.
 Aby zdjęcia wyświetlały się poprawnie, skalowano je do rozdzielczości ekranu, na którym przeprowadzono operację nadawania etykiet.
-Następnie współrzędne wybranego punktu konwertowano do współrzędnych w obrazie oryginalnym.
-Pozyskane koordynaty zapisywano do globalnej zmiennej \textit{obj\_list}.
+Pozyskane koordynaty zapisywano do globalnej tablicy.
 Na koniec procesu dane zapisano do pliku tekstowego, z którego odczytywano dane podczas etapu uczenia.
 Dane w pliku zapisano w formacie \textit{ścieżka do pliku, liczba obiektów w pliku, kolejno współrzędne każdego z prostokątów}.
-W tabeli \ref{tab:tab_data_set_characteristics} przedstawiono cechy charakterystyczne przygotowanego zbioru.
+W tabeli~\ref{tab:tab_data_set_characteristics} przedstawiono cechy charakterystyczne przygotowanego zbioru.
 \begin{table}[h]
     \centering
     \caption{Parametry opracowanego zbioru.}
