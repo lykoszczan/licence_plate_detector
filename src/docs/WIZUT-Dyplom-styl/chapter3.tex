@@ -26,7 +26,7 @@ Nieprawidłowości na tym etapie będą bardzo trudno do wyeliminowania w późn
 
 \subsection{Przygotowanie danych uczących}
 \label{subsec:przygotowanie-danych-uczacych}
-W rozdziale \ref{ch:preparing_data_set} przedstawiono opracowany zbiór zdjęć z kamery samochodowej zawierający poruszające się pojazdy wraz z ich tablicami rejestracyjnymi.
+W rozdziale~\ref{ch:preparing_data_set} przedstawiono opracowany zbiór zdjęć z kamery samochodowej zawierający poruszające się pojazdy wraz z ich tablicami rejestracyjnymi.
 Klasyfikatory działają jednak w inny sposób niż ludzki mózg i wymagają innych wartości, na których będą mogły podejmować decyzje.
 W niniejszej pracy zdecydowano się wykorzystać cechy Haara jako cechy reprezentujące poszukiwane obiekty.
 W celu wyuczenia klasyfikatora, należało opracowany wcześniej zbiór przetworzyć, aby każda negatywna i pozytywna próbka miała swoją reprezentację liczbową.
@@ -42,16 +42,16 @@ Pierwszą czynnością jest określenie parametrów zbioru uczącego.
 Przed rozpoczęciem uczenia należy określić ile cech ma być liczonych z jednej próbki.
 Każdy szablon może być odpowiednią ilość razy skalowany wzdłuż każdego z kierunków.
 Parametr ten oznacza się literą $s$.
-Parametrem $p$ oznacza rozmiary regularnej siatki ($(2p-1)x(2p-1)$) punktów zaczepienia cech~\cite{szybka_detekcja_klesk}.
-Na podstawie powyższych parametrów określa się liczbę cech niezbędnych do wyliczenia w trakcie przetwarzania jednego okna wg wzoru~\eqref{eq:features_count}.
+Parametr $p$ oznacza rozmiary regularnej siatki ($(2p-1)\times (2p-1)$) punktów zaczepienia cech~\cite{szybka_detekcja_klesk}.
+Na podstawie powyższych parametrów określa się liczbę cech niezbędnych do wyliczenia w trakcie przetwarzania jednego okna wg wzoru~\eqref{eq:features_count}
 \begin{equation}
     \label{eq:features_count}
-    n(s,p)=6s^2(2p-1)^2
+    n(s,p)=6s^2(2p-1)^2.
 \end{equation}
 Przykładowo, dla $s=3$ i $p=4$ liczba niezbędnych do wyliczenia cech jest równa 2205.
 Dla $s=p=5$ liczba ta rośnie do 10125.
 Im większa jest liczba cech tym dokładność detekcji powinna rosnąć.
-Jednak wraz ze wzrostem liczby cech, rośnie też czas wykonania skryptu ze względu na większą liczbę niezbędnych do wykonania obliczeń.
+Jednak wraz ze wzrostem liczby cech, rośnie również czas wykonania skryptu ze względu na większą liczbę niezbędnych do wykonania obliczeń.
 Innym wejściowym parametrem jest ustalenie stosunku próbek pozytywnych do próbek negatywnych.
 
 Po ustaleniu wejściowych parametrów, wczytywany jest plik tekstowy ze współrzędnymi tablic dla konkretnych plików.
@@ -61,7 +61,7 @@ Dla każdej próbki wyliczane są cechy Haara za pomocą wygenerowanych wcześni
 
 W opisywanym programie użyto 5 szablonów cech Haara.
 Szablony są skalowane odpowiednim skokiem zależnym od $s$.
-Poniżej zamieszczono kod procedury generującej współrzędne szablonu dla każdej cechy \ref{lst:haar_cords}.
+Poniżej zamieszczono kod procedury generującej współrzędne szablonu dla każdej cechy~\ref{lst:haar_cords}.
 \begin{lstlisting}[language=Python, caption=Procedura generujące szablony cech Haara dla konkretnych wpsółrzędnych., label={lst:haar_cords}]
 def haar_coords(s, p, indexes):
     coords = []
@@ -99,12 +99,13 @@ W ten sposób przygotowane dane w następnym etapie posłużą do wyuczenia klas
 
 \subsection{Uczenie klasyfikatora}
 W niniejszej pracy zaimplementowano i wykorzystano algorytm wzmacniający RealBoost oparty o koszykowanie wartości funkcji logit.
-Na wejściu metody uczącej funkcja przyjmuje cechy uczące oraz ich etykiety.
+Zasadę działania algorytmu RealBoost opisano szerzej w rozdziale~\ref{subsec:klasyfikatory}.
+Na wejściu metody uczącej, funkcja przyjmuje cechy uczące oraz ich etykiety.
 Dla każdej cechy obliczane są wartości maksymalne i minimalne.
 Ustalane są one poprzez posortowanie wartości konkretnej cechy ze wszystkich próbek ze zbioru uczącego.
 Algorytm dodaje odpowiedni margines, aby odrzucić skrajne wyniki.
 Współczynnik ten ustalono na poziomie $0.05$.
-Oznacza to, że dla zbioru o wielkości 100 próbek, odrzucone zostanie 5 pierwszych i 5 ostatnich wartości cech to wyznaczenia wartości brzegowych.
+Oznacza to, że dla zbioru o wielkości 100 próbek, odrzucone zostanie 5 pierwszych i 5 ostatnich wartości cech do wyznaczenia wartości brzegowych.
 Następnie przypisywane są indeksy koszyków do poszczególnych cech.
 Kolejnym krokiem jest przygotowanie indeksów, które przechowują informację o tym czy cecha dla konkretnego koszyka powiązana jest z próbką pozytywną czy negatywną.
 Po przygotowaniu powyższych danych, algorytm przechodzi do wybrania najważniejszych cech z punktu widzenia klasyfikatora.
@@ -112,7 +113,7 @@ Obliczane jest to poprzez iterację po wszystkich cechach i określeniu cechy dl
 Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków z osobna.
 Na koniec dochodzi do reważenia wag.
 Czynność jest powtarza dla każdego słabego klasyfikatora.
-Algorytm \ref{lst:fit_realboostbins} ukazuje fragment metody uczącej odpowiedzialny za wyliczenie odpowiedzi dla każdego ze słabych klasyfikatorów i wyznaczenie indeksów najlepszych cech.
+Algorytm~\ref{lst:fit_realboostbins} ukazuje fragment metody uczącej odpowiedzialny za wyliczenie odpowiedzi dla każdego ze słabych klasyfikatorów i wyznaczenie indeksów najlepszych cech.\\\\\\\\\\
 \begin{lstlisting}[language=Python, caption=Procedura ucząca klasyfikator RealBoostBins., label={lst:fit_realboostbins}]
 w = np.ones(m) / m
 for t in range(self.T_):
@@ -147,7 +148,16 @@ Na Rysunku~\ref{fig:fit_realboostbins} przedstawiono schemat blokowy uczenia kla
 
 
 \section{Schemat algorytmu}
-@todo - opis schematu blokowego
+
+Główną część programu można podzielić na dwa osobne moduły.
+Pierwszy z nich odpowiedzialny jest za detekcję tablic na obrazie wejściowym.
+Drugi moduł odpowiada za segmentację i rozpoznawanie znaków.
+Przed rozpoczęciem detekcji, obraz jest skalowany.
+W opracowanym algorytmie, ustalono wysokość na poziomie 480px.
+Szerokość obrazu była proporcjonalnie skalowana.
+Następnie obraz konwertowano do skali szarości.
+Przed rozpoczęciem detekcji oknem przesuwnym, obliczano obraz całkowy.
+Szablony cech Haara ograniczono tylko do tych odpowiadających cechom wybranym przez słabe klasyfikatory na etapie uczenia klasyfikatora.
 Na Rysunku~\ref{fig:main_alg} przedstawiono schemat blokowy algorytmu rozpoznawania tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
@@ -158,7 +168,19 @@ Na Rysunku~\ref{fig:main_alg} przedstawiono schemat blokowy algorytmu rozpoznawa
 \FloatBarrier
 
 \subsection{Algorytm detekcji}
-@todo - opis schematu blokowego
+Algorytm detekcji odpowiada za zlokalizowanie obszarów potencjalnie zawierających tablice rejestracyjne.
+Mając na uwadze fakt, że tablice mogą mieć różne rozmiary na zdjęciu, dla procedury skanującej oknem przesuwnym należało zastosować kilka skal okna.
+Okno przesuwano w obrazie odpowiednim skokiem w poziomie oraz w pionie.
+Poziomy skok $d_w$ obliczano na podstawie wzoru~\eqref{eq:jump_detect_window}
+\begin{equation}
+    \label{eq:jump_detect_window}
+    d_w = \round(w * \lambda),
+\end{equation}
+gdzie $w$ jest szerokością okna, a $\lambda$ oznacza współczynnik przemieszczania okna.
+Skok pionowy wyznaczano w analogiczny sposób.
+Dla każdego okna obliczano cechy Haara dla indeksów wyznaczonych podczas procesu uczenia klasyfikatora.
+Następnie obliczano odpowiedź klasyfikatora.
+Jeśli była ona większa od podanego progu, okno oznaczano jako pozytywne.
 Na Rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detekcji tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
@@ -167,9 +189,57 @@ Na Rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detek
     \label{fig:detection_alg}
 \end{figure}
 \FloatBarrier
+Po wykonaniu procedury skanowania oknem przesuwnym, rozpoczęto przetwarzanie okien oznaczonych jako pozytywne.
+Z uwagi na fakt, że w otoczeniu tablicy rejestracyjnej wiele okien mogło zostać oznaczonych jako pozytywne, należało te okna połączyć.
+Dzięki temu moduł rozpoznawania znaków otrzyma znacznie mniejszą ilość okien.
+W kolejnym kroku współrzędne połączonych okien konwertowano do współrzędnych w oryginalnym obrazie.
+Taka operacja ma na celu przekazanie do modułu OCR fragmentu obrazu w jakości równej obrazowi sprzed procedury skalowania.
+Rysunek~\ref{fig:non_max_supression} przedstawia porównanie procedury detekcji bez oraz z zastosowaniem techniką łączenia okien.
+Do połączenia okien zastosowano algorytm usuwania niemaksymalnych pikseli (ang. \textit{non-maximum suppression}).
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.4]{Pictures/non_max_supression}
+    \caption{Porównanie detekcji tablicy rejestracyjnej bez i z zastosowaniem algorytmu łączenia okien (źródło: opracowanie własne).}
+    \label{fig:non_max_supression}
+\end{figure}
+\FloatBarrier
 
 \subsection{Algorytm segmentacji i rozpoznawania znaków}
-@todo - opis schematu blokowego
+Moduł odpowiedzialny za rozpoznawanie znaków otrzymuje na wejściu wycięty fragment obrazu w oryginalnej jakości.
+Następnie przed rozpoczęciem segmentacji znaków, obraz jest skalowany do wysokości 300px.
+W kolejnym kroku, obraz jest konwertowany do modelu barw w skali szarości.
+W celu segmentacji znaków, zaproponowano podejście łączące dwie techniki.
+Zdecydowano się na takie rozwiązanie, ponieważ zauważono, że wzajemnie się one uzupełniają i ich połączenie daje lepsze wyniki.
+Pierwsza z technik polegała na binaryzacji obrazu z wykorzystaniem metody Otsu.
+Na tak przygotowanym obrazie wykryto kontury korzystając z metody z biblioteki OpenCV \textit{findContours}.
+Druga technika wykorzystywała maskę binarną w przestrzeni barw HSV\@.
+Następnie przetworzony obraz poddawano operacjom morfologicznym.
+Wynikowy obraz przekazano do metody wykrywającej kontury.
+
+Metoda \textit{findContours} przyjmuje parametr $mode$, który odpowiada za sposób selekcji konturów.
+Procedura może zwracać np.\ tylko kontury zewnętrzne lub wewnętrzne lub zwracać strukturę hierarchiczną~\cite{open_cv_contours_mode}.
+W opisywanym rozwiązaniu wybrano opcje \textit{RETR\_TREE}, która pobiera wszystkie kontury i rekonstruuje pełną hierarchię zagnieżdżonych konturów.
+W \textit{findContours} możliwa jest również do wybrania metoda aproksymacji konturów.
+Dla wartości \textit{CHAIN\_APPROX\_NONE} zbierane są wszystkie wartości konturów.
+Dla wartości \textit{CHAIN\_APPROX\_SIMPLE} algorytm kompresuje poziomie, pionowe oraz diagonalne segmenty i pozostawia tylko punkty końcowe.
+Zdecydowano się na drugą metodę aproksymacji.
+
+Dla obu podejść zbiory wykrytych konturów połączono w całość.
+Wykryte kontury należało przefiltrować, w celu wybrania tylko tych odpowiadającym znakom na tablicy rejestracyjnej.
+Opracowano procedurą z następującymi krokami:
+\begin{enumerate}
+    \item pobranie prostokąta otaczającego dany kontur,
+    \item odrzucenie konturu, jeśli wysokość prostokąta jest większa od wysokości obrazu pomniejszonej o stałą wartość
+    \item obliczenie powierzchni prostokąta,
+    \item odrzucenie konturu, jeśli powierzchnia jest mniejsza od stałej wartości,
+    \item odrzucenie konturu, jeśli stosunek boków prostokąta jest spoza przyjętego zakresu.
+\end{enumerate}
+Na podstawie powyższej procedury odrzucono część wykrytych wcześniej konturów.
+Korzystając z założenia, że wszystkie znaki na tablicy rejestracyjnej są takiej samej wysokości, odrzucono z powstałego zbioru kontury, których wysokość najbardziej odbiegała od średniej wysokości całego zbioru.
+Ostateczny zbiór konturów posłużył do wycięcia znaków ze zbinaryzowanego obrazu.
+W ten sposób przeprowadzono segmentację znaków.
+Nowy obraz, z oddzielonymi znakami od tła, przekazano do biblioteki Tesseract.
+Skorzystano z metody \textit{image\_to\_string}, która zwraca tekst na podstawie obrazu wejściowego.
 Na Rysunku~\ref{fig:characters_alg} przedstawiono schemat blokowy algorytmu rozpoznawania znaków.
 \begin{figure}[!ht]
     \centering
@@ -182,9 +252,8 @@ Na Rysunku~\ref{fig:segmentation} przedstawiono przykładowy proces segmentacji 
 Pierwszy obraz jest obrazem wejściowym, który trafił do algorytmu z detektora tablic rejestracyjnych.
 Ostatni obraz jest wynikiem segmentacji.
 Obraz środkowy jest obrazem wejściowym, na który nałożono wykryte pozycje znaków (kolor niebieski).
-Kolorem różowym oznaczono kontury, które zostały wykryte, ale nie zostały spełniły kryteriów geometrycznych.
+Kolorem różowym oznaczono kontury, które zostały wykryte, ale zostały odrzucone z powodu braku spełnienia kryteriów geometrycznych.
 Założono, że kontur musi być prostokątem o dłuższych bokach zorientowanych w pionie.
-Dodatkowo ustalono minimalną wartość powierzchni prostokąta.
 Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zbyt dużego odchylenia od średniej wysokości konturów.
 \begin{figure}[!ht]
     \centering
@@ -211,46 +280,43 @@ Pierwsza wersja została opracowana w roku 1999.
 Oryginalnie powstała w języku C++, natomiast istnieją biblioteki pozwalające używać jej w innych językach programowania.
 Bibliotekę można podzielić na kilka głównych modułów:
 \begin{itemize}
-    \item Przetwarzanie obrazów - moduł zawiera zestaw metod do przeprowadzania takich operacji jak filtrowanie, przekształcenia geometryczne, zmiana przestrzeni kolorów, histogramy
-    \item Przetwarzanie wideo - zestaw metod, które pozwalają na m. in. usuwanie tła, śledzenie obiektów, wykrywanie ruchu
-    \item Operacje wejścia/wyjścia na wideo - wyciąganie poszczególnych klatek z wideo, kodowanie, zapis i odczyt wideo
-    \item HighGUI - moduł służący do wizualizacji wyników, wyświetlania okien, zaznaczania ROI (ang. \textit{Region of interest})
+    \item przetwarzanie obrazów - moduł zawiera zestaw metod do przeprowadzania takich operacji jak filtrowanie, przekształcenia geometryczne, zmiana przestrzeni kolorów, histogramy,
+    \item przetwarzanie wideo - zestaw metod, które pozwalają na m. in. usuwanie tła, śledzenie obiektów, wykrywanie ruchu,
+    \item operacje wejścia/wyjścia na wideo - wyciąganie poszczególnych klatek z wideo, kodowanie, zapis i odczyt wideo,
+    \item HighGUI - moduł służący do wizualizacji wyników, wyświetlania okien, zaznaczania ROI (ang. \textit{Region of interest}).
 \end{itemize}
 
 Poniżej wymieniono użyte w stworzonym programie funkcje wraz z krótkim opisem ich zastosowania:
 \begin{itemize}
-    \item \textit{videoCapture} - przechwytywanie obrazów z pliku wideo
-    \item \textit{cvtColor} - zmiana przestrzeni barw w obrazie
-    \item \textit{imread} - wczytanie obrazu z pliku
-    \item \textit{imshow} - wyświetlenie obrazu
-    \item \textit{imwrite} - zapis obrazu do pliku
-    \item \textit{rectangle} - rysowanie prostokąta na obrazie
-    \item \textit{putText} - umiejscowienie tekstu na obrazie
-    \item \textit{addWeighted} - połączenie dwóch obrazów poprzez nałożenie ich na siebie
-    \item \textit{thresholding} - binaryzacja obrazu
-    \item \textit{GaussianBlur} - wygładzanie obrazu za pomocą funkcji Gaussa
-    \item \textit{Canny} - wykrywanie krawędzi za pomocą algorytmu Johna F. Canny'ego \cite{4767851}
-    \item \textit{findContours} - wykrywanie konturów obiektów (punktów o tym samym kolorze lub intensywności łączących się w krzywe)
-    \item \textit{resize} - zmiana wielkości obrazu
-    \item \textit{imdecode} - odczytywanie zdjęcia z bufora
+    \item \textit{videoCapture} - przechwytywanie obrazów z pliku wideo,
+    \item \textit{cvtColor} - zmiana przestrzeni barw w obrazie,
+    \item \textit{imread} - wczytanie obrazu z pliku,
+    \item \textit{imshow} - wyświetlenie obrazu,
+    \item \textit{imwrite} - zapis obrazu do pliku,
+    \item \textit{rectangle} - rysowanie prostokąta na obrazie,
+    \item \textit{putText} - umiejscowienie tekstu na obrazie,
+    \item \textit{addWeighted} - połączenie dwóch obrazów poprzez nałożenie ich na siebie,
+    \item \textit{thresholding} - binaryzacja obrazu,
+    \item \textit{GaussianBlur} - wygładzanie obrazu za pomocą funkcji Gaussa,
+    \item \textit{Canny} - wykrywanie krawędzi za pomocą algorytmu Johna F. Canny'ego \cite{4767851},
+    \item \textit{findContours} - wykrywanie konturów obiektów (punktów o tym samym kolorze lub intensywności łączących się w krzywe),
+    \item \textit{resize} - zmiana wielkości obrazu,
+    \item \textit{imdecode} - odczytywanie zdjęcia z bufora.
 \end{itemize}
 
 \subsection{Tesseract OCR}
-Biblioteka Tesseract jest pakietem składającym się z programu lini poleceń \textit{tesseract} oraz silnika OCR \textit{libtesseract} \cite{tesseract}.
+Biblioteka Tesseract jest pakietem składającym się z programu lini poleceń \textit{tesseract} oraz silnika OCR \textit{libtesseract}~\cite{tesseract}.
 Tesseract powstał między rokiem 1985, a 1994 na potrzeby firmy Hewlett-Packard.
 W roku 2005 firma upubliczniła bibliotekę jako rozwiązanie \textit{open-source}.
 Od początku 2006 do listopada 2018 za rozwój Tesseract odpowiedzialna była firma Google.
 Obecnie głównym programistą projektu jest Ray Smith.
 Silnik programu oparty jest o język programowania C++.
-W celu wykorzystania jej w opisywanym programie, użyto nakładki \textit{pytesseract} \cite{pytesseract}.
+W celu wykorzystania jej w opisywanym programie, użyto nakładki \textit{pytesseract}~\cite{pytesseract}.
 Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera ponad 100 języków.
-Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory}) \cite{lstm}.
+Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory})~\cite{lstm}.
 
 \subsection{Numpy}
 TODO
-
-\subsection{Sklearn}
-TODO - do zastanowienia czy sklearn jest istotny w niniejszej pracy
 
 \subsection{Pickle}
 TODO

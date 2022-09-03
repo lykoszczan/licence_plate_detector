@@ -18,8 +18,8 @@ DETECTION_W_GROWTH = 1.2
 DETECTION_W_JUMP_RATIO = 0.1
 
 DETECTION_SIZES = [
-    # [45, 15],
+    [45, 15],
     # [75, 25],
     # [105, 35],
-    [165, 55],
+    # [165, 55],
 ]

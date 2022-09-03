@@ -978,6 +978,18 @@
       \verb https://opencv.org/about/
       \endverb
     \endentry
+    \entry{open_cv_contours_mode}{online}{}
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{OpenCV RetrievalModes}
+      \verb{urlraw}
+      \verb https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga819779b9857cc2f8601e6526a3a5bc71
+      \endverb
+      \verb{url}
+      \verb https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga819779b9857cc2f8601e6526a3a5bc71
+      \endverb
+    \endentry
     \entry{4310076}{article}{}
       \name{author}{1}{}{%
         {{hash=4c9490b4888796e772e507d10bb89b3f}{%

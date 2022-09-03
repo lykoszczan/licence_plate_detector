@@ -72,9 +72,9 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
             continue
         counter += 1
 
-        if verbose:
-            cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 255), 3)
         if area > 1900:
+            if verbose:
+                cv2.rectangle(image, (x, y), (x + w, y + h), (0, 255, 255), 3)
             avg_sizes.append(h)
             candidates.append([x, y, w, h])
 

@@ -457,16 +457,16 @@ feature_indexes = clf.feature_indexes_
 # exit()
 
 # i = cv2.imread("test_data/blurred_plate.png")
-i = cv2.imread("test_data/car.png")
-# i = cv2.imread("test_data/camera.jpg")
+# i = cv2.imread("test_data/car.png")
+i = cv2.imread("test_data/camera.jpg")
 
 i_scaled = utils.scale_image(i)
 i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
 # remove subtitles from camera
-# i_gray_cropped = i_gray[0:-80, 0:]
+i_gray_cropped = i_gray[0:-80, 0:]
 # cv2.imshow("cropped", i_gray_cropped)
 # cv2.waitKey()
-# ii = integral_image(i_gray_cropped)
-ii = integral_image(i_gray)
+ii = integral_image(i_gray_cropped)
+# ii = integral_image(i_gray)
 
-detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=4.9, original_image=i, show_output=True, ocr=True)
+detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1, original_image=i, show_output=True, ocr=True)
