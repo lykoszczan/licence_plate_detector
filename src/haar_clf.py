@@ -32,7 +32,7 @@ def test_video(path):
         i_gray = cv2.cvtColor(i_scaled, cv2.COLOR_BGR2GRAY)
         i_gray_cropped = i_gray[0:-80, 0:]
         ii = integral_image(i_gray_cropped)
-        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.5, original_image=frame,
+        i_scaled = detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=1.3, original_image=frame,
                           show_output=False, ocr=True)
 
         cv2.imshow('window-name', i_scaled)
@@ -371,12 +371,13 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
         if good_detection:
             cv2.rectangle(i_scaled, rect[0], rect[1], (0, 0, 255), 1)
         else:
-            if ocr:
-                cv2.imwrite('test_samples/' + str(datetime.timestamp(datetime.now())) + '.png', rect_cropped)
+            # if ocr:
+            #     cv2.imwrite('test_samples/' + str(datetime.timestamp(datetime.now())) + '.png', rect_cropped)
             cv2.rectangle(i_scaled, rect[0], rect[1], (0, 255, 255), 1)
 
     t2 = time.time()
     print(f"DETECTION DONE IN {t2 - t1} s")
+    cv2.imwrite('test_samples/' + str(datetime.timestamp(datetime.now())) + '.png', i_scaled)
 
     if show_output:
         cv2.imshow("OUTPUT", i_scaled)
@@ -454,8 +455,8 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 # feature_indexes = clf.feature_importances_ > 0  # Ada
 feature_indexes = clf.feature_indexes_
 
-# test_video("test_data/video/70mai-a800s-dzien.mp4")
-test_video("test_data/video/test_video_1.mp4")
+test_video("test_data/video/70mai-a800s-dzien.mp4")
+# test_video("test_data/video/test_video_1.mp4")
 exit()
 
 # i = cv2.imread("test_data/blurred_plate.png")

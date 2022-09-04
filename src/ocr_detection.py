@@ -138,6 +138,7 @@ def ocr_with_segmentation(image, verbose=False):
         predicted_result = ' '.join(letters)
 
     if verbose:
+        cv2.imshow('org_image', org_image)
         cv2.imshow('image', image)
         # cv2.imshow('Concatenated image', connected)
         cv2.imshow('Binary image rgb', invert_tresh)

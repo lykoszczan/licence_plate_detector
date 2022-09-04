@@ -17,6 +17,12 @@ def detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes,
     hcws = utils.multiplyWindow(w, h, hcs)
     hcws = [hcw.astype("int32") for hcw in hcws]
 
+    counter = 0
+    for j in range(rj, H - h, dj):
+        for k in range(rk, W - w, dk):
+            counter += 1
+    print('all windows count ' + str(counter))
+
     detections = []
     with Parallel(n_jobs=16, verbose=0) as parallel:
         def the_job(j0):
