@@ -1,16 +1,16 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
-[50] biber:322> INFO - === Sat Sep  3, 2022, 16:15:37
-[61] Biber.pm:415> INFO - Reading 'main.bcf'
-[110] Biber.pm:943> INFO - Found 55 citekeys in bib section 0
-[122] Biber.pm:4256> INFO - Processing section 0
-[123] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
-[123] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
-[131] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[133] bibtex.pm:1653> INFO - LaTeX decoding ...
-[175] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
-[410] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[410] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
-[410] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pl-PL'
-[449] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[465] bbl.pm:755> INFO - Output to main.bbl
+[47] biber:322> INFO - === Sun Sep  4, 2022, 10:13:05
+[56] Biber.pm:415> INFO - Reading 'main.bcf'
+[104] Biber.pm:943> INFO - Found 57 citekeys in bib section 0
+[114] Biber.pm:4256> INFO - Processing section 0
+[114] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
+[114] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
+[122] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[124] bibtex.pm:1653> INFO - LaTeX decoding ...
+[166] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
+[398] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[399] UCollate.pm:68> INFO - Overriding locale 'pl-PL' defaults 'variable = shifted' with 'variable = non-ignorable'
+[399] Biber.pm:4084> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'pl-PL'
+[436] bbl.pm:652> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[452] bbl.pm:755> INFO - Output to main.bbl

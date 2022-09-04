@@ -315,11 +315,28 @@ W celu wykorzystania jej w opisywanym programie, użyto nakładki \textit{pytess
 Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera ponad 100 języków.
 Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory})~\cite{lstm}.
 
-\subsection{Numpy}
-TODO
+\subsection{NumPy}
+Biblioteka NumPy jest jednym z fundamentalnych pakietów dla obliczeń naukowych w środowisku Python~\cite{numpy}.
+Głównym elementem biblioteki jest obiekt \textit{ndarray}.
+Obiekt ten pozwala na tworzenie wielowymiarowych tablic o ściśle określonym typie danych.
+Oprócz tego, biblioteka zapewnia wiele operacji matematycznych do wykonania na tablicach.
+Operacje wykonywane za pomocą biblioteki NumPy są znacznie bardziej wydajne od standardowych metod języka Python.
+Dzieję się tak, ponieważ biblioteka posiada zaimplementowane metody w języku C\@.
+W opisywanym programie, dzięki zastosowaniu NumPy m.in.\ do obliczenia obrazu całkowego za pomocą metody \textit{cumsum}, osiągnięto znacznie większą wydajność w tym zakresie.
 
 \subsection{Pickle}
-TODO
+Moduł Pickle wchodzi w skład podstawowego pakietu Python.
+Jego zastosowaniem jest serializacja danych.
+Dzięki temu, możliwe jest zapisanie dowolnego obiektu i jego późniejsze odczytanie.
+W trakcie opracowywania niniejszego oprogramowania, operacja ta była niezwykle przydatna.
+Dzięki temu rozwiązaniu, możliwe było np.\ wczytanie z pliku nauczonego klasyfikatora.
+Biblioteka jest niezwykle prosta w użyciu.
+Korzystając z bibliotek do serializacji, należy mieć na uwadze fakt, że wczytywanie zserializowanych obiektów może prowadzić do naruszenia zasad bezpieczeństwa programu.
+Z tego powodu, należy wczytywać tylko takie obiekty, których pochodzenia użytkownik jest pewien.
 
 \subsection{Numba}
-Biblioteka od przyspieszania kodu (jit)
+Numba jest biblioteką służącą do poprawiania wydajności programów napisanych w języku Python.
+Pakiet kompiluje kod w trakcie trwania programu (ang. \textit{just in time} --- JIT), w celu zwiększenia jego wydajności.
+Operacja ta jest działa najlepiej dla kodu opartego o tablice NumPy, pętle i funkcje.
+W celu kompilacji, fragmenty kodu oznacza się specjalnymi adnotacjami.
+Po natrafieniu na odpowiednią komendę, biblioteka kompiluje w trakcie trwania programu kod do postaci kodu maszynowego, dzięki czemu wydajność skompilowanego fragmentu jest porównywalna do wykonywania kodu maszynowego~\cite{numba}.

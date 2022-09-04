@@ -327,12 +327,14 @@ def detect(i_scaled, ii, clf, hcs, feature_indexes, threshold=0.0, original_imag
 
     for s in consts.DETECTION_SIZES:
         [w, h] = s
-        p = mp.Process(target=detection_one_scale,
-                       args=(H, W, h, w, threshold, detections, clf, feature_indexes, n, hcs, ii, i_scaled))
-        p.start()
-        procs.append(p)
+        detections = detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes, n, hcs, ii, i_scaled)
 
-    for p in procs: p.join()
+    #     p = mp.Process(target=detection_one_scale,
+    #                    args=(H, W, h, w, threshold, detections, clf, feature_indexes, n, hcs, ii, i_scaled))
+    #     p.start()
+    #     procs.append(p)
+    #
+    # for p in procs: p.join()
 
     # bez łączenia
     # for j, k, h, w in detections:
@@ -453,8 +455,8 @@ print(f"SPECIFITY TEST: {clf.score(X_test[indexes_neg], y_test[indexes_neg])}")
 feature_indexes = clf.feature_indexes_
 
 # test_video("test_data/video/70mai-a800s-dzien.mp4")
-# test_video("test_data/video/test_video_1.mp4")
-# exit()
+test_video("test_data/video/test_video_1.mp4")
+exit()
 
 # i = cv2.imread("test_data/blurred_plate.png")
 # i = cv2.imread("test_data/car.png")

@@ -32,29 +32,7 @@ def detect_licence_plate_characters(test_license_plate, with_contours=True):
     # test_license_plate = cv2.imread('test_data/blurred_plate.png')
     test_license_plate = scale_image(test_license_plate, 300)
     # return ocr_with_segmentation(test_license_plate)
-    return ocr_with_segmentation(test_license_plate, True)
-
-    cv2.imshow('before process', test_license_plate)
-    cv2.waitKey()
-    # print(with_contours)
-    custom_oem_psm_config = r'--oem 1 --psm 6 -l eng'
-
-    if with_contours:
-        test_license_plate = get_contours(test_license_plate)
-    else:
-        test_license_plate = process(test_license_plate)
-
-    cv2.imshow('after process', test_license_plate)
-    cv2.waitKey()
-
-    predicted_result = pytesseract.image_to_string(test_license_plate, lang='eng',
-                                                   config=custom_oem_psm_config)
-
-    if predicted_result:
-        letters = re.findall("[A-Z0-9]+", predicted_result)
-        predicted_result = ' '.join(letters)
-
-    return predicted_result
+    return ocr_with_segmentation(test_license_plate)
 
 
 def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
@@ -65,7 +43,7 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
         if h >= image.shape[0] - 5:
             continue
 
-        if w / h > 2 or h / w > 5 or area < 100:
+        if w / h > 1.5 or h / w > 5 or area < 100:
             if verbose:
                 # różowy
                 cv2.rectangle(image, (x, y), (x + w, y + h), (255, 100, 255), 3)
@@ -82,6 +60,7 @@ def get_candidates(image, cnts, avg_sizes, candidates, counter, verbose):
 
 
 def ocr_with_segmentation(image, verbose=False):
+    org_image = image.copy()
     # blue
     candidate_color = (255, 0, 0)
     # grey
@@ -91,6 +70,7 @@ def ocr_with_segmentation(image, verbose=False):
     _, thresh = cv2.threshold(img_gray, 200, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     result = np.zeros(image.shape, dtype=np.uint8)
+    result_bin = np.zeros(image.shape, dtype=np.uint8)
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     lower = np.array([0, 0, 0])
     upper = np.array([179, 100, 130])
@@ -124,6 +104,8 @@ def ocr_with_segmentation(image, verbose=False):
         print(np.sort(avg_sizes))
 
     nms_candidates = []
+    thresh_rgb = cv2.cvtColor(thresh, cv2.COLOR_GRAY2RGB)
+    thresh_rgb = 255 - thresh_rgb
     for el in candidates:
         x, y, w, h = el
         nms_candidates.append([y, x, h, w])
@@ -131,7 +113,9 @@ def ocr_with_segmentation(image, verbose=False):
             continue
 
         if verbose:
+            print(x, y, w, h)
             cv2.rectangle(image, (x, y), (x + w, y + h), candidate_color, 3)
+        result_bin[y:y + h, x:x + w] = thresh_rgb[y:y + h, x:x + w]
         result[y:y + h, x:x + w] = extract[y:y + h, x:x + w]
 
     # rects = non_max_supression(nms_candidates, 0.01)
@@ -143,8 +127,10 @@ def ocr_with_segmentation(image, verbose=False):
         print('contours count', counter)
 
     invert = 255 - result
+    invert_tresh = 255 - result_bin
+    # connected = cv2.addWeighted(invert, 0.5, invert_tresh, 0.5, 0.0)
     predicted_result = pytesseract.image_to_string(
-        invert, lang='eng', config='--psm 6 --oem 1 tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+        invert_tresh, lang='eng', config='--psm 6 --oem 1 tessedit_char_whitelist=ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
 
     if predicted_result:
         predicted_result = predicted_result.replace(')', 'J')
@@ -153,7 +139,8 @@ def ocr_with_segmentation(image, verbose=False):
 
     if verbose:
         cv2.imshow('image', image)
-        cv2.imshow('Binary image', thresh)
+        # cv2.imshow('Concatenated image', connected)
+        cv2.imshow('Binary image rgb', invert_tresh)
         cv2.imshow('close', close)
         cv2.imshow('invert', invert)
         cv2.waitKey()

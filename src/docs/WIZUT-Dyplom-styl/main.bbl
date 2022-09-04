@@ -19,6 +19,18 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{numba}{online}{}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{A ~5 minute guide to Numba}
+      \verb{urlraw}
+      \verb https://numba.readthedocs.io/en/stable/user/5minguide.html
+      \endverb
+      \verb{url}
+      \verb https://numba.readthedocs.io/en/stable/user/5minguide.html
+      \endverb
+    \endentry
     \entry{pytesseract}{online}{}
       \field{sortinit}{A}
       \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
@@ -1649,6 +1661,18 @@
       \field{year}{2008}
       \field{pages}{1007\bibrangedash 1020}
       \range{pages}{14}
+    \endentry
+    \entry{numpy}{online}{}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{title}{What is NumPy?}
+      \verb{urlraw}
+      \verb https://numpy.org/doc/stable/user/whatisnumpy.html
+      \endverb
+      \verb{url}
+      \verb https://numpy.org/doc/stable/user/whatisnumpy.html
+      \endverb
     \endentry
     \entry{overfitting}{online}{}
       \field{sortinit}{W}

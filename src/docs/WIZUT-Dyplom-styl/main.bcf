@@ -2265,6 +2265,8 @@
     <bcf:citekey order="77">tesseract</bcf:citekey>
     <bcf:citekey order="78">pytesseract</bcf:citekey>
     <bcf:citekey order="79">lstm</bcf:citekey>
+    <bcf:citekey order="80">numpy</bcf:citekey>
+    <bcf:citekey order="81">numba</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
