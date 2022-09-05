@@ -13,12 +13,46 @@
 
 
 \chapter*{Podsumowanie}
+Celem niniejszej pracy było opracowanie systemu rozpoznawania tablic rejestracyjnych na obrazach z kamery samochodowej.
+Oprócz tego, należało omówić wybrane algorytmy z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych
+do realizacji postawionego zadania.
 
-Podsumowanie pracy powinno na maksymalnie dwóch stronach przedstawić główne wyniki pracy dyplomowej. Struktura zakończenia to:
-\begin{enumerate}
-\item Przypomnienie celu i hipotez
-\item Co w pracy wykonano by cel osiągnąć (analiza, projekt, oprogramowanie, badania eksperymentalne)
-\item Omówienie głównych wyników pracy
-\item Jak wyniki wzbogacają dziedzinę
-\item Zamknięcie np. poprzez wskazanie dalszych kierunków badań.
-\end{enumerate}
+W celu wykonania wspomnianego systemu, zebrano zbiór uczący składający się \\z 10985 zdjęć zawierających 10301 tablice rejestracyjne.
+Opracowano system, w skład którego wchodzą moduł detekcji tablic oraz moduł rozpoznawania, znajdujących się na nich, znaków.
+Do klasyfikacji wykorzystano algorytm RealBoost ze słabymi klasyfikatorami realizowanymi poprzez koszykowanie wartości funkcji logit.
+Klasyfikator oparty został o cechy Haara.
+Do rozpoznawania znaków wykorzystano bibliotekę Tesseract opartą o rekurencyjne sieci neuronowe LSTM\@.
+Program zaimplementowano w środowisku Python.
+Testy przeprowadzono na surowych nagraniach z kilku popularnych kamer samochodowych ze średniej półki.
+
+W stosunku do istniejących rozwiązań, opracowany system nie potrzebuje specjalnej aparatury do działania.
+W ramach testów wykazano, że nagrania pochodzące z wideorejestratorów kosztujących maksymalnie kilkaset złotych, są wystarczające.
+W przeprowadzonych eksperymentach udowodniono poprawność działania opisywanego rozwiązania.
+Przedstawiono słabości systemu, wynikające z niedoskonałości użytych algorytmów.
+Dla wykrywania próbek pozytywnych, algorytm cechuje się dokładnością 82\%.
+Przetwarzanie jednej klatki obrazu z kamery trwa średnio ok\. 1 sekundę.
+Stworzone oprogramowanie zostało przygotowane w ten sposób, że nie wymaga wielu modyfikacji, aby zwiększyć szybkość lub jakość detekcji.
+Można to zrealizować poprzez zmianę parametru liczby używanych cech do klasyfikacji.
+
+Komercyjne rozwiązania zapewniają wyższą dokładność oraz są bardziej wydajne.
+Należy jednak mieć na uwadze fakt, że są one realizowane przez firmy mające odpowiednie zasoby.
+Poprawę systemu można by uzyskać przede wszystkim poprzez ulepszenie algorytmów, zarówno lokalizacji, jak i rozpoznawania znaków.
+Dodatkowo, stosując kamerę o wyższej rozdzielczości, możliwe jest poprawienie operacji rozpoznawania znaków.
+Do osiągnięcia wyższej wydajności systemu, możliwe jest użycie komputera o większej mocy obliczeniowej.
+Poniższa praca udowadnia słuszność stosowania cech Haara w zadaniu lokalizacji tablic rejestracyjnych.
+Również algorytm boostingu zapewnił znaczne przyspieszenie klasyfikacji obiektów przy jednoczesnym zachowaniu odpowiedniego poziomu dokładności.
+
+Opracowany system mógłby zostać wykorzystany np.\ do przetwarzania nagrań z wideorejestratorów znajdujących się w radiowozach.
+Rozpoznane tablice rejestracyjne mogłyby być sprawdzane w zewnętrznym systemie.
+Przykładowo, możliwe byłoby sprawdzenie czy pojazd posiada aktualny przegląd techniczny.
+Funkcjonariusze byliby natychmiastowo powiadamiani o wykrytej nieprawidłowości.
+W konsekwencji doszłoby do zatrzymania potencjalnie niebezpiecznego pojazdu, co znacznie ograniczyłoby stwarzane niebezpieczeństwo na drogach.
+
+%Podsumowanie pracy powinno na maksymalnie dwóch stronach przedstawić główne wyniki pracy dyplomowej. Struktura zakończenia to:
+%\begin{enumerate}
+%\item Przypomnienie celu i hipotez
+%\item Co w pracy wykonano by cel osiągnąć (analiza, projekt, oprogramowanie, badania eksperymentalne)
+%\item Omówienie głównych wyników pracy
+%\item Jak wyniki wzbogacają dziedzinę
+%\item Zamknięcie np. poprzez wskazanie dalszych kierunków badań.
+%\end{enumerate}

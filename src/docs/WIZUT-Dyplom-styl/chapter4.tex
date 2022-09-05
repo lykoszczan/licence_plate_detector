@@ -16,7 +16,6 @@ W celu oceny dokładności klasyfikatora służącego do detekcji tablic rejestr
 W zbiorze testowym znajdowało się 100 próbek pozytywnych oraz 10000 próbek negatywnych.
 Wyniki dla poszczególnych klasyfikatorów przedstawia Tabela~\ref{tab:accuracy_clf}.
 
-%TODO - przykład przedstawienia wyników detekcji
 %\\opis przeprowadzony testów
 %\\zrzuty z nagrań
 %\\czasy
@@ -29,10 +28,9 @@ Wyniki dla poszczególnych klasyfikatorów przedstawia Tabela~\ref{tab:accuracy_
         \toprule
         \textbf{\thead{Liczba \\cech}} & \textbf{\thead{Liczba  \\słabych \\klasyfikatorów}} & \textbf{\thead{Liczba \\koszyków}} & \textbf{\thead{Dokładność \\klasyfikatora}} & \textbf{\thead{Dokładność \\klasyfikatora dla \\próbek pozytywnych}} & \textbf{\thead{Dokładność \\klasyfikatora dla \\próbek negatywnych}} \\
         \midrule
-        2205 & 32 & 8 & ???\%  & ???\%  & ???\%  \\
-        2205 & 64 & 8 & 99,8\%  & 82,2\%  & 99,9\%  \\
-        2205 & 128 & 8 & ???\%  & ???\%  & ???\%  \\
-        2205 & 256 & 8 & ???\%  & ???\%  & ???\%  \\
+        2205 & 32 & 8 & 99.70\% & 75.15\% & 99.94\% \\
+        2205 & 64 & 8 & 99.77\% & 82.24\% & 99.94\% \\
+        2205 & 256 & 8 & 99.87\% & 91.12\% & 99.96\% \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -43,7 +41,7 @@ Wyniki dla poszczególnych klasyfikatorów przedstawia Tabela~\ref{tab:accuracy_
 %\\reklamy i banery
 %\\czas wykonywania
 %\\krzywe roc
-Z racji ograniczeń sprzętowych, nie udało się nauczyć klasyfikatorów dla okien z większą ilością cech.
+Z racji ograniczeń sprzętowych, nie udało się nauczyć klasyfikatorów dla okien \\z większą ilością cech.
 
 Poza zbiorem testowym, algorytm testowano na rzeczywistym nagraniu wideo pochodzącym z kamery samochodowej.
 Poniżej przedstawiono wyniki dla tego rodzaju obrazów wejściowych.
@@ -111,7 +109,7 @@ Jeżeli uznamy, że 20 okien zostało źle sklasyfikowanych, to poprawność kla
 \section{Wyniki rozpoznawaniu znaków}
 Jak wspomniano w poprzednim rozdziale, do rozpoznawania tekstu wykorzystano bibliotekę Tesseract.
 Zgodnie z~\cite{sym12050715}, dokładność klasyfikacji biblioteki wynosi $70.2\%$.
-W rzeczywistości, jakość działania systemu w głównej mierze zależy od metod segmentacji znaków.
+\\W rzeczywistości, jakość działania systemu w głównej mierze zależy od metod segmentacji znaków.
 Na Rysunku~\ref{fig:plates} zaprezentowano przykładowe wyniki segmentacji znaków z tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
@@ -126,7 +124,15 @@ Wynika to przede wszystkim z mniejszych zakłóceń w obrazie i lepiej widocznyc
 Na jakość segmentacji i następnie odczytu znaków wpływ ma również rotacja tablicy rejestracyjnej.
 Dodatkowo, w zależności od kąta, pod którym zrobiono zdjęcie, kontury znaków potrafią się łączyć ze sobą lub z ramką tablicy.
 Ten fakt zdecydowanie nie ułatwia późniejszej segmentacji.
-%TODO - przedstawienie rozpoznawania na podstawie zdjęć
+Śruby, które często stosowane są w celu zamocowania tablicy również negatywnie wpływają na segmentację znaków.
+Mogą one powodować łączenie znaków i w konsekwencji zmianę ich konturów.
+
+Zauważono, że jednym z problematycznych dla biblioteki znaków jest litera ,,J'', która często mylona była ze znakiem ,,)''.
+Wykorzystując fakt, że tablice zawierają tylko znaki alfanumeryczne, można poprawić to programowo, poprzez zamianę tego znaku w rezultacie.
+Trudniejszym do rozwiązania problemem jest wzajemne mylenie litery ,,S'' \\z cyfrą 5.
+Oba znaki mogą występować na tablicach rejestracyjnych.
+Patrząc na przykładowe zdjęcia z Rysunku~\ref{fig:plates}, wyniki nie zawsze są oczywiste, nawet dla człowieka.
+
 %\\przykłady:
 %\\mylony znak ``('' z ``J''
 %\\mylone S z 5
@@ -142,23 +148,45 @@ Wydajność jest uzależniona od poniższych czynników:
     \item liczba pozytywnych okien wysłanych do modułu rozpoznawania znaków,
     \item liczba cech klasyfikatora.
 \end{itemize}
-
+W Tabeli~\ref{tab:performance} przedstawiono wyniki uzyskanych czasów dla opracowanego programu.
+W celu przyspieszenia obliczeń, zrównoleglono obliczenia cech dla procedury skanowania oknem przesuwnym.
+Wszystkie obrazy były skalowane na wejściu do rozmiaru 640$\times$480px.
 \begin{table}[h]
     \centering
     \caption{Wydajność czasowa systemu.}
     \label{tab:performance}
     \begin{tabular}{c c c c c c}
         \toprule
-        \textbf{\thead{Liczba \\cech}} & \textbf{\thead{Liczba  \\słabych \\klasyfikatorów}} & \textbf{\thead{Liczba \\koszyków}} & \textbf{\thead{Dokładność \\klasyfikatora}} & \textbf{\thead{Dokładność \\klasyfikatora dla \\próbek pozytywnych}} & \textbf{\thead{Dokładność \\klasyfikatora dla \\próbek negatywnych}} \\
+        \textbf{\thead{Liczba \\cech}} & \textbf{\thead{Liczba  \\unikalnych cech \\użytych przez \\ klasyfikator}} & \textbf{\thead{Liczba \\okien}} & \textbf{\thead{Czas \\detekcji}} & \textbf{\thead{Czas \\rozpoznawania \\jednej tablicy}} & \textbf{\thead{Czas przetwarzania \\jednego okna}} \\
         \midrule
-        2205 & 32 & 8 & ???\%  & ???\%  & ???\%  \\
-        2205 & 64 & 8 & 99,8\%  & 82,2\%  & 99,9\%  \\
-        2205 & 128 & 8 & ???\%  & ???\%  & ???\%  \\
-        2205 & 256 & 8 & ???\%  & ???\%  & ???\%  \\
+        2205 & 32 & 39188 & 0.68s & 0.11s & 0.4ms \\
+        2205 & 64 & 39188 & 0.91s & 0.12s & 0.9ms \\
+        2205 & 256 & 39188 & 2.24s & 0.11s & 1.1ms \\
         \bottomrule
     \end{tabular}
 \end{table}
+Na podstawie zebranych danych, można zauważyć, że czas detekcji rośnie wraz ze wzrostem liczby używanych cech.
+Czas rozpoznawania dla jednej tablicy jest stały (w granicach błędu pomiarowego).
+Natomiast dla klasyfikatorów z większą liczbą cech, do modułu rozpoznawania znaków trafia mniej okien (z racji mniejszej ilości fałszywych pozytywów).
+Z racji jednak większej ilości czasu poświęcanej podczas detekcji, zysk ten jest pomijalny.
 
 
-\section{Propozycje udoskonalenia}
-TODO
+\section{Propozycje udoskonalenia algorytmu}
+Praca ma charakter eksperymentalny.
+Opracowany program spełnia założenia detekcji tablic i rozpoznawania znaków na nich się znajdujących.
+Z racji ograniczonego czasu oraz jednoosobowego zespołu, istnieją pola do ulepszeń w opracowanym systemie.
+
+Jednym z pomysłów na udoskonalenie modułu detekcji jest dołożenie do zbioru uczącego negatywnych okien, które obecnie klasyfikator wykrywa błędnie, jako pozytywne.
+Prawdopodobne, że ponownie nauczony klasyfikator charakteryzowałby się wyższą dokładnością detekcji.
+Innym pomysłem, który mógłby poprawić wydajność oraz jakość detekcji jest użycie więcej niż jednego klasyfikatora do detekcji obiektów.
+W pierwszej kolejności jeden klasyfikator klasyfikowałby okna zawierający samochody.
+Tak działający klasyfikator działby szybciej, ponieważ rozmiar okna w procedurze skanującej byłby większy.
+Wynika to z faktu, że samochód zajmuje większy obraz na zdjęciu niż jego tablica rejestracyjna.
+Następnie na wykrytych fragmentach należałoby wykryć tablice rejestracyjne.
+W rezultacie liczba okien poddawanych procedurze predykcji mogłaby być mniejsza niż w oryginalnym rozwiązaniu.
+Aby zwiększyć wydajność rozwiązania, możliwe jest również zaimplementowanie programu w silnie typowanym, kompilowanym języku, np.\ C++.
+
+W celu poprawienia jakości rozpoznawania znaków, możliwe jest nauczenie sieci neuronowej biblioteki Tesseract zbiorem znaków z tablic rejestracyjnych.
+Biblioteka domyślnie wyuczona jest na zbiorach znaków pochodzących z różnego rodzaju tekstów drukowanych, tj.\ książki lub dokumenty.
+Podczas przygotowywania zbioru uczącego, szczególną uwagę należałoby przykuć do przygotowania znaków, które nie mają idealnych konturów.
+Ma to na celu zapewnienie przykładów uczących maksymalnie zbliżonych do próbek w realnym środowisku pracy.

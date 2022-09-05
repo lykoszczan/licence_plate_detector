@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  4 SEP 2022 17:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.9.1)  5 SEP 2022 08:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1253,12 +1253,12 @@ LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
-<Pictures/zut.png, id=151, 168.63pt x 65.7657pt>
+<Pictures/zut.png, id=163, 168.63pt x 65.7657pt>
 File: Pictures/zut.png Graphic file (type png)
 <use Pictures/zut.png>
 Package pdftex.def Info: Pictures/zut.png  used on input line 26.
 (pdftex.def)             Requested size: 168.62958pt x 65.76553pt.
-<Pictures/wi.png, id=153, 763.85374pt x 274.02374pt>
+<Pictures/wi.png, id=165, 763.85374pt x 274.02374pt>
 File: Pictures/wi.png Graphic file (type png)
 <use Pictures/wi.png>
 Package pdftex.def Info: Pictures/wi.png  used on input line 26.
@@ -1342,7 +1342,7 @@ This may cause the page layout to be inconsistent, however.
 
  (./chapter1.tex
 Rozdzia\l  1.
-<Pictures/schemat_lpr.png, id=274, 268.00125pt x 638.385pt>
+<Pictures/schemat_lpr.png, id=292, 268.00125pt x 638.385pt>
 File: Pictures/schemat_lpr.png Graphic file (type png)
 <use Pictures/schemat_lpr.png>
 Package pdftex.def Info: Pictures/schemat_lpr.png  used on input line 46.
@@ -1386,7 +1386,7 @@ Package mdframed Info: mdframed works in twoside mode on input line 140.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 140.
-<Pictures/hough_transform.jpeg, id=302, 317.988pt x 114.1866pt>
+<Pictures/hough_transform.jpeg, id=320, 317.988pt x 114.1866pt>
 File: Pictures/hough_transform.jpeg Graphic file (type jpg)
 <use Pictures/hough_transform.jpeg>
 Package pdftex.def Info: Pictures/hough_transform.jpeg  used on input line 149.
@@ -1398,7 +1398,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [12]
-<Pictures/tablice.png, id=326, 489.83pt x 68.255pt>
+<Pictures/tablice.png, id=344, 489.83pt x 68.255pt>
 File: Pictures/tablice.png Graphic file (type png)
 <use Pictures/tablice.png>
 Package pdftex.def Info: Pictures/tablice.png  used on input line 180.
@@ -1412,7 +1412,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [13 <./Pictures/hough_transform.jpeg> <./Pictures/tablice.png>]
-<Pictures/haar_feats.png, id=346, 452.69125pt x 115.43124pt>
+<Pictures/haar_feats.png, id=364, 452.69125pt x 115.43124pt>
 File: Pictures/haar_feats.png Graphic file (type png)
 <use Pictures/haar_feats.png>
 Package pdftex.def Info: Pictures/haar_feats.png  used on input line 221.
@@ -1450,7 +1450,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [16]
-<Pictures/adaboost_alphacurve.png, id=388, 341.02406pt x 296.60812pt>
+<Pictures/adaboost_alphacurve.png, id=406, 341.02406pt x 296.60812pt>
 File: Pictures/adaboost_alphacurve.png Graphic file (type png)
 <use Pictures/adaboost_alphacurve.png>
 Package pdftex.def Info: Pictures/adaboost_alphacurve.png  used on input line 3
@@ -1484,7 +1484,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [19]
-<Pictures/yolo.png, id=433, 957.5775pt x 628.3475pt>
+<Pictures/yolo.png, id=451, 957.5775pt x 628.3475pt>
 File: Pictures/yolo.png Graphic file (type png)
 <use Pictures/yolo.png>
 Package pdftex.def Info: Pictures/yolo.png  used on input line 445.
@@ -1501,7 +1501,7 @@ Overfull \hbox (16.38498pt too wide) in paragraph at lines 446--446
 -[]detection-[]algorithms-[]36d53571365e$[]\T1/qhv/m/n/10.95 ).| 
  []
 
-<Pictures/refleks_świetlny.png, id=438, 267.24844pt x 139.27031pt>
+<Pictures/refleks_świetlny.png, id=456, 267.24844pt x 139.27031pt>
 File: Pictures/refleks_świetlny.png Graphic file (type png)
 <use Pictures/refleks_świetlny.png>
 Package pdftex.def Info: Pictures/refleks_świetlny.png  used on input line 467
@@ -1513,7 +1513,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [20 <./Pictures/yolo.png (PNG copy)>]
-<Pictures/threshold.png, id=450, 514.92375pt x 178.86826pt>
+<Pictures/threshold.png, id=468, 514.92375pt x 178.86826pt>
 File: Pictures/threshold.png Graphic file (type png)
 <use Pictures/threshold.png>
 Package pdftex.def Info: Pictures/threshold.png  used on input line 490.
@@ -1529,7 +1529,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [22 <./Pictures/threshold.png>]
-<Pictures/hist_projection.png, id=478, 426.09187pt x 196.48407pt>
+<Pictures/hist_projection.png, id=496, 426.09187pt x 196.48407pt>
 File: Pictures/hist_projection.png Graphic file (type png)
 <use Pictures/hist_projection.png>
 Package pdftex.def Info: Pictures/hist_projection.png  used on input line 543.
@@ -1548,13 +1548,13 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [24]
-<Pictures/pnn_architecture.png, id=518, 442.65375pt x 342.5297pt>
+<Pictures/pnn_architecture.png, id=536, 442.65375pt x 342.5297pt>
 File: Pictures/pnn_architecture.png Graphic file (type png)
 <use Pictures/pnn_architecture.png>
 Package pdftex.def Info: Pictures/pnn_architecture.png  used on input line 636.
 
 (pdftex.def)             Requested size: 265.59428pt x 205.5194pt.
-<Pictures/lstm.png, id=525, 628.59843pt x 330.48468pt>
+<Pictures/lstm.png, id=543, 628.59843pt x 330.48468pt>
 File: Pictures/lstm.png Graphic file (type png)
 <use Pictures/lstm.png>
 Package pdftex.def Info: Pictures/lstm.png  used on input line 654.
@@ -1570,7 +1570,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [26 <./Pictures/lstm.png (PNG copy)>]
-<Pictures/ocr_template.png, id=556, 1031.855pt x 602.25pt>
+<Pictures/ocr_template.png, id=574, 1031.855pt x 602.25pt>
 File: Pictures/ocr_template.png Graphic file (type png)
 <use Pictures/ocr_template.png>
 Package pdftex.def Info: Pictures/ocr_template.png  used on input line 698.
@@ -1589,7 +1589,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 
 ]
 Rozdzia\l  2.
-<Pictures/captured_frames.png, id=575, 1064.97874pt x 597.23125pt>
+<Pictures/captured_frames.png, id=593, 1064.97874pt x 597.23125pt>
 File: Pictures/captured_frames.png Graphic file (type png)
 <use Pictures/captured_frames.png>
 Package pdftex.def Info: Pictures/captured_frames.png  used on input line 49.
@@ -1619,7 +1619,7 @@ This may cause the page layout to be inconsistent, however.
 
 ]
 Rozdzia\l  3.
-<Pictures/prepare_haar_dataset.png, id=605, 300.12125pt x 1255.69125pt>
+<Pictures/prepare_haar_dataset.png, id=623, 300.12125pt x 1255.69125pt>
 File: Pictures/prepare_haar_dataset.png Graphic file (type png)
 <use Pictures/prepare_haar_dataset.png>
 Package pdftex.def Info: Pictures/prepare_haar_dataset.png  used on input line 
@@ -1651,7 +1651,7 @@ LaTeX Font Info:    Trying to load font information for TS1+lmss on input line
 (/usr/share/texmf/tex/latex/lm/ts1lmss.fd
 File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<Pictures/haar_tepmplates.png, id=621, 491.8375pt x 211.79124pt>
+<Pictures/haar_tepmplates.png, id=639, 491.8375pt x 211.79124pt>
 File: Pictures/haar_tepmplates.png Graphic file (type png)
 <use Pictures/haar_tepmplates.png>
 Package pdftex.def Info: Pictures/haar_tepmplates.png  used on input line 86.
@@ -1692,7 +1692,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [36 <./Pictures/haar_tepmplates.png>]
-<Pictures/fit_realboostbins.png, id=657, 257.96375pt x 944.52875pt>
+<Pictures/fit_realboostbins.png, id=675, 257.96375pt x 944.52875pt>
 File: Pictures/fit_realboostbins.png Graphic file (type png)
 <use Pictures/fit_realboostbins.png>
 Package pdftex.def Info: Pictures/fit_realboostbins.png  used on input line 143
@@ -1704,7 +1704,7 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [37]
-<Pictures/main_alg.png, id=685, 362.35374pt x 1315.91624pt>
+<Pictures/main_alg.png, id=703, 362.35374pt x 1315.91624pt>
 File: Pictures/main_alg.png Graphic file (type png)
 <use Pictures/main_alg.png>
 Package pdftex.def Info: Pictures/main_alg.png  used on input line 164.
@@ -1723,12 +1723,12 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [39 <./Pictures/main_alg.png>]
-<Pictures/detection_alg.png, id=699, 499.8675pt x 924.45375pt>
+<Pictures/detection_alg.png, id=717, 499.8675pt x 924.45375pt>
 File: Pictures/detection_alg.png Graphic file (type png)
 <use Pictures/detection_alg.png>
 Package pdftex.def Info: Pictures/detection_alg.png  used on input line 187.
-(pdftex.def)             Requested size: 199.94345pt x 369.77495pt.
-<Pictures/non_max_supression.png, id=701, 915.42pt x 191.71625pt>
+(pdftex.def)             Requested size: 174.95624pt x 323.56366pt.
+<Pictures/non_max_supression.png, id=719, 915.42pt x 191.71625pt>
 File: Pictures/non_max_supression.png Graphic file (type png)
 <use Pictures/non_max_supression.png>
 Package pdftex.def Info: Pictures/non_max_supression.png  used on input line 20
@@ -1740,17 +1740,18 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [40 <./Pictures/detection_alg.png>]
+<Pictures/characters_alg.png, id=730, 452.69125pt x 934.49126pt>
+File: Pictures/characters_alg.png Graphic file (type png)
+<use Pictures/characters_alg.png>
+Package pdftex.def Info: Pictures/characters_alg.png  used on input line 246.
+(pdftex.def)             Requested size: 181.07329pt x 373.78989pt.
+
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
  [][][][][][][][][][][]
  []
 
 [41 <./Pictures/non_max_supression.png>]
-<Pictures/characters_alg.png, id=722, 452.69125pt x 934.49126pt>
-File: Pictures/characters_alg.png Graphic file (type png)
-<use Pictures/characters_alg.png>
-Package pdftex.def Info: Pictures/characters_alg.png  used on input line 246.
-(pdftex.def)             Requested size: 181.07329pt x 373.78989pt.
-<Pictures/segmentation.png, id=724, 371.3875pt x 429.605pt>
+<Pictures/segmentation.png, id=743, 371.3875pt x 429.605pt>
 File: Pictures/segmentation.png Graphic file (type png)
 <use Pictures/segmentation.png>
 Package pdftex.def Info: Pictures/segmentation.png  used on input line 260.
@@ -1784,47 +1785,33 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 
 ]
 Rozdzia\l  4.
-
-LaTeX Warning: Reference `tab:accuracy_clf' on page 47 undefined on input line 
-17.
-
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 30.
+(Font)              scaled to size 10.0pt on input line 29.
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 30.
+(Font)              size <5> substituted on input line 29.
 
 
-Overfull \hbox (10.7687pt too wide) in paragraph at lines 28--38
+Overfull \hbox (10.7687pt too wide) in paragraph at lines 27--36
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:tablica_rozpoznana' on page 47 undefined on input
- line 53.
-
-<Pictures/tablica_rozpoznana.png, id=767, 856.19875pt x 481.8pt>
+<Pictures/tablica_rozpoznana.png, id=787, 856.19875pt x 481.8pt>
 File: Pictures/tablica_rozpoznana.png Graphic file (type png)
 <use Pictures/tablica_rozpoznana.png>
-Package pdftex.def Info: Pictures/tablica_rozpoznana.png  used on input line 64
+Package pdftex.def Info: Pictures/tablica_rozpoznana.png  used on input line 62
 .
 (pdftex.def)             Requested size: 342.47343pt x 192.71658pt.
 [47]
-
-LaTeX Warning: Reference `fig:autobus' on page 48 undefined on input line 69.
-
-<Pictures/autobus.png, id=774, 162.6075pt x 106.14656pt>
+<Pictures/autobus.png, id=795, 162.6075pt x 106.14656pt>
 File: Pictures/autobus.png Graphic file (type png)
 <use Pictures/autobus.png>
-Package pdftex.def Info: Pictures/autobus.png  used on input line 73.
+Package pdftex.def Info: Pictures/autobus.png  used on input line 71.
 (pdftex.def)             Requested size: 162.6071pt x 106.1463pt.
-
-LaTeX Warning: Reference `fig:bank' on page 48 undefined on input line 78.
-
-<Pictures/bank.png, id=775, 137.7647pt x 97.11281pt>
+<Pictures/bank.png, id=797, 137.7647pt x 97.11281pt>
 File: Pictures/bank.png Graphic file (type png)
 <use Pictures/bank.png>
-Package pdftex.def Info: Pictures/bank.png  used on input line 83.
+Package pdftex.def Info: Pictures/bank.png  used on input line 81.
 (pdftex.def)             Requested size: 137.76434pt x 97.11256pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1833,28 +1820,15 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
 
 [48 <./Pictures/tablica_rozpoznana.png (PNG copy)> <./Pictures/autobus.png (PNG
  copy)>]
-
-LaTeX Warning: Reference `fig:same_car' on page 49 undefined on input line 91.
-
-<Pictures/same_car.png, id=783, 1052.93375pt x 232.87pt>
+<Pictures/same_car.png, id=806, 1052.93375pt x 232.87pt>
 File: Pictures/same_car.png Graphic file (type png)
 <use Pictures/same_car.png>
-Package pdftex.def Info: Pictures/same_car.png  used on input line 95.
+Package pdftex.def Info: Pictures/same_car.png  used on input line 93.
 (pdftex.def)             Requested size: 421.16605pt x 93.14633pt.
-
-LaTeX Warning: Reference `fig:tablica_rozpoznana' on page 49 undefined on input
- line 106.
-
-
-LaTeX Warning: Citation 'sym12050715' on page 49 undefined on input line 113.
-
-
-LaTeX Warning: Reference `fig:plates' on page 49 undefined on input line 115.
-
-<Pictures/plates.png, id=784, 522.95375pt x 436.63126pt>
+<Pictures/plates.png, id=810, 522.95375pt x 436.63126pt>
 File: Pictures/plates.png Graphic file (type png)
 <use Pictures/plates.png>
-Package pdftex.def Info: Pictures/plates.png  used on input line 118.
+Package pdftex.def Info: Pictures/plates.png  used on input line 116.
 (pdftex.def)             Requested size: 209.1778pt x 174.6494pt.
 
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
@@ -1862,14 +1836,6 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [49 <./Pictures/bank.png (PNG copy)> <./Pictures/same_car.png>]
-Overfull \hbox (10.7687pt too wide) in paragraph at lines 150--160
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Overfull \hbox (6.0pt too wide) has occurred while \output is active
 [][][][][][][][][][][] 
  []
@@ -1880,16 +1846,26 @@ Overfull \hbox (6.0pt too wide) has occurred while \output is active
  []
 
 [51]
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[52]
 \openout2 = `conclusions.aux'.
 
- (./conclusions.tex [52
+ (./conclusions.tex [53
 
 
 
-]) [53] [54
+])
+Overfull \hbox (6.0pt too wide) has occurred while \output is active
+[][][][][][][][][][][] 
+ []
+
+[54] [55
 
 
-] [55] [56]
+] [56]
 Overfull \hbox (13.01935pt too wide) in paragraph at lines 135--135
 []\T1/ntxtlf/m/n/12 Robert E. Scha-pire i Yoram Sin-ger. ``Im-pro-ved Bo-osting
  Al-go-ri-thms Using Confidence-
@@ -1916,84 +1892,49 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 153.
 (./chapter4.aux) (./conclusions.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 153.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 153.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 25887A3FC5E7515F0CAC0E09243AFE23;2979.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 8B64953070A9449815E3C20D2BBC454B;2780
-(rerunfilecheck)             After:  02F93F736939BDDC11DBBEF90B0AA331;2909.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24552 strings out of 481239
- 403300 string characters out of 5920378
- 1159759 words of memory out of 5000000
- 39026 multiletter control sequences out of 15000+600000
+ 24540 strings out of 481239
+ 403282 string characters out of 5920378
+ 1161622 words of memory out of 5000000
+ 39023 multiletter control sequences out of 15000+600000
  652779 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 58i,16n,98p,1519b,2050s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{section*.30} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.29} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.28} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.27} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.0.2} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsection.4.0.1} has been referenced but does not 
-exist, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvi
-ps/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf
--sc.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texlive
-/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-dist
-/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/
-public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvbi.pf
-b></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf/font
-s/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/public/tex-gyre
-/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/te
-xmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmia
-X.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on main.pdf (59 pages, 5383401 bytes).
+ 58i,17n,98p,1519b,2035s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-t
+lf-sc.enc}{/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}</usr/share/texlive/texmf-di
+st/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/newtx/NewTXMI7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type
+1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvbi.
+pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qhvr.pfb></usr/share/texmf/fo
+nts/type1/public/tex-gyre/qhvri.pfb></usr/share/texmf/fonts/type1/public/tex-gy
+re/qtmb.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/
+texmf/fonts/type1/public/tex-gyre/qtmri.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txm
+iaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on main.pdf (59 pages, 5389734 bytes).
 PDF statistics:
- 1055 PDF objects out of 1200 (max. 8388607)
- 875 compressed objects within 9 object streams
- 266 named destinations out of 1000 (max. 500000)
- 437 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1072 PDF objects out of 1200 (max. 8388607)
+ 889 compressed objects within 9 object streams
+ 257 named destinations out of 1000 (max. 500000)
+ 461 words of extra memory for PDF output out of 10000 (max. 10000000)
 

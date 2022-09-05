@@ -1,3 +1,4 @@
+import time
 from functools import reduce
 
 import numpy as np
@@ -28,11 +29,13 @@ def detection_one_scale(H, W, h, w, threshold, detections, clf, feature_indexes,
         def the_job(j0):
             job_detections = []
             for k0 in range(rk, W - w + 1, dk):
+                t_start = time.time()
                 features = haar_features(ii, j0, k0, hcws, n, feature_indexes)
                 decision = clf.decision_function(np.array([features]))
                 if decision > threshold:
                     job_detections.append([j0, k0, h, w])
                     print(f"! PLATE DETECTED, DECISION: {decision}, size: {w}x{h}")
+                    print(f"! one plate detection time: {time.time() - t_start}s")
             return job_detections
 
         job_detections_all = parallel((delayed(the_job)(j0) for j0 in range(rj, H - h + 1, dj)))

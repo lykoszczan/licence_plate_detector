@@ -51,7 +51,7 @@ Na Rysunku~\ref{fig:schemat_lpr} przedstawiono graficzną reprezentację powyżs
 Kolejne etapy korzystają z wyników uzyskanych w poprzednich krokach, co oznacza, że błąd powstały we wcześniejszej fazie, będzie rzutował na jakość działania całego systemu.
 W wielu systemach zanim dojdzie do rozpoznawania tablicy rejestracyjnej, obraz jest w pierwszej kolejności odpowiednio przetwarzany.
 Powszechnie stosowanymi czynnościami są: skalowanie obrazu, modyfikacje jasności oraz redukcja zakłóceń.
-W zależności od wymagań stawianych przed danym mechanizmem i środowiskiem jego działania, czynności te mogą znacznie się od siebie różnić.
+\\W zależności od wymagań stawianych przed danym mechanizmem i środowiskiem jego działania, czynności te mogą znacznie się od siebie różnić.
 Najbardziej podstawowe systemy wymagają, aby pojazd znajdował się nieruchomo w określonym miejscu.
 Tego typu rozwiązania najczęściej stosowane są na parkingach, gdzie szlaban otwiera się po odczycie numerów rejestracyjnych pojazdu i potwierdzeniu opłaty za postój w zewnętrznej bazie danych.
 Takie systemy pracują z reguły w środowisku o niskim poziomie zakłóceń wynikających z warunków atmosferycznych i oświetlenia.
@@ -155,7 +155,7 @@ Zasadę transformacji ilustruje Rysunek~\ref{fig:hough_transform}.
 Innym spotykanym podejściem~\cite{4410602} jest stosowanie dwóch algorytmów.
 Pierwszy z nich ma za zadanie wyodrębnić odcinki linii i pogrupować je na podstawie wcześniej ustalonego zbioru warunków geometrycznych.
 Drugi znajduje obszary o najwyższym zagęszczeniu pionowych krawędzi.
-Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysoką dokładności, szczególnie dla pojazdów znajdujących się w ruchu.
+Dzięki takiemu spojrzeniu na przedstawiony problem, uzyskane wyniki mają wysoką dokładności, szczególnie dla pojazdów znajdujących się \\w ruchu.
 Metode oparte na krawędziach są stosowane w wielu rozwiązaniach ze względu na ich szybkość działania i prostotę.
 Jednakże, rozwiązania te są silnie wrażliwe na niepożądane krawędzie i nie sprawdzają się w rozmytych i złożonych obrazach.
 
@@ -205,10 +205,10 @@ Mimo to, metody te wymagają skomplikowanych obliczeń i nie dają zadowalający
 \subsection{Klasyfikatory}\label{subsec:klasyfikatory}
 Wiele badań wykorzystuje cechy Haara razem z algorytmem AdaBoost (ang. \textit{Adaptative Boosting --- AdaBoost}) do wyuczenia kaskady klasyfikatorów~\cite{9310202}.
 Podejście takie zostało zaproponowane po raz pierwszy w~\cite{990517}.
-Algorytm Violi-Jonesa został zaprezentowany w 2001.
+Algorytm Violi-Jonesa został zaprezentowany \\w 2001.
 Wykorzystuje on algorytm AdaBoost, który został zaproponowany w pracy~\cite{Freund1996ExperimentsWA}.
 Pomimo upływu ponad 20 lat, dalej jest on powszechnie stosowany, co świadczy o jego ponadczasowości i uniwersalności.
-Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np\. tablic rejestracyjnych, przy odpowiednim wyuczeniu.
+Autorzy zaprojektowali go jako detektor twarzy, jednak jego funkcjonalność pozwala na wykrywanie dowolnych obiektów, np.\ tablic rejestracyjnych, przy odpowiednim wyuczeniu.
 Aby przedstawić, jak działa algorytm Violi-Jonesa, należy najpierw zrozumieć czym są cechy Haara.
 
 Cechy Haara często są przedstawiane jako skalowalne, prostokątne szablony (Rysunek~\ref{fig:haar_feats}), używane do porównania zależności pomiędzy pikselami.
@@ -307,7 +307,7 @@ W momencie, gdy każdy klasyfikator zostanie wyuczony, AdaBoost przypisuje do ni
 Ostateczną odpowiedź klasyfikatora można opisać wzorem~\eqref{eq:ada_boost_clf}.
 \begin{equation}
     \label{eq:ada_boost_clf}
-    F(x) = \sign\left(\sum_{t=1}^{T} \alpha_t f_t(x))\right)
+    F(x) = \sign\left(\sum_{t=1}^{T} \alpha_t f_t(x)\right)
 \end{equation}
 Finalny klasyfikator zawiera $T$ słabych klasyfikatorów.
 Każdy ze słabych klasyfikatorów zwraca jedną z dwóch odpowiedzi $\{-1, 1\}$.
@@ -323,7 +323,7 @@ Rysunek~\ref{fig:adaboost_alphacurve} przedstawia powyższą zależność.
     \label{fig:adaboost_alphacurve}
 \end{figure}
 \FloatBarrier
-Z Rysunku~\ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów o wysokiej dokładności.
+Z Rysunku~\ref{fig:adaboost_alphacurve} można odczytać, że waga rośnie wykładniczo dla klasyfikatorów \\o wysokiej dokładności.
 Dla klasyfikatora o poziomie błędu $0.5$ waga jest równa zero.
 Oznacza to, że taki klasyfikator jest równie dokładny co losowe zgadywanie, dlatego jest on ignorowany.
 Dla klasyfikatorów o większym poziomie błędu, waga przyjmuje wartość ujemną.
@@ -332,16 +332,16 @@ Jeśli taki klasyfikator uzna próbkę za negatywną, ostatecznie zostanie ona o
 AdaBoost jest techniką, która może zostać łączona z dowolnym algorytmem klasyfikującym, jednak nie może zostać wykorzystany jako samodzielny klasyfikator.
 AdaBoost występuję w połączeniu z popularnymi wariantami słabych klasyfikatorów~\cite{szybka_detekcja_klesk}:
 \begin{itemize}
-    \item AdaBoost + decision stump
-    \item AdaBoost + drzewka decyzyjne
-    \item AdaBoost + klasyfikator liniowy (np. SVM)
-    \item AdaBoost + naiwny Bayes
+    \item AdaBoost + decision stump,
+    \item AdaBoost + drzewka decyzyjne,
+    \item AdaBoost + klasyfikator liniowy (np. SVM),
+    \item AdaBoost + naiwny Bayes.
 \end{itemize}
 Głównymi zastosowaniami tej techniki jest wybór najlepszych cech z punktu widzenia klasyfikacji oraz dobór wag dla klasyfikatorów wchodzących w skład kaskady.
 Dzięki selekcji cech najlepiej opisujących dany obiekt, jest odporna na zakłócenia.
 
 Poza algorytmem AdaBoost, stosowane są również inne metody boostingu.
-Jedną z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w~\cite{10.1023/A:1007614523901}.
+Jedną \\z nich jest Real AdaBoost, zwany również RealBoostem, zaprezentowany po raz pierwszy w~\cite{10.1023/A:1007614523901}.
 Główną różnicą w stosunku do AdaBoosta, jest założenie, że słabe klasyfikatory są rzeczywistoliczbowe, a nie binarne~\cite{szybka_detekcja_klesk}.
 Na poniższych schemacie przedstawiono pseudokod algorytmu uczącego RealBoost.
 \begin{algorithm}
@@ -375,7 +375,7 @@ gdzie $\hat{P_w}(y=\pm1|x)$ stanowi oszacowanie rozkładu klas warunkowego na $x
 Ostateczną odpowiedź klasyfikatora można opisać wzorem~\eqref{eq:real_boost_clf}.
 \begin{equation}
     \label{eq:real_boost_clf}
-    F(x) = \sign\left(\sum_{t=1}^{T} f_t(x))\right)
+    F(x) = \sign\left(\sum_{t=1}^{T} f_t(x)\right)
 \end{equation}
 Algorytm RealBoost posiada silne podobieństwa do techniki regresji logistycznej.
 Schemat reważenia w boostingu pracuje sposób pokrewny do rezyduów błędów (ang. \textit{error residuals}).
@@ -396,7 +396,7 @@ Indeks kosza $\beta(x) \in \{1,\dots,B\}$, do którego należy $x$ obliczany jes
     \end{cases}
     \right.
 \end{equation}
-Odpowiedź słabego klasyfikatora dla $j^*$-tej cechy przedstawia wzór~\eqref{eq:bin_weak_clf}, gdzie $\hat{P_w}(y=-1, j\;\text{jest}\;w\;b)=\sum_{\{i:y_i=-1,\beta(x_{ij})=b\}}^{} w_i$ oznacza szacowane prawdopodobieństwo zdarzenia, że przykład jest negatywny, a jego $j$-ta cecha należy do kosza $b$.
+Odpowiedź słabego klasyfikatora dla $j^*$-tej cechy przedstawia wzór~\eqref{eq:bin_weak_clf}, gdzie\\ $\hat{P_w}(y=-1, j\;\text{jest}\;w\;b)=\sum_{\{i:y_i=-1,\beta(x_{ij})=b\}}^{} w_i$ oznacza szacowane prawdopodobieństwo zdarzenia, że przykład jest negatywny, a jego $j$-ta cecha należy do kosza $b$.
 \begin{equation}
     \label{eq:bin_weak_clf}
     f_t(x;j^*) = \dfrac{1}{2} \ln\dfrac{\hat{P_w}(y=1, j^*\;\text{jest}\;w\;\beta(x_{j^*}))}{\hat{P_w}(y=-1, j^*\;\text{jest}\;w\;\beta(x_{j^*}))}
@@ -414,7 +414,7 @@ Dzięki takiemu podejściu algorytm stał się bardziej wydajny czasowo.
 Każdy kolejny klasyfikator w kaskadzie oblicza większą liczbę cech.
 Jeżeli na którymś etapie klasyfikator zwróci odpowiedź negatywną, proces jest przerywany.
 Do osiągnięcia pozytywnego wyniku, wymagane jest zwrócenie przez wszystkie klasyfikatory odpowiedzi pozytywnej.
-W algorytmie Violi-Jonesa kaskada składa się z 32 klasyfikatorów, które badają od 2 do 200 cech.
+W algorytmie Violi-Jonesa kaskada składa się \\z 32 klasyfikatorów, które badają od 2 do 200 cech.
 Łącznie liczone jest 4297 cech, co daje średnio 8 cech na klasyfikator.
 Algorytm jest ceniony za szybkość detekcji.
 Pomimo faktu, że jego dokładność jest niższa od dokładności nowoczesnych metod opartych na sieciach neuronowych, stosowany jest on w rozwiązaniach o ograniczonej mocy obliczeniowej.
@@ -425,7 +425,7 @@ W związku z rozwojem dziedziny widzenia komputerowego oraz wzrostem mocy komput
 Jednym z zaproponowanych podejść jest użycie sieci splotowych (ang. \textit{Convolutional Neural Network} --- CNN)~\cite{cnn_detector}.
 Składają się one z jednej lub wielu warstw splotowych (typowych dla kroku próbkowania, określającego subwzorce), a następnie przez jedną lub w pełni połączone warstwy tak jak w klasycznej wielowarstwowej sieci.
 Sieci splotowe są łatwe do uczenia, gdyż zawierają mniej parametrów (wykorzystując te same wagi) niż typowe sieci neuronowe z dokładnością do ilości warstw splotowych i ich rozmiaru.
-Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj\. obrazy)~\cite{cnn_agh}.
+Ten rodzaj sieci neuronowych jest predestynowany do obliczeń na strukturach 2D (tj.\ obrazy)~\cite{cnn_agh}.
 
 Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest algorytm YOLO (ang. \textit{You only look once})~\cite{7780460}.
 Algorytm jest bardzo wydajny.
@@ -457,7 +457,7 @@ Zanim dojdzie do klasyfikacji znaków, często są one wpierw segmentowane.
 Jest to szczególny przypadek optycznego rozpoznawania znaków~\cite{9310202}.
 Wiele krajów posiada ścisłe regulacje na temat czcionki i kolorów tablicy rejestracyjnej.
 Przepisy te mają na celu zwiększenie czytelności znaków identyfikujących każdy pojazd.
-W Polsce, jak i większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
+W Polsce, jak \\i w większości krajów na świecie, tablice pokryte są specjalną warstwą refleksyjną odbijającą światło.
 Działanie takie zwiększa ich czytelność dla ludzkiego oka w gorszych warunkach oświetleniowych.
 Efektem takiej cechy tablic, może być ich nieczytelność na zdjęciu wykonanym aparatem fotograficznym.
 Tablica odbija na tyle dużą ilość światła, co skutkuje powstaniem na zdjęciu białego prostokąta w miejscu tablicy.
@@ -500,7 +500,7 @@ W tym przypadku obraz dzielony jest na zbiór nakładających się fragmentów.
 Optymalny próg wyznaczany jest dla konkretnego fragmentu na podstawie analizy histogramu.
 Próg dla każdego piksela wyliczany jest na podstawie interpolacji wyników dla odpowiedniego fragmentu.
 Wadą tej metody jest jej złożoność obliczeniowa.
-Jest to jeden z głównych powodów, dlaczego algorytm ten nie znalazł zastosowania w aplikacjach działających w czasie rzeczywistym.
+Jest to jeden z głównych powodów, dlaczego algorytm ten nie znalazł zastosowania w aplikacjach działających \\w czasie rzeczywistym.
 
 Alternatywnym podejściem do znalezienia lokalnego progu jest statystyczne zbadanie intensywności sąsiedztwa każdego piksela.
 Wybór metody statystycznej jest skorelowany z obrazem wejściowym.
@@ -575,7 +575,7 @@ Główna idea wyglądała następująco:
     \item Przekalkulowanie środków klastrów poprzez uśrednienie wszystkich pikseli w klastrze,
     \item Powtórzenie kroku 2 i 3, do momentu kiedy piksele przestaną zmieniać klastry.
 \end{enumerate}
-Dokładność takiego rozwiązania jest mocno skorelowana z odpowiednim wyborem $k$ oraz początkowym zbiorze klastrów.
+Dokładność takiego rozwiązania jest mocno skorelowana z odpowiednim wyborem $k$ oraz początkowym zbiorem klastrów.
 W celu właściwego wyboru $k$, autorzy użyli algorytmu SIFT (ang. \textit{Scale Invariant Feature Transform --- SIFT})~\cite{sift}.
 Algorytm ten jest odporny na skalę i rotację obrazu.
 Zaproponowana technika uzyskała wysoką dokładność segmentacji na poziomie $98.82\%$.
@@ -585,7 +585,7 @@ Zaproponowana technika uzyskała wysoką dokładność segmentacji na poziomie $
 \index{Przegląd istniejących metod rozpoznawania tablic rejestracyjnych}
 W wyniku operacji segmentowania znaków, otrzymywane są obrazy z oddzielonymi znakami od tła.
 Kolejną częścią automatycznego systemu rozpoznawania tablic rejestracyjnych jest odczytanie numeru identyfikującego dany pojazd.
-Jest to ostatni etap w systemie.
+Jest to ostatni etap \\w systemie.
 Rezultat tego działania przeważnie wysyłany jest już do innego modułu lub systemu odpowiedzialnego za logikę biznesową danego rozwiązania.
 
 Optyczne rozpoznawanie znaków (ang. \textit{Optical Character Recognition} --- OCR) jest obszerną dziedziną algorytmów przetwarzających obraz na tekst.
@@ -645,8 +645,8 @@ Bazują one na wykorzystaniu informacji sekwencyjnych.
 W tradycyjnych sieciach wszystkie wejścia i wyjścia są od siebie niezależne.
 W sieciach rekurencyjnych dane wyjściowe zależą od poprzednich obliczeń.
 Przykładowo chcąc przewidzieć kolejny wyraz w zdaniu, istotne jest wiedzieć, które wyrazy pojawiły się do tej pory~\cite{lawrynowicz_lstm}.
-Sieci RNN posiadają zdolność ,,pamiętania" wcześniej obliczonych informacji~\cite{lawrynowicz_lstm}.
-Natomiast im upłynął dłuższy czas od przetworzenia pewnej informacji, komórki sieci stopniowo ,,zapominają" tą informację.
+Sieci RNN posiadają zdolność ,,pamiętania'' wcześniej obliczonych informacji~\cite{lawrynowicz_lstm}.
+Natomiast im upłynął dłuższy czas od przetworzenia pewnej informacji, komórki sieci stopniowo ,,zapominają'' tą informację.
 Sieci LSTM zostały zaprojektowane do rozwiązania problem zaniku pierwszych wejść.
 Rysunek~\ref{fig:lstm} przedstawia architekturę komórki sieci LSTM\@.
 \begin{figure}[!ht]
@@ -660,7 +660,7 @@ Kluczową ideą sieci jest jej możliwość nauczenia się co warto przechowywa�
 Stan komórki sieci LSTM jest podzielony na dwa wektory $h^{(t)}$ i $c^{(t)}$, odpowiadające odpowiednio stanowi krótko- i długoterminowemu.
 Literą $t$ oznaczono daną chwilę czasu.
 Wyróżnia się trzy bramki: wejściową, wyjściową oraz ,,zapomnij''.
-Stan długoterminowy $c^{(t-1)}$ przemierza sieć od lewej do prawej, porzucając niektóre wspomnienia w bramce ,,zapomnij", a następnie dodając nowe.
+Stan długoterminowy $c^{(t-1)}$ przemierza sieć od lewej do prawej, porzucając niektóre wspomnienia w bramce ,,zapomnij'', a następnie dodając nowe.
 Wspomnienia dodawane są przez bramkę wejściową.
 Po operacji dodawania, stan długoterminowy jest kopiowany i przechodzi przez funkcję $\tanh$.
 Ostatecznie wynik jest filtrowany przez bramkę wyjściową.

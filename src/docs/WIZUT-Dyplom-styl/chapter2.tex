@@ -22,7 +22,7 @@ Niewątpliwą przyczyną rozwoju dziedziny uczenia maszynowego na przestrzeni os
 Uczenie maszynowe jest obszarem sztucznej inteligencji poświęconej algorytmom, które poprawiają się automatycznie poprzez doświadczenie \cite{Mitchell97}.
 Tworząc system automatycznego rozpoznawania tablic rejestracyjnych niezbędne jest przygotowanie odpowiedniego zbioru danych.
 Jedną z kluczowych kwestii przed rozpoczęciem kolekcjonowania informacji, jest ustalenie wielkość zbioru.
-Najbardziej powszechnym stosowanym podejściem jest zasada 10 razy.
+Najbardziej powszechnie stosowanym podejściem jest zasada 10 razy.
 W tym kontekście oznacza ona, że aby ilość danych była wystarczająca, zbiór danych wejściowych powinien być 10 razy większy od liczby parametrów w opracowywanym modelu.
 Dla modelu o 1000 parametrach, zbiór powinien zawierać 10 tysięcy próbek.
 Zwykle jest to jeden z bardziej czasochłonnych etapów podczas tworzenia modeli uczenia maszynowego.
@@ -39,8 +39,8 @@ Aby to osiągnąć, należało przygotować zdjęcia, na których następnie zaz
 W pierwszej kolejności przygotowano zdjęcia na podstawie plików wideo.
 Każdy plik wideo miał 60 sekund długości.
 Podzielono go w ten sposób, aby z każdej sekundy nagrania powstały 3 zdjęcia.
-Dla plików z 60 klatkami na sekundy, próbkowano co 20 klatek, natomiast dla pozostałych co 10.
-Przykładowy obrazy pochodzące z nagrania z rejestratora przedstawia Rysunek~\ref{fig:captured_frame}.
+Dla plików z 60 klatkami na sekundę, próbkowano co 20 klatek, natomiast dla pozostałych co 10.
+Przykładowe obrazy pochodzące z nagrania z rejestratora przedstawia Rysunek~\ref{fig:captured_frame}.
 W ten sposób pozyskano 10985 zdjęć.
 Jak można zauważyć, większość rejestratorów dodaje metadane takie jak prędkość pojazdu, data i godzina.
 Dla algorytmu rozpoznawania tablic rejestracyjnych może to stanowić trudność, ponieważ wyświetlany tekst może być klasyfikowany jako tablica.

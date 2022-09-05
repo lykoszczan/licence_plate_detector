@@ -27,13 +27,14 @@
 \BOOKMARK [2][-]{subsection.3.3.3}{NumPy}{section.3.3}% 27
 \BOOKMARK [2][-]{subsection.3.3.4}{Pickle}{section.3.3}% 28
 \BOOKMARK [2][-]{subsection.3.3.5}{Numba}{section.3.3}% 29
-\BOOKMARK [0][-]{chapter.4}{Wyniki badan}{}% 30
-\BOOKMARK [1][-]{section.4.1}{Wyniki detekcji tablic rejestracyjnych}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.2}{Wyniki rozpoznawaniu znak\363w}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.3}{Por\363wnanie wydajnosci czasowej}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.4}{Propozycje udoskonalenia}{chapter.4}% 34
-\BOOKMARK [0][-]{section.4.4}{Podsumowanie}{}% 35
-\BOOKMARK [0][-]{chapter*.33}{Spis literatury}{}% 36
-\BOOKMARK [1][-]{section*.34}{Ksiazki}{chapter*.33}% 37
-\BOOKMARK [1][-]{section*.35}{Artyku\233y}{chapter*.33}% 38
-\BOOKMARK [1][-]{section*.36}{Zr\363d\233a internetowe i inne}{chapter*.33}% 39
+\BOOKMARK [2][-]{subsection.3.3.6}{Joblib}{section.3.3}% 30
+\BOOKMARK [0][-]{chapter.4}{Wyniki badan}{}% 31
+\BOOKMARK [1][-]{section.4.1}{Wyniki detekcji tablic rejestracyjnych}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.2}{Wyniki rozpoznawaniu znak\363w}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.3}{Por\363wnanie wydajnosci czasowej}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{Propozycje udoskonalenia algorytmu}{chapter.4}% 35
+\BOOKMARK [0][-]{section.4.4}{Podsumowanie}{}% 36
+\BOOKMARK [0][-]{chapter*.33}{Spis literatury}{}% 37
+\BOOKMARK [1][-]{section*.34}{Ksiazki}{chapter*.33}% 38
+\BOOKMARK [1][-]{section*.35}{Artyku\233y}{chapter*.33}% 39
+\BOOKMARK [1][-]{section*.36}{Zr\363d\233a internetowe i inne}{chapter*.33}% 40

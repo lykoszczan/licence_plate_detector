@@ -110,7 +110,7 @@ Następnie przypisywane są indeksy koszyków do poszczególnych cech.
 Kolejnym krokiem jest przygotowanie indeksów, które przechowują informację o tym czy cecha dla konkretnego koszyka powiązana jest z próbką pozytywną czy negatywną.
 Po przygotowaniu powyższych danych, algorytm przechodzi do wybrania najważniejszych cech z punktu widzenia klasyfikatora.
 Obliczane jest to poprzez iterację po wszystkich cechach i określeniu cechy dla każdego klasyfikatora o najmniejszym błędzie.
-Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków z osobna.
+Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków \\z osobna.
 Na koniec dochodzi do reważenia wag.
 Czynność jest powtarza dla każdego słabego klasyfikatora.
 Algorytm~\ref{lst:fit_realboostbins} ukazuje fragment metody uczącej odpowiedzialny za wyliczenie odpowiedzi dla każdego ze słabych klasyfikatorów i wyznaczenie indeksów najlepszych cech.\\\\\\\\\\
@@ -184,7 +184,7 @@ Jeśli była ona większa od podanego progu, okno oznaczano jako pozytywne.
 Na Rysunku~\ref{fig:detection_alg} przedstawiono schemat blokowy algorytmu detekcji tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.4]{Pictures/detection_alg}
+    \includegraphics[scale=0.35]{Pictures/detection_alg}
     \caption{Schemat blokowy algorytmu detekcji tablic rejestracyjnych (źródło: opracowanie własne).}
     \label{fig:detection_alg}
 \end{figure}
@@ -316,7 +316,7 @@ Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera p
 Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory})~\cite{lstm}.
 
 \subsection{NumPy}
-Biblioteka NumPy jest jednym z fundamentalnych pakietów dla obliczeń naukowych w środowisku Python~\cite{numpy}.
+Biblioteka NumPy jest jednym z fundamentalnych pakietów dla obliczeń naukowych \\w środowisku Python~\cite{numpy}.
 Głównym elementem biblioteki jest obiekt \textit{ndarray}.
 Obiekt ten pozwala na tworzenie wielowymiarowych tablic o ściśle określonym typie danych.
 Oprócz tego, biblioteka zapewnia wiele operacji matematycznych do wykonania na tablicach.
@@ -329,7 +329,7 @@ Moduł Pickle wchodzi w skład podstawowego pakietu Python.
 Jego zastosowaniem jest serializacja danych.
 Dzięki temu, możliwe jest zapisanie dowolnego obiektu i jego późniejsze odczytanie.
 W trakcie opracowywania niniejszego oprogramowania, operacja ta była niezwykle przydatna.
-Dzięki temu rozwiązaniu, możliwe było np.\ wczytanie z pliku nauczonego klasyfikatora.
+Dzięki temu rozwiązaniu, możliwe było np.\ wczytanie \\z pliku nauczonego klasyfikatora.
 Biblioteka jest niezwykle prosta w użyciu.
 Korzystając z bibliotek do serializacji, należy mieć na uwadze fakt, że wczytywanie zserializowanych obiektów może prowadzić do naruszenia zasad bezpieczeństwa programu.
 Z tego powodu, należy wczytywać tylko takie obiekty, których pochodzenia użytkownik jest pewien.
@@ -339,4 +339,10 @@ Numba jest biblioteką służącą do poprawiania wydajności programów napisan
 Pakiet kompiluje kod w trakcie trwania programu (ang. \textit{just in time} --- JIT), w celu zwiększenia jego wydajności.
 Operacja ta jest działa najlepiej dla kodu opartego o tablice NumPy, pętle i funkcje.
 W celu kompilacji, fragmenty kodu oznacza się specjalnymi adnotacjami.
-Po natrafieniu na odpowiednią komendę, biblioteka kompiluje w trakcie trwania programu kod do postaci kodu maszynowego, dzięki czemu wydajność skompilowanego fragmentu jest porównywalna do wykonywania kodu maszynowego~\cite{numba}.
+Po natrafieniu na odpowiednią komendę, biblioteka kompiluje \\w trakcie trwania programu kod do postaci kodu maszynowego, dzięki czemu wydajność skompilowanego fragmentu jest porównywalna do wykonywania kodu maszynowego~\cite{numba}.
+
+\subsection{Joblib}
+Biblioteka Joblib zapewnia zestaw narzędzi do zarządzaniem przepływem (ang. \textit{flow}) kodu w programach napisanych w języku w Python.
+W opisywanym rozwiązaniu wykorzystano moduł Parallel do równoległego wykonywania kodu.
+Poza tym, Joblib oferuje cache'owanie danych oraz ich leniwe ładowanie (ang. \textit{lazy loading}).
+Jednymi z istotnych zalet jest brak zależności do innych niestandardowych pakietów oraz wysoka wydajność na dużych zbiorach danych.

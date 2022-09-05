@@ -1517,6 +1517,50 @@
       \endverb
       \keyw{Neural network,Probability density function,Parallel processor,“Neuron”,Pattern recognition,Parzen window,Bayes strategy,Associative memory}
     \endentry
+    \entry{sym12050715}{article}{}
+      \name{author}{3}{}{%
+        {{hash=3700c05149e96073a87200c9e4f28ad8}{%
+           family={Sporici},
+           familyi={S\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2e4a3cc8ee93e46f58e2a53375e0c8fe}{%
+           family={Cușnir},
+           familyi={C\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5f4b8c37d8c848b9926382faf85a337b}{%
+           family={Boiangiu},
+           familyi={B\bibinitperiod},
+           given={Costin-Anton},
+           giveni={C\bibinithyphendelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f41d33235859d15bd0e7121e5c960e06}
+      \strng{fullhash}{f41d33235859d15bd0e7121e5c960e06}
+      \strng{bibnamehash}{f41d33235859d15bd0e7121e5c960e06}
+      \strng{authorbibnamehash}{f41d33235859d15bd0e7121e5c960e06}
+      \strng{authornamehash}{f41d33235859d15bd0e7121e5c960e06}
+      \strng{authorfullhash}{f41d33235859d15bd0e7121e5c960e06}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2073-8994}
+      \field{journaltitle}{Symmetry}
+      \field{number}{5}
+      \field{title}{Improving the Accuracy of Tesseract 4.0 OCR Engine Using Convolution-Based Preprocessing}
+      \field{volume}{12}
+      \field{year}{2020}
+      \verb{doi}
+      \verb 10.3390/sym12050715
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2073-8994/12/5/715
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2073-8994/12/5/715
+      \endverb
+    \endentry
     \entry{Lexicon_on_Neural_networks}{book}{}
       \name{author}{2}{}{%
         {{hash=955918dbcbe10f35cc8d71846591e307}{%
