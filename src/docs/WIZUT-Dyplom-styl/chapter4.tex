@@ -41,7 +41,7 @@ Wyniki dla poszczególnych klasyfikatorów przedstawia Tabela~\ref{tab:accuracy_
 %\\reklamy i banery
 %\\czas wykonywania
 %\\krzywe roc
-Z racji ograniczeń sprzętowych, nie udało się nauczyć klasyfikatorów dla okien \\z większą ilością cech.
+Z racji ograniczeń sprzętowych, nie udało się nauczyć klasyfikatorów dla okien \linebreak z większą ilością cech.
 
 Poza zbiorem testowym, algorytm testowano na rzeczywistym nagraniu wideo pochodzącym z kamery samochodowej.
 Poniżej przedstawiono wyniki dla tego rodzaju obrazów wejściowych.
@@ -85,7 +85,7 @@ Podobnie jak w przypadku wyświetlacza na autobusie, okno zawiera kontrastowy te
 \FloatBarrier
 Z przedstawionymi błędami można walczyć za pomocą umiejętnego dobierania progu decyzyjnego $t$.
 Dla progu $t=2.5$ powyższe okna nie zostają uznane za pozytywne.
-Zwiększanie progu jednak objawia się również brakiem detekcji dla niektórych próbek pozytywnych.
+Zwiększanie progu jednak objawia się również brakiem detekcji dla niektórych próbek prawdziwie pozytywnych.
 Rysunek~\ref{fig:same_car} przedstawia problem braku detekcji tego samego samochodu pomiędzy klatkami.
 Takie zachowanie wynika z nieprzekroczenia progu dla środkowego zdjęcia.
 \begin{figure}[!ht]
@@ -101,7 +101,7 @@ Opracowany klasyfikator nie ma takiej wiedzy.
 Z tego powodu, określenie granicy, dla której próbki powinny być klasyfikowane jako pozytywne, nie jest trywialnym zadaniem.
 
 Należy podkreślić, że procent poprawnie sklasyfikowanych próbek przez klasyfikator nie zawsze powinien być jedyną miarą jakości systemu.
-Przykładowo, dla obrazu przedstawionego na Rysunku~\ref{fig:tablica_rozpoznana} procedura oknem przesuwnym, dla liczby cech równej 2205 oraz rozmiaru okna
+Przykładowo, dla obrazu przedstawionego na Rysunku~\ref{fig:tablica_rozpoznana} procedura skanowania oknem przesuwnym, dla rozmiaru okna
 45$\times$15px, generuje 39188 okien.
 Jeżeli uznamy, że 20 okien zostało źle sklasyfikowanych, to poprawność klasyfikacji dalej jest bardzo wysoka i wynosi w tym przypadku $99.95\%$.
 
@@ -109,7 +109,7 @@ Jeżeli uznamy, że 20 okien zostało źle sklasyfikowanych, to poprawność kla
 \section{Wyniki rozpoznawaniu znaków}
 Jak wspomniano w poprzednim rozdziale, do rozpoznawania tekstu wykorzystano bibliotekę Tesseract.
 Zgodnie z~\cite{sym12050715}, dokładność klasyfikacji biblioteki wynosi $70.2\%$.
-\\W rzeczywistości, jakość działania systemu w głównej mierze zależy od metod segmentacji znaków.
+\linebreak W rzeczywistości, jakość działania systemu w głównej mierze zależy od metod segmentacji znaków.
 Na Rysunku~\ref{fig:plates} zaprezentowano przykładowe wyniki segmentacji znaków z tablic rejestracyjnych.
 \begin{figure}[!ht]
     \centering
@@ -129,7 +129,7 @@ Mogą one powodować łączenie znaków i w konsekwencji zmianę ich konturów.
 
 Zauważono, że jednym z problematycznych dla biblioteki znaków jest litera ,,J'', która często mylona była ze znakiem ,,)''.
 Wykorzystując fakt, że tablice zawierają tylko znaki alfanumeryczne, można poprawić to programowo, poprzez zamianę tego znaku w rezultacie.
-Trudniejszym do rozwiązania problemem jest wzajemne mylenie litery ,,S'' \\z cyfrą 5.
+Trudniejszym do rozwiązania problemem jest wzajemne mylenie litery ,,S'' \linebreak z cyfrą 5.
 Oba znaki mogą występować na tablicach rejestracyjnych.
 Patrząc na przykładowe zdjęcia z Rysunku~\ref{fig:plates}, wyniki nie zawsze są oczywiste, nawet dla człowieka.
 
@@ -144,12 +144,13 @@ Aby dane mogły być odpowiednio przetwarzane, system powinien na bieżąco proc
 Wydajność jest uzależniona od poniższych czynników:
 \begin{itemize}
     \item rozmiar okna przesuwnego,
-    \item liczna skal dla okna przesuwnego,
+    \item liczba skal dla okna przesuwnego,
     \item liczba pozytywnych okien wysłanych do modułu rozpoznawania znaków,
     \item liczba cech klasyfikatora.
 \end{itemize}
 W Tabeli~\ref{tab:performance} przedstawiono wyniki uzyskanych czasów dla opracowanego programu.
 W celu przyspieszenia obliczeń, zrównoleglono obliczenia cech dla procedury skanowania oknem przesuwnym.
+Poniższe dane uwzględniają zrównloleglenie, stąd czas detekcji nie jest równy iloczynowi liczby okien i czasu klasyfikacji jednego okna.
 Wszystkie obrazy były skalowane na wejściu do rozmiaru 640$\times$480px.
 \begin{table}[h]
     \centering
@@ -177,7 +178,7 @@ Opracowany program spełnia założenia detekcji tablic i rozpoznawania znaków 
 Z racji ograniczonego czasu oraz jednoosobowego zespołu, istnieją pola do ulepszeń w opracowanym systemie.
 
 Jednym z pomysłów na udoskonalenie modułu detekcji jest dołożenie do zbioru uczącego negatywnych okien, które obecnie klasyfikator wykrywa błędnie, jako pozytywne.
-Prawdopodobne, że ponownie nauczony klasyfikator charakteryzowałby się wyższą dokładnością detekcji.
+Jest prawdopodobnym, że ponownie nauczony klasyfikator charakteryzowałby się wyższą dokładnością detekcji.
 Innym pomysłem, który mógłby poprawić wydajność oraz jakość detekcji jest użycie więcej niż jednego klasyfikatora do detekcji obiektów.
 W pierwszej kolejności jeden klasyfikator klasyfikowałby okna zawierający samochody.
 Tak działający klasyfikator działby szybciej, ponieważ rozmiar okna w procedurze skanującej byłby większy.

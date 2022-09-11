@@ -13,11 +13,8 @@
 
 
 \chapter*{Podsumowanie}
-Celem niniejszej pracy było opracowanie systemu rozpoznawania tablic rejestracyjnych na obrazach z kamery samochodowej.
-Oprócz tego, należało omówić wybrane algorytmy z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych
-do realizacji postawionego zadania.
-
-W celu wykonania wspomnianego systemu, zebrano zbiór uczący składający się \\z 10985 zdjęć zawierających 10301 tablice rejestracyjne.
+Celem niniejszej pracy było opracowanie systemu rozpoznawania tablic rejestracyjnych na obrazach z kamery samochodowej z użyciem wybranych algorytmów z zakresu przetwarzania obrazów i uczenia maszynowego.
+W celu wykonania wspomnianego systemu, zebrano zbiór uczący składający się z 10985 zdjęć zawierających 10301 tablic rejestracyjnych.
 Opracowano system, w skład którego wchodzą moduł detekcji tablic oraz moduł rozpoznawania, znajdujących się na nich, znaków.
 Do klasyfikacji wykorzystano algorytm RealBoost ze słabymi klasyfikatorami realizowanymi poprzez koszykowanie wartości funkcji logit.
 Klasyfikator oparty został o cechy Haara.
@@ -29,8 +26,8 @@ W stosunku do istniejących rozwiązań, opracowany system nie potrzebuje specja
 W ramach testów wykazano, że nagrania pochodzące z wideorejestratorów kosztujących maksymalnie kilkaset złotych, są wystarczające.
 W przeprowadzonych eksperymentach udowodniono poprawność działania opisywanego rozwiązania.
 Przedstawiono słabości systemu, wynikające z niedoskonałości użytych algorytmów.
-Dla wykrywania próbek pozytywnych, algorytm cechuje się dokładnością 82\%.
-Przetwarzanie jednej klatki obrazu z kamery trwa średnio ok\. 1 sekundę.
+Zrealizowany system cechuje się ogólną dokładnością równą 99.77\% przy czym czułością 82\%.
+Przetwarzanie jednej klatki obrazu z kamery trwa w przybliżeniu 1 sekundę.
 Stworzone oprogramowanie zostało przygotowane w ten sposób, że nie wymaga wielu modyfikacji, aby zwiększyć szybkość lub jakość detekcji.
 Można to zrealizować poprzez zmianę parametru liczby używanych cech do klasyfikacji.
 

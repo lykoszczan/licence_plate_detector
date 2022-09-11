@@ -7,7 +7,7 @@
 \chaptermark{Opracowany algorytm}
 W przedstawionej pracy zrealizowano program rozpoznający tablice rejestracyjne na sekwencjach wideo pochodzących z kamery samochodowej.
 Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech Haara za pomocą algorytmu RealBoost.
-Jako słaby klasyfikator wykorzystano algorytm koszykowania wartości funkcją logit.
+Jako słaby klasyfikator wykorzystano algorytm koszykowania wartości funkcji logit.
 Rozpoznane fragmenty obrazu zawierające tablice poddano operacjom morfologicznym.
 Z przetworzonych obrazów segmentowano znaki tablicy rejestracyjnej.
 Do rozpoznania znaków użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
@@ -39,10 +39,10 @@ Na Rysunku~\ref{fig:haar_feats_dataset_prepare} przedstawiono schemat blokowy pr
 \end{figure}
 \FloatBarrier
 Pierwszą czynnością jest określenie parametrów zbioru uczącego.
-Przed rozpoczęciem uczenia należy określić ile cech ma być liczonych z jednej próbki.
+Przed rozpoczęciem uczenia należy określić, ile cech ma być liczonych z jednej próbki.
 Każdy szablon może być odpowiednią ilość razy skalowany wzdłuż każdego z kierunków.
 Parametr ten oznacza się literą $s$.
-Parametr $p$ oznacza rozmiary regularnej siatki ($(2p-1)\times (2p-1)$) punktów zaczepienia cech~\cite{szybka_detekcja_klesk}.
+Parametr $p=1, 2, \dots$ przekłada się na rozmiary regularnej siatki $(2p - 1) \times (2p-1)$ punktów zaczepienia cech~\cite{szybka_detekcja_klesk}.
 Na podstawie powyższych parametrów określa się liczbę cech niezbędnych do wyliczenia w trakcie przetwarzania jednego okna wg wzoru~\eqref{eq:features_count}
 \begin{equation}
     \label{eq:features_count}
@@ -110,7 +110,7 @@ Następnie przypisywane są indeksy koszyków do poszczególnych cech.
 Kolejnym krokiem jest przygotowanie indeksów, które przechowują informację o tym czy cecha dla konkretnego koszyka powiązana jest z próbką pozytywną czy negatywną.
 Po przygotowaniu powyższych danych, algorytm przechodzi do wybrania najważniejszych cech z punktu widzenia klasyfikatora.
 Obliczane jest to poprzez iterację po wszystkich cechach i określeniu cechy dla każdego klasyfikatora o najmniejszym błędzie.
-Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków \\z osobna.
+Wyznaczane jest to za pomocą funkcji logit, która jest wyznaczana dla każdego z koszyków \linebreak z osobna.
 Na koniec dochodzi do reważenia wag.
 Czynność jest powtarza dla każdego słabego klasyfikatora.
 Algorytm~\ref{lst:fit_realboostbins} ukazuje fragment metody uczącej odpowiedzialny za wyliczenie odpowiedzi dla każdego ze słabych klasyfikatorów i wyznaczenie indeksów najlepszych cech.\\\\\\\\\\
@@ -195,7 +195,7 @@ Dzięki temu moduł rozpoznawania znaków otrzyma znacznie mniejszą ilość oki
 W kolejnym kroku współrzędne połączonych okien konwertowano do współrzędnych w oryginalnym obrazie.
 Taka operacja ma na celu przekazanie do modułu OCR fragmentu obrazu w jakości równej obrazowi sprzed procedury skalowania.
 Rysunek~\ref{fig:non_max_supression} przedstawia porównanie procedury detekcji bez oraz z zastosowaniem techniką łączenia okien.
-Do połączenia okien zastosowano algorytm usuwania niemaksymalnych pikseli (ang. \textit{non-maximum suppression}).
+Do połączenia okien zastosowano algorytm \emph{non-max suppression}.
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.4]{Pictures/non_max_supression}
@@ -253,7 +253,7 @@ Pierwszy obraz jest obrazem wejściowym, który trafił do algorytmu z detektora
 Ostatni obraz jest wynikiem segmentacji.
 Obraz środkowy jest obrazem wejściowym, na który nałożono wykryte pozycje znaków (kolor niebieski).
 Kolorem różowym oznaczono kontury, które zostały wykryte, ale zostały odrzucone z powodu braku spełnienia kryteriów geometrycznych.
-Założono, że kontur musi być prostokątem o dłuższych bokach zorientowanych w pionie.
+Założono, że kontur pojedynczego znaku musi być prostokątem o dłuższych bokach zorientowanych w pionie.
 Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zbyt dużego odchylenia od średniej wysokości konturów.
 \begin{figure}[!ht]
     \centering
@@ -316,7 +316,7 @@ Autorzy deklarują, że najnowsza wersja 5, wydana w listopadzie 2021, wspiera p
 Biblioteka wykorzystuje rekurencyjne sieci neuronowe LSTM (ang. \textit{Long Short-Temp Memory})~\cite{lstm}.
 
 \subsection{NumPy}
-Biblioteka NumPy jest jednym z fundamentalnych pakietów dla obliczeń naukowych \\w środowisku Python~\cite{numpy}.
+Biblioteka NumPy jest jednym z fundamentalnych pakietów dla obliczeń naukowych \linebreak w środowisku Python~\cite{numpy}.
 Głównym elementem biblioteki jest obiekt \textit{ndarray}.
 Obiekt ten pozwala na tworzenie wielowymiarowych tablic o ściśle określonym typie danych.
 Oprócz tego, biblioteka zapewnia wiele operacji matematycznych do wykonania na tablicach.
@@ -329,7 +329,7 @@ Moduł Pickle wchodzi w skład podstawowego pakietu Python.
 Jego zastosowaniem jest serializacja danych.
 Dzięki temu, możliwe jest zapisanie dowolnego obiektu i jego późniejsze odczytanie.
 W trakcie opracowywania niniejszego oprogramowania, operacja ta była niezwykle przydatna.
-Dzięki temu rozwiązaniu, możliwe było np.\ wczytanie \\z pliku nauczonego klasyfikatora.
+Dzięki temu rozwiązaniu, możliwe było np.\ wczytanie \linebreak z pliku nauczonego klasyfikatora.
 Biblioteka jest niezwykle prosta w użyciu.
 Korzystając z bibliotek do serializacji, należy mieć na uwadze fakt, że wczytywanie zserializowanych obiektów może prowadzić do naruszenia zasad bezpieczeństwa programu.
 Z tego powodu, należy wczytywać tylko takie obiekty, których pochodzenia użytkownik jest pewien.
@@ -339,7 +339,7 @@ Numba jest biblioteką służącą do poprawiania wydajności programów napisan
 Pakiet kompiluje kod w trakcie trwania programu (ang. \textit{just in time} --- JIT), w celu zwiększenia jego wydajności.
 Operacja ta jest działa najlepiej dla kodu opartego o tablice NumPy, pętle i funkcje.
 W celu kompilacji, fragmenty kodu oznacza się specjalnymi adnotacjami.
-Po natrafieniu na odpowiednią komendę, biblioteka kompiluje \\w trakcie trwania programu kod do postaci kodu maszynowego, dzięki czemu wydajność skompilowanego fragmentu jest porównywalna do wykonywania kodu maszynowego~\cite{numba}.
+Po natrafieniu na odpowiednią komendę, biblioteka kompiluje \linebreak w trakcie trwania programu kod do postaci kodu maszynowego, dzięki czemu wydajność skompilowanego fragmentu jest porównywalna do wykonywania kodu maszynowego~\cite{numba}.
 
 \subsection{Joblib}
 Biblioteka Joblib zapewnia zestaw narzędzi do zarządzaniem przepływem (ang. \textit{flow}) kodu w programach napisanych w języku w Python.

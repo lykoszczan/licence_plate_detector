@@ -73,7 +73,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.4}Propozycje udoskonalenia algorytmu}{51}{section.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Podsumowanie}{53}{section.4.4}%
+\contentsline {chapter}{Podsumowanie}{52}{section.4.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\leavevmode {\color {blueZUT}Spis literatury}}{55}{chapter*.33}%
 \defcounter {refsection}{0}\relax 
