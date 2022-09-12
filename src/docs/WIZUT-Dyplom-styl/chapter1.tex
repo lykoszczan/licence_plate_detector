@@ -250,7 +250,7 @@ Sposobem na szybsze obliczenie obrazu całkowego może być wykorzystanie wzoró
          ii(j,k)=ii(j,k-1)+s(j,k),
     \end{aligned}
 \end{align}
-gdzie $s(j,k)$ to skumulowana suma w wierszu, $f(j,k)$ to wartość obrazu w punkcie $(j,k)$~\cite{990517}.
+gdzie $s(j,k)$ to skumulowana suma w wierszu, $f(j,k)$ to wartość obrazu w punkcie $(j,k)$, natomiast $s(j,-1)=0$ oraz $ii(-1,k)=0$~\cite{990517}.
 Dla $j=k=1$ zachodzi równość $s(1,1)=f(1,1)$.
 Dzięki takiemu rozwiązaniu, wyznaczanie obrazu całkowego charakteryzuje się złożonością obliczeniową $O(n_x n_y)$.
 
