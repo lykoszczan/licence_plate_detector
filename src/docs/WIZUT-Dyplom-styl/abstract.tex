@@ -13,20 +13,38 @@
 
 
 \begin{center}
-\noindent {{\color{blueZUT}\Large\sffamily  {Streszczenie}}}\\[1cm] 
+    \noindent {{\color{blueZUT}\Large\sffamily  {Streszczenie}}}\\[1cm]
 \end{center}
+Celem niniejszej pracy było opracowanie systemu do rozpoznawania tablic rejestracyjnych pojazdów na obrazach z kamery samochodowej.
+Pracę podzielono na część teoretyczną i praktyczną.
+W części teoretycznej omówiono wybrane algorytmy z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebne do realizacji postawionego zadania.
+W części praktycznej przedstawiono opracowany algorytm oraz zaraportowano wyniki.
+Do realizacji zadania detekcji tablic na obrazie, wykorzystano cechy Haara oraz klasyfikator oparty o algorytm RealBoost ze słabymi klasyfikatorami realizowanymi poprzez koszykowanie wartości funkcji logit.
+W celu rozpoznania znaków na wykrytych tablicach, użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
+Wyniki badań potwierdzają możliwość zastosowania opracowanego rozwiązania w systemie rozpoznawania tablic rejestracyjnych.
+Osiągnięto dokładność równą 99.77\%, przy czym czułość 82\%.
+Przetwarzanie jednej klatki obrazu z kamery trwa w przybliżeniu 1 sekundę.
 
-W tym miejscu trzeba napisać streszczenie pracy w języku polskim. Zawiera krótką charakterystykę dziedziny, przedmiotu i wyników zaprezentowanych w pracy. Maksymalnie 1/2 strony.
+%W tym miejscu trzeba napisać streszczenie pracy w języku polskim.
+%Zawiera krótką charakterystykę dziedziny, przedmiotu i wyników zaprezentowanych w pracy. Maksymalnie 1/2 strony.
 
 \vspace{10pt}
-\noindent{\bf słowa kluczowe:} np. informatyka, sterowanie, grafika komputerowa
+\noindent{\bf słowa kluczowe:} uczenie maszynowe, rozpoznawanie tablic rejestracyjnych, obrazy całkowe, widzenie komputerowe
 
 \vfill
 
 \begin{center}
-\noindent {{\color{blueZUT}\Large\sffamily {Abstract}}}\\[1cm] 
+    \noindent {{\color{blueZUT}\Large\sffamily {Abstract}}}\\[1cm]
 \end{center}
-The abstract's purpose, which should not exceed 150 words, is to provide sufficient information to allow potential readers to decide on the thesis's relevance—a maximum of half the page.
+The aim of this study was to develop a system for recognizing vehicle license plates in images from a car camera.
+The thesis was divided into the theoretical and practical parts.
+In the theoretical part, selected algorithms in the field of image processing and machine learning, that were needed to complete the task, were described.
+The practical part presents the developed algorithm and reports the results.
+To complete the task of detecting licence plates in an image, Haar features and a classifier were used based on the RealBoost algorithm with weak classifiers implemented by binning the response of the logit function.
+In order to recognize characters on detected plates, the Tesseract library based on recursive LSTM neural networks was used.
+The results of tests confirm the possibility of using the developed solution in the vehicle licence plates recognition system.
+An accuracy of 99.77\% was achieved, with the sensitivity 82\%.
+It takes approximately 1 second to process one frame from the camera image.
 
 \vspace{10pt}
-\noindent{\bf keywords:} e.g.: computer science, control, computer graphics
+\noindent{\bf keywords:} machine learning, licence plates recognition, integral images, computer vision
