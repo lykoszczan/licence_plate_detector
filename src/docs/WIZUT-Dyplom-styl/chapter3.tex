@@ -62,6 +62,7 @@ Dla każdej próbki wyliczane są cechy Haara za pomocą wygenerowanych wcześni
 W opisywanym programie użyto 5 szablonów cech Haara.
 Szablony są skalowane odpowiednim skokiem zależnym od $s$.
 Poniżej zamieszczono kod procedury generującej współrzędne szablonu dla każdej cechy~\ref{lst:haar_cords}.
+Algorytm~\ref{lst:haar_indexes} przedstawia sposób generowanie argumentu $indexes$.
 \begin{lstlisting}[language=Python, caption=Procedura generujące szablony cech Haara dla konkretnych wpsółrzędnych., label={lst:haar_cords}]
 def haar_coords(s, p, indexes):
     coords = []
@@ -80,6 +81,18 @@ def haar_coords(s, p, indexes):
         coords.append(np.array(single_coords))
     return np.array(coords, dtype=object)
 \end{lstlisting}
+\begin{lstlisting}[language=Python, caption=Procedura generujące indeksy., label={lst:haar_indexes}]
+def haar_indexes(s, p):
+    indexes = []
+    for t in range(len(HAAR_TEMPLATES)):
+        for s_j in range(s):
+            for s_k in range(s):
+                for p_j in range(-(p - 1), p):
+                    for p_k in range(-(p - 1), p):
+                        indexes.append(np.array([t, s_j, s_k, p_j, p_k]))
+    return np.array(indexes)
+\end{lstlisting}
+
 Na Rysunku~\ref{fig:haar_feats_examples} pokazano przykładowe szablony podczas procesu uczenia.
 \begin{figure}[!ht]
     \centering
