@@ -76,7 +76,7 @@ W tym kontekście, za definicję można uznać ,,prostokątny obszar, z dużym z
 W oparciu o powyższe cechy zaprezentowano wiele algorytmów do rozwiązania zadania wykrywania tablic rejestracyjnych.
 Część z nich wywodzi się z tradycyjnych metod widzenia komputerowego i metod głębokiego uczenia.
 Każda z metod ma swoje zalety, ale również często ograniczenia.
-W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardziej efektywna.
+\linebreak W związku z tym, trudno jednoznacznie stwierdzić, która z metod jest najbardziej efektywna.
 
 Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poniższe czynniki:
 \begin{itemize}
@@ -85,14 +85,14 @@ Detekcja numerów rejestracyjnych jest wyzywającym zadaniem ze względu na poni
     \item słabe oświetlenie, rozmazany obraz, refleksy świetlne,
     \item ruch pojazdu, zabrudzone tablice.
 \end{itemize}
-Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\cite{9310202}.
+Tradycyjne metody widzenia komputerowego oparte są na cechach takich jak kształt, kolor, symetria, tekstury itp.\ ~\cite{9310202}.
 W celu uzyskania lepszych wyników, spotyka się rozwiązania, w których łączy się wiele technik.
-Poniżej wyróżniono najczęściej stosowane metody w detekcji tablic rejestracyjnych.
+Poniżej wyróżniono najczęściej stosowane metody \linebreak w detekcji tablic rejestracyjnych.
 
 \subsection{Metody oparte na krawędziach (ang. \textit{edge based)}}
 \label{subsec:edge-based}
 W większości krajów tablice rejestracyjne posiadają prostokątny kształt.
-Dla poprawienia widoczności numerów pojazdów, stosuje się kolory o wysokim kontraście dla czcionki i tła.
+Dla poprawienia widoczności numerów pojazdów, stosuje się kolory o wysokim kontraście dla czcionki \linebreak i tła.
 Dzięki temu, tablice rejestracyjne zawierają wiele równoległych i prostopadłych linii.
 Z uwagi na to, znaczna część badań bazuje na podejściu opartym o wykrywanie krawędzi.
 W większości przypadków kolor tablicy rejestracyjnej jest różny od koloru pojazdu.
@@ -168,7 +168,7 @@ Model ten jest jednak wrażliwy na szum.
 Często metody wykorzystujące kolor tablicy rejestracyjnej są używane do wyselekcjonowania kandydatów.
 Innymi słowy, oznacza to wybrania obszarów obrazu, w których może znajdować się tablica rejestracyjna.
 Technika ta łączona jest z innymi algorytmami, które na kolejnych etapach decydują, czy wskazany obszar rzeczywiście zawiera poszukiwany obiekt.
-Do tego typu metod wykorzystywany jest m.\ in.\ algorytm \textit{Mean shift}~\cite{1520110} i logika rozmyta~\cite{Wang2008FuzzybasedAF}.
+Do tego typu metod wykorzystywany jest m.\ in.\ algorytm \textit{Mean shift}~\cite{1520110} \linebreak i logika rozmyta~\cite{Wang2008FuzzybasedAF}.
 
 Opisywana grupa metod może zostać użyta do detekcji zdeformowanych i pochylonych tablic.
 Rzadko występują one osobno w metodach detekcji, głównie ze względu na ich dużą czułość na zmiany naświetlenia.
@@ -251,7 +251,7 @@ Sposobem na szybsze obliczenie obrazu całkowego może być wykorzystanie wzoró
     \end{aligned}
 \end{align}
 gdzie $s(j,k)$ to skumulowana suma w wierszu, $f(j,k)$ to wartość obrazu w punkcie $(j,k)$, natomiast $s(j,-1)=0$ oraz $ii(-1,k)=0$~\cite{990517}.
-Dla $j=k=1$ zachodzi równość $s(1,1)=f(1,1)$.
+Dla $j=k=1$ zachodzi równość \linebreak $s(1,1)=f(1,1)$.
 Dzięki takiemu rozwiązaniu, wyznaczanie obrazu całkowego charakteryzuje się złożonością obliczeniową $O(n_x n_y)$.
 
 Kiedy obraz całkowy został wyznaczony, obliczenie sumy jasności dla dowolnego fragmentu obrazu jest operacją o stałej złożoności obliczeniowej $O(1)$.
@@ -261,11 +261,11 @@ Poniżej przedstawiono obliczenie sumy dla prostokąta rozpiętego między punkt
     \label{eq:integral_image_x_y}
     \sum_{x_1\leq x \leq x_2} \sum_{y_1\leq y \leq y_2} i(x,y) = ii(x_2, y_2) - ii(x_1 - 1, y_2) - ii(x_2, y_1 - 1) + ii(x_1 - 1, y_1 - 1)
 \end{equation}
-Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na 4 punktach obrazu całkowego~\cite{szybka_detekcja_klesk}.
+Na podstawie powyższego wzoru można zauważyć, że wystarczą operacje tylko na \linebreak 4 punktach obrazu całkowego~\cite{szybka_detekcja_klesk}.
 Dla obliczenia różnicy pomiędzy sumami dwóch dowolnych prostokątów wymagane jest pobranie wartości dla 8 punktów z obrazu całkowego.
 Poprzez zastosowanie skalowania szablonów i zakotwiczanie ich w różnych miejscach badanego okna, możliwe jest uzyskanie dużej (tzn.\ rzędu $10^3$ lub $10^4$) liczby cech Haara bez konieczności skalowania obrazu.
 Tak duża liczba cech wymagana jest na etapie uczenia klasyfikatora.
-Dzięki zastosowaniu boostingu, algorytm dokonuje selekcji znacznie mniejszej liczby cech, które zapewnią dobry opis rozpatrywanych obiektów w danym zagadnieniu detekcji.
+Dzięki zastosowaniu boostingu, algorytm dokonuje selekcji znacznie mniejszej liczby cech, które zapewnią dobry opis rozpatrywanych obiektów \linebreak w danym zagadnieniu detekcji.
 
 AdaBoost (Adaptive Boosting) to jedna z technik boostingu.
 Takie podejście zostało zaprezentowane po raz pierwszy w~\cite{Freund1996ExperimentsWA}.
@@ -433,7 +433,7 @@ Jednym z najnowocześniejszych systemów detekcji w czasie rzeczywistych jest al
 Algorytm jest bardzo wydajny.
 Bazuje on na odpowiednio zaprojektowanym zadaniu regresji do predykcji tzw.\ bounding boxów obiektów.
 Autorzy zapewniają o możliwości przetwarzania 45 klatek na sekundę, a dla wersji szybszej, lecz o niższej dokładności, ponad 150 klatek na sekundę.
-W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas procesu uczenia i testowania otrzymuje na wejściu cały obraz.
+W przeciwieństwie do tradycyjnych metod z oknem przesuwnym, YOLO podczas procesu uczenia \linebreak i testowania otrzymuje na wejściu cały obraz.
 Na obraz wejściowy nałożona zostaje siatka o rozmiarze $S\times S$, która tworzy obwiednie, a następnie wykorzystuje je do rozpoznawania szukanych obiektów.
 Dla każdej uzyskanej ramki, mechanizm wyznacza prawdopodobną klasę.
 Ramki o prawdopodobieństwie wyższym od ustalonego progu, zostają nałożone na wejściowy obraz, najczęściej w postaci prostokątów otaczających obiekt.
@@ -560,7 +560,7 @@ Dodatkowo, dla niektórych liter, widoczne są minima lokalne wynikające z ich 
 \subsection{Pozostałe metody}
 Wyodrębnienie znaków od tła jest problemem rozważanym w wielu pracach.
 Wciąż poszukiwane są sposoby segmentacji o wyższej skuteczności niż te obecnie stosowane.
-W~\cite{686064} autorzy skanowali w poziomie obraz binarny, w celu znalezienia obszarów, w których stosunek pikseli tła do pikseli znaków przekraczał predefiniowany próg.
+W~\cite{686064} autorzy skanowali w poziomie obraz binarny, w celu znalezienia obszarów, \linebreak w których stosunek pikseli tła do pikseli znaków przekraczał predefiniowany próg.
 Jeżeli takie miejsce znaleziono, uznawano je za początek znaku.
 Dla odnalezienia końca znaku wykonywano odwrotną procedurę.
 
@@ -676,7 +676,7 @@ Na ich wyjściu wartości są z zakresu od 0 do 1.
 W zastosowaniach OCR, ten rodzaj sieci pracuje na poziomie znaku.
 Oznacza to, że sieci LSTM mogą być wykorzystywane do rozpoznawania tekstu niezależnie od użytego języka.
 Na przestrzeni ostatnich lat pojawiło się wiele opracowań wykorzystujących sieci LSTM do realizacji systemów OCR~\cite{10.1109, 8563237}.
-Warto również wspomnieć, że jedna z najpopularniejszych bibliotek programistycznych Tesseract~\cite{tesseract} od wersji 4 wykorzystuje sieci LSTM\@.
+Warto również wspomnieć, że jedna \linebreak z najpopularniejszych bibliotek programistycznych Tesseract~\cite{tesseract} od wersji 4 wykorzystuje sieci LSTM\@.
 
 %tesseract korzysta z sieci lstm wiec warto by to opisać i jakieś inne sieci
 %%https://bulldogjob.pl/readme/3-typy-rekurencyjnych-sieci-neuronowych
@@ -703,7 +703,7 @@ Rysunek~\ref{fig:ocr_template_matching} przedstawia schemat opisywanej techniki 
     \label{fig:ocr_template_matching}
 \end{figure}
 \FloatBarrier
-Cyfrową reprezentacją znaku jest tablica, gdzie 1 to punkt wchodzący w skład znaku, a 0 to tło.
+Cyfrową reprezentacją znaku jest tablica, gdzie 1 to punkt wchodzący w skład znaku, \linebreak a 0 to tło.
 Tablica musi mieć ten sam rozmiar co tablica wzorca, więc obrazy są najczęściej skalowane.
 Dla litery $A$ wykryto 17, a dla litery $C$ 6 niepoprawnych punktów.
 Metoda ta jest stosunkowo prosta w implementacji.

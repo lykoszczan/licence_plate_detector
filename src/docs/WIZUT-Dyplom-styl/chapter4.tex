@@ -101,7 +101,7 @@ Opracowany klasyfikator nie ma takiej wiedzy.
 Z tego powodu, określenie granicy, dla której próbki powinny być klasyfikowane jako pozytywne, nie jest trywialnym zadaniem.
 
 Należy podkreślić, że procent poprawnie sklasyfikowanych próbek przez klasyfikator nie zawsze powinien być jedyną miarą jakości systemu.
-Przykładowo, dla obrazu przedstawionego na Rysunku~\ref{fig:tablica_rozpoznana} procedura skanowania oknem przesuwnym, dla rozmiaru okna
+Przykładowo, dla obrazu przedstawionego na Rysunku~\ref{fig:tablica_rozpoznana}, procedura skanowania oknem przesuwnym, dla rozmiaru okna
 45$\times$15px, generuje 39188 okien.
 Jeżeli uznamy, że 20 okien zostało źle sklasyfikowanych, to poprawność klasyfikacji dalej jest bardzo wysoka i wynosi w tym przypadku $99.95\%$.
 
@@ -149,7 +149,7 @@ Wydajność jest uzależniona od poniższych czynników:
     \item liczba cech klasyfikatora.
 \end{itemize}
 W Tabeli~\ref{tab:performance} przedstawiono wyniki uzyskanych czasów dla opracowanego programu.
-W celu przyspieszenia obliczeń, zrównoleglono obliczenia cech dla procedury skanowania oknem przesuwnym.
+\linebreak W celu przyspieszenia obliczeń, zrównoleglono obliczenia cech dla procedury skanowania oknem przesuwnym.
 Poniższe dane uwzględniają zrównloleglenie, stąd czas detekcji nie jest równy iloczynowi liczby okien i czasu klasyfikacji jednego okna.
 Wszystkie obrazy były skalowane na wejściu do rozmiaru 640$\times$480px.
 \begin{table}[h]
@@ -181,7 +181,7 @@ Jednym z pomysłów na udoskonalenie modułu detekcji jest dołożenie do zbioru
 Jest prawdopodobnym, że ponownie nauczony klasyfikator charakteryzowałby się wyższą dokładnością detekcji.
 Innym pomysłem, który mógłby poprawić wydajność oraz jakość detekcji jest użycie więcej niż jednego klasyfikatora do detekcji obiektów.
 W pierwszej kolejności jeden klasyfikator klasyfikowałby okna zawierający samochody.
-Tak działający klasyfikator działby szybciej, ponieważ rozmiar okna w procedurze skanującej byłby większy.
+Tak działający klasyfikator działałby szybciej, ponieważ rozmiar okna w procedurze skanującej byłby większy.
 Wynika to z faktu, że samochód zajmuje większy obraz na zdjęciu niż jego tablica rejestracyjna.
 Następnie na wykrytych fragmentach należałoby wykryć tablice rejestracyjne.
 W rezultacie liczba okien poddawanych procedurze predykcji mogłaby być mniejsza niż w oryginalnym rozwiązaniu.

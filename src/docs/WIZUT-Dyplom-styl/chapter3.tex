@@ -62,7 +62,7 @@ Dla każdej próbki wyliczane są cechy Haara za pomocą wygenerowanych wcześni
 W opisywanym programie użyto 5 szablonów cech Haara.
 Szablony są skalowane odpowiednim skokiem zależnym od $s$.
 Poniżej zamieszczono kod procedury generującej współrzędne szablonu dla każdej cechy~\ref{lst:haar_cords}.
-Algorytm~\ref{lst:haar_indexes} przedstawia sposób generowanie argumentu $indexes$.
+Algorytm~\ref{lst:haar_indexes} przedstawia sposób generowanie argumentu \emph{indexes} funkcji \emph{haar\_coords}.
 \begin{lstlisting}[language=Python, caption=Procedura generujące szablony cech Haara dla konkretnych wpsółrzędnych., label={lst:haar_cords}]
 def haar_coords(s, p, indexes):
     coords = []
@@ -81,7 +81,8 @@ def haar_coords(s, p, indexes):
         coords.append(np.array(single_coords))
     return np.array(coords, dtype=object)
 \end{lstlisting}
-\begin{lstlisting}[language=Python, caption=Procedura generujące indeksy., label={lst:haar_indexes}]
+\begin{minipage}{\linewidth}
+    \begin{lstlisting}[language=Python, caption=Procedura generujące indeksy., label={lst:haar_indexes}]
 def haar_indexes(s, p):
     indexes = []
     for t in range(len(HAAR_TEMPLATES)):
@@ -91,8 +92,8 @@ def haar_indexes(s, p):
                     for p_k in range(-(p - 1), p):
                         indexes.append(np.array([t, s_j, s_k, p_j, p_k]))
     return np.array(indexes)
-\end{lstlisting}
-
+    \end{lstlisting}
+\end{minipage}
 Na Rysunku~\ref{fig:haar_feats_examples} pokazano przykładowe szablony podczas procesu uczenia.
 \begin{figure}[!ht]
     \centering
@@ -266,7 +267,7 @@ Pierwszy obraz jest obrazem wejściowym, który trafił do algorytmu z detektora
 Ostatni obraz jest wynikiem segmentacji.
 Obraz środkowy jest obrazem wejściowym, na który nałożono wykryte pozycje znaków (kolor niebieski).
 Kolorem różowym oznaczono kontury, które zostały wykryte, ale zostały odrzucone z powodu braku spełnienia kryteriów geometrycznych.
-Założono, że kontur pojedynczego znaku musi być prostokątem o dłuższych bokach zorientowanych w pionie.
+Założono, że kontur pojedynczego znaku musi być prostokątem \linebreak o dłuższych bokach zorientowanych w pionie.
 Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zbyt dużego odchylenia od średniej wysokości konturów.
 \begin{figure}[!ht]
     \centering
@@ -281,10 +282,10 @@ Kolorem żółtym oznaczono kontury, które zostały odrzucone, z powodu ich zby
 Środowisko Python jest niezwykle popularne m.in. ze względu na mnogość dostępnych gotowych bilbiotek.
 Jednym z celów pracy było zaimplementowanie algorytmu uczącego i klasyfikującego.
 Cel ten udało się zrealizować, natomiast nie byłoby to możliwe bez użycia gotowych rozwiązań do elementarnych operacji t.j. listowanie plików w katalogach, odczyt i zapis zdjęć, pobieranie pojedynczych klatek z filmu wideo czy operacje na tablicach.
-Poniżej wymieniono i opisano najważniejsze oraz najczęściej używane biblioteki w opisywanej pracy.
+Poniżej wymieniono i opisano najważniejsze oraz najczęściej używane biblioteki \linebreak w opisywanej pracy.
 
 \subsection{OpenCV}
-OpenCV jest biblioteką o otwartym źródle (ang. \textit{open source}) \cite{open_cv,open_cv_docs} .
+OpenCV jest biblioteką o otwartym źródle (ang. \textit{open source})~\cite{open_cv,open_cv_docs} .
 Do jej głównych zastosowań należą przetwarzanie obrazów oraz uczenie maszynowe.
 W przedstawionym programie wykorzystano najnowszą dostępną wersję na moment pisania pracy $4.6.0$.
 Została zaprojektowana, aby zapewnić ustandaryzowaną infrastrukturę dla aplikacji widzenia komputerowego.
