@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Cel i zakres pracy}{2}{0}{1}
+\beamer@sectionintoc {2}{Wprowadzenie}{3}{0}{2}
+\beamer@sectionintoc {3}{Opracowaine zbioru uczącego}{6}{0}{3}
+\beamer@sectionintoc {4}{Opracowany algorytm}{8}{0}{4}
+\beamer@sectionintoc {5}{Wyniki badań}{14}{0}{5}
