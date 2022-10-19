@@ -3,6 +3,7 @@
 \usepackage{multimedia}
 \usepackage{hyperref}
 \usepackage{polski}
+\usepackage{float} %figure inside minipage
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{color}
@@ -10,17 +11,24 @@
 \usepackage{graphicx}
 \usepackage{makecell}
 \usepackage{booktabs}
+
+%\usepackage{algpseudocode}
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{mathtools}% http://ctan.org/pkg/algorithmicx
+\floatname{algorithm}{Algorytm}
 \usetheme{Warsaw}
 
 
-\title{Rozpoznawanie tablic rejestracyjnych pojazdów na obrazach z kamery samochodowej}
+\title{Rozpoznawanie tablic rejestracyjnych pojazdów \linebreak na obrazach z kamery samochodowej}
 \author{Marcin Łykowski}
 
 \begin{document}
     \begin{frame}
         \maketitle
         \centering
-        Promotor: dr hab.inż. Przemysław Klęsk
+        Promotor: dr hab.~inż. Przemysław Klęsk, prof.~ZUT
     \end{frame}
 
 
@@ -31,9 +39,9 @@
         W zakres pracy wchodzą:
         \begin{itemize}
             \item omówienie wybranych algorytmów z zakresu przetwarzania obrazów i uczenia maszynowego, potrzebnych do realizacji postawionego zadania,
-            \item przygotowania odpowiedniego materiału (sekwencje wideo) na potrzeby uczenia maszynowego i testowania,
-            \item przedstawienie ostatecznego schematu algorytmicznego dla całego procesu,
-            \item przeprowadzenie eksperymentów, pomiary dokładności i czasów wykonania, wnioski końcowe.
+            \item przygotowania odpowiedniego materiału (sekwencje wideo) \linebreak na potrzeby uczenia maszynowego i testowania,
+            \item przedstawienie ostatecznego schematu algorytmicznego \linebreak dla całego procesu,
+            \item przeprowadzenie eksperymentów, pomiary dokładności \linebreak i czasów wykonania, wnioski końcowe.
         \end{itemize}
     \end{frame}
 
@@ -43,9 +51,9 @@
     \begin{frame}
         \frametitle{Rozpoznawanie tablic rejestracyjnych}
         \begin{itemize}
-            \item \textbf{Detekcja} --- określenie położenia tablicy rejestracyjnej w analizowanym obrazie.
-            \item \textbf{Segmentacja} --- wyodrębnienie pojedynczych znaków na fragmencie obrazu ze zlokalizowaną tablicą.
-            \item \textbf{Identyfikacja} --- rozpoznanie każdego ze znaków i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu.
+            \item \textbf{Detekcja} --- określenie położenia tablicy rejestracyjnej \linebreak w analizowanym obrazie.
+            \item \textbf{Segmentacja} --- wyodrębnienie pojedynczych znaków \linebreak na fragmencie obrazu ze zlokalizowaną tablicą.
+            \item \textbf{Identyfikacja} --- rozpoznanie każdego ze znaków \linebreak i przedstawienie ich w formie tekstowej, którą można później wykorzystać do dalszych działań w zależności od przeznaczenia systemu.
         \end{itemize}
     \end{frame}
 
@@ -60,7 +68,7 @@
         \frametitle{Potencjalne trudności}
         \begin{itemize}
             \item zajmowanie niewielkiego obszaru na zdjęciu przez tablicę rejestracyjną
-            \item istnienie ogromnej liczby formatów tablic rejestracyjnych (w zależności od kraju rejestracji lub rodzaju pojazdu)
+            \item istnienie ogromnej liczby formatów tablic rejestracyjnych \linebreak (w zależności od kraju rejestracji lub rodzaju pojazdu)
             \item słabe oświetlenie, rozmazany obraz, refleksy świetlne
             \item ruch pojazdu, zabrudzone tablice
         \end{itemize}
@@ -107,11 +115,18 @@
 
     \begin{frame}
         \frametitle{Opracowany algorytm}
-        Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech Haara za pomocą algorytmu RealBoost.
-        Jako słaby klasyfikator wykorzystano algorytm koszykowania wartości funkcji logit.
-        Rozpoznane fragmenty obrazu zawierające tablice poddano operacjom morfologicznym.
-        Z przetworzonych obrazów segmentowano znaki tablicy rejestracyjnej.
-        Do rozpoznania znaków użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
+        \begin{itemize}
+            \item detekcja uzyskana poprzez zastosowanie skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech Haara za pomocą algorytmu RealBoost
+            \item słaby klasyfikator realizowany poprzez algorytm koszykowania wartości funkcji logit
+            \item przetwarzanie rozpoznanych fragmentów obrazu zawierających tablice za pomocą operacji morfologicznych w celu segmentacji znaków
+            \item rozpoznanie znaków osiągnięte poprzez zastosowanie biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM
+        \end{itemize}
+
+%        Do detekcji użyto skanowania obrazu oknem przesuwnym i klasyfikowanie na podstawie cech Haara za pomocą algorytmu RealBoost.
+%        Jako słaby klasyfikator wykorzystano algorytm koszykowania wartości funkcji logit.
+%        Rozpoznane fragmenty obrazu zawierające tablice poddano operacjom morfologicznym.
+%        Z przetworzonych obrazów segmentowano znaki tablicy rejestracyjnej.
+%        Do rozpoznania znaków użyto biblioteki Tesseract opartej o rekurencyjne sieci neuronowe LSTM\@.
         \begin{figure}
             \includegraphics[scale=0.3]{../WIZUT-Dyplom-styl/Pictures/haar_feats}
         \end{figure}
@@ -119,17 +134,71 @@
 
     \begin{frame}
         \frametitle{Opracowany algorytm}
-        \begin{figure}
-            \includegraphics[scale=0.25]{../WIZUT-Dyplom-styl/Pictures/main_alg_scaled}
-        \end{figure}
+        \begin{center}
+            \scalebox{0.9}{
+                \begin{minipage}{1\linewidth}
+                    \begin{algorithm}[H]
+                        \caption{Algorytm rozpoznawania tablic rejestracyjnych.}
+                        \begin{algorithmic}[1]
+                            \label{main_alg}
+                            \Procedure{LicencePlateRecognition}{$(image)$}
+                                \State Przeskaluj obraz.
+                                \State Przejdź do skali szarości.
+                                \State Oblicz obraz całkowy.
+                                \State Wybierz z indeksów współrzędne cech wybranych przez \linebreak klasyfikator.
+                                \State \textbf{Znajdź tablice rejestracyjne na obrazie}.
+                                \State Połącz wykryte prostokąty.
+                                \State Pobierz z oryginalnego obrazu znalezione fragmenty.
+                                \State \textbf{Rozpoznaj znaki na przekazanych fragmentach obrazu}.
+                                \State Oznacz na obrazie rozpoznane tablice.
+                            \EndProcedure
+                        \end{algorithmic}
+                    \end{algorithm}
+                \end{minipage}
+            }
+        \end{center}
     \end{frame}
 
     \begin{frame}
-        \frametitle{Algorytm detekcji}
-        \begin{figure}
-            \includegraphics[scale=0.2]{../WIZUT-Dyplom-styl/Pictures/detection_alg}
-        \end{figure}
+        \frametitle{Opracowany algorytm}
+        \begin{center}
+            \scalebox{0.9}{
+                \begin{minipage}{1\linewidth}
+                    \begin{algorithm}[H]
+                        \caption{Algorytm detekcji tablic rejestracyjnych.}
+                        \begin{algorithmic}[1]
+                            \label{detection_alg}
+                            \Procedure{DetectLicencePlates}{$(image, feature\_indexes)$}
+                                \For{\texttt{$t \coloneq 1, \dots, N$}}
+                                    \State Obliczenie wielkości okna dla aktualnej skali.
+                                    \State Obliczenie skoku okna w poziomie i w pionie.
+                                    \State Obliczenie wartości cech wykorzystywanych przez \linebreak klasyfikator dla przetwarzanego okna.
+                                    \If {Odpowiedź klasyfikatora $>$ próg decyzyjny}
+                                        \State Oznacz okno jako pozytywne.
+                                    \EndIf
+                                \EndFor
+                                \State \textbf{Zwróć} wszystkie okna pozytywne.
+                            \EndProcedure
+                        \end{algorithmic}
+                    \end{algorithm}
+                \end{minipage}
+            }
+        \end{center}
     \end{frame}
+%
+%    \begin{frame}
+%        \frametitle{Opracowany algorytm}
+%        \begin{figure}
+%            \includegraphics[scale=0.25]{../WIZUT-Dyplom-styl/Pictures/main_alg_scaled}
+%        \end{figure}
+%    \end{frame}
+
+%    \begin{frame}
+%        \frametitle{Algorytm detekcji}
+%        \begin{figure}
+%            \includegraphics[scale=0.2]{../WIZUT-Dyplom-styl/Pictures/detection_alg}
+%        \end{figure}
+%    \end{frame}
 
     \begin{frame}
         \frametitle{Wynik detekcji}
@@ -139,11 +208,38 @@
     \end{frame}
 
     \begin{frame}
-        \frametitle{Algorytm segmentacji}
-        \begin{figure}
-            \includegraphics[scale=0.2]{../WIZUT-Dyplom-styl/Pictures/characters_alg}
-        \end{figure}
+        \frametitle{Opracowany algorytm}
+        \begin{center}
+            \scalebox{0.9}{
+                \begin{minipage}{1\linewidth}
+                    \begin{algorithm}[H]
+                        \caption{Algorytm segmentacji i rozpoznawania znaków.}
+                        \begin{algorithmic}[1]
+                            \label{segmentation_alg}
+                            \Procedure{CharactersSegmentation}{$(plate\_image)$}
+                                \State Przeskaluj obraz.
+                                \State Przejdź do skali szarości.
+                                \State Binaryzacja obrazu, nałożenie maski HSV, transformacje morfologiczne.
+                                \State Wykrycie konturów.
+                                \State Obliczenie średniej wysokości konturów.
+                                \State Odrzucenie konturów nie spełniających wymagań.
+                                \State Segmentacja wyznaczonych konturów.
+                                \State Rozpoznanie tekstu z przetworzonego obrazu.
+                                \State Zwróć rozpoznany tekst.
+                            \EndProcedure
+                        \end{algorithmic}
+                    \end{algorithm}
+                \end{minipage}
+            }
+        \end{center}
     \end{frame}
+%
+%    \begin{frame}
+%        \frametitle{Algorytm segmentacji}
+%        \begin{figure}
+%            \includegraphics[scale=0.2]{../WIZUT-Dyplom-styl/Pictures/characters_alg}
+%        \end{figure}
+%    \end{frame}
 
     \begin{frame}
         \frametitle{Wynik segmentacji}
@@ -183,14 +279,14 @@
     \begin{frame}
         \frametitle{Wyniki badań}
         \begin{figure}
-            \includegraphics[scale=0.6]{../WIZUT-Dyplom-styl/Pictures/autobus}
+            \includegraphics[scale=1]{../WIZUT-Dyplom-styl/Pictures/autobus}
         \end{figure}
     \end{frame}
 
     \begin{frame}
         \frametitle{Wyniki badań}
         \begin{figure}
-            \includegraphics[scale=0.6]{../WIZUT-Dyplom-styl/Pictures/bank}
+            \includegraphics[scale=1]{../WIZUT-Dyplom-styl/Pictures/bank}
         \end{figure}
     \end{frame}
 
@@ -232,7 +328,7 @@
             \item dołożenie do zbioru uczącego negatywnych okien, które obecnie klasyfikator wykrywa błędnie, jako pozytywne
             \item użycie więcej niż jednego klasyfikatora do detekcji obiektów
             \item użycie kompilowanego języka w celu zwiększenia wydajności
-            \item nauczenie sieci neuronowej zbiorem znaków pochodzących z tablic rejestracyjnych
+            \item nauczenie sieci neuronowej zbiorem znaków pochodzących \linebreak z tablic rejestracyjnych
         \end{itemize}
 
 %        Jednym z pomysłów na udoskonalenie modułu detekcji jest dołożenie do zbioru uczącego negatywnych okien, które obecnie klasyfikator wykrywa błędnie, jako pozytywne.
