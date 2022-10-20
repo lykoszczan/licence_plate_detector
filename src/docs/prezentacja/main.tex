@@ -162,20 +162,38 @@
     \begin{frame}
         \frametitle{Opracowany algorytm}
         \begin{center}
-            \scalebox{0.9}{
+            \scalebox{0.60}{
                 \begin{minipage}{1\linewidth}
                     \begin{algorithm}[H]
                         \caption{Algorytm detekcji tablic rejestracyjnych.}
                         \begin{algorithmic}[1]
                             \label{detection_alg}
                             \Procedure{DetectLicencePlates}{$(image, feature\_indexes)$}
-                                \For{\texttt{$t \coloneq 1, \dots, N$}}
-                                    \State Obliczenie wielkości okna dla aktualnej skali.
-                                    \State Obliczenie skoku okna w poziomie i w pionie.
-                                    \State Obliczenie wartości cech wykorzystywanych przez \linebreak klasyfikator dla przetwarzanego okna.
-                                    \If {Odpowiedź klasyfikatora $>$ próg decyzyjny}
-                                        \State Oznacz okno jako pozytywne.
-                                    \EndIf
+                                \For{\texttt{$s \coloneqq 0, \dots, s_{\max}$}}
+                                    \State Obliczenie wielkości okna $(w, h)$ dla aktualnej skali $s$.
+                                    \State Obliczenie skoku okna $(d_j, d_k)$ w poziomie i w pionie.
+                                    \State $k \coloneqq 0$
+                                    \While{$k + w \leq W$}
+                                        \State $j \coloneqq 0$
+                                        \While{$j + h \leq H$}
+                                            \State Obliczenie wartości cech wykorzystywanych przez \linebreak klasyfikator dla przetwarzanego okna.
+                                            \If {Odpowiedź klasyfikatora $>$ próg decyzyjny}
+                                                \State Oznacz okno jako pozytywne.
+                                            \EndIf
+
+                                            \State  $j \coloneqq j + d_j$
+                                        \EndWhile
+                                        \State $k \coloneqq k + d_k$
+                                    \EndWhile
+
+%                                    \For{\texttt{$j \coloneq rj, rj + dj, \dots, H - h$}}
+%                                        \For{\texttt{$k \coloneq rk, rk + dk, \dots, W - w$}}
+%                                            \State Obliczenie wartości cech wykorzystywanych przez \linebreak klasyfikator dla przetwarzanego okna.
+%                                            \If {Odpowiedź klasyfikatora $>$ próg decyzyjny}
+%                                                \State Oznacz okno jako pozytywne.
+%                                            \EndIf
+%                                        \EndFor
+%                                    \EndFor
                                 \EndFor
                                 \State \textbf{Zwróć} wszystkie okna pozytywne.
                             \EndProcedure
